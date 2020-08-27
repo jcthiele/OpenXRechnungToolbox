@@ -13,10 +13,10 @@ Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den
 
 ## Die Vorteile der OpenXRechnungToolbox gegenüber vielen anderen Angeboten sind:
 
-- Sie geben Ihre Daten nicht aus der Hand: kein Hochladen von Rechnungsdateien auf einen Server; reine lokale Desktop-Anwendung (Datenschutz)
-- Sie bleiben jederzeit anonym: keine Registrierung oder sonstige Nutzer*inneninformationen erforderlich (Datenschutz)
-- Ihnen rückt kein Vertrieb auf den Leib: kein kommerzielles Interesse
-- Sie besitzen vollständige digitale Souveränität: offener Quellcode (Open Source), somit vollständige Nachvollziehbarkeit und Weiterentwicklungsmöglichkeit
+- *Sie geben Ihre Daten nicht aus der Hand*: kein Hochladen von Rechnungsdateien auf einen Server; reine lokale Desktop-Anwendung (Datenschutz)
+- *Sie bleiben jederzeit anonym*: keine Registrierung oder sonstige Nutzer*inneninformationen erforderlich (Datenschutz)
+- *Ihnen rückt kein Vertrieb auf den Leib*: kein kommerzielles Interesse
+- *Sie besitzen vollständige digitale Souveränität*: offener Quellcode (Open Source), somit vollständige Nachvollziehbarkeit und Weiterentwicklungsmöglichkeit
 
 
 ## Installation
