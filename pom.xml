@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>OpenXRechnungToolbox</groupId>
+  <artifactId>org.oxt</artifactId>
+  <version>1.0</version>
+  <name>OpenXRechnungToolbox</name>
+  <description>This is the OpenXRechnungToolbox by Dr. Jan C. Thiele</description>
+  <packaging>jar</packaging>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <swt.version>4.6.1</swt.version> 
+	<swt.version.mac32>4.4.2</swt.version.mac32>
+    <lombok.version>1.18.8</lombok.version>
+    <saxon-he.version>9.9.1-3</saxon-he.version>
+    <slf4j.version>1.7.25</slf4j.version>        
+    <log4j.version>1.2.17</log4j.version>
+    <fop.version>2.5</fop.version>            
+  	
+  	<maven.compiler.source>1.9</maven.compiler.source>
+  	<maven.compiler.target>1.9</maven.compiler.target>
+  	
+  	<launch4j.version>1.7.25</launch4j.version>
+  	
+  	<min.jre.version>9</min.jre.version>
+  	<icon.path>resources/images/oxt.ico</icon.path>
+  	
+  	<jre.path>./openJDK</jre.path>
+  </properties>
+  
+  
+   <profiles>	
+    <!--  ******************************* -->
+    <!-- profile for 32 Bit Windows -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>windows_32bit_excl_java</id>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.win32.win32.x86</artifactId>
+				<version>${swt.version}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <tasks>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_32bit.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, knownIssues.txt, license.txt" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>              
+		              </tasks>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+			<plugin>
+	 		 	<groupId>com.akathist.maven.plugins.launch4j</groupId>  
+			    <artifactId>launch4j-maven-plugin</artifactId>
+			    <version>${launch4j.version}</version>	 		
+			    <!--  ******************************* -->
+			    <!-- create gui exe of application -->
+			    <!--  ******************************* -->	 		    
+			    <executions>
+			        <execution>
+			            <id>l4j-gui</id>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>launch4j</goal>
+			            </goals>
+			            <configuration>
+			                <headerType>gui</headerType>
+			                <outfile>${project.build.directory}/OpenXRechnungToolbox.exe</outfile>
+			                <jar>${project.build.directory}/OpenXRechnungToolbox_${project.version}-jar-with-dependencies.jar</jar>		                
+			                <errTitle>Application Error</errTitle>
+			                <classPath>
+			                    <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
+			                </classPath>
+			                <icon>${icon.path}</icon>
+			                <downloadUrl>https://jdk.java.net/14/</downloadUrl>
+			                <jre>
+			                    <minVersion>${min.jre.version}</minVersion>
+			                    <initialHeapSize>128</initialHeapSize>
+			                    <maxHeapSize>1024</maxHeapSize>
+	    						<opts>
+	        						<opt>-Dfile.encoding=UTF8</opt>
+	        					</opts> 
+							</jre>
+			            </configuration>
+			        </execution>			
+			    </executions>		    
+			 </plugin>			
+		   </plugins>
+		</build>    
+	</profile>
+
+    <!--  ******************************* -->
+    <!-- profile for 64 Bit Windows with bundled Java -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>windows_64bit_incl_java</id>
+	    <activation>
+	      <activeByDefault>true</activeByDefault>
+	    </activation>		
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
+				<version>${swt.version}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <tasks>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_64bit_including_Java.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, knownIssues.txt, license.txt" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/openJDK" includes="**" prefix="openJDK"/>				   
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>              
+		              </tasks>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+			<plugin>
+	 		 	<groupId>com.akathist.maven.plugins.launch4j</groupId>  
+			    <artifactId>launch4j-maven-plugin</artifactId>
+			    <version>${launch4j.version}</version>	 		
+			    <!--  ******************************* -->
+			    <!-- create gui exe of application -->
+			    <!--  ******************************* -->	 		    
+			    <executions>
+			        <execution>
+			            <id>l4j-gui</id>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>launch4j</goal>
+			            </goals>
+			            <configuration>
+			                <headerType>gui</headerType>
+			                <outfile>${project.build.directory}/OpenXRechnungToolbox.exe</outfile>
+			                <jar>${project.build.directory}/OpenXRechnungToolbox_${project.version}-jar-with-dependencies.jar</jar>		                
+			                <errTitle>Application Error</errTitle>
+			                <classPath>
+			                    <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
+			                </classPath>
+			                <icon>${icon.path}</icon>
+			                <downloadUrl>https://jdk.java.net/14/</downloadUrl>
+			                <jre>
+			                    <minVersion>${min.jre.version}</minVersion>
+			                    <initialHeapSize>128</initialHeapSize>
+			                    <maxHeapSize>1024</maxHeapSize>
+			                    <!--bundledJreAsFallback>true</bundledJreAsFallback-->
+	    						<path>${jre.path}</path>
+	    						<opts>
+	        						<opt>-Dfile.encoding=UTF8</opt>
+	        					</opts> 
+							</jre>
+			            </configuration>
+			        </execution>			
+			    </executions>		    
+			 </plugin>			
+		   </plugins>
+		</build>    
+	</profile>
+	
+    <!--  ******************************* -->
+    <!-- profile for 64 Bit Windows -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>windows_64bit_excl_java</id>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
+				<version>${swt.version}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <tasks>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_64bit.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, knownIssues.txt, license.txt" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>              
+		              </tasks>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+			<plugin>
+	 		 	<groupId>com.akathist.maven.plugins.launch4j</groupId>  
+			    <artifactId>launch4j-maven-plugin</artifactId>
+			    <version>${launch4j.version}</version>	 		
+			    <!--  ******************************* -->
+			    <!-- create gui exe of application -->
+			    <!--  ******************************* -->	 		    
+			    <executions>
+			        <execution>
+			            <id>l4j-gui</id>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>launch4j</goal>
+			            </goals>
+			            <configuration>
+			                <headerType>gui</headerType>
+			                <outfile>${project.build.directory}/OpenXRechnungToolbox.exe</outfile>
+			                <jar>${project.build.directory}/OpenXRechnungToolbox_${project.version}-jar-with-dependencies.jar</jar>		                
+			                <errTitle>Application Error</errTitle>
+			                <classPath>
+			                    <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
+			                </classPath>
+			                <icon>${icon.path}</icon>
+							<downloadUrl>https://jdk.java.net/14/</downloadUrl>
+			                <jre>
+			                    <minVersion>${min.jre.version}</minVersion>
+			                    <initialHeapSize>128</initialHeapSize>
+			                    <maxHeapSize>1024</maxHeapSize>
+	    						<opts>
+	        						<opt>-Dfile.encoding=UTF8</opt>
+	        					</opts> 
+			                </jre>
+			            </configuration>
+			        </execution>			
+			    </executions>		    
+			 </plugin>
+		   </plugins>
+		</build>    
+	</profile>
+
+    <!--  ******************************* -->
+    <!-- profile for 32 Bit Linux -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>linux_32bit</id>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.gtk.linux.x86</artifactId>
+				<version>${swt.version}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <tasks>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Linux_32bit.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>  						             
+		              </tasks>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+		   </plugins>
+		</build>    
+	</profile>
+	
+    <!--  ******************************* -->
+    <!-- profile for 64 Bit Linux -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>linux_64bit</id>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+				<version>${swt.version}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <tasks>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Linux_64bit.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>  						             
+		              </tasks>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+		   </plugins>
+		</build>    
+	</profile>
+
+    <!--  ******************************* -->
+    <!-- profile for 32 Bit Apple Mac -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>mac_32bit</id>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.cocoa.macosx</artifactId>
+				<version>${swt.version.mac32}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <tasks>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_32bit.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>  						             
+		              </tasks>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+		   </plugins>
+		</build>    
+	</profile>
+	
+    <!--  ******************************* -->
+    <!-- profile for 64 Bit Apple Mac -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>mac_64bit</id>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.swt</groupId>
+				<artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
+				<version>${swt.version}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <tasks>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_64bit.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>  						             
+		              </tasks>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+		   </plugins>
+		</build>    
+	</profile>
+  </profiles>
+
+
+  <dependencies>
+    <!-- validation tool - needs local installation -->
+	<!-- download validation tool and run "mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.3.1.jar" in advance -->    
+	<dependency>
+	    <groupId>de.kosit</groupId>
+	    <artifactId>validationtool</artifactId>
+	    <version>1.3.1</version>
+	</dependency>
+      <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>Saxon-HE</artifactId>
+            <version>${saxon-he.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+	   	<dependency>
+	    	<groupId>org.slf4j</groupId>
+	    	<artifactId>slf4j-log4j12</artifactId>
+	    	<version>${slf4j.version}</version>
+	   	</dependency>  
+	   	<dependency>
+			<groupId>log4j</groupId>
+	    	<artifactId>log4j</artifactId>
+	    	<version>${log4j.version}</version>
+		</dependency> 
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.4</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.2</version>
+            <optional>true</optional>
+        </dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/fop -->
+		<dependency>
+		    <groupId>org.apache.xmlgraphics</groupId>
+		    <artifactId>fop</artifactId>
+		    <version>${fop.version}</version>
+		</dependency>          
+		<dependency>
+		    <groupId>com.akathist.maven.plugins.launch4j</groupId>
+		    <artifactId>launch4j-maven-plugin</artifactId>
+		    <version>1.7.25</version>
+		</dependency>
+  </dependencies>
+   
+  <repositories>
+  		<!--  swt repository -->
+  		<repository>
+	        <id>maven-eclipse-repo</id>
+	        <url>http://maven-eclipse.github.io/maven</url>
+	    </repository>
+  </repositories>
+   
+   
+  <build>	        
+   <plugins>    
+	<plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <!--  ******************************* -->
+          <!--  copy resources and other files to target directory -->
+          <!--  ******************************* -->
+          <execution>
+          	<id>copyresources</id>
+            <phase>package</phase>
+            <configuration>
+              <tasks>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="resources/**"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="openJDK/**"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="exampleInvoices/**"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="license.txt"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="OpenXRechnungToolbox.sh"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="knownIssues.txt"/>
+				    </fileset>
+				</copy>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>	
+		  <!--  ******************************* -->
+		  <!-- copy jar file to a nice name -->
+          <!--  ******************************* -->
+          <execution>
+          	<id>copyjar</id>
+            <phase>install</phase>
+            <configuration>
+              <tasks>          	 
+              	<copy file="${project.build.directory}/OpenXRechnungToolbox_${project.version}-jar-with-dependencies.jar" tofile="${project.build.directory}/OpenXRechnungToolbox.jar"/>  
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>			
+          </execution>	
+        </executions>
+      </plugin>
+	    <plugin>
+	      <artifactId>maven-assembly-plugin</artifactId>
+		  <!--  ******************************* -->
+	      <!--  create jar file with dependencies -->
+		  <!--  ******************************* -->
+	      <configuration>
+	      	<finalName>OpenXRechnungToolbox_${project.version}</finalName>
+	        <descriptorRefs>
+	          <descriptorRef>jar-with-dependencies</descriptorRef>
+	        </descriptorRefs>
+			<archive>
+	          <manifest>
+	            <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
+	          </manifest>
+	        </archive>    
+	      </configuration>
+	      <executions>
+	        <execution>
+	          <phase>package</phase>
+	          <goals>
+	            <goal>single</goal>
+	          </goals>
+	        </execution>   
+	      </executions>	
+	  </plugin>
+     </plugins>
+    </build>   
+</project>

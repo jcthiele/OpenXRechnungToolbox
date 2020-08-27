@@ -1,0 +1,6 @@
+- layout of validation report in header broken
+	--> browser specific, only happens in swt-browser; 
+	    after saving to external file and displaying with, for example, Firefox, everything it's fine.
+	    Workaround: adaption of CSS template, increasing width in header from 230px to 250px.
+- fragment in help page url not used
+	--> java.awt.Desktop.getDesktop.browse does not consume fragment in URL, therefore anchors in help urls are not used

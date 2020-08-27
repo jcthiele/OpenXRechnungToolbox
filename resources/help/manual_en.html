@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Justifiable 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130801
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>User manual - OpenXRechnungToolbox</title>
+
+<meta name="keywords" content="OpenXRechnungToolbox, XRechnung" />
+<meta name="description" content="OpenXRechnungToolbox Hilfe" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Open+Sans+Condensed:300,700" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+
+</head>
+<body>
+
+<button onclick="topFunction()" id="topBtn" title="Go to top">top</button>
+<script type="text/javascript" src="topbutton.js"> </script>
+
+
+<div id="logo" class="container">
+	<h1><span class="icon icon-o icon-size2"></span><span class="icon icon-x icon-size"></span><span class="icon icon-t icon-size2"></span><a href="index.html">Open<span>XRechnung</span>Toolbox</a></h1>
+	<p>by <a href="author.html" rel="nofollow">Dr. Jan C. Thiele</a></p>
+</div>
+<div id="wrapper" class="container">
+	<div id="menu" class="container">
+		<ul>
+			<li><a href="index.html" accesskey="1" title="">OXT</a></li>
+			<li><a href="author.html" accesskey="1" title="">Autor</a></li>
+			<li class="current_page_item"><a href="manual.html" accesskey="2" title="">Benutzerhandbuch</a></li>
+			<li><a href="docu.html" accesskey="3" title="">Dokumentation</a></li>
+			<li><a href="license.html" accesskey="4" title="">Lizenz</a></li>
+			<li><a href="impress.html" accesskey="5" title="">Impressum</a></li>
+		</ul>
+	</div>
+	<div id="three-column" class="container">
+	<p> 
+		<br/>
+		<br/>
+	</p>
+	</div>
+	<div id="page">
+		<!--
+		<div><span class="arrow-down"></span></div>
+		-->
+		<div><!-- id="box1">-->
+			<div class="title">
+				<h2>Benutzerhandbuch</h2>
+			</div>
+			<p>
+			Im Folgenden wird die Bedienung der OpenXRechnungToolbox erläutert. 
+			Wesentliche Grundlage ist der <a href="https://www.xoev.de/xrechnung-16828#BestandteileXRechnung" target="_blank">Standard XRechnung</a> und die zugehörigen technischen Bestandteile.
+			</p>
+			
+			
+			<h3><a id=”top”>Inhalt</a></h3>
+			<p>
+			<div style="text-indent:15px;"><a href="#installation">Installation</a><br /></div>
+			<div style="text-indent:15px;"><a href="#start">Starten der Anwendung</a><br /></div>
+				<div style="text-indent:30px;"><a href="#windows">Unter MS Windows</a><br /></div>
+				<div style="text-indent:30px;"><a href="#linux">Unter Linux</a><br /></div>
+				<div style="text-indent:30px;"><a href="#macos">Unter Apple Mac OS</a><br /></div>
+			<div style="text-indent:15px;"><a href="#gui">Benutzeroberfläche</a><br /></div>
+				<div style="text-indent:30px;"><a href="#dragdrop">Drag-and-Drop Bedienung</a><br /></div>
+				<div style="text-indent:30px;"><a href="#menubar">Menüleiste</a><br /></div>
+					<div style="text-indent:45px;"><a href="#menudata">Menü <i>Datei</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#menuentryvisualization">Menüpunkt <i>Rechnung visualisieren</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#menuentryvalidation">Menüpunkt <i>Rechnung prüfen</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#menuentryLWIDcheck">Menüpunkt <i>Leitweg-ID berechnen/prüfen</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#menuentryClose">Menüpunkt <i>Schließen</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#menuentryClose">Menüpunkt <i>Schließen</i></a><br /></div>
+					<div style="text-indent:45px;"><a href="#menuSettings">Menü <i>Einstellungen</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#menuentyChangeSettings">Menüpunkt <i>Einstellungen ändern</i></a><br /></div>
+							<div style="text-indent:75px;"><a href="#settingsLanguage">Sprache</a><br /></div>
+							<div style="text-indent:75px;"><a href="#settingsVisualization">Visualisierung</a><br /></div>
+							<div style="text-indent:75px;"><a href="#settingsValidation">Prüfbericht</a><br /></div>
+			<div style="text-indent:15px;"><a href="#visualization">Visualisierung</a><br /></div>
+				<div style="text-indent:30px;"><a href="#vizMenu">Menüleiste</a><br /></div>
+					<div style="text-indent:45px;"><a href="#vizMenuData">Menü <i>Datei</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#vizMenuEntryCheckInvoice">Menüpunkt <i>Gewählte Rechnung prüfen</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#vizMenuEntrySave">Menüpunkt <i>Speichern</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#vizMenuEntrySaveAs">Menüpunkt <i>Speichern als</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#vizMenuEntrySaveAsPDF">Menüpunkt <i>Speichern als PDF</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#vizMenuEntryClose">Menüpunkt <i>Schließen</i></a><br /></div>
+					<div style="text-indent:45px;"><a href="#vizMenuHelp">Menü <i>Hilfe</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#vizMenuEntryOpenHelp">Menüpunkt <i>Hilfe öffnen</i></a><br /></div>
+			<div style="text-indent:15px;"><a href="#validation">Prüfbericht</a><br /></div>
+				<div style="text-indent:30px;"><a href="#valiMenu">Menüleiste</a><br /></div>
+					<div style="text-indent:45px;"><a href="#valiMenuData">Menü <i>Datei</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#valiMenuEntryVisualization">Menüpunkt <i>Gewählte Rechnung visualisieren</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#valiMenuEntrySave">Menüpunkt <i>Speichern</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#valiMenuEntrySaveAs">Menüpunkt <i>Speichern als</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#valiMenuEntryClose">Menüpunkt <i>Schließen</i></a><br /></div>
+					<div style="text-indent:45px;"><a href="#valiMenuHelp">Menü <i>Hilfe</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#valiMenuEntryOpenHelp">Menüpunkt <i>Hilfe öffnen</i></a><br /></div>
+			<div style="text-indent:15px;"><a href="#lwidcheck">Leitweg-ID-Berechnung/-Prüfung</a><br /></div>
+				<div style="text-indent:30px;"><a href="#lwidMenu">Menüleiste</a><br /></div>
+					<div style="text-indent:45px;"><a href="#lwidMenuData">Menü <i>Datei</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#lwidMenuEntryClose">Menüpunkt <i>Schließen</i></a><br /></div>
+					<div style="text-indent:45px;"><a href="#lwidMenuHelp">Menü <i>Hilfe</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#lwidMenuEntryOpenHelp">Menüpunkt <i>Hilfe öffnen</i></a><br /></div>
+			</p>
+			
+			
+			
+			
+			<h3><a id="installation">Installation</a></h3>
+			<p>
+			Das Ausführen einer Installationsroutine ist für die OpenXRechnungToolbox nicht zwingend erforderlich.<br />
+			Für Windows Betriebssysteme steht der Komfortabilität wegen dennoch optional eine automatische Installationsroutine zur Verfügung, um u.a. das Programm in das Startmenü einzutragen. In dieser Variante kommt auch ein passendes Java direkt mit.<br />
+			Es steht, wie für andere Betriebssysteme (Linux, Apple Mac) aber auch für Windows ein einfaches zip-Archiv zur Verfügung, für das keine Installationsroutine durchlaufen werden muss. So kann die Software auch genutzt werden, wenn keine Administrationsrechte auf dem Rechner zur Verfügung stehen.<br />
+			In diesem Fall laden Sie einfach das zip-Archiv für Ihr Betriebssystem (Windows, Linux oder Apple Mac, jeweils 32- oder 64-bit) herunter und entpacken es an einem beliebigen Ort.
+			Von dort können Sie dann die Anwendung, wie im Folgenden beschrieben, starten.
+			Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. <a href="https://www.7-zip.org/" target="_blank">7-zip</a> nutzen.
+			</p>
+			<p>
+			Die Benutzung der Software unter Apple Mac OS ist vorbereitet jedoch mangels Hardware nicht getestet. 
+			</p>
+			<p>
+			Die OpenXRechnungToolbox Version 1.0 benötigt eine Java-Installation Version 9 oder höher.
+			Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich).
+			Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.</p>
+			
+			<h3><a id="start">Starten der Anwendung</a></h3>
+			<h4><a id="windows">Unter MS Windows</a></h4>
+			<p class="h4">
+			Für Windows Betriebssysteme steht eine direkt ausführbare Datei (exe) zur Verfügung. Hier starten Sie die OpenXRechnungToolbox durch einen Doppelkick auf die Datei OpenXRechnungToolbox.exe bzw. nach Durchführung der automatischen Installationsroutine durch Auswahl im Windows-Startmenü.<br />
+			Haben Sie nicht die Variante mit der automatischen Installationsroutine genutzt, dann können finden Sie im entpackten Ordner keine exe-Datei sondern eine jar-Datei.
+			Ist eine passende Java-Version (>= 9) verfügbar, können Sie die OpenXRechnungToolbox über einen Doppelklick auf die jar-Datei oder im Dos-Fenster bzw. in der PowerShell mittels folgenden Befehl starten:<br />
+			<i>java -jar OpenXRechnungToolbox.jar "resources/app.config"</i><br />
+			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
+			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
+			</p>
+
+			<h4><a id="linux">Unter Linux</a></h4>
+			<p class="h4">
+			Unter Linux starten Sie die OpenXRechnungToolbox durch Ausführen der Datei <i>OpenXRechnungToolbox.sh</i> im Terminal/Console. 
+			Dazu müssen Sie die Datei zunächst ausführbar machen, z.B. durch den Befehl <i>chmod +x OpenXRechnungToolbox.sh</i>. 
+			Alternativ können Sie den Java-Aufruf auch direkt auf der Console/im Terminal eingeben:<br />
+			<i>java -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
+			In beiden Fällen muss auf dem Rechner eine Java-Installation (Version >= 9) verfügbar sein.<br />			
+			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
+			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
+			</p>
+
+			<h4><a id="linux">Unter Apple Mac OS</a></h4>
+			<p class="h4">
+			Die Benutzung der Software unter Apple Mac OS ist vorbereitet, jedoch mangels Hardware nicht getestet. 
+			Starten Sie die Anwendung durch Ausführung des Befehls:<br />
+			<i>java -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
+			Hierfür muss auf dem Rechner eine Java-Installation (Version >= 9) verfügbar sein.<br />
+			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
+			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
+			</p>
+
+			
+			
+			<h3><a id="gui">Benutzeroberfläche</a></h3>
+			<p>
+			Die Oberfläche teilt sich in zwei Funktionsbereiche: 
+			(1) Die Menüleiste oben rechts und (2) die Drag-and-Drop-Fläche darunter.
+			</p>
+			<p>
+				<img src="img/Oberflaeche_en.PNG">
+			</p>
+
+
+
+			<h4><a id="dragdrop">Drag-and-Drop Bedienung</a></h4>
+			<p class="h4">
+			Die Drag-and-Drop-Flächen bieten eie schnelle Möglichkeit, für eine oder mehrere Dateien eine menschenlesbare Visualisierung (oben) oder einen Prüfbericht über die Konformität zu Standard XRechnung (unten) zu erzeugen.
+			Dazu werden eine oder mehrere Dateien im Dateisystem (z.B. Explorer) markiert und mit gedrückter Maustaste auf die jeweilige Fläche gezogen. 
+			Für jeder Datei wird sodann das angeforderte Ergebnis prozessiert und jeweils in einem neuen Fenster angezeigt (<a href="#visualization">Visualisierung</a>, <a href="#validation">Prüfbericht</a>).
+			</p>
+
+			
+			<h5><a id="menubar">Menüleiste</a></h5>
+			<p class="h5">
+			Die Menüleiste beinhaltet drei Menüs: (1) <i>Datei</i>, (2) <i>Einstellungen</i> und (3) <i>Hilfe</i>.
+			</p>
+
+			
+			
+			<h6><a id="menudata">Menü <i>Datei</i></a></h6>
+			<p class="h6">
+			Das Datei-Menü enthält vier Menüpunkte: (1) <i>Rechnung visualisieren</i>, (2) <i>Rechnung prüfen</i>, (4) <i>Leitweg-ID berechnen/prüfen</i> und (5) <i>Schließen</i>.			
+			</p>
+
+			
+			
+			<h7><a id="menuentryvisualization">Menüpunkt <i>Rechnung visualisieren</i></a></h7>
+			<p class="h7">
+			Mit diesem Menüpunkt kann eine XRechnungsdatei menschenlesbar visualisiert werden. Wir der Menüpunkt ausgewählt, dann öffnet sich ein Dateiauswahl-Dialog. 
+			Hier kann eine oder mehrere Dateien zur Visualisierung ausgewählt werden.
+			Die Funktion ist identisch zum <a href="#dragdrop">Drag-and-Drop</a> auf der Hauptoberfläche (oberer Bereich).
+			Nach der Dateiauswahl wird für jede gewählte Datei eine <a href="#visualization">Visualisierung</a> erzeugt und in einem neuen Fenster geöffnet.		
+			</p>
+			
+			<h7><a id="menuentryvalidation">Menüpunkt <i>Rechnung prüfen</i></a></h7>
+			<p class="h7">
+			Mit dem Menüpunkt <i>Rechnung prüfen</i> kann eine XRechnungsdatei auf Konformität zum Standard XRechnung geprüft werden. Das Ergebnis wird in einem Prüfbericht angezeigt.
+			Wird der Menüpunkt gewählt, können im sich öffnenden Dateiauswahl-Dialog eine oder mehrere Dateien zur Prüfung ausgewählt werden.
+			Die Funktion ist identisch zum <a href="#dragdrop">Drag-and-Drop auf der Hauptoberfläche</a> (unterer Bereich).
+			Nach der Dateiauswahl wird für jede gewählte Datei die Prüfung prozessiert und der jeweilige <a href="#validation">Prüfbericht</a> in einem neuen Fenster geöffnet.	
+			Für die Prüfung wird die Prüftoolkonfiguration genutzt, die in den <a href="#settingsValidation">Einstellungen</a> gewählt wurde. 
+			Hier kann eine bestimmte Version von XRechnung sowie alternativ Peppol eingestellt werden.
+			</p>
+
+			
+			<h7><a id="menuentryLWIDcheck">Menüpunkt <i>Leitweg-ID berechnen/prüfen</i></a></h7>
+			<p class="h7">
+			Bei Auswahl dieses Menüpunktes wird ein neues Fenster geöffnet.
+			Hier kann im oberen Teil für eine Grob- ud Feinadressierung die passende Prüfziffer berechnet werden.
+			Im unteren Teil läßt sich umgekehrt für eine vollständige Leitweg-ID testen, ob die angegebene Prüfziffer zur Grob- und Feinadressierung passt.
+			Details zum Konzept und der Verwendung Leitweg-ID finden Sie <a href="https://www.xoev.de/die_standards/xrechnung-16828#LID" target="_blank">hier</a>:
+			</p>
+
+
+			<h7><a id="menuentryClose">Menüpunkt <i>Schließen</i></a></h7>
+			<p class="h7">
+			Über den Menüpunkt <i>Schließen</i> kann die Anwendung beendet werden. Alternativ kann dies auch durch Klick auf das Kreuz oben links geschehen.
+			Alle geöffneten Visualisierung- und Prüffenster werden sodann ebenfalls geschlossen.
+			</p>
+				
+			<h6><a id="menuSettings">Menü <i>Einstellungen</i></a></h6>
+			<p class="h6">
+			Das Menü <i>Einstellungen</i> beinhaltet lediglich einen Menüpunkt <i>Einstellungen ändern</i>.
+			</p>
+
+			<h7><a id="menuentyChangeSettings">Menüpunkt <i>Einstellungen ändern</i></a></h7>
+			<p class="h7">
+			Bei Auswahl des Menüpunktes <i>Einstellungen ändern</i> öffnet sich ein neues Fenster, in dem einige Einstellungen für die Funktionsweise der Software vorgenommen werden.
+			Dazu gehören im Moment: (1) Ändern der Sprache der Benutzeroberfläche, (2) Auflösen von Codelisten bei der Erzeugung der Visualisierung und (3) Auswahl der XRechnungsversion, gegen die die Konformitätsprüfung erfolgen soll.
+			Weitergehende Erläuterungen:
+			</p>			
+			<p class="h7">
+				<img src="img/Einstellungen_en.PNG">
+			</p>			
+
+
+			<h8><a id="settingsLanguage">Sprache:</a></h8>
+			<p class="h8">
+			Die Auswahl der Sprache erfolgt auf Basis des Länder-/Sprachcodes (z.B. <i>de</i> für Deutsch, <i>en</i> für Englisch). 
+			Es stehen die Sprachen zur Auswahl, die in der Konfigurationsdatei definiert sind und für die entsprechende Sprachdateien vorliegen. Weitere Sprachen können selbstständig ergänzt werden. 
+			Siehe hierzu die <a href="docu.html#languages">Dokumentation</a>. Derzeit stehen keine Übersetzungen zur Verfügung, auch wenn die Auswahl von Englisch bereits vorbereit ist. Zulieferungen sind herzlich Willkommen.
+			</p>
+
+			
+			<h8><a id="settingsVisualization">Visualisierung:</a></h8>
+			<p class="h8">
+			Für die Visualisierung werden die über die KoSIT bereitgestellten Visualisierungskomponenten eingesetzt. 
+			Allerdings gibt es in der XRechnung verschiedene Informationselemente, in denen die Inhalte nicht in menschenlesbarer Form gespeichert sind, sondern in Form von maschinenlesbaren Codes.
+			Die Visualisierungskomponenten, die von der KoSIT bereitgestellt werden, stellen lediglich die Codes dar, die zumeist nicht selbsterklärend sind.
+			Daher wurde für die OpenXRechnungToolbox eine Erweiterung geschaffen, die für die Codes ergänzend auch die in den offizellen Codelisten angegebenen Bezeichnungen der Codes in Klamern in die Visualisierung einfügt.
+			Es werden also ausschließlich Ergänzungen in der Visualisierung vorgenommen.
+			Diese Option der Codelistenauflösung kann durch die Checkbox <i>Codelisten auflösen</i> aktiviert werden.
+			Da keine offiziellen Übersetzung des Codelisten vorliegen, werden die Bezeichnungen der Codes nur auf Englisch ausgegeben.
+			Eine Erläuterung, wie dies technisch umgesetzt wurde, bzw. einen Link dorthin, finden Sie in der <a href="docu.html#visualization">Dokumentation.
+			</p>
+
+			
+			<h8><a id="settingsValidation">Prüfbericht:</a></h8>
+			<p class="h8">
+			Die KoSIT veröffentlicht mit jeder neuen Version der XRechnung, die Veränderungen am Datenmodell bzw. den Geschäftsregeln mit sich bringt, eine neue Version der Prüftoolkonfiguration.
+			Wenn Sie gezielt eine XRechnungsinstanz gegen eine bestimmte Konfigurationsversion testen wollen, dann können Sie hier die entsprechende Version auswählen.
+			Im Standardumfang der OpenXRechnungToolbox werden direkt verschiedene Versionen der Konfiguration mitgeliefert und stehen zur Auswahl bereit. Ergänzend steht hier auch eine Prüfungskonfiguration
+			für <a href="https://peppol.eu/" target="_blank">Peppol</a> Rechnungen zur Auswahl.			
+			Wie hier bei Bedarf weitere Versionen hinterlegt werden können, ist in der <a href="docu.html#validationtool">Dokumentation</a> beschrieben.
+			</p>
+
+			
+			
+			<h3><a id="visualization">Visualisierung</a></h3>
+			<p>
+			Wurde über das <a href="#menuentryvisualization">Menü</a> oder per <a href="#dragdrop">Drag-and-Drop</a> eine Visualisierung angefordert, so wird das Ergebnis in einem neuen Fenster dargestellt.
+			Die Prozessierung dauert einen Moment. In dieser Zeit ist die Anwendung blockiert und steht erst nachdem sich das neue Fenster geöffnet hat wieder zur Verfügung.
+			Im Inhaltsbereich des Visualisierungsfensters finden Sie die menschenlesbar Darstellung der XRechnung oder einen Hinweis, dass die Visualisierung wegen eines Verarbeitungsfehlers nicht prozessiert werden konnte (z.B. wenn es sich um eine XML-Datei handelt, die keine XRechnungsinstanz ist).
+			Das Fenster können Sie in der Größe anpassen sowie über das Kreuz oben rechts (je nach Betriebssystem) schließen.
+			Zudem können Sie durch gleichzeitiges Drücken der Tasten "Strg" und "+" die Textdarstellung vergrößern sowie über "Strg" und "-" verkleinern. Über "Strg" und "0" setzen Sie die Größeneinstellung auf den Ursprung zurück.
+			In der Titelzeile des Fensters sehen Sie den Dateinamen der Datei, die in diesem Fenster visualisiert ist.
+			In den Einstellungen im Hauptfenster können Sie konfigurieren, ob Codes, die aus Codelisten stammen, zusammen mit ihrer Beschreibung dargestellt werden sollen (<a href="settingsVisualization">Codelistenauflösung</a>). Ist diese Option aktiviert, so wird für jeden Code in Klammern zusätzlich
+			die Bezeichnung aus der entsprechenden Codeliste mit ausgegeben. Diese Einstellung wird auch beim <a href="#vizMenuEntrySave">Speichern</a> sowie bei der <a href="vizMenuEntrySaveAsPDF">Erzeugung einer PDF-Darstellung</a> angewendet.
+			</p>
+			<p>
+				<img src="img/Visualisierung_en.PNG">
+			</p>
+			<p>
+			Der Inhaltsbereich besitzt im oberen Teil fünf Reiter: (1) <i>Übersicht</i>, (2) <i>Details</i>, (3) <i>Zusätze</i>, (4) <i>Anlagen</i>, (5) <i>Laufzettel</i>.
+			Hier können Sie verschiedenen Inhaltsbereiche innerhalb der HTML-Visualisierung umschalten. Bei längeren Informationsinhalten erreichen Sie die unteren Bereiche durch die Scrollleiste an der linken Seite.
+			Im Bereich Laufzettel werden für gewöhnlich keine Einträge enthalten sein, da dieser Bereich derzeit nur innerhalb der Bundesverwaltung benutzt wird. 
+			Im Bereich Anlagen können Sie die ggf. in der XML-Rechnung eingebetteten rechnungsbegründenden Anlagen öffnen oder finden dort ein URL für den Download der Anlage.			
+			<p>
+			<p>
+			Wenn Sie die Maus einen Moment über ein Inhaltselement der Visualisierung halten, dann wird Ihnen in einem Tooltip die ID des entsprechenden semantischen Informationselementes angezeigt (z.B. BT-10). 
+			Diese IDs finden Sie in der <a href="https://www.xoev.de/die_standards/xrechnung-16828#DL" target="_blank">Spezifikation des Standards XRechnung</a> wieder und können dort nachsehen, welcher Inhalt gem. der Spezifikation in diesem Element überittelt werden darf.
+			</p>
+
+
+			
+			<h4><a id="vizMenu">Menüleiste</a></h4>
+			<p class="h4">
+			Die Menüleiste des Visualisierungsfensters besitzt lediglich zwei Menüs: (1) <i>Datei</i> und (2) <i>Hilfe</i>.
+			</p>
+
+
+			<h5><a id="vizMenuData">Menü <i>Datei</i></a></h5>
+			<p class="h5">
+			Dieses Menü besitzt vier Menüpunkte: (1) <i>Gewählte Rechnung prüfen</i>, (2) <i>Speichern</i>, (3) <i>Speichern als</i>, (4) <i>Speichern als PDF</i> und (5) <i>Schließen</i>.
+			</p>
+
+			
+			<h6><a id="vizMenuEntryCheckInvoice">Menüpunkt <i>Gewählte Rechnung prüfen</i></a></h6>
+			<p class="h6">
+			Mit Hilfe dieses Menüpunktes kann für die aktuell visualisierte Rechnung direkt ein Prüfbericht angefordert werden, ohne dass die Rechnung nochmal aus dem Dateisystem ausgewählt werden muss.
+			Der Prüfbericht wird in einem neuen Fenster geöffnet. Wenn Sie den Punkt auswählen, dann haben Sie bitte einen Moment Geduld. Die Prüfung dauert einen kleinen Moment. In dieser Zeit ist die Anwendung blockiert.
+			</p>
+			
+			<h6><a id="vizMenuEntrySave">Menüpunkt <i>Speichern</i></a></h6>
+			<p class="h6">
+			Bei Auswahl dieses Menüpunktes wird die Visualisierung in einer HTML-Datei in das Verzeichnis gespeichert, in dem auch die Rechnung liegt.
+			Es wird eine Datei erzeugt mit dem Namen <Name der Rechnung>_visualisierung.html. Diese Datei kann dann anschließend mit einem beliebigen Browser angezeigt werden.
+			</p>
+			
+			<h6><a id="vizMenuEntrySaveAs">Menüpunkt <i>Speichern als</i></a></h6>
+			<p class="h6">
+			Dieser Menüpunkt ist ähnlich zum Menüpunkt <a href="#vizMenuEntrySave"><i>Speichern</i></a>, nur dass hier die Speicherort und der Dateiname in einem Dialog selbst gewählt werden kann.
+			</p>
+			
+			<h6><a id="vizMenuEntrySaveAsPDF">Menüpunkt <i>Speichern als PDF</i></a></h6>
+			<p class="h6">
+			Mit der Auswahl dieses Menüpunkts wird eine PDF-Visualisierung der Rechnung erzeugt. Diese ist vom Aufbau her ähnlich zur HTML-Visualisierung, listet aber nur die gefüllten Informationsfelder.
+			Wie bei <a href="#vizMenuEntrySaveAs"><i>Speichern als</i></a> ist hier der Speicherort und der Dateiname in einem Dialog zu wählen.
+			</p>
+			
+			<p class="h6">
+				<img src="img/VisualisierungPDF_en.PNG">
+			</p>
+			
+			<h6><a id="vizMenuEntryClose">Menüpunkt <i>Schließen</i></a></h6>
+			<p class="h6">
+			Durch Auswahl dieses Menüpunktes wird das Visualisierungsfenster geschlossen. 
+			</p>
+
+			
+			<h5><a id="vizMenuHelp">Menü <i>Hilfe</i></a></h5>
+			<p class="h5">
+			Dieses Menü besitzt nur einen Menüpunkt: <i>Hilfe öffnen</i>.
+			</p>
+			
+			<h6><a id="vizMenuEntryOpenHelp">Menüpunkt <i>Hilfe öffnen</i></a></h6>
+			<p class="h6">
+			Hierüber wird das vorliegende Benutzerhandbuch geöffnet.
+			</p>
+
+			
+			
+			<h3><a id="validation">Prüfbericht</a></h3>
+			<p>
+			Wurde über das <a href="menuentryvalidation">Menü</a> oder per <a href="#dragdrop">Drag-and-Drop</a> ein Prüfbericht angefordert, so wird das Ergebnis in einem neuen Fenster dargestellt.
+			Die Prozessierung der Prüfung dauert einen Moment. In dieser Zeit ist die Anwendung blockiert und steht erst nachdem sich das neue Fenster geöffnet hat wieder zur Verfügung.
+			Im Inhaltsbereich des Prüfberichts finden Sie zunächst einige Angaben zum geprüften Dokument gefolgt vom zusammenfassenden Prüfergebnis mit Handlungsempfehlung.
+			Diese Bewertung basiert auf den von der KoSIT, als Herausgeberin der Standards XRechnung, festgelegten Bewertungskriterien. Fehler führen hier zu einer Ablehnung des Dokuments, während Warnung durchgelassen werden.
+			Sofern Fehler oder Warnungen auftreten, sind diese nach der Bewertung aufgeführt, jeweils mit einer Referenz auf die nicht erfüllte Prüfregel, die in der Spezifikation nachgeschlagen werden kann.
+			Darunter folgt eine syntaxneutrale Aufstellung der für die Prüfung zugrunde gelegten Rechnungsinhalte.	
+			</p>
+			<p>
+			Konnte die Prüfung nicht prozessiert werden, so wird - in Abhngigkeit vom Grund des Fehlers der Version des Prüftools - entweder das sog. "Fallback-Szenario" für die Prüfung verwendet oder im Prüfbericht ausgegeben, dass
+			es sich nicht um eine valide Rechnungsinstanz der zulässigen Spezifikationen handelt. Oder es wird im Fenster nur ein Fehler ausgegeben, wenn die Datei überhaupt nicht prozessiert werden konnte.
+			Die für die Prüfung zugrunde gelegte Konfigurationsversion kann im Hauptfenster unter <a href="#settingsValidation"><i>Einstellungen</i></a> gewählt werden.
+			</p>
+			<p>
+			Das Fenster können Sie in der Größe anpassen sowie über das Kreuz oben rechts (je nach Betriebssystem) schließen.
+			Zudem können Sie durch gleichzeitiges Drücken der Tasten "Strg" und "+" die Textdarstellung vergrößern sowie über "Strg" und "-" verkleinern. Über "Strg" und "0" setzen Sie die Größeneinstellung auf den Ursprung zurück.
+			In der Titelzeile des Fensters sehen Sie den Dateinamen der Datei, für die das Prüfergebnis die in diesem Fenster angezeigt ist.
+			</p>
+			<p>
+				<img src="img/Pruefbericht_en.PNG">
+			</p>
+
+			
+			<h4><a id="valiMenu">Menüleiste</a></h4>
+			<p class="h4">
+			Die Menüleiste des Prüfberichtfensters besitzt lediglich zwei Menüs: (1) <i>Datei</i> und (2) <i>Hilfe</i>.
+			</p>
+
+			
+			<h5><a id="valiMenuData">Menü <i>Datei</i></a></h5>
+			<p class="h5">
+			Diese Menü besitzt vier Menüpunkte: (1) <i>Gewählte Rechnung visualisieren</i>, (2) <i>Speichern</i>, (3) <i>Speichern als</i> und (4) <i>Schließen</i>.
+			</p>
+
+			
+			<h6><a id="valiMenuEntryVisualization">Menüpunkt <i>Gewählte Rechnung visualisieren</i></a></h6>
+			<p class="h6">
+			Mit Hilfe dieses Menüpunktes kann für die aktuell geprüfte Rechnung direkt die Visualisierung angefordert werden, ohne dass die Rechnung nochmal aus dem Dateisystem ausgewählt werden muss.
+			Die Visualisierung wird in einem neuen Fenster geöffnet. Wenn Sie den Punkt auswählen, dann haben Sie bitte einen Moment Geduld. Die Erzeugung der Visualisierung dauert einen kleinen Moment. 
+			In dieser Zeit ist die Anwendung blockiert.
+			</p>
+			
+			<h6><a id="valiMenuEntrySave">Menüpunkt <i>Speichern</i></a></h6>
+			<p class="h6">
+			Bei Auswahl dieses Menüpunktes wird der Prüfbericht in einer HTML-Datei in das Verzeichnis gespeichert, in dem auch die Rechnung liegt.
+			Es wird eine Datei erzeugt mit dem Namen <Name der Rechnung>_pruefbericht.html. Diese Datei kann dann anschließend mit einem beliebigen Browser angezeigt werden.
+			</p>
+			
+			<h6><a id="valiMenuEntrySaveAs">Menüpunkt <i>Speichern als</i></a></h6>
+			<p class="h6">
+			Dieser Menüpunkt ist ähnlich zum Menüpunkt <a href="#valiMenuEntrySave"><i>Speichern</i></a>, nur dass hier die Speicherort und der Dateiname in einem Dialog selbst gewählt werden kann.
+			</p>
+			
+			<h6><a id="valiMenuEntrySaveAs">Menüpunkt <i>Schließen</i></a></h6>
+			<p class="h6">
+			Durch Auswahl dieses Menüpunktes wird das Prüfberichtfenster geschlossen. 
+			</p>
+
+			
+			<h5><a id="valiMenuHelp">Menü <i>Hilfe</i></a></h5>
+			<p class="h5">
+			Dieses Menü besitzt nur einen Menüpunkt: <i>Hilfe öffnen</i>.
+			</P>
+
+			
+			<h6><a id="valiMenuEntryOpenHelp">Menüpunkt <i>Hilfe öffnen</i></a></h6>
+			<p class="h6">
+			Hierüber wird das vorliegende Benutzerhandbuch geöffnet.
+			</p>			
+
+			
+			
+			<h3><a id="lwidcheck">Leitweg-ID-Berechnung/-Prüfung</a></h3>
+			<p>
+			Das Schema der sog. <a href="https://www.xoev.de/die_standards/xrechnung-16828#LID" target="_blank">Leitweg-ID</a> wird im Kontext der XRechnung an zwei Stellen verwendet:<br />
+			(1) im semantische Informationselement BT-10 (Buyer Reference) für die interne Verarbeitung beim Käufer<br />
+			(2) als Schema der Participant ID bei der Adressierung im Transportnetzwerk Peppol.<br />
+			Mit dem hier angebotenen Tool können Sie zu einer Grob- und Feinadressierung die passende Prüfziffer berechnen sowie für eine vorhandere vollständige Leitweg-ID die Prüfziffergültigkeit überprüfen.
+			Zu dem Tool gelagen Sie über das Menü des Hauptfensters: Datei - Leitweg-ID berechnen/prüfen. Es öffnet sich ein neues Fenster. 
+			Diese teilt sich in die Menüleiste und den Inhaltsbereich. 
+			</p>
+			<p>
+				<img src="img/LWID_en.PNG">
+			</p>
+			<p>
+			Der Inhaltsbereich wiederum gliedert sich zwei Abschnitte:<br />
+			(1) oben: Prüfziffer berechnen, (2) unten: Leitweg-ID prüfen.<br />
+			Für die Berechnung der Prüfziffer müssen Sie die Grob- und die Feinadressierung ohne die Trennzeichen angeben. Mit Klick auf den Button <i>Prüfziffer berechnen</i> erscheint im Feld darüber die entsprechende Prüfziffer.
+			Für die Prüfung einer Leitweg-ID geben Sie die Grob- und Feinadressierung sowie die Prüfziffer an - ebenfalls ohne Trennzeichen - und drücken auf den Button <i>Leitweg-ID prüfen</i>. Sodann wird ihnen darunter angezeigt,
+			ob die Fein- und Grobadressierung zur Prüfziffer passen. 
+			</p>
+
+			
+			<h4><a id="lwidMenu">Menüleiste</a></h4>			
+			<p class="h4">
+			Das Menü dieses Fensters enthält nur zwei Menüs: (1) <i>Datei</i> und (2) <i>Hilfe</i>.
+			</p>
+
+			
+			<h5><a id="lwidMenuData">Menü <i>Datei</i></a></h5>
+			<p class="h5">
+			Das Menü <i>Datei</i> enthält nur einen Menüpunkt: <i>Schließen</i>. 
+			</p>
+
+			
+			<h6><a id="lwidMenuEntryClose">Menüpunkt <i>Schließen</i></a></h6>
+			<p class="h6">
+			Hierüber wird das Fenster geschlossen.
+			</p>			
+
+			<h5><a id="lwidMenuHelp">Menü <i>Hilfe</i></a></h5>
+			<p class="h5">
+			Dieses Menü besitzt ebenfalls nur einen Menüpunkt: <i>Hilfe öffnen</i>.
+			</p>
+
+			
+			<h6><a id="lwidMenuEntryHelp">Menüpunkt <i>Hilfe öffnen</i></a></h6>
+			<p class="h6">
+			Hierüber wird das vorliegende Benutzerhandbuch geöffnet.
+			</p>			
+
+			
+		</div>		
+	</div>
+
+</div>
+<div id="copyright">
+	<p>&copy; Dr. Jan C. Thiele. </a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- THIS is the source file for creating scenarios.xml-->
+<scenarios xmlns="http://www.xoev.de/de/validator/framework/1/scenarios"
+    frameworkVersion="1.0.0">
+    <name>Prüftool-Konfiguration XRechnung 1.2.0</name>
+    <author>KoSIT</author>
+    <date>2018-12-19</date>
+    <description>
+        <p>Prüfung von Dokumenten auf Konformität zum Standard XRechnung
+            1.2.0
+            (https://www.xoev.de/die_standards/xrechnung-14741).</p>
+        <p>Diese Konfiguration enthält die Schematron-Regeln der urn:cen.eu:en16931:2017
+            in der Version 1.1.0 mit dem Stand vom 2018-12-19
+            (https://github.com/CenPC434/validation/releases).</p>
+        <p>Diese Konfiguration enthält die Schematron-Regeln der CIUS XRechnung
+            1.2.0 in der Version 1.2.0
+            (https://github.com/itplr-kosit/xrechnung-schematron/releases/download/release-1.2.0/xrechnung-1.2.0-schematron-1.2.0.zip). </p>
+    </description>
+
+    <scenario>
+        <name>EN16931 CIUS XRechnung (UBL Invoice)</name>
+        <description>
+            <p>Validierung von UBL Invoice version 2.1</p>
+            <p>Dieses Scenario enthält UBL Invoice 2.1 XML Schema und
+                Schematron-Regeln der EN16931:2017 und XRechnung
+                1.2.0 </p>
+            <p>Download von UBL XML Schema am 2018-12-19 von
+                http://docs.oasis-open.org/ubl/os-UBL-2.1//UBL-2.1.zip}</p>
+            <p>Download von UBL Schematron Rules am 2018-12-19 von
+                https://github.com/CenPC434/validation/releases/download/validation-1.1.0/en16931-ubl-1.1.0.zip</p>
+            <p>Download von XRechnung Schematron Rules am 2018-12-19 von
+                https://github.com/itplr-kosit/xrechnung-schematron/releases/download/release-1.2.0/xrechnung-1.2.0-schematron-1.2.0.zip</p>
+        </description>
+        <namespace prefix="cbc"
+            >urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</namespace>
+        <namespace prefix="invoice"
+            >urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</namespace>
+
+        <match>/invoice:Invoice[ starts-with(cbc:CustomizationID,
+            'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_1.2') ]</match>
+        <validateWithXmlSchema>
+            <resource>
+                <name>XML Schema for UBL 2.1 Invoice</name>
+                <location>resources/ubl/2.1/xsd/maindoc/UBL-Invoice-2.1.xsd</location>
+            </resource>
+        </validateWithXmlSchema>
+        <validateWithSchematron>
+            <resource>
+                <name>Schematron rules for EN16931 (UBL)</name>
+                <location>resources/ubl/2.1/xsl/EN16931-UBL-validation.xsl</location>
+            </resource>
+        </validateWithSchematron>
+        <validateWithSchematron>
+            <resource>
+                <name>Schematron rules for Invoice - CIUS XRechnung (UBL)</name>
+                <location>resources/xrechnung/1.2.0/xsl/XRechnung-UBL-validation-Invoice.xsl</location>
+            </resource>
+        </validateWithSchematron>
+        <createReport>
+            <resource>
+                <name>Validation report for XRechnung</name>
+                <location>resources/xrechnung-report.xsl</location>
+            </resource>
+            <customLevel level="warning">BR-CL-23</customLevel>
+            <customLevel level="warning">BR-CL-21</customLevel>
+        </createReport>
+    </scenario>
+    <scenario>
+        <name>EN16931 CIUS XRechnung (UBL CreditNote)</name>
+        <description>
+            <p>Validierung von UBL CrediteNote version 2.1</p>
+            <p>Dieses Scenario enthält UBL Invoice 2.1 XML Schema und
+                Schematron-Regeln der EN16931:2017 und XRechnung
+                1.2.0 </p>
+            <p>Download von UBL XML Schema am 2018-12-19 von
+                http://docs.oasis-open.org/ubl/os-UBL-2.1//UBL-2.1.zip}</p>
+            <p>Download von UBL Schematron Rules am 2018-12-19 von
+                https://github.com/CenPC434/validation/releases/download/validation-1.1.0/en16931-ubl-1.1.0.zip</p>
+            <p>Download von XRechnung Schematron Rules am 2018-12-19 von
+                https://github.com/itplr-kosit/xrechnung-schematron/releases/download/release-1.2.0/xrechnung-1.2.0-schematron-1.2.0.zip</p>
+        </description>
+        <namespace prefix="cbc"
+            >urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</namespace>
+        <namespace prefix="creditnote"
+            >urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2</namespace>
+        <match>/creditnote:CreditNote[starts-with(cbc:CustomizationID,
+            'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_1.2')]</match>
+        <validateWithXmlSchema>
+            <resource>
+                <name>XML Schema for UBL 2.1 CreditNote</name>
+                <location>resources/ubl/2.1/xsd/maindoc/UBL-CreditNote-2.1.xsd</location>
+            </resource>
+        </validateWithXmlSchema>
+        <validateWithSchematron>
+            <resource>
+                <name>Schematron rules for EN16931 (UBL)</name>
+                <location>resources/ubl/2.1/xsl/EN16931-UBL-validation.xsl</location>
+            </resource>
+        </validateWithSchematron>
+        <validateWithSchematron>
+            <resource>
+                <name>Schematron rules for CreditNote - CIUS XRechnung
+                    (UBL)</name>
+                <location>resources/xrechnung/1.2.0/xsl/XRechnung-UBL-validation-CreditNote.xsl</location>
+            </resource>
+        </validateWithSchematron>
+        <createReport>
+            <resource>
+                <name>Prüfbericht für XRechnung</name>
+                <location>resources/xrechnung-report.xsl</location>
+            </resource>
+        </createReport>
+    </scenario>
+    <scenario>
+        <name>EN16931 CIUS XRechnung (CII)</name>
+        <description>
+            <p>Validierung von UN/CEFACT XML (SCRDM - CII uncoupled) Version
+                D16B</p>
+            <p>Dieses Scenario enthält UN/CEFACT (SCRDM - CII uncoupled)
+                D16B XML Schema und Schematron-Regeln der EN16931:2017
+                und XRechnung 1.2.0 </p>
+            <p>Download von CII uncoupled XML Schema am 2018-12-19 von
+                http://www.unece.org/fileadmin/DAM/cefact/xml_schemas/D16B_SCRDM__Subset__CII.zip</p>
+            <p>Download von CII Schematron Rules am 2018-12-19 von
+                https://github.com/CenPC434/validation/releases/download/validation-1.1.0/en16931-cii-1.1.0.zip </p>
+            <p>Download von XRechnung Schematron Rules am 2018-12-19 von
+                https://github.com/itplr-kosit/xrechnung-schematron/releases/download/release-1.2.0/xrechnung-1.2.0-schematron-1.2.0.zip</p>
+        </description>
+        <namespace prefix="rsm"
+            >urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100</namespace>
+        <namespace prefix="ram"
+            >urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100</namespace>
+        <match>/rsm:CrossIndustryInvoice[starts-with(rsm:ExchangedDocumentContext/ram:GuidelineSpecifiedDocumentContextParameter/ram:ID,
+            'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_1.2')]</match>
+        <validateWithXmlSchema>
+            <resource>
+                <name>XML Schema for UN/CEFACT XML (SCRDM - CII
+                    uncoupled)</name>
+                <location>resources/cii/16b/xsd/CrossIndustryInvoice_100pD16B.xsd</location>
+            </resource>
+        </validateWithXmlSchema>
+        <validateWithSchematron>
+            <resource>
+                <name>Schematron rules for EN16931 (CII)</name>
+                <location>resources/cii/16b/xsl/EN16931-CII-validation.xsl</location>
+            </resource>
+        </validateWithSchematron>
+        <validateWithSchematron>
+            <resource>
+                <name>Schematron rules for CIUS XRechnung (CII)</name>
+                <location>resources/xrechnung/1.2.0/xsl/XRechnung-CII-validation.xsl</location>
+            </resource>
+        </validateWithSchematron>
+        <createReport>
+            <resource>
+                <name>Prüfbericht für XRechnung</name>
+                <location>resources/xrechnung-report.xsl</location>
+            </resource>
+        </createReport>
+    </scenario>
+    <noScenarioReport>
+        <resource>
+            <name>Default Report</name>
+            <location>resources/default-report.xsl</location>
+        </resource>
+    </noScenarioReport>
+</scenarios>
