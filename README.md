@@ -1,16 +1,17 @@
-# OpenXRechnungToolbox
+# OpenXRechnungToolbox by Dr. Jan C. Thiele
+
 Graphical User Interface for visualization and validation of XRechnung (and other EN16931 compliant e-invoices) as well as tool for Leitweg-ID calculation and validation.
 
 Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) und fügt ergänzend noch ein paar weitere Funktionalitäten hinzu (Codelistenauflösung für die Visualisierung, Leitweg-ID-Rechner/-Prüfer, Nutzung für Peppol-Rechnungen). Damit macht sie die XRechnungs-Tools für Nicht-Programmierer nutzbar.
 
-Im Detail bietet die OpenXRechnungToolbox derzeit folgende Funktionalitäten:
+## Im Detail bietet die OpenXRechnungToolbox derzeit folgende Funktionalitäten:
 
 - Erzeugung einer menschenlesbare Visualisierung von XRechnungs-Dateien, inkl. optionaler Codelisten-Auflösung, inkl. Speicherfunktion als HTML-Datei sowie Erzeugung einer PDF-Visualiserung; auch für andere Rechnungsinstanzen nutzbar, die konform zur Europäischen Norm EN16931 sind (z.B. Peppol BIS 3.0)
 - Technische Validierung von XRechnungs-Dateien sowie Peppol BIS 3.0 Rechnungen, verfügbar für verschiedene XRechnungs-Versionen, inkl. Speicherfunktion des Prüfberichts als HTML-Datei
 - Berechnung und Prüfung von Leitweg-ID-Prüfziffern
 
 
-Die Vorteile der OpenXRechnungToolbox gegenüber vielen anderen Angeboten sind:
+## Die Vorteile der OpenXRechnungToolbox gegenüber vielen anderen Angeboten sind:
 
 - Sie geben Ihre Daten nicht aus der Hand: kein Hochladen von Rechnungsdateien auf einen Server; reine lokale Desktop-Anwendung (Datenschutz)
 - Sie bleiben jederzeit anonym: keine Registrierung oder sonstige Nutzer*inneninformationen erforderlich (Datenschutz)
@@ -18,7 +19,7 @@ Die Vorteile der OpenXRechnungToolbox gegenüber vielen anderen Angeboten sind:
 - Sie besitzen vollständige digitale Souveränität: offener Quellcode (Open Source), somit vollständige Nachvollziehbarkeit und Weiterentwicklungsmöglichkeit
 
 
-Installation
+## Installation
 
 Das Ausführen einer Installationsroutine ist für die OpenXRechnungToolbox nicht zwingend erforderlich.
 Für Windows Betriebssysteme steht der Komfortabilität wegen dennoch optional eine automatische Installationsroutine zur Verfügung, um u.a. das Programm in das Startmenü einzutragen. In dieser Variante kommt auch ein passendes Java direkt mit.
@@ -30,6 +31,8 @@ Die Benutzung der Software unter Apple Mac OS ist vorbereitet jedoch mangels Har
 Die OpenXRechnungToolbox Version 1.0 benötigt eine Java-Installation Version 9 oder höher. Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich). Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.
 
 
-Das Benutzer*innenhandbuch finden Sie unter resouces/help/manual.html.
+## Benutzung
+
+Das Benutzer*innenhandbuch finden Sie unter resouces/help/manual.html bzw. über das Hilfe-Menü der OpenXRechnungToolbox.
 
 
