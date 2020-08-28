@@ -33,6 +33,6 @@ Die OpenXRechnungToolbox Version 1.0 benötigt eine Java-Installation Version 8 
 
 ## Benutzung
 
-Das Benutzer*innenhandbuch finden Sie unter resouces/help/manual.html bzw. über das Hilfe-Menü der OpenXRechnungToolbox.
+Das Benutzer*innenhandbuch finden Sie unter https://jcthiele.github.io/OpenXRechnungToolbox/manual.html sowie über das Hilfe-Menü der OpenXRechnungToolbox.
 
 
