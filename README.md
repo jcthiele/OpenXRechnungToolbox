@@ -28,7 +28,7 @@ In diesem Fall laden Sie einfach das zip-Archiv für Ihr Betriebssystem (Windows
 
 Die Benutzung der Software unter Apple Mac OS ist vorbereitet jedoch mangels Hardware nicht getestet.
 
-Die OpenXRechnungToolbox Version 1.0 benötigt eine Java-Installation Version 9 oder höher. Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich). Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.
+Die OpenXRechnungToolbox Version 1.0 benötigt eine Java-Installation Version 8 oder höher. Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich). Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.
 
 
 ## Benutzung
