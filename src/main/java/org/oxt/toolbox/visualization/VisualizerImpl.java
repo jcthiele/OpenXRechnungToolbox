@@ -1,12 +1,13 @@
 package org.oxt.toolbox.visualization;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
@@ -15,6 +16,7 @@ import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.stream.XMLStreamException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -88,9 +90,15 @@ public class VisualizerImpl implements IVisualizer {
 	 */
 	public void saveAs(String filePath) throws IOException {
 		if (this.html != null) {
-			FileWriter fw = new FileWriter(filePath, StandardCharsets.UTF_8);
-	        fw.write(this.html.toString());
-	        fw.close();
+			// requires Java >= 9:
+			//FileWriter fw = new FileWriter(filePath, StandardCharsets.UTF_8);
+			//FileWriter fw = new FileWriter(filePath);
+	        //fw.write(this.html.toString());
+	        //fw.close();	
+			// Java = 8 compatible solution
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, true), StandardCharsets.UTF_8));
+			bw.write(this.html.toString());		
+			bw.close();
 		}
 	}
 
@@ -176,6 +184,7 @@ public class VisualizerImpl implements IVisualizer {
  
         // Obtain the XSLT transformer
         Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath)); 
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");        
         StringWriter sw = new StringWriter();
         StreamResult result = new StreamResult(sw);
         transformer.transform(source, result);
@@ -205,9 +214,10 @@ public class VisualizerImpl implements IVisualizer {
  
         // Obtain the XSLT transformer
         Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath)); 
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
  
         StringWriter sw = new StringWriter();
-        StreamResult result = new StreamResult(sw);
+        StreamResult result = new StreamResult(sw);        
         transformer.transform(source, result);
         this.html = sw;
 		return this.html;

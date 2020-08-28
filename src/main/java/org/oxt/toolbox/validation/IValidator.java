@@ -1,7 +1,6 @@
 package org.oxt.toolbox.validation;
 
 import java.io.IOException;
-import java.io.StringWriter;
 
 import javax.xml.stream.XMLStreamException;
 

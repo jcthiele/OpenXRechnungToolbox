@@ -1,10 +1,11 @@
 package org.oxt.toolbox.validation;
 
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.StringWriter;
-import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,12 +24,10 @@ import org.oxt.toolbox.helpers.AppProperties;
 import org.w3c.dom.Document;
 
 import de.kosit.validationtool.api.Check;
-import de.kosit.validationtool.api.CheckConfiguration;
 import de.kosit.validationtool.api.Configuration;
 import de.kosit.validationtool.api.Input;
 import de.kosit.validationtool.api.InputFactory;
 import de.kosit.validationtool.api.Result;
-import de.kosit.validationtool.config.ConfigurationLoader;
 import de.kosit.validationtool.impl.DefaultCheck;
 import de.kosit.validationtool.impl.DefaultResult;
 import de.kosit.validationtool.impl.ResolvingMode;
@@ -117,9 +116,15 @@ public class ValidatorImpl implements IValidator {
 	 */
 	public void saveAs(String filePath) throws IOException {
 		if (this.html != null) {
-			FileWriter fw = new FileWriter(filePath, StandardCharsets.UTF_8);
-	        fw.write(this.html.toString());
-	        fw.close();			
+			// requires Java >= 9:
+			//FileWriter fw = new FileWriter(filePath, StandardCharsets.UTF_8);
+			//FileWriter fw = new FileWriter(filePath);
+			//fw.write(this.html.toString());
+	        //fw.close();
+			// Java = 8 compatible solution:
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, true), StandardCharsets.UTF_8));
+			bw.write(this.html.toString());		
+			bw.close();
 		}		
 	}
 

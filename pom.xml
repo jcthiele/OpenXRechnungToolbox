@@ -20,12 +20,15 @@
     <log4j.version>1.2.17</log4j.version>
     <fop.version>2.5</fop.version>            
   	
-  	<maven.compiler.source>1.9</maven.compiler.source>
-  	<maven.compiler.target>1.9</maven.compiler.target>
-  	
+  	<!-- <maven.compiler.source>1.9</maven.compiler.source> -->
+  	<!-- <maven.compiler.target>1.9</maven.compiler.target> -->
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  	  	
   	<launch4j.version>1.7.25</launch4j.version>
   	
-  	<min.jre.version>9</min.jre.version>
+  	<!-- <min.jre.version>9</min.jre.version> -->
+  	<min.jre.version>8</min.jre.version>
   	<icon.path>resources/images/oxt.ico</icon.path>
   	
   	<jre.path>./openJDK</jre.path>
@@ -91,7 +94,8 @@
 			                    <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
 			                </classPath>
 			                <icon>${icon.path}</icon>
-			                <downloadUrl>https://jdk.java.net/14/</downloadUrl>
+			                <!-- <downloadUrl>https://jdk.java.net/14/</downloadUrl>  -->
+			                <downloadUrl>http://java.com/download</downloadUrl>
 			                <jre>
 			                    <minVersion>${min.jre.version}</minVersion>
 			                    <initialHeapSize>128</initialHeapSize>
@@ -170,7 +174,8 @@
 			                    <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
 			                </classPath>
 			                <icon>${icon.path}</icon>
-			                <downloadUrl>https://jdk.java.net/14/</downloadUrl>
+			                <!-- <downloadUrl>https://jdk.java.net/14/</downloadUrl>  -->
+			                <downloadUrl>http://java.com/download</downloadUrl>
 			                <jre>
 			                    <minVersion>${min.jre.version}</minVersion>
 			                    <initialHeapSize>128</initialHeapSize>
@@ -247,7 +252,8 @@
 			                    <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
 			                </classPath>
 			                <icon>${icon.path}</icon>
-							<downloadUrl>https://jdk.java.net/14/</downloadUrl>
+			                <!-- <downloadUrl>https://jdk.java.net/14/</downloadUrl>  -->
+			                <downloadUrl>http://java.com/download</downloadUrl>
 			                <jre>
 			                    <minVersion>${min.jre.version}</minVersion>
 			                    <initialHeapSize>128</initialHeapSize>

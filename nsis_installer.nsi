@@ -155,7 +155,7 @@ Section "Uninstall"
 
   ; Remove files and uninstaller
   Delete $INSTDIR\OpenXRechnungToolbox.exe
-  Delete $INSTDIR\gpl-3.0.txt
+  Delete $INSTDIR\license.txt
   Delete $INSTDIR\knownIssues.txt
   Delete $INSTDIR\uninstall.exe
 
