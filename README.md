@@ -24,7 +24,7 @@ Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den
 Das Ausführen einer Installationsroutine ist für die OpenXRechnungToolbox nicht zwingend erforderlich.
 Für Windows Betriebssysteme steht der Komfortabilität wegen dennoch optional eine automatische Installationsroutine zur Verfügung, um u.a. das Programm in das Startmenü einzutragen. In dieser Variante kommt auch ein passendes Java direkt mit.
 Es steht, wie für andere Betriebssysteme (Linux, Apple Mac) aber auch für Windows ein einfaches zip-Archiv zur Verfügung, für das keine Installationsroutine durchlaufen werden muss. So kann die Software auch genutzt werden, wenn keine Administrationsrechte auf dem Rechner zur Verfügung stehen.
-In diesem Fall laden Sie einfach das zip-Archiv für Ihr Betriebssystem (Windows, Linux oder Apple Mac, jeweils 32- oder 64-bit) herunter und entpacken es an einem beliebigen Ort. Von dort können Sie dann die Anwendung, wie im Folgenden beschrieben, starten. Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. 7-zip nutzen.
+In diesem Fall laden Sie einfach das zip-Archiv für Ihr Betriebssystem (Windows, Linux oder Apple Mac) herunter und entpacken es an einem beliebigen Ort. Von dort können Sie dann die Anwendung, wie im Folgenden beschrieben, starten. Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. 7-zip nutzen.
 
 Die Benutzung der Software unter Apple Mac OS ist vorbereitet jedoch mangels Hardware nicht getestet.
 
