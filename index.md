@@ -141,3 +141,8 @@ Das Benutzerhandbuch etc. ist [hier](https://jcthiele.github.io/OpenXRechnungToo
 ### Kontakt
 
 Wenn Sie Kontakt aufnehmen wollen, Lob oder Optimierungshinweise mitteilen möchten, dann wenden Sie sich bitte mit Ihrem Anliegen an: <a href="mailto:openxrechnungtoolbox@gmx.net">openxrechnungtoolbox@gmx.net</a>.
+
+### Download
+
+Das jeweils aktuelle Release ist [hier](https://github.com/jcthiele/OpenXRechnungToolbox/releases) erhältlich.
+Der Quellcode wird im [GitHub Repository](https://github.com/jcthiele/OpenXRechnungToolbox) gepflegt. 
