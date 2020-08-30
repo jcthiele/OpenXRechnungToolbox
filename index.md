@@ -145,8 +145,7 @@ Wenn Sie Kontakt aufnehmen wollen, Lob oder Optimierungshinweise mitteilen möch
 ### Download
 
 Das jeweils aktuelle Release ist [hier](https://github.com/jcthiele/OpenXRechnungToolbox/releases) erhältlich.
-
 Der Quellcode wird im [GitHub Repository](https://github.com/jcthiele/OpenXRechnungToolbox) gepflegt. 
 <br />
 <br />
-(Master branch)
+<tiny>(Masterbranch)</tiny>
