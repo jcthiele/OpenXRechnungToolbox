@@ -50,32 +50,32 @@
 <div class="slideshow-container">
 			<div class="mySlides fade">
 			  <div class="numbertext">1 / 6</div>
-			  <img src="docs/img/carousel/Oberflaeche.PNG" style="height:100%">
+			  <img src="docs/img/slideshow/Oberflaeche.PNG" style="height:100%">
 			  <div class="text">Hauptfenster</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">2 / 6</div>
-			  <img src="docs/img/carousel/Pruefbericht.PNG" style="height:100%">
+			  <img src="docs/img/slideshow/Pruefbericht.PNG" style="height:100%">
 			  <div class="text">Prüfbericht</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">3 / 6</div>
-			  <img src="docs/img/carousel/Visualisierung.PNG" style="height:100%">
+			  <img src="docs/img/slideshow/Visualisierung.PNG" style="height:100%">
 			  <div class="text">Visualisierung</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">4 / 6</div>
-			  <img src="docs/img/carousel/VisualisierungPDF.PNG" style="height:100%">
+			  <img src="docs/img/slideshow/VisualisierungPDF.PNG" style="height:100%">
 			  <div class="text">PDF-Visualisierung</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">5 / 6</div>
-			  <img src="docs/img/carousel/LWID.PNG" style="height:100%">
+			  <img src="docs/img/slideshow/LWID.PNG" style="height:100%">
 			  <div class="text">Leitweg-ID-Rechner/-Prüfer</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">6 / 6</div>
-			  <img src="docs/img/carousel/Einstellungen.PNG" style="height:100%">
+			  <img src="docs/img/slideshow/Einstellungen.PNG" style="height:100%">
 			  <div class="text">Einstellungen</div>
 			</div>
 </div>
