@@ -148,4 +148,4 @@ Das jeweils aktuelle Release ist [hier](https://github.com/jcthiele/OpenXRechnun
 Der Quellcode wird im [GitHub Repository](https://github.com/jcthiele/OpenXRechnungToolbox) gepflegt. 
 <br />
 <br />
-<tiny>(Masterbranch)</tiny>
+<small>(Masterbranch)</small>
