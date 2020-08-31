@@ -45,6 +45,17 @@
 	  from {opacity: .4} 
 	  to {opacity: 1}
 	}	
+	.btn {
+	  background-color: DodgerBlue;
+	  border: none;
+	  color: white;
+	  padding: 12px 30px;
+	  cursor: pointer;
+	  font-size: 20px;
+	}
+	.btn:hover {
+	  background-color: RoyalBlue;
+	} 	
 </style>
 
 <div class="slideshow-container">
@@ -113,6 +124,11 @@ function showSlides() {
 </script>
 
 Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) und fügt ergänzend noch ein paar weitere Funktionalitäten hinzu (Codelistenauflösung für die Visualisierung, Leitweg-ID-Rechner/-Prüfer, Nutzung für Peppol-Rechnungen). Damit macht sie die XRechnungs-Tools für Nicht-Programmierer nutzbar. 
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Auto width -->
+<a href="https://github.com/jcthiele/OpenXRechnungToolbox/releases" target="_blank"><button class="btn"><i class="fa fa-download"></i> Download</button></a>
 
 
 ### Funktionalitäten auf einen Blick
