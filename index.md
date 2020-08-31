@@ -46,7 +46,7 @@
 	  to {opacity: 1}
 	}	
 	.btn {
-	  background-color: DodgerBlue;
+	  background-color: #0090ff;
 	  border: none;
 	  color: white;
 	  padding: 12px 30px;
