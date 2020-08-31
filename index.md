@@ -128,7 +128,7 @@ Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Auto width -->
-<a href="https://github.com/jcthiele/OpenXRechnungToolbox/releases" target="_blank"><button class="btn"><i class="fa fa-download"></i> Download</button></a>
+<center><a href="https://github.com/jcthiele/OpenXRechnungToolbox/releases" target="_blank"><button class="btn"><i class="fa fa-download"></i> Download</button></a></center>
 
 
 ### Funktionalitäten auf einen Blick
