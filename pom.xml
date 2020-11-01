@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>OpenXRechnungToolbox</groupId>
   <artifactId>org.oxt</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <name>OpenXRechnungToolbox</name>
   <description>This is the OpenXRechnungToolbox by Dr. Jan C. Thiele</description>
   <packaging>jar</packaging>
@@ -14,8 +14,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <swt.version>4.6.1</swt.version> 
 	<swt.version.mac32>4.4.2</swt.version.mac32>
-    <lombok.version>1.18.8</lombok.version>
-    <saxon-he.version>9.9.1-3</saxon-he.version>
+    <lombok.version>1.18.12</lombok.version>
+    <saxon-he.version>9.9.1-7</saxon-he.version>
     <slf4j.version>1.7.25</slf4j.version>        
     <log4j.version>1.2.17</log4j.version>
     <fop.version>2.5</fop.version>            
@@ -430,11 +430,11 @@
 
   <dependencies>
     <!-- validation tool - needs local installation -->
-	<!-- download validation tool and run "mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.3.1.jar" in advance -->    
+	<!-- download validation tool and run "mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.4.0.jar" in advance -->    
 	<dependency>
 	    <groupId>de.kosit</groupId>
 	    <artifactId>validationtool</artifactId>
-	    <version>1.3.1</version>
+	    <version>1.4.0</version>
 	</dependency>
       <dependency>
             <groupId>org.projectlombok</groupId>
@@ -472,12 +472,12 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
+            <version>3.10</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.2</version>
+            <version>2.3.3</version>
             <optional>true</optional>
         </dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/fop -->

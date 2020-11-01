@@ -19,13 +19,13 @@
 
 
 ; The name of the installer
-Name "OpenXRechnungToolbox v1.0"
+Name "OpenXRechnungToolbox v1.1"
 
 ; The icon
 Icon "resources/images/oxt.ico"
 
 ; The file to write
-OutFile "OpenXRechnungToolbox_v1.0_Installer.exe"
+OutFile "OpenXRechnungToolbox_v1.1_Installer.exe"
 
 ; Request application privileges for Windows Vista and higher
 RequestExecutionLevel admin
