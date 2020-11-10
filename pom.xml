@@ -371,7 +371,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_32bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
@@ -410,7 +410,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_64bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
@@ -538,6 +538,11 @@
 				<copy todir="${project.build.directory}" >  
 				    <fileset dir="${basedir}">  
 				        <include name="OpenXRechnungToolbox.sh"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="OpenXRechnungToolboxMac.sh"/>
 				    </fileset>
 				</copy>
 				<copy todir="${project.build.directory}" >  
