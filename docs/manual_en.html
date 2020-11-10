@@ -129,9 +129,6 @@ Released   : 20130801
 			Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. <a href="https://www.7-zip.org/" target="_blank">7-zip</a> nutzen.
 			</p>
 			<p>
-			Die Benutzung der Software unter Apple Mac OS ist vorbereitet jedoch mangels Hardware nicht getestet. 
-			</p>
-			<p>
 			Die OpenXRechnungToolbox Version 1.0 benötigt eine Java-Installation Version 8 oder höher.
 			Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich).
 			Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.</p>
@@ -160,9 +157,8 @@ Released   : 20130801
 
 			<h4><a id="linux">Unter Apple Mac OS</a></h4>
 			<p class="h4">
-			Die Benutzung der Software unter Apple Mac OS ist vorbereitet, jedoch mangels Hardware nicht getestet. 
-			Starten Sie die Anwendung durch Ausführung des Befehls:<br />
-			<i>java -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
+			Unter Apple Mac OS starten Sie die Anwendung durch Ausführung des Befehls im Terminal:<br />
+			<i>java -XstartOnFirstThread -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
 			Hierfür muss auf dem Rechner eine Java-Installation (Version >= 8) verfügbar sein.<br />
 			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
 			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
