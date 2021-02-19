@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.apache.log4j.PropertyConfigurator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
@@ -28,6 +29,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
+import org.oxt.toolbox.converter.ConverterImpl;
 import org.oxt.toolbox.helpers.AppProperties;
 import org.oxt.toolbox.helpers.CustomDropTargetAdapter;
 import org.oxt.toolbox.helpers.CustomHelpSelectionAdapter;
@@ -40,7 +42,7 @@ import org.oxt.toolbox.visualization.VisualizerImpl;
  * Main class of OpenXRechnungToolbox.
  * Builds the main GUI window. 
  * @author Dr. Jan C. Thiele
- * @version 1.0
+ * @version 1.1.1
  */
 public class AppWindow {
 
@@ -75,6 +77,10 @@ public class AppWindow {
         lwidItem.setImage(new Image(shell.getDisplay(), AppProperties.prop.getProperty("lwid.icon")));
         lwidItem.setText(resourceBundle.getString("lwidMenuItem"));
 
+        MenuItem converterItem = new MenuItem(fileMenu, SWT.PUSH);
+        converterItem.setImage(new Image(shell.getDisplay(), AppProperties.prop.getProperty("converter.icon")));
+        converterItem.setText(resourceBundle.getString("converterMenuItem"));
+        
         MenuItem exitItem = new MenuItem(fileMenu, SWT.PUSH);
         exitItem.setImage(new Image(shell.getDisplay(), AppProperties.prop.getProperty("exit.icon")));
         exitItem.setText(resourceBundle.getString("exitMenuItem"));
@@ -171,6 +177,35 @@ public class AppWindow {
             }
           });
 
+        /**
+         * Handle selection of CII2UBL converter.
+         */
+        converterItem.addSelectionListener(new CustomSelectionAdapter(shell) {
+            public void widgetSelected(SelectionEvent e) {
+                FileDialog fd = this.fileOpenSelection();
+                final String result = fd.open ();
+                if ( result != null )
+                {
+                    final File base = new File ( fd.getFilterPath () );
+                    for ( final String name : fd.getFileNames () )
+                    {
+                  	  ConverterImpl conv = new ConverterImpl(display);
+                  	  File invoiceFile = new File(base,name);
+                  	  try {
+                  		conv.convert(name, invoiceFile.getAbsolutePath());
+  	                  } catch (Exception e1) {
+  	                	  logger.error(e1.getMessage());
+  	                	  // error dialog
+  	                	  MessageBox dialog = new MessageBox(shell, SWT.OK);
+  	                	  dialog.setText(AppWindow.resourceBundle.getString("conversion_errorTitle"));
+  	                	  dialog.setMessage(invoiceFile+" "+AppWindow.resourceBundle.getString("conversion_errorMessage")+e1.getMessage());
+  	                	  dialog.open();
+  	                  }
+                    }
+                }
+              }
+            });
+        
         /**
          * Handle selection and close the application.
          */

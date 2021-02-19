@@ -143,6 +143,7 @@ Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den
 - **Erzeugung einer menschenlesbaren Visualisierung** von XRechnungs-Dateien, inkl. optionaler Codelisten-Auflösung, inkl. Speicherfunktion als HTML-Datei sowie Erzeugung einer PDF-Visualiserung; auch für andere Rechnungsinstanzen nutzbar, die konform zur Europäischen Norm EN16931 sind (z.B. Peppol BIS 3.0)
 - **Technische Validierung** von XRechnungs-Dateien sowie Peppol BIS 3.0 Rechnungen, verfügbar für verschiedene XRechnungs-Versionen, inkl. Speicherfunktion des Prüfberichts als HTML-Datei
 - Berechnung und Prüfung von **Leitweg-ID-Prüfziffern**
+- **Konvertierung** von UN/CEFACT CII nach UBL 2.1
 
 ### Vorteile gegenüber vielen anderen Angeboten
 

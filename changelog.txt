@@ -1,0 +1,14 @@
+v1.1.1
+- update to XRechnung v2.0.1
+- update to en16931 v1.3.3
+- update to Peppol BIS v3.0.9
+- added validation profile for en16931
+- update to KoSIT validator v.1.4.1
+- update to KoSIT visualization for XRechnung v2.0.1
+- added new conversion functionality from cii to ubl
+
+v1.1
+- update to KoSIT validator v.1.4.0
+
+v1.0
+- initial release

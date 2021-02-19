@@ -1,6 +1,4 @@
 
-- GitHub-Projekt einrichten
-
 
 - build sauber machen
 

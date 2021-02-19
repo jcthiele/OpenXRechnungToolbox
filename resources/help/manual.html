@@ -81,7 +81,7 @@ Released   : 20130801
 						<div style="text-indent:60px;"><a href="#menuentryvisualization">Menüpunkt <i>Rechnung visualisieren</i></a><br /></div>
 						<div style="text-indent:60px;"><a href="#menuentryvalidation">Menüpunkt <i>Rechnung prüfen</i></a><br /></div>
 						<div style="text-indent:60px;"><a href="#menuentryLWIDcheck">Menüpunkt <i>Leitweg-ID berechnen/prüfen</i></a><br /></div>
-						<div style="text-indent:60px;"><a href="#menuentryClose">Menüpunkt <i>Schließen</i></a><br /></div>
+						<div style="text-indent:60px;"><a href="#menuentryConvert">Menüpunkt <i>CII in UBL konvertieren (experimentell)</i></a><br /></div>
 						<div style="text-indent:60px;"><a href="#menuentryClose">Menüpunkt <i>Schließen</i></a><br /></div>
 					<div style="text-indent:45px;"><a href="#menuSettings">Menü <i>Einstellungen</i></a><br /></div>
 						<div style="text-indent:60px;"><a href="#menuentyChangeSettings">Menüpunkt <i>Einstellungen ändern</i></a><br /></div>
@@ -226,6 +226,16 @@ Released   : 20130801
 			Details zum Konzept und der Verwendung Leitweg-ID finden Sie <a href="https://www.xoev.de/die_standards/xrechnung-16828#LID" target="_blank">hier</a>:
 			</p>
 
+			<h7><a id="menuentryConvert">Menüpunkt <i>CII in UBL konvertieren (experimentell)</i></a></h7>
+			<p class="h7">
+			Mit dem Menüpunkt <i>CII in UBL konvertieren (experimentell)</i> kann eine XRechnungsdatei in der Syntax UN/CEFACT CII in eine XRechnungsdatei in der Syntax UBL 2.1 konvertiert werden.
+			Wird der Menüpunkt gewählt, können im sich öffnenden Dateiauswahl-Dialog eine oder mehrere Dateien zur Konvertierung ausgewählt werden.
+			Handelt es sich bei der/den gewählten Datei(en) nicht um eine gültige UN/CEFACT CII Instanz, so wird ein Fehler ausgegeben.
+			Bei erfolgreicher Konvertierung wird in dem Quellverzeichnis eine neue Datei erzeugt, die an den Namen der Ursprungsdatei die Zusatz _ubl angehängt hat. Existiert bereits eine Datei mit dem Namen, wird die Konvertierung gestopped.
+			Zudem wird eine Erfolgsmeldung angezeigt.
+			Bei einer fehlerhaften Konvertierung wird ein Fehlerfenster angezeigt.
+			Die Funktion ist experimentell.
+			</p>
 
 			<h7><a id="menuentryClose">Menüpunkt <i>Schließen</i></a></h7>
 			<p class="h7">

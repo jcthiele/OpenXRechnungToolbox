@@ -7,6 +7,9 @@ package org.oxt.toolbox.leitwegcheck;
  */
 public class LeitwegCheckerImpl implements ILeitwegChecker {
 
+	/**
+	 * Constructor.
+	 */
 	public LeitwegCheckerImpl() {
 		
 	}
