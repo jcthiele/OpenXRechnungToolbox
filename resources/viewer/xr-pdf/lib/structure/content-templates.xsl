@@ -191,7 +191,10 @@
                    <xsl:copy-of select="$value"/>
                  </xsl:when>
                  <xsl:otherwise>
-                   <xsl:value-of select="."/>
+                   <xsl:choose>
+                     <xsl:when test="$field-mapping-identifier = 'xr:Payment_due_date'"><xsl:value-of select="format-date(xs:date(.),'[D].[M].[Y]')"/></xsl:when>
+                     <xsl:otherwise><xsl:value-of select="."/></xsl:otherwise>
+                   </xsl:choose>
                  </xsl:otherwise>
                </xsl:choose>
              </fo:block>

@@ -15,7 +15,7 @@
          <xd:p>
             <xd:b>Author:</xd:b> KoSIT Bremen (kosit@finanzen.bremen.de)</xd:p>
          <xd:b>Fassung vom: 2020-06-30+02:00</xd:b>
-         <xd:b>modifiziert durch Dr. Jan Thiele am: 2020-08-14+01:00</xd:b>         
+         <xd:b>modifiziert durch Dr. Jan Thiele am: 2021-02-11+01:00</xd:b>
          <xd:p>Überführt eine zur EN 16931 konforme elektronische Rechnung in der konkreten Syntax UBL.2_1.Invoice in eine Instanz gemäß des Schemas für den Namensraum urn:ce.eu:en16931:2017:xoev-de:kosit:standard:xrechnung-1.</xd:p>
          <xd:p>Das Skript setzt voraus, dass das zu verarbeitende Dokument valide bzgl. des XML Schemas und der Schematron-Regeln der Quelle ist. Für nicht valide Dokumente ist das Ergebnis nicht definiert.</xd:p>
       </xd:desc>
@@ -782,7 +782,7 @@
          <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
          <xsl:call-template name="identifier-with-scheme.6523"/>
-		 <!-- End: Jan Thiele -->         
+		 <!-- End: Jan Thiele -->
       </xr:Payee_identifier>
    </xsl:template>
    <xsl:template mode="BT-61"
@@ -2296,7 +2296,7 @@
       <xsl:param name="schemeID" as="element()?"/>
       <xsl:if test="@schemeID">
 		 <xsl:variable name="listID_JT">
-			<xsl:call-template name="code.iso.6523">
+			<xsl:call-template name="code.ICD">
 				<xsl:with-param name="myparam" select="($schemeID, @listID, @schemeID)[1]"/>			
 			</xsl:call-template>
 		 </xsl:variable>	  

@@ -1,3 +1,3 @@
-Peppol BIS version 3.0.7 release, 2020 Spring Hotfix
+Peppol BIS version 3.0.9 release, 2020 Fall Hotfix
 
-https://github.com/OpenPEPPOL/peppol-bis-invoice-3/releases/tag/3.0.7
+https://github.com/OpenPEPPOL/peppol-bis-invoice-3/releases/tag/3.0.9

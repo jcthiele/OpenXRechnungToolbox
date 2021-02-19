@@ -15,7 +15,7 @@
          <xd:p>
             <xd:b>Author:</xd:b> KoSIT Bremen (kosit@finanzen.bremen.de)</xd:p>
          <xd:b>Fassung vom: 2020-06-30+02:00</xd:b>
-		 <xd:b>modifiziert durch Dr. Jan Thiele am: 2020-08-14+01:00</xd:b>
+		 <xd:b>modifiziert durch Dr. Jan Thiele am: 2021-02-11+01:00</xd:b>         
          <xd:p>Überführt eine zur EN 16931 konforme elektronische Rechnung in der konkreten Syntax UBL.2_1.CreditNote in eine Instanz gemäß des Schemas für den Namensraum urn:ce.eu:en16931:2017:xoev-de:kosit:standard:xrechnung-1.</xd:p>
          <xd:p>Das Skript setzt voraus, dass das zu verarbeitende Dokument valide bzgl. des XML Schemas und der Schematron-Regeln der Quelle ist. Für nicht valide Dokumente ist das Ergebnis nicht definiert.</xd:p>
       </xd:desc>
@@ -54,7 +54,7 @@
          <xsl:apply-templates mode="BT-9" select="./cac:PaymentMeans/cbc:PaymentDueDate"/>
          <xsl:apply-templates mode="BT-10" select="./cbc:BuyerReference"/>
          <xsl:apply-templates mode="BT-11"
-                              select="./cac:AdditionalDocumentReference/cbc:ID[cbc:DocumentTypeCode = 50]"/>
+                              select="./cac:AdditionalDocumentReference/cbc:ID[following-sibling::cbc:DocumentTypeCode = 50]"/>
          <xsl:apply-templates mode="BT-12" select="./cac:ContractDocumentReference/cbc:ID"/>
          <xsl:apply-templates mode="BT-13" select="./cac:OrderReference/cbc:ID"/>
          <xsl:apply-templates mode="BT-14" select="./cac:OrderReference/cbc:SalesOrderID"/>
@@ -84,7 +84,7 @@
 						 </xsl:call-template>
 					 </xsl:variable>
 					 <xsl:value-of select="$group_JT"/>		 
-					 <!-- End: Jan Thiele -->                     
+					 <!-- End: Jan Thiele --> 
                   </xr:Invoice_note_subject_code>
                </xsl:if>
                <xr:Invoice_note>
@@ -140,7 +140,7 @@
                               select="./cac:AllowanceCharge[cbc:ChargeIndicator = 'true']"/>
          <xsl:apply-templates mode="BG-22" select="./cac:LegalMonetaryTotal"/>
          <xsl:apply-templates mode="BG-23" select="./cac:TaxTotal/cac:TaxSubtotal"/>
-         <xsl:apply-templates mode="BG-24" select="./cac:AdditionalDocumentReference"/>
+         <xsl:apply-templates mode="BG-24" select="./cac:AdditionalDocumentReference[not(cbc:DocumentTypeCode = 50)]"/>
          <xsl:apply-templates mode="BG-25" select="./cac:CreditNoteLine"/>
       </xr:invoice>
    </xsl:template>
@@ -230,7 +230,7 @@
       </xr:Buyer_reference>
    </xsl:template>
    <xsl:template mode="BT-11"
-                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference/cbc:ID[cbc:DocumentTypeCode = 50]">
+                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference/cbc:ID[following-sibling::cbc:DocumentTypeCode = 50]">
       <xr:Project_reference>
          <xsl:attribute name="xr:id" select="'BT-11'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
@@ -563,10 +563,8 @@
          <xsl:apply-templates mode="BT-45" select="./cac:Party/cac:PartyName/cbc:Name"/>
          <xsl:apply-templates mode="BT-46" select="./cac:Party/cac:PartyIdentification/cbc:ID"/>
          <xsl:apply-templates mode="BT-47" select="./cac:Party/cac:PartyLegalEntity/cbc:CompanyID"/>
-         <!-- Jan Thiele: outcommented
          <xsl:apply-templates mode="BT-47"
                               select="./cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID"/>
-		 -->
          <xsl:apply-templates mode="BT-48"
                               select="./cac:Party/cac:PartyTaxScheme/cbc:CompanyID[following-sibling::cac:TaxScheme/cbc:ID = 'VAT']"/>
          <xsl:apply-templates mode="BT-49" select="./cac:Party/cbc:EndpointID"/>
@@ -605,7 +603,7 @@
 		 <!--<xsl:call-template name="identifier-with-scheme"/>-->
 		 <!-- Begin: Jan Thiele -->
          <xsl:call-template name="identifier-with-scheme.6523"/>
-		 <!-- End: Jan Thiele -->         
+		 <!-- End: Jan Thiele -->  
       </xr:Buyer_identifier>
    </xsl:template>
    <xsl:template mode="BT-47"
@@ -616,10 +614,9 @@
          <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
          <xsl:call-template name="identifier-with-scheme.6523"/>
-		 <!-- End: Jan Thiele -->         
+		 <!-- End: Jan Thiele --> 
       </xr:Buyer_legal_registration_identifier>
    </xsl:template>
-   <!-- Jan Thiele; outcommented 
    <xsl:template mode="BT-47"
                  match="/CreditNote:CreditNote/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID">
       <xr:Buyer_legal_registration_identifier>
@@ -628,7 +625,6 @@
          <xsl:call-template name="identifier"/>
       </xr:Buyer_legal_registration_identifier>
    </xsl:template>
-   -->
    <xsl:template mode="BT-48"
                  match="/CreditNote:CreditNote/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID[following-sibling::cac:TaxScheme/cbc:ID = 'VAT']">
       <xr:Buyer_VAT_identifier>
@@ -1585,7 +1581,7 @@
       </xr:VAT_exemption_reason_code>
    </xsl:template>
    <xsl:template mode="BG-24"
-                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference">
+                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference[not(cbc:DocumentTypeCode = 50)]">
       <xsl:variable name="bg-contents" as="item()*"><!--Der Pfad /CreditNote:CreditNote/cac:AdditionalDocumentReference der Instanz in konkreter Syntax wird auf 4 Objekte der EN 16931 abgebildet. -->
          <xsl:apply-templates mode="BT-122" select="./cbc:ID"/>
          <xsl:apply-templates mode="BT-123" select="./cbc:DocumentDescription"/>
@@ -2320,7 +2316,7 @@
       </xsl:if>
       <xsl:value-of select="."/>
    </xsl:template>
-   <!-- End: Jan Thiele -->   
+   <!-- End: Jan Thiele -->    
    <xsl:template name="identifier-with-scheme">
       <xsl:param name="schemeID" as="element()?"/>
       <xsl:if test="@schemeID">
@@ -2355,13 +2351,13 @@
       </xsl:if>
       <xsl:value-of select="."/>
    </xsl:template>
-   <!-- End: Jan Thiele -->   
+   <!-- End: Jan Thiele --> 
    <!-- Begin: Jan Thiele -->
    <xsl:template name="identifier-with-scheme.6523">
       <xsl:param name="schemeID" as="element()?"/>
       <xsl:if test="@schemeID">
 		 <xsl:variable name="listID_JT">
-			<xsl:call-template name="code.iso.6523">
+			<xsl:call-template name="code.ICD">
 				<xsl:with-param name="myparam" select="($schemeID, @listID, @schemeID)[1]"/>			
 			</xsl:call-template>
 		 </xsl:variable>	  
@@ -2369,7 +2365,7 @@
       </xsl:if>
       <xsl:value-of select="."/>
    </xsl:template>
-   <!-- End: Jan Thiele -->         
+   <!-- End: Jan Thiele -->
    <xsl:template name="identifier">
       <xsl:value-of select="."/>
    </xsl:template>

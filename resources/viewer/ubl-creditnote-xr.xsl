@@ -35,7 +35,7 @@
          <xsl:apply-templates mode="BT-9" select="./cac:PaymentMeans/cbc:PaymentDueDate"/>
          <xsl:apply-templates mode="BT-10" select="./cbc:BuyerReference"/>
          <xsl:apply-templates mode="BT-11"
-                              select="./cac:AdditionalDocumentReference/cbc:ID[cbc:DocumentTypeCode = 50]"/>
+                              select="./cac:AdditionalDocumentReference/cbc:ID[following-sibling::cbc:DocumentTypeCode = 50]"/>
          <xsl:apply-templates mode="BT-12" select="./cac:ContractDocumentReference/cbc:ID"/>
          <xsl:apply-templates mode="BT-13" select="./cac:OrderReference/cbc:ID"/>
          <xsl:apply-templates mode="BT-14" select="./cac:OrderReference/cbc:SalesOrderID"/>
@@ -112,7 +112,7 @@
                               select="./cac:AllowanceCharge[cbc:ChargeIndicator = 'true']"/>
          <xsl:apply-templates mode="BG-22" select="./cac:LegalMonetaryTotal"/>
          <xsl:apply-templates mode="BG-23" select="./cac:TaxTotal/cac:TaxSubtotal"/>
-         <xsl:apply-templates mode="BG-24" select="./cac:AdditionalDocumentReference"/>
+         <xsl:apply-templates mode="BG-24" select="./cac:AdditionalDocumentReference[not(cbc:DocumentTypeCode = 50)]"/>
          <xsl:apply-templates mode="BG-25" select="./cac:CreditNoteLine"/>
       </xr:invoice>
    </xsl:template>
@@ -182,7 +182,7 @@
       </xr:Buyer_reference>
    </xsl:template>
    <xsl:template mode="BT-11"
-                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference/cbc:ID[cbc:DocumentTypeCode = 50]">
+                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference/cbc:ID[following-sibling::cbc:DocumentTypeCode = 50]">
       <xr:Project_reference>
          <xsl:attribute name="xr:id" select="'BT-11'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
@@ -1448,7 +1448,7 @@
       </xr:VAT_exemption_reason_code>
    </xsl:template>
    <xsl:template mode="BG-24"
-                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference">
+                 match="/CreditNote:CreditNote/cac:AdditionalDocumentReference[not(cbc:DocumentTypeCode = 50)]">
       <xsl:variable name="bg-contents" as="item()*"><!--Der Pfad /CreditNote:CreditNote/cac:AdditionalDocumentReference der Instanz in konkreter Syntax wird auf 4 Objekte der EN 16931 abgebildet. -->
          <xsl:apply-templates mode="BT-122" select="./cbc:ID"/>
          <xsl:apply-templates mode="BT-123" select="./cbc:DocumentDescription"/>

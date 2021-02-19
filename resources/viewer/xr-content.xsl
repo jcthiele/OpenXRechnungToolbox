@@ -308,16 +308,7 @@
     <xsl:call-template name="list">
       <xsl:with-param name="content">        
         <xsl:apply-templates mode="list-entry" select="xr:Payment_terms"/>        
-        <xsl:apply-templates mode="list-entry" select="xr:Payment_due_date"/>                
-        <!--<xsl:for-each select="tokenize(xr:Payment_due_date,',')">
-          <xsl:apply-templates mode="list-entry" select=".">
-            <xsl:with-param name="value" select="format-date(xs:date(.),'[D].[M].[Y]')"/>
-            <xsl:with-param name="field-mapping-identifier" select="xr:Payment_due_date"/>
-          </xsl:apply-templates>
-          <xsl:if test="position() != last()">
-            <xsl:text>,</xsl:text>
-          </xsl:if>
-        </xsl:for-each>--> 
+        <xsl:apply-templates mode="list-entry" select="xr:Payment_due_date"/>       
         <xsl:apply-templates mode="list-entry" select="xr:PAYMENT_INSTRUCTIONS/xr:Payment_means_type_code"/>
         <xsl:apply-templates mode="list-entry" select="xr:PAYMENT_INSTRUCTIONS/xr:Payment_means_text"/>
         <xsl:apply-templates mode="list-entry" select="xr:PAYMENT_INSTRUCTIONS/xr:Remittance_information"/>

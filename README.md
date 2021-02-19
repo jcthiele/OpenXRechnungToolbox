@@ -26,7 +26,7 @@ Für Windows Betriebssysteme steht der Komfortabilität wegen dennoch optional e
 Es steht, wie für andere Betriebssysteme (Linux, Apple Mac) aber auch für Windows ein einfaches zip-Archiv zur Verfügung, für das keine Installationsroutine durchlaufen werden muss. So kann die Software auch genutzt werden, wenn keine Administrationsrechte auf dem Rechner zur Verfügung stehen.
 In diesem Fall laden Sie einfach das zip-Archiv für Ihr Betriebssystem (Windows, Linux oder Apple Mac) herunter und entpacken es an einem beliebigen Ort. Von dort können Sie dann die Anwendung, wie im Benutzer*innenhandbuch beschrieben, starten. Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. 7-zip nutzen.
 
-Die OpenXRechnungToolbox Version 1.1 benötigt eine Java-Installation Version 8 oder höher. Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich). Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.
+Die OpenXRechnungToolbox Version 1.1.1 benötigt eine Java-Installation Version 8 oder höher. Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich). Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.
 
 
 ## Benutzung
