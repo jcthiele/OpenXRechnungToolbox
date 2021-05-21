@@ -214,7 +214,7 @@
 
    <!--PATTERN variable-pattern-->
    <xsl:variable name="XR-SKONTO-REGEX"
-                 select="'#(SKONTO|VERZUG)#TAGE=([0-9]+#PROZENT=[0-9]+\.[0-9]{2})(#BASISBETRAG=-?[0-9]+\.[0-9]{2})?#\n'"/>
+                 select="'#(SKONTO|VERZUG)#TAGE=([0-9]+#PROZENT=[0-9]+\.[0-9]{2})(#BASISBETRAG=-?[0-9]+\.[0-9]{2})?#$'"/>
    <xsl:template match="text()" priority="-1" mode="M7"/>
    <xsl:template match="@*|node()" priority="-2" mode="M7">
       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M7"/>
