@@ -27,8 +27,8 @@
 	  <div class="menue">
 	    <div class="innen">
               <button type="button" class="tab" id="menueUebersicht" onclick="show(this);">Übersicht</button>
-              <button type="button" class="tab" id="menueDetails" onclick="show(this);">Details</button>
-              <button type="button" class="tab" id="menueZusaetze" onclick="show(this)">Zusätze</button>
+              <button type="button" class="tab" id="menueDetails" onclick="show(this);">Positionen</button>
+              <button type="button" class="tab" id="menueZusaetze" onclick="show(this)">Informationen</button>
               <button type="button" class="tab" id="menueAnlagen" onclick="show(this)">Anlagen</button>
               <button type="button" class="tab" id="menueLaufzettel" onclick="show(this)">Laufzettel</button>
 	    </div>
@@ -114,59 +114,59 @@
               <div id="BG-7" title="BG-7" class="boxtitel">Informationen zum Käufer</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Leitweg-ID:</div>
+                  <div class="boxdaten legende">Leitweg-ID (BT-10):</div>
                   <div id="BT-10" title="BT-10" class="boxdaten wert"><xsl:value-of select="../xr:Buyer_reference"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Name:</div>
+                  <div class="boxdaten legende">Name (BT-44):</div>
                   <div id="BT-44" title="BT-44" class="boxdaten wert"><xsl:value-of select="xr:Buyer_name"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Straße / Hausnummer:</div>
+                  <div class="boxdaten legende">Straße / Haus-Nr. (BT-50):</div>
                   <div id="BT-50" title="BT-50" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_address_line_1"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Postfach:</div>
+                  <div class="boxdaten legende">Postfach (BT-51):</div>
                   <div id="BT-51" title="BT-51" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_address_line_2"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Adresszusatz:</div>
+                  <div class="boxdaten legende">Adresszusatz (BT-163):</div>
                   <div id="BT-163" title="BT-163" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_address_line_3"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">PLZ:</div>
+                  <div class="boxdaten legende">PLZ (BT-53):</div>
                   <div id="BT-53" title="BT-53" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_post_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Ort:</div>
+                  <div class="boxdaten legende">Ort (BT-52):</div>
                   <div id="BT-52" title="BT-52" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_city"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Bundesland:</div>
+                  <div class="boxdaten legende">Bundesland (BT-54):</div>
                   <div id="BT-54" title="BT-54" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_country_subdivision"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Land:</div>
+                  <div class="boxdaten legende">Land (BT-55):</div>
                   <div id="BT-55" title="BT-55" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_country_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kennung:</div>
+                  <div class="boxdaten legende">Kennung / Kunden-Nr. (BT-46):</div>
                   <div id="BT-46" title="BT-46" class="boxdaten wert"><xsl:value-of select="xr:Buyer_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Kennung:</div>
+                  <div class="boxdaten legende">Schema der Kennung (BT-46-ID):</div>
                   <div id="BT-46-scheme-id" title="BT-46-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Buyer_identifier/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Name:</div>
+                  <div class="boxdaten legende">Name (BT-56):</div>
                   <div id="BT-56" title="BT-56" class="boxdaten wert"><xsl:value-of select="xr:BUYER_CONTACT/xr:Buyer_contact_point"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Telefon:</div>
+                  <div class="boxdaten legende">Telefon (BT-57):</div>
                   <div id="BT-57" title="BT-57" class="boxdaten wert"><xsl:value-of select="xr:BUYER_CONTACT/xr:Buyer_contact_telephone_number"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">E-Mail-Adresse:</div>
+                  <div class="boxdaten legende">E-Mail-Adresse (BT-58):</div>
                   <div id="BT-58" title="BT-58" class="boxdaten wert"><xsl:value-of select="xr:BUYER_CONTACT/xr:Buyer_contact_email_address"/></div>
                 </div>
               </div>
@@ -183,55 +183,55 @@
                   <div class="boxdaten wert" style="background-color: white;"> </div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Firmenname:</div>
+                  <div class="boxdaten legende">Firmenname (BT-27):</div>
                   <div id="BT-27" title="BT-27" class="boxdaten wert"><xsl:value-of select="xr:Seller_name"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Straße / Hausnummer:</div>
+                  <div class="boxdaten legende">Straße / Haus-Nr. (BT-35):</div>
                   <div id="BT-35" title="BT-35" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_address_line_1"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Postfach:</div>
+                  <div class="boxdaten legende">Postfach (BT-36):</div>
                   <div id="BT-36" title="BT-36" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_address_line_2"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Adresszusatz:</div>
+                  <div class="boxdaten legende">Adresszusatz (BT-162):</div>
                   <div id="BT-162" title="BT-162" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_address_line_3"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">PLZ:</div>
+                  <div class="boxdaten legende">PLZ (BT-38):</div>
                   <div id="BT-38" title="BT-38" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_post_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Ort:</div>
+                  <div class="boxdaten legende">Ort (BT-37):</div>
                   <div id="BT-37" title="BT-37" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_city"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Bundesland:</div>
+                  <div class="boxdaten legende">Bundesland (BT-39):</div>
                   <div id="BT-39" title="BT-39" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_country_subdivision"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Ländercode:</div>
+                  <div class="boxdaten legende">Ländercode (BT-40):</div>
                   <div id="BT-40" title="BT-40" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_country_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kennung:</div>
+                  <div class="boxdaten legende">Kennung BT-29):</div>
                   <div id="BT-29" title="BT-29" class="boxdaten wert"><xsl:value-of select="xr:Seller_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Kennung:</div>
+                  <div class="boxdaten legende">Schema der Kennung (BT-29-ID):</div>
                   <div id="BT-29-scheme-id" title="BT-29-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Seller_identifier/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Name:</div>
+                  <div class="boxdaten legende">Name: (BT-41)</div>
                   <div id="BT-41" title="BT-41" class="boxdaten wert"><xsl:value-of select="xr:SELLER_CONTACT/xr:Seller_contact_point"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Telefon:</div>
+                  <div class="boxdaten legende">Telefon (BT-42):</div>
                   <div id="BT-42" title="BT-42" class="boxdaten wert"><xsl:value-of select="xr:SELLER_CONTACT/xr:Seller_contact_telephone_number"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">E-Mail-Adresse:</div>
+                  <div class="boxdaten legende">E-Mail-Adresse (BT-43):</div>
                   <div id="BT-43" title="BT-43" class="boxdaten wert"><xsl:value-of select="xr:SELLER_CONTACT/xr:Seller_contact_email_address"/></div>
                 </div>
               </div>
@@ -247,30 +247,30 @@
                 <div class="boxcell boxZweispaltig">
                   <div class="boxtabelle borderSpacing">
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Rechnungsnummer:</div>
+                      <div class="boxdaten legende">Rechnungsnummer (BT-1):</div>
                       <div id="BT-1" title="BT-1" class="boxdaten wert"><xsl:value-of select="xr:Invoice_number"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Rechnungsdatum:</div>
+                      <div class="boxdaten legende">Rechnungsdatum (BT-2):</div>
                       <div id="BT-2" title="BT-2" class="boxdaten wert"><xsl:value-of select="format-date(xr:Invoice_issue_date,'[D].[M].[Y]')"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Rechnungsart:</div>
+                      <div class="boxdaten legende">Rechnungsart (BT-3):</div>
                       <div id="BT-3" title="BT-3" class="boxdaten wert"><xsl:value-of select="xr:Invoice_type_code"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Währung:</div>
+                      <div class="boxdaten legende">Währung: (BT-5)</div>
                       <div id="BT-5" title="BT-5" class="boxdaten wert"><xsl:value-of select="xr:Invoice_currency_code"/></div>
                     </div>
                   </div>
                   <h4>Abrechnungszeitraum:</h4>
                   <div class="boxtabelle borderSpacing">
                     <div class="boxzeile">
-                      <div class="boxdaten legende">von:</div>
+                      <div class="boxdaten legende">von: (BT-73)</div>
                       <div id="BT-73" title="BT-73" class="boxdaten wert"><xsl:value-of select="format-date(xr:INVOICING_PERIOD/xr:Invoicing_period_start_date,'[D].[M].[Y]')"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">bis:</div>
+                      <div class="boxdaten legende">bis: (BT-74)</div>
                       <div id="BT-74" title="BT-74" class="boxdaten wert"><xsl:value-of select="format-date(xr:INVOICING_PERIOD/xr:Invoicing_period_end_date,'[D].[M].[Y]')"/></div>
                     </div>
                   </div>
@@ -279,19 +279,19 @@
                 <div class="boxcell boxZweispaltig">
                   <div class="boxtabelle borderSpacing">
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Projektnummer:</div>
+                      <div class="boxdaten legende">Projektnummer (BT-11):</div>
                       <div id="BT-11" title="BT-11" class="boxdaten wert"><xsl:value-of select="xr:Project_reference"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Vertragsnummer:</div>
+                      <div class="boxdaten legende">Vertragsnummer (BT-12):</div>
                       <div id="BT-12" title="BT-12" class="boxdaten wert"><xsl:value-of select="xr:Contract_reference"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Bestellnummer:</div>
+                      <div class="boxdaten legende">Bestellnummer (BT-13):</div>
                       <div id="BT-13" title="BT-13" class="boxdaten wert"><xsl:value-of select="xr:Purchase_order_reference"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Auftragsnummer:</div>
+                      <div class="boxdaten legende">Auftragsnummer (BT-14):</div>
                       <div id="BT-14" title="BT-14" class="boxdaten wert"><xsl:value-of select="xr:Sales_order_reference"/></div>
                     </div>
                   </div>
@@ -306,11 +306,11 @@
   <xsl:template match="xr:PRECEDING_INVOICE_REFERENCE">
                   <div class="boxtabelle borderSpacing">
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Rechnungsnummer:</div>
+                      <div class="boxdaten legende">Rechnungsnummer (BT-25):</div>
                       <div id="BT-25" title="BT-25" class="boxdaten wert"><xsl:value-of select="xr:Preceding_Invoice_reference"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende">Rechnungsdatum:</div>
+                      <div class="boxdaten legende">Rechnungsdatum (BT-26):</div>
                       <div id="BT-26" title="BT-26" class="boxdaten wert"><xsl:value-of select="(format-date,xr:Preceding_Invoice_issue_date,'[D].[M].[Y]')"/></div>
                     </div>
                   </div>
@@ -320,55 +320,55 @@
   <xsl:template name="uebersichtRechnungsuebersicht">
           <div class="boxzeile">
             <div id="uebersichtRechnungsuebersicht" class="box">
-              <div id="BG-22" title="BG-22" class="boxtitel">Gesamtbeträge der Rechnung</div>
+              <div id="BG-22" title="BG-22" class="boxtitel">Gesamtbeträge der Rechnung (BG-22)</div>
               <div class="boxtabelle boxinhalt">
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Summe aller Positionen</div>
+                    <div class="boxdaten rechnungSp1">Summe aller Positionen (BT-106)</div>
                     <div class="boxdaten rechnungSp2 color2">netto</div>
                     <div id="BT-106" title="BT-106" class="boxdaten rechnungSp3"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Sum_of_Invoice_line_net_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Summe Nachlässe</div>
+                    <div class="boxdaten rechnungSp1">Summe Nachlässe (BT-107)</div>
                     <div class="boxdaten rechnungSp2 color2">netto</div>
                     <div id="BT-107" title="BT-107" class="boxdaten rechnungSp3"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Sum_of_allowances_on_document_level,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 paddingBottom line1Bottom">Summe Zuschläge</div>
+                    <div class="boxdaten rechnungSp1 paddingBottom line1Bottom">Summe Zuschläge (BT-108)</div>
                     <div class="boxdaten rechnungSp2 paddingBottom line1Bottom color2">netto</div>
                     <div id="BT-108" title="BT-108" class="boxdaten rechnungSp3 paddingBottom line1Bottom"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Sum_of_charges_on_document_level,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 paddingTop">Gesamtsumme</div>
+                    <div class="boxdaten rechnungSp1 paddingTop">Gesamtsumme (BT-109)</div>
                     <div class="boxdaten rechnungSp2 paddingTop color2">netto</div>
                     <div id="BT-109" title="BT-109" class="boxdaten rechnungSp3 paddingTop"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Invoice_total_amount_without_VAT,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Summe Umsatzsteuer</div>
+                    <div class="boxdaten rechnungSp1">Summe Umsatzsteuer (BT-110)</div>
                     <div class="boxdaten rechnungSp2 color2"></div>
                     <div id="BT-110" title="BT-110" class="boxdaten rechnungSp3"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Invoice_total_VAT_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 paddingBottom line1Bottom">Summe Umsatzsteuer in Abrechnungswährung</div>
+                    <div class="boxdaten rechnungSp1 paddingBottom line1Bottom">Summe Umsatzsteuer in Abrechnungswährung (BT-111)</div>
                     <div class="boxdaten rechnungSp2 paddingBottom line1Bottom color2"></div>
                     <div id="BT-111" title="BT-111" class="boxdaten rechnungSp3 paddingBottom line1Bottom"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Invoice_total_VAT_amount_in_accounting_currency,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 paddingTop">Gesamtsumme</div>
+                    <div class="boxdaten rechnungSp1 paddingTop">Gesamtsumme (BT-112)</div>
                     <div class="boxdaten rechnungSp2 paddingTop color2">brutto</div>
                     <div id="BT-112" title="BT-112" class="boxdaten rechnungSp3 paddingTop"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Invoice_total_amount_with_VAT,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Gezahlter Betrag</div>
+                    <div class="boxdaten rechnungSp1">Gezahlter Betrag (BT-113)</div>
                     <div class="boxdaten rechnungSp2 color2">brutto</div>
                     <div id="BT-113" title="BT-113" class="boxdaten rechnungSp3"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Paid_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 paddingBottom line2Bottom">Rundungsbetrag</div>
+                    <div class="boxdaten rechnungSp1 paddingBottom line2Bottom">Rundungsbetrag (BT-114)</div>
                     <div class="boxdaten rechnungSp2 paddingBottom line2Bottom color2">brutto</div>
                     <div id="BT-114" title="BT-114" class="boxdaten rechnungSp3 paddingBottom line2Bottom"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Rounding_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 paddingTop bold">Fälliger Betrag</div>
+                    <div class="boxdaten rechnungSp1 paddingTop bold">Fälliger Betrag (BT-115)</div>
                     <div class="boxdaten rechnungSp2 paddingTop color2">brutto</div>
                     <div id="BT-115" title="BT-115" class="boxdaten rechnungSp3 paddingTop bold"><xsl:value-of select="format-number(xr:DOCUMENT_TOTALS/xr:Amount_due_for_payment,'###.##0,00','decimal')"/></div>
                   </div>
@@ -381,33 +381,33 @@
   <xsl:template name="uebersichtUmsatzsteuer" match="xr:VAT_BREAKDOWN">
           <div class="boxzeile">
             <div id="uebersichtUmsatzsteuer" class="box">
-              <div id="BG-23" title="BG-23" class="boxtitel">Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung</div>
+              <div id="BG-23" title="BG-23" class="boxtitel">Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung (BG-23)</div>
               <div class="boxtabelle boxinhalt">
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 bold">Umsatzsteuerkategorie: <span id="BT-118" title="BT-118"><xsl:value-of select="xr:VAT_category_code"/></span></div>
+                    <div class="boxdaten rechnungSp1 bold">Umsatzsteuerkategorie (BT-118): <span id="BT-118" title="BT-118"><xsl:value-of select="xr:VAT_category_code"/></span></div>
                     <div class="boxdaten rechnungSp2"></div>
                     <div class="boxdaten rechnungSp3"></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Gesamtsumme</div>
+                    <div class="boxdaten rechnungSp1">Gesamtsumme (BT-116)</div>
                     <div class="boxdaten rechnungSp2 color2">netto</div>
                     <div id="BT-116" title="BT-116" class="boxdaten rechnungSp3"><xsl:value-of select="format-number(xr:VAT_category_taxable_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 line1Bottom">Umsatzsteuersatz</div>
+                    <div class="boxdaten rechnungSp1 line1Bottom">Umsatzsteuersatz (BT-119)</div>
                     <div class="boxdaten rechnungSp2 color2 line1Bottom"></div>
                     <div id="BT-119" title="BT-119" class="boxdaten rechnungSp3 line1Bottom"><xsl:value-of select="xr:VAT_category_rate"/>%</div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Umsatzsteuerbetrag</div>
+                    <div class="boxdaten rechnungSp1">Umsatzsteuerbetrag (BT-117)</div>
                     <div class="boxdaten rechnungSp2 color2"></div>
                     <div id="BT-117" title="BT-117" class="boxdaten rechnungSp3 bold"><xsl:value-of select="format-number(xr:VAT_category_tax_amount,'###.##0,00','decimal')"/></div>
                   </div>
               </div>
 
               <div class="grund">
-                <div>Befreiungsgrund: <span id="BT-120" title="BT-120" class="bold"><xsl:value-of select="xr:VAT_exemption_reason_text"/></span></div>
-                <div>Kennung für den Befreiungsgrund: <span id="BT-121"  title="BT-121" class="bold"><xsl:value-of select="xr:VAT_exemption_reason_code"/></span></div>
+                <div>Befreiungsgrund (BT-120): <span id="BT-120" title="BT-120" class="bold"><xsl:value-of select="xr:VAT_exemption_reason_text"/></span></div>
+                <div>Kennung für den Befreiungsgrund (BT-121): <span id="BT-121"  title="BT-121" class="bold"><xsl:value-of select="xr:VAT_exemption_reason_code"/></span></div>
               </div>
             </div>
 	  </div>
@@ -417,37 +417,37 @@
   <xsl:template name="uebersichtNachlass" match="xr:DOCUMENT_LEVEL_ALLOWANCES">
           <div class="boxzeile">
             <div id="uebersichtNachlass" class="box">
-              <div id="BG-20" title="BG-20" class="boxtitel">Nachlass auf Ebene der Rechnung</div>
+              <div id="BG-20" title="BG-20" class="boxtitel">Nachlass auf Ebene der Rechnung (BG-20)</div>
               <div class="boxtabelle boxinhalt">
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 bold">Umsatzsteuerkategorie des Nachlasses: <span title="BT-95"><xsl:value-of select="xr:Document_level_allowance_VAT_category_code"/></span></div>
+                    <div class="boxdaten rechnungSp1 bold">Umsatzsteuerkategorie des Nachlasses (BT-95): <span title="BT-95"><xsl:value-of select="xr:Document_level_allowance_VAT_category_code"/></span></div>
                     <div class="boxdaten rechnungSp2"></div>
                     <div class="boxdaten rechnungSp3"></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Grundbetrag</div>
+                    <div class="boxdaten rechnungSp1">Grundbetrag (BT-93)</div>
                     <div class="boxdaten rechnungSp2 color2">netto</div>
                     <div id="BT-93" title="BT-93" class="boxdaten rechnungSp3"><xsl:value-of select="format-number(xr:Document_level_allowance_base_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 line1Bottom">Prozentsatz</div>
+                    <div class="boxdaten rechnungSp1 line1Bottom">Prozentsatz (BT-94)</div>
                     <div class="boxdaten rechnungSp2 color2 line1Bottom"></div>
                     <div id="BT-94" title="BT-94" class="boxdaten rechnungSp3 line1Bottom"><xsl:value-of select="xr:Document_level_allowance_percentage"/>%</div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Nachlass</div>
+                    <div class="boxdaten rechnungSp1">Nachlass (BT-92)</div>
                     <div class="boxdaten rechnungSp2 color2">netto</div>
                     <div id="BT-92" title="BT-92" class="boxdaten rechnungSp3 bold"><xsl:value-of select="format-number(xr:Document_level_allowance_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Umsatzsteuersatz des Nachlasses</div>
+                    <div class="boxdaten rechnungSp1">Umsatzsteuersatz des Nachlasses (BT-96)</div>
                     <div class="boxdaten rechnungSp2 color2"></div>
                     <div id="BT-96" title="BT-96" class="boxdaten rechnungSp3"><xsl:value-of select="xr:Document_level_allowance_VAT_rate"/></div>
                   </div>
               </div>
               <div class="grund">
-                <div>Grund für den Nachlass: <span id="BT-97" title="BT-97" class="bold"><xsl:value-of select="xr:Document_level_allowance_reason"/></span></div>
-                <div>Document level allowance reason code: <span id="BT-98" title="BT-98" class="bold"><xsl:value-of select="xr:Document_level_allowance_reason_code"/></span></div>
+                <div>Grund für den Nachlass (BT-97): <span id="BT-97" title="BT-97" class="bold"><xsl:value-of select="xr:Document_level_allowance_reason"/></span></div>
+                <div>Document level allowance reason code (BT-98): <span id="BT-98" title="BT-98" class="bold"><xsl:value-of select="xr:Document_level_allowance_reason_code"/></span></div>
               </div>
             </div>
 	  </div>
@@ -458,37 +458,37 @@
   <xsl:template name="uebersichtZuschlaege" match="xr:DOCUMENT_LEVEL_CHARGES">
           <div class="boxzeile">
             <div id="uebersichtZuschlaege" class="box">
-              <div id="BG-21" title="BG-21" class="boxtitel">Zuschlag auf Ebene der Rechnung</div>
+              <div id="BG-21" title="BG-21" class="boxtitel">Zuschlag auf Ebene der Rechnung (BG-21)</div>
               <div class="boxtabelle boxinhalt">
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 bold">Umsatzsteuerkategorie des Zuschlages: <span title="BT-102"><xsl:value-of select="xr:Document_level_charge_VAT_category_code"/></span></div>
+                    <div class="boxdaten rechnungSp1 bold">Umsatzsteuerkategorie des Zuschlages BT-102): <span title="BT-102"><xsl:value-of select="xr:Document_level_charge_VAT_category_code"/></span></div>
                     <div class="boxdaten rechnungSp2"></div>
                     <div class="boxdaten rechnungSp3"></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Grundbetrag</div>
+                    <div class="boxdaten rechnungSp1">Grundbetrag (BT-100)</div>
                     <div class="boxdaten rechnungSp2 color2">netto</div>
                     <div id="BT-100" title="BT-100" class="boxdaten rechnungSp3"><xsl:value-of select="format-number(xr:Document_level_charge_base_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1 line1Bottom">Prozentsatz</div>
+                    <div class="boxdaten rechnungSp1 line1Bottom">Prozentsatz (BT-101)</div>
                     <div class="boxdaten rechnungSp2 color2 line1Bottom"></div>
                     <div id="BT-101" title="BT-101" class="boxdaten rechnungSp3 line1Bottom"><xsl:value-of select="xr:Document_level_charge_percentage"/>%</div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Zuschlag</div>
+                    <div class="boxdaten rechnungSp1">Zuschlag (BT-99)</div>
                     <div class="boxdaten rechnungSp2 color2">netto</div>
                     <div id="BT-99" title="BT-99" class="boxdaten rechnungSp3 bold"><xsl:value-of select="format-number(xr:Document_level_charge_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten rechnungSp1">Umsatzsteuersatz des Zuschlages</div>
+                    <div class="boxdaten rechnungSp1">Umsatzsteuersatz des Zuschlages (BT-103)</div>
                     <div class="boxdaten rechnungSp2 color2"></div>
                     <div id="BT-103" title="BT-103" class="boxdaten rechnungSp3"><xsl:value-of select="xr:Document_level_charge_VAT_rate"/></div>
                   </div>
               </div>
               <div class="grund">
-                <div>Grund für den Zuschlag: <span id="BT-104" title="BT-104" class="bold"><xsl:value-of select="xr:Document_level_charge_reason"/></span></div>
-                <div>Document level charge reason code: <span id="BT-105" title="BT-105" class="bold"><xsl:value-of select="xr:Document_level_charge_reason_code"/></span></div>
+                <div>Grund für den Zuschlag (BT-104): <span id="BT-104" title="BT-104" class="bold"><xsl:value-of select="xr:Document_level_charge_reason"/></span></div>
+                <div>Document level charge reason code (BT-105): <span id="BT-105" title="BT-105" class="bold"><xsl:value-of select="xr:Document_level_charge_reason_code"/></span></div>
               </div>
             </div>
 	  </div>
@@ -501,7 +501,7 @@
               <div title="" class="boxtitel">Zahlungsdaten</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Skonto; weitere Zahlungsbedingungen:</div>
+                  <div class="boxdaten legende">Skonto; weitere Zahlungsbed. (BT-20):</div>
                   <div id="BT-20" title="BT-20" class="boxdaten wert">                       
                     <xsl:for-each select="tokenize(xr:Payment_terms,';')">                      
                       <xsl:value-of select="."/>
@@ -512,7 +512,7 @@
                   </div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Fälligkeitsdatum:</div>
+                  <div class="boxdaten legende">Fälligkeitsdatum: (BT-9)</div>
                   <div id="BT-9" title="BT-9" class="boxdaten wert">
                     <xsl:for-each select="tokenize(xr:Payment_due_date,';')">
                       <xsl:value-of select="format-date(xs:date(.),'[D].[M].[Y]')"/>
@@ -523,15 +523,15 @@
                   </div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Code für das Zahlungsmittel:</div>
+                  <div class="boxdaten legende">Code für das Zahlungsmittel (BT-81):</div>
                   <div id="BT-81" title="BT-81" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:Payment_means_type_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Zahlungsmittel:</div>
+                  <div class="boxdaten legende">Zahlungsmittel (BT-82):</div>
                   <div id="BT-82" title="BT-82" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:Payment_means_text"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Verwendungszweck:</div>
+                  <div class="boxdaten legende">Verwendungszweck (BT-83):</div>
                   <div id="BT-83" title="BT-83" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:Remittance_information"/></div>
                 </div>
               </div>
@@ -541,14 +541,14 @@
 
   <xsl:template name="uebersichtCard">
             <div id="uebersichtCard" class="box subBox">
-              <div id="BG-18" title="BG-18" class="boxtitel boxtitelSub">Karteninformation</div>
+              <div id="BG-18" title="BG-18" class="boxtitel boxtitelSub">Karteninformation (BG-18)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kartennummer:</div>
+                  <div class="boxdaten legende">Kartennummer (BT-87):</div>
                   <div id="BT-87" title="BT-87" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:PAYMENT_CARD_INFORMATION/xr:Payment_card_primary_account_number"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Karteninhaber:</div>
+                  <div class="boxdaten legende">Karteninhaber (BT-88):</div>
                   <div id="BT-88" title="BT-88" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:PAYMENT_CARD_INFORMATION/xr:Payment_card_holder_name"/></div>
                 </div>
               </div>
@@ -558,18 +558,18 @@
 
   <xsl:template name="uebersichtLastschrift">
             <div id="uebersichtLastschrift" class="box subBox">
-              <div id="BG-19" title="BG-19" class="boxtitel boxtitelSub">Lastschrift</div>
+              <div id="BG-19" title="BG-19" class="boxtitel boxtitelSub">Lastschrift (BG-19)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Mandatsreferenznr.:</div>
+                  <div class="boxdaten legende">Mandatsreferenznr. (BT-89):</div>
                   <div id="BT-89" title="BT-89" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:DIRECT_DEBIT/xr:Mandate_reference_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">IBAN:</div>
+                  <div class="boxdaten legende">IBAN (BT-91):</div>
                   <div id="BT-91" title="BT-91" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:DIRECT_DEBIT/xr:Debited_account_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Gläubiger-ID:</div>
+                  <div class="boxdaten legende">Gläubiger-ID (BT-90):</div>
                   <div id="BT-90" title="BT-90" class="boxdaten wert"><xsl:value-of select="xr:PAYMENT_INSTRUCTIONS/xr:DIRECT_DEBIT/xr:Bank_assigned_creditor_identifier"/></div>
                 </div>
               </div>
@@ -579,19 +579,19 @@
 
   <xsl:template name="uebersichtUeberweisung">
             <div id="uebersichtUeberweisung" class="box subBox">
-              <div id="BG-17" title="BG-17" class="boxtitel boxtitelSub">Überweisung</div>
+              <div id="BG-17" title="BG-17" class="boxtitel boxtitelSub">Überweisung (BG-17)</div>
               <xsl:for-each select="xr:PAYMENT_INSTRUCTIONS/xr:CREDIT_TRANSFER">
               <div class="boxtabelle boxinhalt borderSpacing">
                  <div class="boxzeile">
-                    <div class="boxdaten legende">Kontoinhaber:</div>
+                    <div class="boxdaten legende">Kontoinhaber (BT-85):</div>
                     <div id="BT-85" title="BT-85" class="boxdaten wert"><xsl:value-of select="xr:Payment_account_name"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">IBAN:</div>
+                    <div class="boxdaten legende">IBAN (BT-84):</div>
                     <div id="BT-84" title="BT-84" class="boxdaten wert"><xsl:value-of select="xr:Payment_account_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">BIC:</div>
+                    <div class="boxdaten legende">BIC (BT-86):</div>
                     <div id="BT-86" title="BT-86" class="boxdaten wert"><xsl:value-of select="xr:Payment_service_provider_identifier"/></div>
                   </div>
               </div>
@@ -602,14 +602,14 @@
 
   <xsl:template name="uebersichtBemerkungen" match="xr:INVOICE_NOTE">
             <div id="uebersichtBemerkungen" class="box">
-              <div id="BG-1" title="BG-1" class="boxtitel">Bemerkung zur Rechnung</div>
+              <div id="BG-1" title="BG-1" class="boxtitel">Bemerkung zur Rechnung (BG-1)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                  <div class="boxzeile">
-                    <div class="boxdaten legende">Betreff:</div>
+                    <div class="boxdaten legende">Betreff (BT-21):</div>
                     <div id="BT-21" title="BT-21" class="boxdaten wert"><xsl:value-of select="xr:Invoice_note_subject_code"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">Bemerkung:</div>
+                    <div class="boxdaten legende">Bemerkung (BT-22):</div>
                     <div id="BT-22" title="BT-22" class="boxdaten wert"><xsl:value-of select="xr:Invoice_note"/></div>
                   </div>
               </div>
@@ -629,82 +629,82 @@
         <div class="boxtabelle boxabstandtop boxtabelleZweispaltig first">
           <div class="boxzeile">
             <div class="box subBox">
-              <div id="BT-126" title="BT-126" class="boxtitel">Position <xsl:value-of select="xr:Invoice_line_identifier"/></div>
+              <div id="BT-126" title="BT-126" class="boxtitel">Position (BT-126) <xsl:value-of select="xr:Invoice_line_identifier"/></div>
               <div class="boxtabelle boxinhalt borderSpacing">
                   <div class="boxzeile">
-                    <div class="boxdaten legende">Freitext:</div>
+                    <div class="boxdaten legende">Freitext (BT-127):</div>
                     <div id="BT-127" title="BT-127" class="boxdaten wert"><xsl:value-of select="xr:Invoice_line_note"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">Objektkennung:</div>
+                    <div class="boxdaten legende">Objektkennung (BT-128):</div>
                     <div id="BT-128" title="BT-128" class="boxdaten wert"><xsl:value-of select="xr:Invoice_line_object_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">Schema der Objektkennung:</div>
+                    <div class="boxdaten legende">Schema der Objektkennung (BT-128-ID):</div>
                     <div id="BT-128-scheme-id" title="BT-128-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Invoice_line_object_identifier/@scheme_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">Nummer der Auftragsposition:</div>
+                    <div class="boxdaten legende">Nummer der Auftragsposition (BT-132):</div>
                     <div id="BT-132" title="BT-132" class="boxdaten wert"><xsl:value-of select="xr:Referenced_purchase_order_line_reference"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">Kontierungshinweis:</div>
+                    <div class="boxdaten legende">Kontierungshinweis /Kostenstelle (BT-133):</div>
                     <div id="BT-133" title="BT-133" class="boxdaten wert"><xsl:value-of select="xr:Invoice_line_Buyer_accounting_reference"/></div>
                   </div>
-                  <h4 id="BG-26" title="BG-26">Abrechnungszeitraum:</h4>
+                  <h4 id="BG-26" title="BG-26">Abrechnungszeitraum (BG-26):</h4>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">von:</div>
+                    <div class="boxdaten legende">von (BT-134):</div>
                     <div id="BT-134" title="BT-134" class="boxdaten wert"><xsl:value-of select="format-date(xr:INVOICE_LINE_PERIOD/xr:Invoice_line_period_start_date,'[D].[M].[Y]')"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende">bis:</div>
+                    <div class="boxdaten legende">bis (BT-135):</div>
                     <div id="BT-135" title="BT-135" class="boxdaten wert"><xsl:value-of select="format-date(xr:INVOICE_LINE_PERIOD/xr:Invoice_line_period_end_date,'[D].[M].[Y]')"/></div>
                   </div>
               </div>
             </div>
             <div class="box subBox">
-              <div id="BG-29" title="BG-29" class="boxtitel boxtitelSub">Preiseinzelheiten</div>
+              <div id="BG-29" title="BG-29" class="boxtitel boxtitelSub">Preiseinzelheiten (BG-29)</div>
               <div class="boxtabelle boxinhalt">
                 <div class="rechnungsZeile">
-                  <div class="boxdaten detailSp1 color2">Menge</div>
+                  <div class="boxdaten detailSp1 color2">Menge (BT-129)</div>
                   <div id="BT-129" title="BT-129" class="boxdaten detailSp2"><xsl:value-of select="xr:Invoiced_quantity"/></div>
                 </div>
                 <div class="rechnungsZeile">
-                  <div class="boxdaten detailSp1 color2">Einheit</div>
+                  <div class="boxdaten detailSp1 color2">Einheit (BT-130)</div>
                   <div id="BT-130" title="BT-130" class="boxdaten detailSp2"><xsl:value-of select="xr:Invoiced_quantity_unit_of_measure_code"/></div>
                 </div>
                 <div class="rechnungsZeile">
-                  <div class="boxdaten detailSp1 line1Bottom color2">Preis pro Einheit (netto)</div>
+                  <div class="boxdaten detailSp1 line1Bottom color2">Preis pro Einheit (netto) (BT-146)</div>
                   <div id="BT-146" title="BT-146" class="boxdaten detailSp2 line1Bottom"><xsl:value-of select="format-number(xr:PRICE_DETAILS/xr:Item_net_price,'###.##0,00','decimal')"/></div>
                 </div>
                 <div class="rechnungsZeile">
-                  <div class="boxdaten detailSp1 color2">Gesamtpreis (netto)</div>
+                  <div class="boxdaten detailSp1 color2">Gesamtpreis (netto) (BT-131)</div>
                   <div id="BT-131" title="BT-131" class="boxdaten detailSp2 bold"><xsl:value-of select="format-number(xr:Invoice_line_net_amount,'###.##0,00','decimal')"/></div>
                 </div>
               </div>
               <div class="boxtabelle boxinhalt noPaddingTop borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende ">Rabatt (netto):</div>
+                  <div class="boxdaten legende ">Rabatt (netto) (BT-147):</div>
                   <div id="BT-147" title="BT-147" class="boxdaten wert"><xsl:value-of select="format-number(xr:PRICE_DETAILS/xr:Item_price_discount,'###.##0,00','decimal')"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende ">Listenpreis (netto):</div>
+                  <div class="boxdaten legende ">Listenpreis (netto) BT-148):</div>
                   <div id="BT-148" title="BT-148" class="boxdaten wert"><xsl:value-of select="format-number(xr:PRICE_DETAILS/xr:Item_gross_price,'###.##0,00','decimal')"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende ">Anzahl der Einheit:</div>
+                  <div class="boxdaten legende ">Anzahl der Einheit (BT-149):</div>
                   <div id="BT-149" title="BT-149" class="boxdaten wert"><xsl:value-of select="xr:PRICE_DETAILS/xr:Item_price_base_quantity"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende ">Code der Maßeinheit:</div>
+                  <div class="boxdaten legende ">Code der Maßeinheit (BT-150):</div>
                   <div id="BT-150" title="BT-150" class="boxdaten wert"><xsl:value-of select="xr:PRICE_DETAILS/xr:Item_price_base_quantity_unit_of_measure"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende ">Umsatzsteuer:</div>
+                  <div class="boxdaten legende ">Umsatzsteuer (BT-151):</div>
                   <div id="BT-151" title="BT-151" class="boxdaten wert"><xsl:value-of select="xr:LINE_VAT_INFORMATION/xr:Invoiced_item_VAT_category_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende ">Umsatzsteuersatz in Prozent:</div>
+                  <div class="boxdaten legende ">Umsatzsteuersatz in % (BT-152):</div>
                   <div id="BT-152" title="BT-152" class="boxdaten wert"><xsl:value-of select="format-number(xr:LINE_VAT_INFORMATION/xr:Invoiced_item_VAT_rate,'##0,##','decimal')"/>%</div>
                 </div>
               </div>
@@ -714,48 +714,48 @@
         <div class="boxtabelle">
           <div class="boxzeile">
             <div class="box subBox">
-              <div id="BG-27" title="BG-27" class="boxtitel boxtitelSub">Nachlässe auf Ebene der Rechnungsposition</div>
+              <div id="BG-27" title="BG-27" class="boxtitel boxtitelSub">Nachlässe auf Ebene der Rechnungsposition (BG-27)</div>
               <xsl:for-each select = "xr:INVOICE_LINE_ALLOWANCES">
                 <div class="boxtabelle boxinhalt ">
                   <div class="rechnungsZeile">
-                    <div class="boxdaten detailSp1 color2">Grundbetrag (netto)</div>
+                    <div class="boxdaten detailSp1 color2">Grundbetrag (netto) (BT-137)</div>
                     <div id="BT-137" title="BT-137" class="boxdaten detailSp2"><xsl:value-of select="format-number(xr:Invoice_line_allowance_base_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten detailSp1 line1Bottom color2">Prozentsatz</div>
+                    <div class="boxdaten detailSp1 line1Bottom color2">Prozentsatz (BT-138)</div>
                     <div id="BT-138" title="BT-138" class="boxdaten detailSp2 line1Bottom"><xsl:value-of select="format-number(xr:Invoice_line_allowance_percentage,'##0,00','decimal')"/>%</div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten detailSp1 color2">Nachlass (netto)</div>
+                    <div class="boxdaten detailSp1 color2">Nachlass (netto) (BT-136)</div>
                     <div id="BT-136" title="BT-136" class="boxdaten detailSp2 bold"><xsl:value-of select="format-number(xr:Invoice_line_allowance_amount,'###.##0,00','decimal')"/></div>
                   </div>
                 </div>
                 <div class="grundDetail">
-                  <div class="color2">Grund des Nachlasses: <span id="BT-139" title="BT-139" class="bold"><xsl:value-of select="xr:Invoice_line_allowance_reason"/></span></div>
-                  <div class="color2">Code für den Nachlassgrund: <span id="BT-140" title="BT-140" class="bold"><xsl:value-of select="xr:Invoice_line_allowance_reason_code"/></span></div>
+                  <div class="color2">Grund des Nachlasses (BT-139): <span id="BT-139" title="BT-139" class="bold"><xsl:value-of select="xr:Invoice_line_allowance_reason"/></span></div>
+                  <div class="color2">Code für den Nachlassgrund (BT-140): <span id="BT-140" title="BT-140" class="bold"><xsl:value-of select="xr:Invoice_line_allowance_reason_code"/></span></div>
                 </div>
               </xsl:for-each>
             </div>
             <div class="box subBox">
-              <div id="BG-28" title="BG-28" class="boxtitel boxtitelSub">Zuschläge auf Ebene der Rechnungsposition</div>
+              <div id="BG-28" title="BG-28" class="boxtitel boxtitelSub">Zuschläge auf Ebene der Rechnungsposition (BG-28)</div>
               <xsl:for-each select = "xr:INVOICE_LINE_CHARGES">
                 <div class="boxtabelle boxinhalt ">
                   <div class="rechnungsZeile">
-                    <div class="boxdaten detailSp1 color2">Grundbetrag (netto)</div>
+                    <div class="boxdaten detailSp1 color2">Grundbetrag (netto) (BT-142)</div>
                     <div id="BT-142" title="BT-142" class="boxdaten detailSp2"><xsl:value-of select="format-number(xr:Invoice_line_charge_base_amount,'###.##0,00','decimal')"/></div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten detailSp1 line1Bottom color2">Prozentsatz</div>
+                    <div class="boxdaten detailSp1 line1Bottom color2">Prozentsatz (BT-143)</div>
                     <div id="BT-143" title="BT-143" class="boxdaten detailSp2 line1Bottom"><xsl:value-of select="format-number(xr:Invoice_line_charge_percentage,'##0,00','decimal')"/>%</div>
                   </div>
                   <div class="rechnungsZeile">
-                    <div class="boxdaten detailSp1 color2">Zuschlag (netto)</div>
+                    <div class="boxdaten detailSp1 color2">Zuschlag (netto) (BT-141)</div>
                     <div id="BT-141" title="BT-141" class="boxdaten detailSp2 bold"><xsl:value-of select="format-number(xr:Invoice_line_charge_amount,'###.##0,00','decimal')"/></div>
                   </div>
                 </div>
                 <div class="grundDetail">
-                  <div class="color2">Grund des Zuschlags: <span id="BT-144" title="BT-144" class="bold"><xsl:value-of select="xr:Invoice_line_charge_reason"/></span></div>
-                  <div class="color2">Code für den Zuschlagsgrund: <span id="BT-145" title="BT-145" class="bold"><xsl:value-of select="xr:Invoice_line_charge_reason_code"/></span></div>
+                  <div class="color2">Grund des Zuschlags (BT-144): <span id="BT-144" title="BT-144" class="bold"><xsl:value-of select="xr:Invoice_line_charge_reason"/></span></div>
+                  <div class="color2">Code für den Zuschlagsgrund (BT-145): <span id="BT-145" title="BT-145" class="bold"><xsl:value-of select="xr:Invoice_line_charge_reason_code"/></span></div>
                 </div>
               </xsl:for-each>
             </div>
@@ -764,28 +764,28 @@
         <div class="boxtabelle">
           <div class="boxzeile">
             <div class="box subBox">
-              <div id="BG-31" title="BG-31" class="boxtitel boxtitelSub">Artikelinformationen</div>
+              <div id="BG-31" title="BG-31" class="boxtitel boxtitelSub">Artikelinformationen (BG-31)</div>
               <div class="boxtabelle boxinhalt ">
                 <div class="boxzeile">
                  <div class="boxcell boxZweispaltig">
                   <div class="boxtabelle borderSpacing">
                     <div class="boxzeile">
-                      <div class="boxdaten legende ">Bezeichnung:</div>
+                      <div class="boxdaten legende ">Bezeichnung (BT-153):</div>
                       <div id="BT-153" title="BT-153" class="boxdaten wert bold"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_name"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende ">Beschreibung:</div>
+                      <div class="boxdaten legende ">Beschreibung (BT-154):</div>
                       <div id="BT-154" title="BT-154" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_description"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende ">Artikelnummer:</div>
+                      <div class="boxdaten legende ">Artikelnummer (BT-155):</div>
                       <div id="BT-155" title="BT-155" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_Sellers_identifier"/></div>
                     </div>
                     <div class="boxzeile">
-                      <div class="boxdaten legende ">Artikelkennung des Käufers:</div>
+                      <div class="boxdaten legende ">Kunden-Material-Nr. (BT-156):</div>
                       <div id="BT-156" title="BT-156" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_Buyers_identifier"/></div>
                     </div>
-                    <h4 id="BG-32" title="BG-32">Eigenschaften des Artikels:</h4>
+                    <h4 id="BG-32" title="BG-32">Eigenschaften des Artikels (BG-32):</h4>
 		    <xsl:apply-templates select="xr:ITEM_INFORMATION/xr:ITEM_ATTRIBUTES" />
                   </div>
                 </div>
@@ -793,27 +793,27 @@
                 <div class="boxcell boxZweispaltig">
                  <div class="boxtabelle borderSpacing">
                   <div class="boxzeile">
-                    <div class="boxdaten legende ">Artikelkennung:</div>
+                    <div class="boxdaten legende ">Artikelkennung (EAN)(BT-157):</div>
                     <div id="BT-157" title="BT-157" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_standard_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende ">Schema der Artikelkennung:</div>
+                    <div class="boxdaten legende ">Schema der Artikelkennung (BT-157-ID)):</div>
                     <div id="BT-157-scheme-id" title="BT-157-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_standard_identifier/@scheme_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende ">Code der Artikelklassifizierung:</div>
+                    <div class="boxdaten legende ">Code der Artikelklassifizierung (BT-158):</div>
                     <div id="BT-158" title="BT-158" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_classification_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende ">Kennung zur Bildung des Schemas:</div>
+                    <div class="boxdaten legende ">Kennung zur Bildung des Schemas (BT-158-ID):</div>
                     <div id="BT-158-scheme-id" title="BT-158-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_classification_identifier/@scheme_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende ">Version zur Bildung des Schemas:</div>
+                    <div class="boxdaten legende ">Version zur Bildung des Schemas (BT-158-Vers-ID):</div>
                     <div id="BT-158-scheme-version-id" title="BT-158-scheme-version-id" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_classification_identifier/@scheme_version_identifier"/></div>
                   </div>
                   <div class="boxzeile">
-                    <div class="boxdaten legende ">Code des Herkunftslandes:</div>
+                    <div class="boxdaten legende ">Code des Herkunftslandes (BT-159):</div>
                     <div id="BT-159" title="BT-159" class="boxdaten wert"><xsl:value-of select="xr:ITEM_INFORMATION/xr:Item_country_of_origin"/></div>
                   </div>
                 </div>
@@ -871,46 +871,46 @@
 
   <xsl:template name="zusaetzeVerkaeufer" match="xr:SELLER" mode="zusaetze">
             <div id="zusaetzeVerkaeufer" class="box boxZweispaltig">
-              <div id="BG-4" title="BG-4" class="boxtitel">Informationen zum Verkäufer</div>
+              <div id="BG-4" title="BG-4" class="boxtitel">Informationen zum Verkäufer (BG-4)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Abweichender Handelsname:</div>
+                  <div class="boxdaten legende">Abweichender Handelsname (BT-28):</div>
                   <div id="BT-28" title="BT-28" class="boxdaten wert"><xsl:value-of select="xr:Seller_trading_name"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Bundesland:</div>
+                  <div class="boxdaten legende">Bundesland (BT-39):</div>
                   <div id="BT-39" title="BT-39" class="boxdaten wert"><xsl:value-of select="xr:SELLER_POSTAL_ADDRESS/xr:Seller_country_subdivision"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Elektronische Adresse:</div>
+                  <div class="boxdaten legende">Elektronische Adresse BT-34):</div>
                   <div id="BT-34" title="BT-34" class="boxdaten wert"><xsl:value-of select="xr:Seller_electronic_address"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der elektronischen Adresse:</div>
+                  <div class="boxdaten legende">Schema der elektronischen Adresse (BT-34-ID):</div>
                   <div id="BT-34-scheme-id" title="BT-34-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Seller_electronic_address/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Register-/Registriernummer:</div>
+                  <div class="boxdaten legende">Register-/Registriernummer (BT-30):</div>
                   <div id="BT-30" title="BT-30" class="boxdaten wert"><xsl:value-of select="xr:Seller_legal_registration_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Umsatzsteuer-ID:</div>
+                  <div class="boxdaten legende">Umsatzsteuer-ID (BT-31):</div>
                   <div id="BT-31" title="BT-31" class="boxdaten wert"><xsl:value-of select="xr:Seller_VAT_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Steuernummer:</div>
+                  <div class="boxdaten legende">Steuernummer (BT-32):</div>
                   <div id="BT-32" title="BT-32" class="boxdaten wert"><xsl:value-of select="xr:Seller_tax_registration_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Steuernummer:</div>
+                  <div class="boxdaten legende">Schema der Steuernummer (BT-32-Schema):</div>
                   <div id="BT-32-scheme" title="BT-32-scheme" class="boxdaten wert"><xsl:value-of select="xr:Seller_tax_registration_identifier/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Weitere rechtliche Informationen:</div>
+                  <div class="boxdaten legende">Weitere rechtliche Informationen (BT-33):</div>
                   <div id="BT-33" title="BT-33" class="boxdaten wert"><xsl:value-of select="xr:Seller_additional_legal_information"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Code der Umsatzsteuerwährung:</div>
+                  <div class="boxdaten legende">Code der Umsatzsteuerwährung (BT-6):</div>
                   <div id="BT-6" title="BT-6" class="boxdaten wert"><xsl:value-of select="../xr:VAT_accounting_currency_code"/></div>
                 </div>
               </div>
@@ -920,42 +920,42 @@
 
   <xsl:template name="zusaetzeSteuervertreter" match="xr:SELLER_TAX_REPRESENTATIVE_PARTY">
             <div id="zusaetzeSteuervertreter" class="box boxZweispaltig">
-              <div id="BG-11" title="BG-11" class="boxtitel">Steuervertreter des Verkäufers</div>
+              <div id="BG-11" title="BG-11" class="boxtitel">Steuervertreter des Verkäufers (BG-11)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Name:</div>
+                  <div class="boxdaten legende">Name (BT-62):</div>
                   <div id="BT-62" title="BT-62" class="boxdaten wert"><xsl:value-of select="xr:Seller_tax_representative_name"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Straße / Hausnummer:</div>
+                  <div class="boxdaten legende">Straße / Hausnummer (BT-64):</div>
                   <div id="BT-64" title="BT-64" class="boxdaten wert"><xsl:value-of select="xr:SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESS/xr:Tax_representative_address_line_1"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Postfach:</div>
+                  <div class="boxdaten legende">Postfach (BT-65):</div>
                   <div id="BT-65" title="BT-65" class="boxdaten wert"><xsl:value-of select="xr:SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESS/xr:Tax_representative_address_line_2"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Adresszusatz:</div>
+                  <div class="boxdaten legende">Adresszusatz (BT-164):</div>
                   <div id="BT-164" title="BT-164" class="boxdaten wert"><xsl:value-of select="xr:SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESS/xr:Tax_representative_address_line_3"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">PLZ:</div>
+                  <div class="boxdaten legende">PLZ (BT-67):</div>
                   <div id="BT-67" title="BT-67" class="boxdaten wert"><xsl:value-of select="xr:SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESS/xr:Tax_representative_post_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Ort:</div>
+                  <div class="boxdaten legende">Ort (BT-66):</div>
                   <div id="BT-66" title="BT-66" class="boxdaten wert"><xsl:value-of select="xr:SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESS/xr:Tax_representative_city"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Bundesland:</div>
+                  <div class="boxdaten legende">Bundesland (BT-68):</div>
                   <div id="BT-68" title="BT-68" class="boxdaten wert"><xsl:value-of select="xr:SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESS/xr:Tax_representative_country_subdivision"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Ländercode:</div>
+                  <div class="boxdaten legende">Ländercode (BT-69):</div>
                   <div id="BT-69" title="BT-69" class="boxdaten wert"><xsl:value-of select="xr:SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESS/xr:Tax_representative_country_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Umsatzsteuer-ID:</div>
+                  <div class="boxdaten legende">Umsatzsteuer-ID (BT-63):</div>
                   <div id="BT-63" title="BT-63" class="boxdaten wert"><xsl:value-of select="xr:Seller_tax_representative_VAT_identifier"/></div>
                 </div>
               </div>
@@ -965,38 +965,38 @@
 
   <xsl:template name="zusaetzeKaeufer" match="xr:BUYER" mode="zusaetze">
             <div id="zusaetzeKaeufer" class="box boxZweispaltig">
-              <div id="BG-7" title="BG-7" class="boxtitel">Informationen zum Käufer</div>
+              <div id="BG-7" title="BG-7" class="boxtitel">Informationen zum Käufer (BG-7)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Abweichender Handelsname:</div>
+                  <div class="boxdaten legende">Abweichender Handelsname (BT-45):</div>
                   <div id="BT-45" title="BT-45" class="boxdaten wert"><xsl:value-of select="xr:Buyer_trading_name"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Bundesland:</div>
+                  <div class="boxdaten legende">Bundesland (BT-54):</div>
                   <div id="BT-54" title="BT-54" class="boxdaten wert"><xsl:value-of select="xr:BUYER_POSTAL_ADDRESS/xr:Buyer_country_subdivision"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Elektronische Adresse:</div>
+                  <div class="boxdaten legende">Elektronische Adresse (BT-49):</div>
                   <div id="BT-49" title="BT-49" class="boxdaten wert"><xsl:value-of select="xr:Buyer_electronic_address"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der elektronischen Adresse:</div>
+                  <div class="boxdaten legende">Schema der elektronischen Adresse (BT-49-ID):</div>
                   <div id="BT-49-scheme-id" title="BT-49-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Buyer_electronic_address/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Register-/Registriernummer:</div>
+                  <div class="boxdaten legende">Register-/Registriernummer (BT-47):</div>
                   <div id="BT-47" title="BT-47" class="boxdaten wert"><xsl:value-of select="xr:Buyer_legal_registration_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Register-/Registriernummer:</div>
+                  <div class="boxdaten legende">Schema der Register-/Registriernummer (BT-47-ID):</div>
                   <div id="BT-47-scheme-id" title="BT-47-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Buyer_legal_registration_identifier/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Umsatzsteuer-ID:</div>
+                  <div class="boxdaten legende">Umsatzsteuer-ID (BT-48):</div>
                   <div id="BT-48" title="BT-48" class="boxdaten wert"><xsl:value-of select="xr:Buyer_VAT_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Abrechnungsdatum der Umsatzsteuer:</div>
+                  <div class="boxdaten legende">Abrechnungsdatum der Umsatzsteuer (BT-7):</div>
                   <div id="BT-7" title="BT-7" class="boxdaten wert">
                     <xsl:for-each select="tokenize(../xr:Value_added_tax_point_date,';')">                      
                       <xsl:value-of select="format-date(xs:date(.),'[D].[M].[Y]')"/>
@@ -1007,11 +1007,11 @@
                   </div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Code des Umsatzsteuer-Abrechnungsdatums:</div>
+                  <div class="boxdaten legende">Code des Umsatzsteuer-Abrechnungsdatums (BT-8):</div>
                   <div id="BT-8" title="BT-8" class="boxdaten wert"><xsl:value-of select="../xr:Value_added_tax_point_date_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kontierungsinformation:</div>
+                  <div class="boxdaten legende">Kontierungsinformation / Kostenstelle (BT-19):</div>
                   <div id="BT-19" title="BT-19" class="boxdaten wert"><xsl:value-of select="../xr:Buyer_accounting_reference"/></div>
                 </div>
               </div>
@@ -1021,50 +1021,50 @@
 
   <xsl:template name="zusaetzeLieferung" match="xr:DELIVERY_INFORMATION">
             <div id="zusaetzeLieferung" class="box boxZweispaltig">
-              <div id="BG-13" title="BG-13" class="boxtitel">Lieferinformationen</div>
+              <div id="BG-13" title="BG-13" class="boxtitel">Lieferinformationen (BG-13)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kennung des Lieferorts:</div>
+                  <div class="boxdaten legende">Kennung des Lieferorts (BT-71):</div>
                   <div id="BT-71" title="BT-71" class="boxdaten wert"><xsl:value-of select="xr:Deliver_to_location_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Kennung:</div>
+                  <div class="boxdaten legende">Schema der Kennung (BT-71-ID):</div>
                   <div id="BT-71-scheme-id" title="BT-71-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Deliver_to_location_identifier/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Lieferdatum:</div>
+                  <div class="boxdaten legende">Lieferdatum /BT-72):</div>
                   <div id="BT-72" title="BT-72" class="boxdaten wert"><xsl:value-of select="format-date(xr:Actual_delivery_date,'[D].[M].[Y]')"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Name des Empfängers:</div>
+                  <div class="boxdaten legende">Name des Empfängers (BT-70):</div>
                   <div id="BT-70" title="BT-70" class="boxdaten wert"><xsl:value-of select="xr:Deliver_to_party_name"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Straße / Hausnummer:</div>
+                  <div class="boxdaten legende">Straße / Haus-Nr. (BT-75):</div>
                   <div id="BT-75" title="BT-75" class="boxdaten wert"><xsl:value-of select="xr:DELIVER_TO_ADDRESS/xr:Deliver_to_address_line_1"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Postfach:</div>
+                  <div class="boxdaten legende">Postfach (BT-76):</div>
                   <div id="BT-76" title="BT-76" class="boxdaten wert"><xsl:value-of select="xr:DELIVER_TO_ADDRESS/xr:Deliver_to_address_line_2"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Adresszusatz:</div>
+                  <div class="boxdaten legende">Adresszusatz (BT-165):</div>
                   <div title="BT-165" class="boxdaten wert"><xsl:value-of select="xr:DELIVER_TO_ADDRESS/xr:Deliver_to_address_line_3"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">PLZ:</div>
+                  <div class="boxdaten legende">PLZ (BT-78):</div>
                   <div id="BT-78" title="BT-78" class="boxdaten wert"><xsl:value-of select="xr:DELIVER_TO_ADDRESS/xr:Deliver_to_post_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Ort:</div>
+                  <div class="boxdaten legende">Ort (BT-77):</div>
                   <div id="BT-77" title="BT-77" class="boxdaten wert"><xsl:value-of select="xr:DELIVER_TO_ADDRESS/xr:Deliver_to_city"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Bundesland:</div>
+                  <div class="boxdaten legende">Bundesland (BT-79):</div>
                   <div id="BT-79" title="BT-79" class="boxdaten wert"><xsl:value-of select="xr:DELIVER_TO_ADDRESS/xr:Deliver_to_country_subdivision"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Land:</div>
+                  <div class="boxdaten legende">Land (BT-80):</div>
                   <div id="BT-80" title="BT-80" class="boxdaten wert"><xsl:value-of select="xr:DELIVER_TO_ADDRESS/xr:Deliver_to_country_code"/></div>
                 </div>
               </div>
@@ -1077,31 +1077,31 @@
               <div class="boxtitel">Informationen zum Vertrag</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Vergabenummer:</div>
+                  <div class="boxdaten legende">Vergabenummer (BT-17):</div>
                   <div id="BT-17" title="BT-17" class="boxdaten wert"><xsl:value-of select="xr:Tender_or_lot_reference"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kennung der Empfangsbestätigung:</div>
+                  <div class="boxdaten legende">Kennung der Empfangsbestätigung (BT-15):</div>
                   <div id="BT-15" title="BT-15" class="boxdaten wert"><xsl:value-of select="xr:Receiving_advice_reference"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kennung der Versandanzeige:</div>
+                  <div class="boxdaten legende">Kennung der Versandanzeige (BT-16):</div>
                   <div id="BT-16" title="BT-16" class="boxdaten wert"><xsl:value-of select="xr:Despatch_advice_reference"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Prozesskennung:</div>
+                  <div class="boxdaten legende">Prozesskennung (BT-23):</div>
                   <div id="BT-23" title="BT-23" class="boxdaten wert"><xsl:value-of select="xr:PROCESS_CONTROL/xr:Business_process_type"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Spezifikationskennung:</div>
+                  <div class="boxdaten legende">Spezifikationskennung BT-24):</div>
                   <div id="BT-24" title="BT-24" class="boxdaten wert"><xsl:value-of select="xr:PROCESS_CONTROL/xr:Specification_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Objektkennung:</div>
+                  <div class="boxdaten legende">Objektkennung (BT-18):</div>
                   <div id="BT-18" title="BT-18" class="boxdaten wert"><xsl:value-of select="xr:Invoiced_object_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Objektkennung:</div>
+                  <div class="boxdaten legende">Schema der Objektkennung (BT-18):</div>
                   <div id="BT-18-scheme-id" title="BT-18-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Invoiced_object_identifier/@scheme_identifier"/></div>
                 </div>
               </div>
@@ -1111,26 +1111,26 @@
 
   <xsl:template name="zusaetzeZahlungsempfaenger" match="xr:PAYEE">
             <div id="zusaetzeZahlungsempfaenger" class="box boxZweispaltig">
-              <div id="BG-10" title="BG-10" class="boxtitel">Vom Verkäufer abweichender Zahlungsempfänger</div>
+              <div id="BG-10" title="BG-10" class="boxtitel">Vom Verkäufer abweichender Zahlungsempfänger (BG-10)</div>
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Name:</div>
+                  <div class="boxdaten legende">Name (BT-59):</div>
                   <div id="BT-59" title="BT-59" class="boxdaten wert"><xsl:value-of select="xr:Payee_name"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kennung:</div>
+                  <div class="boxdaten legende">Kennung (BT-60):</div>
                   <div id="BT-60" title="BT-60" class="boxdaten wert"><xsl:value-of select="xr:Payee_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Kennung:</div>
+                  <div class="boxdaten legende">Schema der Kennung (BT-60-ID):</div>
                   <div id="BT-60-scheme-id" title="BT-60-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Payee_identifier/@scheme_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Register-/Registriernummer:</div>
+                  <div class="boxdaten legende">Register-/Registriernummer (BT-61):</div>
                   <div id="BT-61" title="BT-61" class="boxdaten wert"><xsl:value-of select="xr:Payee_legal_registration_identifier"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Schema der Register-/Registriernummer:</div>
+                  <div class="boxdaten legende">Schema der Register-/Registriernummer (BT-61-ID):</div>
                   <div id="BT-61-scheme-id" title="BT-61-scheme-id" class="boxdaten wert"><xsl:value-of select="xr:Payee_legal_registration_identifier/@scheme_identifier"/></div>
                 </div>
               </div>
@@ -1144,7 +1144,7 @@
         <div class="boxtabelle boxabstandtop">
           <div class="boxzeile">
             <div id="anlagenListe" class="box">
-              <div id="BG-24" title="BG-24" class="boxtitel">Rechnungsbegründende Unterlagen</div>
+              <div id="BG-24" title="BG-24" class="boxtitel">Rechnungsbegründende Unterlagen (BG-24)</div>
 	      <xsl:apply-templates select="./xr:ADDITIONAL_SUPPORTING_DOCUMENTS"/>
 	    </div>
 	  </div>
@@ -1156,19 +1156,19 @@
   <xsl:template match="xr:ADDITIONAL_SUPPORTING_DOCUMENTS">
               <div class="boxtabelle boxinhalt borderSpacing">
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Kennung:</div>
+                  <div class="boxdaten legende">Kennung (BT-122):</div>
                   <div id="BT-122" title="BT-122" class="boxdaten wert"><xsl:value-of select="xr:Supporting_document_reference"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Beschreibung:</div>
+                  <div class="boxdaten legende">Beschreibung (BT-123):</div>
                   <div id="BT-123" title="BT-123" class="boxdaten wert"><xsl:value-of select="xr:Supporting_document_description"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Verweis (z.B. Internetadresse):</div>
+                  <div class="boxdaten legende">Verweis (z.B. Internetadresse)(BT-124):</div>
                   <div id="BT-124" title="BT-124" class="boxdaten wert"><a href="{xr:External_document_location}"><xsl:value-of select="xr:External_document_location"/></a></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Anhangsdokument:</div>
+                  <div class="boxdaten legende">Anhangsdokument (BT-125):</div>
                   <div id="BT-125" title="BT-125" class="boxdaten wert">
 		    <a href="#"
 		       onClick="downloadData('{xr:Supporting_document_reference}')">Öffnen</a>
@@ -1181,11 +1181,11 @@
 
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Format des Anhangdokuments:</div>
+                  <div class="boxdaten legende">Format des Anhangdokuments (BT-125):</div>
                   <div id="BT-125" title="BT-125" class="boxdaten wert"><xsl:value-of select="xr:Attached_document/@mime_code"/></div>
                 </div>
                 <div class="boxzeile">
-                  <div class="boxdaten legende">Name des Anhangsdokuments:</div>
+                  <div class="boxdaten legende">Name des Anhangsdokuments (BT-125):</div>
                   <div id="BT-125" title="BT-125" class="boxdaten wert"><xsl:value-of select="xr:Attached_document/@filename"/></div>
                 </div>
               </div>
