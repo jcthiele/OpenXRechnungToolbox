@@ -2,17 +2,13 @@ package org.oxt.toolbox.gui;
 
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
-import java.util.Properties;
 import java.util.ResourceBundle;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DropTarget;
@@ -35,6 +31,7 @@ import org.oxt.toolbox.helpers.CustomDropTargetAdapter;
 import org.oxt.toolbox.helpers.CustomHelpSelectionAdapter;
 import org.oxt.toolbox.helpers.CustomSelectionAdapter;
 import org.oxt.toolbox.helpers.Internationalization;
+import org.oxt.toolbox.helpers.LogConfigurator;
 import org.oxt.toolbox.validation.ValidatorImpl;
 import org.oxt.toolbox.visualization.VisualizerImpl;
 
@@ -42,7 +39,7 @@ import org.oxt.toolbox.visualization.VisualizerImpl;
  * Main class of OpenXRechnungToolbox.
  * Builds the main GUI window. 
  * @author Dr. Jan C. Thiele
- * @version 1.1.1
+ * @version 1.1.2
  */
 public class AppWindow {
 
@@ -242,8 +239,8 @@ public class AppWindow {
 	 * Method to handle drop event for validation and visualization.
 	 * @param shell Shell widget
 	 * @param label name of file
-	 * @param indicator, if called for visualization
-	 * @param indicator, if called for validation
+	 * @param viz indicator, if called for visualization
+	 * @param vali indicator, if called for validation
 	 */
 	private void dropHandling(Shell shell, Label label, boolean viz, boolean vali) {
         // Allow data to be copied or moved to the drop target
@@ -264,13 +261,7 @@ public class AppWindow {
 	 * @throws IOException error when properties and/or language file is not found
 	 */
 	public AppWindow() throws IOException {
-		
-		String log4jConfPath = "resources/log4j.properties";		
-		Properties props = new Properties();
-		props.load(new FileInputStream(log4jConfPath));
-		PropertyConfigurator.configure(props);		
-		logger = LoggerFactory.getLogger(AppWindow.class);
-
+		logger = LogConfigurator.LogConfig(AppWindow.class);
 		
         // try to load language bundle
         try {
@@ -284,8 +275,7 @@ public class AppWindow {
         	logger.error("Language bundle not found!");
         	throw new IOException("Language bundle not found!");        	
         }
-
-        
+       
 		this.display = new Display();
 		Shell shell = new Shell(this.display, SWT.SHELL_TRIM & (~SWT.RESIZE) & (~SWT.MAX));
 		
@@ -343,10 +333,14 @@ public class AppWindow {
 	 * @throws IOException error when config and/or language files not found
 	 */
 	public static void main(String[] args) throws IOException {		
+		System.setProperty("com.sun.xml.bind.v2.bytecode.ClassTailor.noOptimize","true");
+		
 		String config = "resources/app.config";
 		if (args.length > 0) {
 			config = args[0];
 		}
+		
+		
 		AppProperties.initializeProperties(config);
 		if (AppProperties.prop == null) {
 			Display display = new Display();

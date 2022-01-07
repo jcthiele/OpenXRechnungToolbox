@@ -6,6 +6,7 @@
 		<xsl:param name="myparam"/>
 		<xsl:variable name="myparam.upper" select="upper-case($myparam)"/>
 		<xsl:choose>
+      		<xsl:when test="$myparam.upper='TSU'"><xsl:value-of select="$myparam"/> (EU RoHS Directive)</xsl:when>
       		<xsl:when test="$myparam.upper='AA'"><xsl:value-of select="$myparam"/> (Product version number)</xsl:when>
       		<xsl:when test="$myparam.upper='AB'"><xsl:value-of select="$myparam"/> (Assembly)</xsl:when>
       		<xsl:when test="$myparam.upper='AC'"><xsl:value-of select="$myparam"/> (HIBC (Health Industry Bar Code))</xsl:when>

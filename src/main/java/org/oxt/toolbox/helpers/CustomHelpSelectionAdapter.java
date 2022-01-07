@@ -10,8 +10,10 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.oxt.toolbox.gui.AppWindow;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.oxt.toolbox.gui.HTMLWindow;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Helper class to implement a custom selection adapter for help page opening in external browser.
@@ -30,7 +32,7 @@ public class CustomHelpSelectionAdapter extends SelectionAdapter {
 	 * @param helppage string to key of current help page entry
 	 */
 	public CustomHelpSelectionAdapter(Shell shell, String helppage) {
-		this.logger = LoggerFactory.getLogger(CustomHelpSelectionAdapter.class);
+		this.logger = LogConfigurator.LogConfig(CustomHelpSelectionAdapter.class);
 		this.helppage = helppage;
 		this.shell = shell;
 	}

@@ -9,8 +9,8 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.MessageBox;
 import org.oxt.toolbox.gui.AppWindow;
 import org.oxt.toolbox.gui.SettingsWindow;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Class to define a custom save listener for settings file.
@@ -22,7 +22,7 @@ public class CustomSettingsSaveListener implements Listener {
 	SettingsWindow sw;
 	
 	public CustomSettingsSaveListener(SettingsWindow sw) {
-		this.logger = LoggerFactory.getLogger(CustomSettingsSaveListener.class);
+		this.logger = LogConfigurator.LogConfig(CustomSettingsSaveListener.class);
 		this.sw = sw;
 	}
 	
@@ -32,6 +32,7 @@ public class CustomSettingsSaveListener implements Listener {
 	@Override
 	public void handleEvent(Event event) {
         AppProperties.prop.setProperty("language", this.sw.getLanguageCombo().getItem(this.sw.getLanguageCombo().getSelectionIndex()));
+        AppProperties.prop.setProperty("viz.language", this.sw.getVizLanguageCombo().getItem(this.sw.getVizLanguageCombo().getSelectionIndex()));
         AppProperties.prop.setProperty("viz.codelistresolve", String.valueOf(this.sw.getResolveCodelists().getSelection()));
         AppProperties.prop.setProperty("valiVersion", this.sw.getValiVersionCombo().getItem(this.sw.getValiVersionCombo().getSelectionIndex()));
     	

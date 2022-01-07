@@ -35,7 +35,12 @@ public class SettingsWindow {
 	 * GUI language selection combo box.
 	 */
 	Combo languageCombo;
-	
+
+	/**
+	 * GUI viz language selection combo box.
+	 */
+	Combo vizLanguageCombo;
+
 	/**
 	 * Combo box for validation configuration version selection.
 	 */
@@ -45,7 +50,15 @@ public class SettingsWindow {
 	 * Button/check box for selection whether codelists in visualization should be resolved.
 	 */
 	Button resolveCodelists;
-	
+
+	/**
+	 * Method to get the viz language selection combo box.
+	 * @return combo box
+	 */
+	public Combo getVizLanguageCombo() {
+		return vizLanguageCombo;
+	}
+
 	/**
 	 * Method to get the language selection combo box.
 	 * @return combo box
@@ -85,7 +98,7 @@ public class SettingsWindow {
 
 		int frameX = shell.getSize().x - shell.getClientArea().width;
         int frameY = shell.getSize().y - shell.getClientArea().height;
-        shell.setSize(380 + frameX, 450 + frameY);
+        shell.setSize(430 + frameX, 450 + frameY);
         shell.setText(AppWindow.resourceBundle.getString("settings_title"));
       
         shell.setImage(new Image(shell.getDisplay(), AppProperties.prop.getProperty("app.icon")));
@@ -130,12 +143,39 @@ public class SettingsWindow {
         if (index >= 0) {
         	languageCombo.select(index);
         }
-        
+
         languageCombo.addSelectionListener(new SelectionAdapter() {	
 	        @Override
 	        public void widgetSelected(SelectionEvent event) {
-	        		Combo combo = (Combo) event.getSource();
-	                System.out.println(combo.getItem(combo.getSelectionIndex()));
+	        		//Combo combo = (Combo) event.getSource();
+	            }
+        });
+
+        
+        // add viz language selection
+        Label vizLanguageLabel = new Label(languageGroup, SWT.SHADOW_NONE | SWT.CENTER);
+        vizLanguageLabel.setText(AppWindow.resourceBundle.getString("settingsgroup_vizLanguageLabel"));	       
+        
+        this.vizLanguageCombo = new Combo(languageGroup, SWT.READ_ONLY);        
+        vizLanguageCombo.setBounds(50, 50, 150, 65);
+        //String items[] = { "de", "en" };
+        
+        String vizLangs = AppProperties.prop.getProperty("available_vizLanguages");
+        String[] vizLanguages = vizLangs.split(",");
+
+        vizLanguageCombo.setItems(vizLanguages);
+        
+        List<String> vizLanguagesList = Arrays.asList(vizLanguages);
+        
+        int vizIndex = vizLanguagesList.indexOf(AppProperties.prop.getProperty("viz.language"));
+        if (vizIndex >= 0) {
+        	vizLanguageCombo.select(vizIndex);
+        }
+
+        vizLanguageCombo.addSelectionListener(new SelectionAdapter() {	
+	        @Override
+	        public void widgetSelected(SelectionEvent event) {
+	        		//Combo combo = (Combo) event.getSource();
 	            }
         });
 
@@ -162,8 +202,7 @@ public class SettingsWindow {
         resolveCodelists.addSelectionListener(new SelectionAdapter() {	
 	        @Override
 	        public void widgetSelected(SelectionEvent event) {
-	                Button btn = (Button) event.getSource();
-	                System.out.println(btn.getSelection());	                
+	                //Button btn = (Button) event.getSource();
 	            }
         });
 
@@ -174,13 +213,13 @@ public class SettingsWindow {
         valiGroup.setFont(new org.eclipse.swt.graphics.Font(null, font.getFontData()[0].getName(), font.getFontData()[0].getHeight(), SWT.BOLD));	        
         valiGroup.setText(AppWindow.resourceBundle.getString("settingsgroup_vali"));
    
-        GridLayout gridLayout4 = new GridLayout();
-        gridLayout4.numColumns = 2;
-        gridLayout4.marginHeight = 20;
-        valiGroup.setLayout(gridLayout4);
+        GridLayout gridLayout5 = new GridLayout();
+        gridLayout5.numColumns = 2;
+        gridLayout5.marginHeight = 20;
+        valiGroup.setLayout(gridLayout5);
 
         Label valiVersionLabel = new Label(valiGroup, SWT.SHADOW_NONE | SWT.CENTER);
-        valiVersionLabel.setText(AppWindow.resourceBundle.getString("settingsgroup_vizVersionLabel"));	       
+        valiVersionLabel.setText(AppWindow.resourceBundle.getString("settingsgroup_valiVersionLabel"));	       
 
         this.valiVersionCombo = new Combo(valiGroup, SWT.READ_ONLY);        
         valiVersionCombo.setBounds(50, 50, 250, 65);
@@ -200,8 +239,7 @@ public class SettingsWindow {
         valiVersionCombo.addSelectionListener(new SelectionAdapter() {	
 	        @Override
 	        public void widgetSelected(SelectionEvent event) {
-	        		Combo combo = (Combo) event.getSource();
-	                System.out.println(combo.getItem(combo.getSelectionIndex()));
+	        		//Combo combo = (Combo) event.getSource();
 	            }
         });
         
@@ -211,10 +249,10 @@ public class SettingsWindow {
         Composite buttonGroup = new Composite(shell, SWT.SHADOW_NONE & SWT.NO_BACKGROUND & SWT.DRAW_TRANSPARENT);
         buttonGroup.setLayoutData(new GridData(SWT.RIGHT, SWT.BEGINNING, true, false));
 
-        GridLayout gridLayout5 = new GridLayout();
-        gridLayout5.numColumns = 2;
-        gridLayout5.marginHeight = 20;
-        buttonGroup.setLayout(gridLayout5);
+        GridLayout gridLayout6 = new GridLayout();
+        gridLayout6.numColumns = 2;
+        gridLayout6.marginHeight = 20;
+        buttonGroup.setLayout(gridLayout6);
                 
         final Button buttonCancel = new Button(buttonGroup, SWT.PUSH);
         buttonCancel.setText(AppWindow.resourceBundle.getString("settings_cancel"));

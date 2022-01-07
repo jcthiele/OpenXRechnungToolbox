@@ -2,7 +2,7 @@
 
 This validator uses the latest Peppol BIS 3.0.9 rules.
 This is the Fall 2020 release hotfix from 2020-11-12.
-It is valid per 2020-11-16.
+It is valid per November 16th, 2020.
 
 The next update is foreseen in May 2021.
 
@@ -82,5 +82,5 @@ Required tools:
 * zip
 
 ```shell
-zip -r -9 validation-configuration-bis-3.0.9.zip README.md scenarios.xml resources/*
+zip -r -9 dist/validation-configuration-bis-3.0.9.zip README.md scenarios.xml resources/*
 ```

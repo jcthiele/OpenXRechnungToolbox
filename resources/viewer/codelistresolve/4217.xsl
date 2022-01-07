@@ -101,7 +101,7 @@
       		<xsl:when test="$myparam.upper='MMK'"><xsl:value-of select="$myparam"/> (Kyat)</xsl:when>
       		<xsl:when test="$myparam.upper='MNT'"><xsl:value-of select="$myparam"/> (Tugrik)</xsl:when>
       		<xsl:when test="$myparam.upper='MOP'"><xsl:value-of select="$myparam"/> (Pataca)</xsl:when>
-      		<xsl:when test="$myparam.upper='MRO'"><xsl:value-of select="$myparam"/> (Ouguiya)</xsl:when>
+      		<xsl:when test="$myparam.upper='MRU'"><xsl:value-of select="$myparam"/> (Ouguiya)</xsl:when>
       		<xsl:when test="$myparam.upper='MUR'"><xsl:value-of select="$myparam"/> (Mauritius Rupee)</xsl:when>
       		<xsl:when test="$myparam.upper='MVR'"><xsl:value-of select="$myparam"/> (Rufiyaa)</xsl:when>
       		<xsl:when test="$myparam.upper='MWK'"><xsl:value-of select="$myparam"/> (Malawi Kwacha)</xsl:when>
@@ -119,7 +119,7 @@
       		<xsl:when test="$myparam.upper='PAB'"><xsl:value-of select="$myparam"/> (Balboa)</xsl:when>
       		<xsl:when test="$myparam.upper='PEN'"><xsl:value-of select="$myparam"/> (Sol)</xsl:when>
       		<xsl:when test="$myparam.upper='PGK'"><xsl:value-of select="$myparam"/> (Kina)</xsl:when>
-      		<xsl:when test="$myparam.upper='PHP'"><xsl:value-of select="$myparam"/> (Philippine Piso)</xsl:when>
+      		<xsl:when test="$myparam.upper='PHP'"><xsl:value-of select="$myparam"/> (Philippine Peso)</xsl:when>
       		<xsl:when test="$myparam.upper='PKR'"><xsl:value-of select="$myparam"/> (Pakistan Rupee)</xsl:when>
       		<xsl:when test="$myparam.upper='PLN'"><xsl:value-of select="$myparam"/> (Zloty)</xsl:when>
       		<xsl:when test="$myparam.upper='PYG'"><xsl:value-of select="$myparam"/> (Guarani)</xsl:when>
@@ -139,7 +139,7 @@
       		<xsl:when test="$myparam.upper='SOS'"><xsl:value-of select="$myparam"/> (Somali Shilling)</xsl:when>
       		<xsl:when test="$myparam.upper='SRD'"><xsl:value-of select="$myparam"/> (Surinam Dollar)</xsl:when>
       		<xsl:when test="$myparam.upper='SSP'"><xsl:value-of select="$myparam"/> (South Sudanese Pound)</xsl:when>
-      		<xsl:when test="$myparam.upper='STD'"><xsl:value-of select="$myparam"/> (Dobra)</xsl:when>
+      		<xsl:when test="$myparam.upper='STN'"><xsl:value-of select="$myparam"/> (Dobra)</xsl:when>
       		<xsl:when test="$myparam.upper='SVC'"><xsl:value-of select="$myparam"/> (El Salvador Colon)</xsl:when>
       		<xsl:when test="$myparam.upper='SYP'"><xsl:value-of select="$myparam"/> (Syrian Pound)</xsl:when>
       		<xsl:when test="$myparam.upper='SZL'"><xsl:value-of select="$myparam"/> (Lilangeni)</xsl:when>
@@ -156,10 +156,11 @@
       		<xsl:when test="$myparam.upper='UGX'"><xsl:value-of select="$myparam"/> (Uganda Shilling)</xsl:when>
       		<xsl:when test="$myparam.upper='USD'"><xsl:value-of select="$myparam"/> (US Dollar)</xsl:when>
       		<xsl:when test="$myparam.upper='USN'"><xsl:value-of select="$myparam"/> (US Dollar (Next day))</xsl:when>
-      		<xsl:when test="$myparam.upper='UYI'"><xsl:value-of select="$myparam"/> (Uruguay Peso en Unidades Indexadas (URUIURUI))</xsl:when>
+      		<xsl:when test="$myparam.upper='UYI'"><xsl:value-of select="$myparam"/> (Uruguay Peso en Unidades Indexadas (UI))</xsl:when>
       		<xsl:when test="$myparam.upper='UYU'"><xsl:value-of select="$myparam"/> (Peso Uruguayo)</xsl:when>
+      		<xsl:when test="$myparam.upper='UYW'"><xsl:value-of select="$myparam"/> (Unidad Previsional)</xsl:when>
       		<xsl:when test="$myparam.upper='UZS'"><xsl:value-of select="$myparam"/> (Uzbekistan Sum)</xsl:when>
-      		<xsl:when test="$myparam.upper='VEF'"><xsl:value-of select="$myparam"/> (Bolívar)</xsl:when>
+      		<xsl:when test="$myparam.upper='VES'"><xsl:value-of select="$myparam"/> (Bolívar Soberano)</xsl:when>
       		<xsl:when test="$myparam.upper='VND'"><xsl:value-of select="$myparam"/> (Dong)</xsl:when>
       		<xsl:when test="$myparam.upper='VUV'"><xsl:value-of select="$myparam"/> (Vatu)</xsl:when>
       		<xsl:when test="$myparam.upper='WST'"><xsl:value-of select="$myparam"/> (Tala)</xsl:when>

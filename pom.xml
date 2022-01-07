@@ -5,39 +5,54 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>OpenXRechnungToolbox</groupId>
   <artifactId>org.oxt</artifactId>
-  <version>1.1.1</version>
+  <version>1.1.2</version>
   <name>OpenXRechnungToolbox</name>
   <description>This is the OpenXRechnungToolbox by Dr. Jan C. Thiele</description>
   <packaging>jar</packaging>
   
   <properties>
+	<!-- insert keystore password here -->
+	<keystore.password>password</keystore.password>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+	<jsign.url>https://github.com/ebourg/jsign/releases/download/4.0/jsign-4.0.jar</jsign.url>
     <swt.version>4.6.1</swt.version> 
 	<swt.version.mac32>4.4.2</swt.version.mac32>
-    <lombok.version>1.18.12</lombok.version>
-    <saxon-he.version>9.9.1-7</saxon-he.version>
-    <slf4j.version>1.7.25</slf4j.version>        
-    <log4j.version>1.2.17</log4j.version>
-    <fop.version>2.5</fop.version>     
-    <validatontool.version>1.4.1</validatontool.version>
-	<cii2ubl.verion>1.3.0</cii2ubl.verion>
-           
+    <lombok.version>1.18.22</lombok.version> <!-- 1.18.12 -->
+    <saxon-he.version>9.9.1-7</saxon-he.version> <!-- 10.6 -->    
+    <log4j.version>2.17.1</log4j.version> <!-- 1.2.17 -->
+    <fop.version>2.6</fop.version>    <!-- 2.5 --> 
+    <validatontool.version>1.4.2</validatontool.version> <!-- 1.4.1 -->
+	<cii2ubl.version>1.4.5</cii2ubl.version> <!-- 1.3.0 -->
+    <slf4j.version>1.7.25</slf4j.version>   <!-- 1.7.32 -->   
+  	<launch4j.version>2.1.2</launch4j.version> <!-- 1.7.25 -->
+  	<jaxb.api.version>2.3.1</jaxb.api.version>
+	<jaxb-runtime.version>2.3.4</jaxb-runtime.version>
+	<jaxb-impl.version>2.2.6</jaxb-impl.version>
+	<jakarta.activation.version>1.2.2</jakarta.activation.version>
+	<jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>  	
+	<jsign.version>4.0</jsign.version>
+	<commons-cli.version>1.4</commons-cli.version>
+	<commons-lang3.version>3.10</commons-lang3.version>
+	<commons-io.version>2.7</commons-io.version>
+	<istack.version>3.0.12</istack.version>
+
+	<jansi.version>1.18</jansi.version>
+	<txw2.version>2.3.4</txw2.version>
+
+	<maven-antrun-plugin>3.0.0</maven-antrun-plugin>
+	<maven-assembly-plugin>3.3.0</maven-assembly-plugin>
+
+	<maven.compiler.source>9</maven.compiler.source> 
+ 	<maven.compiler.target>9</maven.compiler.target> 
   	
-  	<!-- <maven.compiler.source>1.9</maven.compiler.source> -->
-  	<!-- <maven.compiler.target>1.9</maven.compiler.target> -->
-  	<maven.compiler.source>1.8</maven.compiler.source>
-  	<maven.compiler.target>1.8</maven.compiler.target>
-  	  	
-  	<launch4j.version>1.7.25</launch4j.version>
-  	
-  	<!-- <min.jre.version>9</min.jre.version> -->
-  	<min.jre.version>8</min.jre.version>
+  	<min.jre.version>9</min.jre.version>
   	<icon.path>resources/images/oxt.ico</icon.path>
   	
   	<jre.path>./openJDK</jre.path>
   </properties>
-  
-  
+
    <profiles>	
     <!--  ******************************* -->
     <!-- profile for 32 Bit Windows -->
@@ -52,7 +67,7 @@
 			</dependency>
 		</dependencies>
 	    <build>	        
-		   <plugins>    
+		   <plugins> 
 			<plugin>
 		        <artifactId>maven-antrun-plugin</artifactId>
 		        <executions>
@@ -62,7 +77,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_32bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, knownIssues.txt, license.txt" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>              
@@ -110,7 +125,29 @@
 			            </configuration>
 			        </execution>			
 			    </executions>		    
-			 </plugin>			
+			 </plugin>
+			<!-- signing the exe -->
+	        <plugin>
+	          <groupId>net.jsign</groupId>
+	          <artifactId>jsign-maven-plugin</artifactId>
+	          <version>${jsign.version}</version>
+	          <executions>
+	            <execution>
+	              <goals>
+	                <goal>sign</goal>
+	              </goals>
+	              <configuration>
+	                <file>${project.build.directory}/OpenXRechnungToolbox.exe</file>
+	                <name>OpenXRechnungToolbox</name>
+	                <url>https://jcthiele.github.io/OpenXRechnungToolbox/</url>
+	                <keystore>keystore.jks</keystore>
+					<tsaurl>http://timestamp.sectigo.com</tsaurl>
+	                <alias>ssl</alias>
+	                <storepass>${keystore.password}</storepass>
+	              </configuration>
+	            </execution>
+	          </executions>
+	        </plugin>			
 		   </plugins>
 		</build>    
 	</profile>
@@ -131,7 +168,7 @@
 			</dependency>
 		</dependencies>
 	    <build>	        
-		   <plugins>    
+		   <plugins>
 			<plugin>
 		        <artifactId>maven-antrun-plugin</artifactId>
 		        <executions>
@@ -141,7 +178,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_64bit_including_Java.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, knownIssues.txt, license.txt" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, CHANGELOG.md, knownIssues.txt, license.txt" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/openJDK" includes="**" prefix="openJDK"/>				   
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
@@ -177,7 +214,6 @@
 			                    <mainClass>org.oxt.toolbox.gui.AppWindow</mainClass>
 			                </classPath>
 			                <icon>${icon.path}</icon>
-			                <!-- <downloadUrl>https://jdk.java.net/14/</downloadUrl>  -->
 			                <downloadUrl>http://java.com/download</downloadUrl>
 			                <jre>
 			                    <minVersion>${min.jre.version}</minVersion>
@@ -192,7 +228,29 @@
 			            </configuration>
 			        </execution>			
 			    </executions>		    
-			 </plugin>			
+			 </plugin>
+			<!-- signing the exe -->
+	        <plugin>
+	          <groupId>net.jsign</groupId>
+	          <artifactId>jsign-maven-plugin</artifactId>
+	          <version>${jsign.version}</version>
+	          <executions>
+	            <execution>
+	              <goals>
+	                <goal>sign</goal>
+	              </goals>
+	              <configuration>
+	                <file>${project.build.directory}/OpenXRechnungToolbox.exe</file>
+	                <name>OpenXRechnungToolbox</name>
+	                <url>https://jcthiele.github.io/OpenXRechnungToolbox/</url>
+	                <keystore>keystore.jks</keystore>
+	                <tsaurl>http://timestamp.sectigo.com</tsaurl>
+	                <alias>ssl</alias>
+	                <storepass>${keystore.password}</storepass>
+	              </configuration>
+	            </execution>
+	          </executions>
+	        </plugin>			
 		   </plugins>
 		</build>    
 	</profile>
@@ -220,7 +278,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_64bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, knownIssues.txt, license.txt" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>              
@@ -269,6 +327,28 @@
 			        </execution>			
 			    </executions>		    
 			 </plugin>
+			<!-- signing the exe -->
+	        <plugin>
+	          <groupId>net.jsign</groupId>
+	          <artifactId>jsign-maven-plugin</artifactId>
+	          <version>${jsign.version}</version>
+	          <executions>
+	            <execution>
+	              <goals>
+	                <goal>sign</goal>
+	              </goals>
+	              <configuration>
+	                <file>${project.build.directory}/OpenXRechnungToolbox.exe</file>
+	                <name>OpenXRechnungToolbox</name>
+	                <url>https://jcthiele.github.io/OpenXRechnungToolbox/</url>
+	                <keystore>keystore.jks</keystore>
+	                <tsaurl>http://timestamp.sectigo.com</tsaurl>
+	                <alias>ssl</alias>
+	                <storepass>${keystore.password}</storepass>
+	              </configuration>
+	            </execution>
+	          </executions>
+	        </plugin>
 		   </plugins>
 		</build>    
 	</profile>
@@ -296,7 +376,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Linux_32bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
@@ -335,7 +415,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Linux_64bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
@@ -374,7 +454,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_32bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
@@ -413,7 +493,7 @@
 		            <configuration>
 		              <tasks>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_64bit.zip">  
-						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
@@ -442,7 +522,7 @@
 	<dependency>
   		<groupId>com.helger</groupId>
   		<artifactId>en16931-cii2ubl</artifactId>
-  		<version>${cii2ubl.verion}</version>
+  		<version>${cii2ubl.version}</version>
 	</dependency>
       <dependency>
             <groupId>org.projectlombok</groupId>
@@ -456,38 +536,111 @@
             <version>${saxon-he.version}</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-	   	<dependency>
-	    	<groupId>org.slf4j</groupId>
-	    	<artifactId>slf4j-log4j12</artifactId>
-	    	<version>${slf4j.version}</version>
-	   	</dependency>  
-	   	<dependency>
-			<groupId>log4j</groupId>
-	    	<artifactId>log4j</artifactId>
+	  	<dependency>
+	    	<groupId>org.apache.logging.log4j</groupId>
+	    	<artifactId>log4j-api</artifactId>
 	    	<version>${log4j.version}</version>
-		</dependency> 
+	  	</dependency>
+	  	<dependency>
+	    	<groupId>org.apache.logging.log4j</groupId>
+	    	<artifactId>log4j-core</artifactId>
+	    	<version>${log4j.version}</version>
+	 	</dependency>
+
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-simple</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
+
+
+<!-- TODO: check for version updates -->
         <dependency>
             <groupId>commons-cli</groupId>
             <artifactId>commons-cli</artifactId>
-            <version>1.4</version>
+            <version>${commons-cli.version}</version> <!-- 1.5.0 -->
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.10</version>
+            <version>${commons-lang3.version}</version> <!-- 3.12.0 -->
         </dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>${commons-io.version}</version> <!-- 2.11.0 -->
+		</dependency>
+		<dependency>
+		    <groupId>com.sun.istack</groupId>
+		    <artifactId>istack-commons-runtime</artifactId>
+		    <version>${istack.version}</version> <!-- 4.0.1 -->
+		</dependency>
+		<dependency>
+		    <groupId>com.sun.activation</groupId>
+		    <artifactId>jakarta.activation</artifactId>
+		    <version>${jakarta.activation.version}</version> <!-- 2.0.1 -->
+		</dependency>
+		<dependency>
+		    <groupId>jakarta.xml.bind</groupId>
+		    <artifactId>jakarta.xml.bind-api</artifactId>
+		    <version>${jakarta.xml.bind-api.version}</version> <!-- 3.0.1 --> 
+		</dependency>
+		<dependency>
+		    <groupId>org.fusesource.jansi</groupId>
+		    <artifactId>jansi</artifactId>
+		    <version>${jansi.version}</version> <!-- 2.4.0 -->
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jaxb</groupId>
+		    <artifactId>txw2</artifactId>
+		    <version>${txw2.version}</version> <!-- 3.0.2 -->
+		</dependency>
+
+
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.3</version>
-            <optional>true</optional>
+            <version>${jaxb-runtime.version}</version> <!-- 3.0.2 -->
+            <!--<optional>true</optional>-->
         </dependency>
+
+		<!-- check -->
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-api</artifactId>
+		    <version>${jaxb.api.version}</version>
+		</dependency>
+
+		<!--
+		<dependency>
+		    <groupId>javax.xml.bind</groupId>
+		    <artifactId>jaxb-core</artifactId>
+		    <version>${jaxb.api.version}</version>
+		</dependency>
+		-->
+
+		<!-- https://mvnrepository.com/artifact/javax.xml.stream/stax-api -->
+		<!--
+		<dependency>
+		    <groupId>javax.xml.stream</groupId>
+		    <artifactId>stax-api</artifactId>
+		    <version>1.0-2</version>
+		</dependency>
+		-->
+
+		<dependency>
+		    <groupId>com.sun.xml.bind</groupId>
+		    <artifactId>jaxb-impl</artifactId>
+		    <version>${jaxb-impl.version}</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/fop -->
 		<dependency>
 		    <groupId>org.apache.xmlgraphics</groupId>
@@ -497,21 +650,62 @@
 		<dependency>
 		    <groupId>com.akathist.maven.plugins.launch4j</groupId>
 		    <artifactId>launch4j-maven-plugin</artifactId>
-		    <version>1.7.25</version>
+		    <version>${launch4j.version}</version> <!-- 1.7.25 -->
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-antrun-plugin -->
+		<dependency>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-antrun-plugin</artifactId>
+		    <version>${maven-antrun-plugin}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->
+		<dependency>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-assembly-plugin</artifactId>
+		    <version>${maven-assembly-plugin}</version>
+		</dependency>
+
+
   </dependencies>
    
   <repositories>
   		<!--  swt repository -->
   		<repository>
 	        <id>maven-eclipse-repo</id>
-	        <url>http://maven-eclipse.github.io/maven</url>
+	        <url>https://maven-eclipse.github.io/maven</url>
 	    </repository>
   </repositories>
    
    
   <build>	        
-   <plugins>    
+   <plugins> 
+	<!--
+    <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.14.0</version>
+        <configuration>
+            <plugins>
+                <plugin>
+                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                    <artifactId>jaxb2-basics</artifactId>
+                    <version>0.11.1</version>
+                </plugin>
+            </plugins>
+        </configuration>
+        <dependencies>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>2.3.4</version>
+                <optional>true</optional>
+            </dependency>
+        </dependencies>
+    </plugin>
+	-->
+  
 	<plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
@@ -545,6 +739,11 @@
 				</copy>
 				<copy todir="${project.build.directory}" >  
 				    <fileset dir="${basedir}">  
+				        <include name="CHANGELOG.md"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
 				        <include name="OpenXRechnungToolbox.sh"/>
 				    </fileset>
 				</copy>
@@ -556,6 +755,18 @@
 				<copy todir="${project.build.directory}" >  
 				    <fileset dir="${basedir}">  
 				        <include name="knownIssues.txt"/>
+				    </fileset>
+				</copy>
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="nsis_installer.nsi"/>
+				    </fileset>
+				</copy>
+				<get src="${jsign.url}"
+ 					 dest="jsign.jar" verbose="true" usetimestamp="true" />
+				<copy todir="${project.build.directory}" >  
+				    <fileset dir="${basedir}">  
+				        <include name="jsign.jar"/>
 				    </fileset>
 				</copy>
               </tasks>

@@ -7,7 +7,7 @@
 		<xsl:variable name="myparam.upper" select="upper-case($myparam)"/>
 		<xsl:choose>
       		<xsl:when test="$myparam.upper='0002'"><xsl:value-of select="$myparam"/> (System Information et Repertoire des Entreprise et des Etablissements: SIRENE)</xsl:when>
-      		<xsl:when test="$myparam.upper='0007'"><xsl:value-of select="$myparam"/> (Organisationsnumme)</xsl:when>
+      		<xsl:when test="$myparam.upper='0007'"><xsl:value-of select="$myparam"/> (Organisationsnummer)</xsl:when>
       		<xsl:when test="$myparam.upper='0009'"><xsl:value-of select="$myparam"/> (SIRET-CODE)</xsl:when>
       		<xsl:when test="$myparam.upper='0037'"><xsl:value-of select="$myparam"/> (LY-tunnus)</xsl:when>
       		<xsl:when test="$myparam.upper='0060'"><xsl:value-of select="$myparam"/> (Data Universal Numbering System (D-U-N-S Number))</xsl:when>
@@ -25,6 +25,7 @@
       		<xsl:when test="$myparam.upper='0191'"><xsl:value-of select="$myparam"/> (Centre of Registers and Information Systems of the Ministry of Justice)</xsl:when>
       		<xsl:when test="$myparam.upper='0192'"><xsl:value-of select="$myparam"/> (Enhetsregisteret ved Bronnoysundregisterne)</xsl:when>
       		<xsl:when test="$myparam.upper='0193'"><xsl:value-of select="$myparam"/> (UBL.BE party identifier)</xsl:when>
+      		<xsl:when test="$myparam.upper='0194'"><xsl:value-of select="$myparam"/> (KOIOS Open Technical Dictionary)</xsl:when>
       		<xsl:when test="$myparam.upper='0195'"><xsl:value-of select="$myparam"/> (Singapore UEN identifier)</xsl:when>
       		<xsl:when test="$myparam.upper='0196'"><xsl:value-of select="$myparam"/> (Kennitala - Iceland legal id for individuals and legal entities)</xsl:when>
       		<xsl:when test="$myparam.upper='0198'"><xsl:value-of select="$myparam"/> (ERSTORG)</xsl:when>
@@ -34,6 +35,12 @@
       		<xsl:when test="$myparam.upper='0202'"><xsl:value-of select="$myparam"/> (Indirizzo di Posta Elettronica Certificata)</xsl:when>
       		<xsl:when test="$myparam.upper='0203'"><xsl:value-of select="$myparam"/> (eDelivery Network Participant identifier)</xsl:when>
       		<xsl:when test="$myparam.upper='0204'"><xsl:value-of select="$myparam"/> (Leitweg-ID)</xsl:when>
+      		<xsl:when test="$myparam.upper='0208'"><xsl:value-of select="$myparam"/> (Numero d'entreprise / ondernemingsnummer / Unternehmensnummer)</xsl:when>
+      		<xsl:when test="$myparam.upper='0209'"><xsl:value-of select="$myparam"/> (GS1 identification keys)</xsl:when>
+      		<xsl:when test="$myparam.upper='0210'"><xsl:value-of select="$myparam"/> (CODICE FISCALE)</xsl:when>
+      		<xsl:when test="$myparam.upper='0211'"><xsl:value-of select="$myparam"/> (PARTITA IVA)</xsl:when>
+      		<xsl:when test="$myparam.upper='0212'"><xsl:value-of select="$myparam"/> (Finnish Organization Identifier)</xsl:when>
+      		<xsl:when test="$myparam.upper='0213'"><xsl:value-of select="$myparam"/> (Finnish Organization Value Add Tax Identifier)</xsl:when>
       		<xsl:when test="$myparam.upper='9901'"><xsl:value-of select="$myparam"/> (Danish Ministry of the Interior and Health)</xsl:when>
       		<xsl:when test="$myparam.upper='9902'"><xsl:value-of select="$myparam"/> (The Danish Commerce and Companies Agency)</xsl:when>
       		<xsl:when test="$myparam.upper='9904'"><xsl:value-of select="$myparam"/> (Danish Ministry of Taxation, Central Customs and Tax Administration)</xsl:when>

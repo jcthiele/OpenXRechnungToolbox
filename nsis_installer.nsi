@@ -19,13 +19,13 @@
 
 
 ; The name of the installer
-Name "OpenXRechnungToolbox v1.1.1"
+Name "OpenXRechnungToolbox v1.1.2"
 
 ; The icon
 Icon "resources/images/oxt.ico"
 
 ; The file to write
-OutFile "OpenXRechnungToolbox_v1.1.1_Installer.exe"
+OutFile "OpenXRechnungToolbox_v1.1.2_Installer.exe"
 
 ; Request application privileges for Windows Vista and higher
 RequestExecutionLevel admin
@@ -39,6 +39,9 @@ InstallDir $PROGRAMFILES\OpenXRechnungToolbox
 ; Registry key to check for directory (so if you install again, it will 
 ; overwrite the old one automatically)
 InstallDirRegKey HKLM "Software\OpenXRechnungToolbox" "Install_Dir"
+
+; sign the installer; insert storepass password; insert the outfile name at the end
+!finalize 'java -jar jsign.jar --keystore ../keystore.jks --alias ssl --storepass password --tsaurl http://timestamp.sectigo.com OpenXRechnungToolbox_v1.1.2_Installer.exe'
 
 ;--------------------------------
 
@@ -88,6 +91,7 @@ Section "Installation (required)"
   File "OpenXRechnungToolbox.exe"
   File "license.txt"
   File "knownIssues.txt"
+  File "CHANGELOG.md"
   File /r "resources"
   File /r "openJDK"
 
@@ -157,6 +161,7 @@ Section "Uninstall"
   Delete $INSTDIR\OpenXRechnungToolbox.exe
   Delete $INSTDIR\license.txt
   Delete $INSTDIR\knownIssues.txt
+  Delete $INSTDIR\CHANGELOG.md
   Delete $INSTDIR\uninstall.exe
 
   ; Remove shortcuts, if any

@@ -11,9 +11,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.oxt.toolbox.gui.AppWindow;
+import org.oxt.toolbox.helpers.LogConfigurator;
 import org.oxt.toolbox.visualization.VisualizerImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+
 import org.w3c.dom.Document;
 
 import com.helger.cii.d16b.CIID16BReader;
@@ -52,7 +53,8 @@ public class ConverterImpl implements IConverter {
 	 * @param display Mother display
 	 */
 	public ConverterImpl(Display display) {
-		this.logger = LoggerFactory.getLogger(VisualizerImpl.class);
+		this.logger = LogConfigurator.LogConfig(VisualizerImpl.class);
+		
 		this.display = display;
 		this.shell = new Shell(this.display);
 	}

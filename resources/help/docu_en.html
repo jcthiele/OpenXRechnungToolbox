@@ -30,18 +30,18 @@ Released   : 20130801
 
 
 <div id="logo" class="container">
-	<h1><span class="icon icon-o icon-size2"></span><span class="icon icon-x icon-size"></span><span class="icon icon-t icon-size2"></span><a href="index.html">Open<span>XRechnung</span>Toolbox</a></h1>
-	<p>by <a href="author.html" rel="nofollow">Dr. Jan C. Thiele</a></p>
+	<h1><span class="icon icon-o icon-size2"></span><span class="icon icon-x icon-size"></span><span class="icon icon-t icon-size2"></span><a href="index_en.html">Open<span>XRechnung</span>Toolbox</a></h1>
+	<p>by <a href="author_en.html" rel="nofollow">Dr. Jan C. Thiele</a></p>
 </div>
 <div id="wrapper" class="container">
 	<div id="menu" class="container">
 		<ul>
-			<li><a href="index.html" accesskey="1" title="">OXT</a></li>
-			<li><a href="author.html" accesskey="1" title="">Autor</a></li>
-			<li><a href="manual.html" accesskey="2" title="">Benutzerhandbuch</a></li>
-			<li class="current_page_item"><a href="docu.html" accesskey="3" title="">Dokumentation</a></li>
-			<li><a href="license.html" accesskey="4" title="">Lizenz</a></li>
-			<li><a href="impress.html" accesskey="5" title="">Impressum</a></li>
+			<li><a href="index_en.html" accesskey="1" title="">OXT</a></li>
+			<li><a href="author_en.html" accesskey="1" title="">Autor</a></li>
+			<li><a href="manual_en.html" accesskey="2" title="">Benutzerhandbuch</a></li>
+			<li class="current_page_item"><a href="docu_en.html" accesskey="3" title="">Dokumentation</a></li>
+			<li><a href="license_en.html" accesskey="4" title="">Lizenz</a></li>
+			<li><a href="impress_en.html" accesskey="5" title="">Impressum</a></li>
 		</ul>
 	</div>
 	<div id="three-column" class="container">
@@ -142,13 +142,19 @@ Released   : 20130801
 			Die Codelistenauflösung ist ein eigenständiges Projekt, ebenfalls von Dr. Jan C. Thiele. Dieses Projekt hat eine eigene Dokumentation, die hier 
 			zu finden ist: <a href="https://github.com/jcthiele/xrechnung-visualization-codelist-resolve">Projekt Codelistenauflösung</a>.
 			</p>
+			<p>
+			Ergänzend kann bei der Visualisierung die Ausgabesprache gewählt bzw. neue Sprachen hinzugefügt werden.
+			Die Einstellung findet sich im Key <i>viz.language</i>.
+			Soll eine weitere Sprache ergänzt werden, so ist eine entsprechende Sprachdatei im Ordner <i>resources/viewer/l10n</i> anzulegen, in den Dateien 
+			<i>xr-content.xsl</i> und <i>xrechnung-html.xsl</i> Einträge für <i>decimal-format</i> vorzunehmen sowie im Key <i>available_vizLanguages</i> das Sprachkürzel zu ergänzen.
+			</p>
 			<h4><a id="help">Hilfedateien</a></h4>
 			<p class="h4">
 			Die vorliegenden Hilfedateien sind im Speicherpfade <i>resources/help</i> abgelegt. Dort können die HTML-Dateien angepasst werden, z.B. wenn Weiterentwicklungen der Toolbox vorgenommen wurden.
 			</p>
 			<h4><a id="logging">Logging</a></h4>
 			<p class="h4">
-			In der Datei <i>resources/log4j.properties</i> können das Logging der Toolbox konfiguriert werden. Dieses basiert auf der Java-Bibliothek <a href="https://logging.apache.org/log4j/2.x/" target="_blank">log4j</a> mit den entsprechenden Konfigurationsmöglichkeiten.			
+			In der Datei <i>resources/log4j2.xml</i> können das Logging der Toolbox konfiguriert werden. Dieses basiert auf der Java-Bibliothek <a href="https://logging.apache.org/log4j/2.x/" target="_blank">log4j</a> mit den entsprechenden Konfigurationsmöglichkeiten.			
 			</p>
 			<h3><a id="development">Entwicklung und Build</a></h3>
 			<p>
@@ -158,7 +164,7 @@ Released   : 20130801
 			Für die Erzeugung der graphischen Benutzeroberfläche wird die SWT-Bibliothek verwendet. <br />
 			Für die Validator-Bibliothek steht kein Maven-Repository zur Verfügung. Daher wird die Bibliothek im lib-Ordner mitgeliefert und muss von dort ins lokale Repository übertragen werden.<br />
 			Dies kann über den Befehl:
-			<i>mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.4.1.jar</i>
+			<i>mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.4.2.jar</i>
 			erfolgen.
 			</p>
 			<p>
@@ -178,6 +184,20 @@ Released   : 20130801
 			Das Fenster für die Konfiguration der Einstellungen wird durch die Klasse <i>SettingsWindow.java</i> bereitgestellt.
 			Alle weiteren Informationen können der <a href="./javadoc/index.html" target="_blank">javadoc Dokumentation</a> entnommen werden.
 			</p>
+			<p>
+			Die einzelnen Schritte für die Erzeugung sind:
+			<ul>
+				<li>KoSIT validation tool, OpenJDK herunterladen</li>
+				<li>JDK, NSIS, Maven & Eclipse installieren</li>
+				<li>KoSIT validation tool in Maven registrieren: <i>mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.4.2.jar</i></li>
+				<li>Eclipse Existing Maven Project importieren</li>
+				<li><i>create_keystore.bat</i> ausführen</li>
+				<li>keystore Passwort in Property <i>keystore.password</i> in <i>pom.xml</i> eintragen</li>
+				<li><i>build_all_archs.bat</i> ausführen (mvn clean; mvn install)</li>
+				<li>keystore Passwort in Zeile <i>finalize!</i> in <i>target/nsis_installer.nsi</i> eintragen</li>
+				<li><i>nsis_installer.nsi</i> in Ordner target mit NSIS ausführen</li>
+			</ul>
+			</p>			
 		</div>		
 	</div>
 

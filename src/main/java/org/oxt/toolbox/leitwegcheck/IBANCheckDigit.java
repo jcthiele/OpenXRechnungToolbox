@@ -117,7 +117,7 @@ package org.oxt.toolbox.leitwegcheck;
 	     *
 	     * @param code The code to calculate the modulus for.
 	     * @return The modulus value
-	     * @throws CheckDigitExceptionOld if an error occurs calculating the modulus
+	     * @throws CheckDigitException if an error occurs calculating the modulus
 	     * for the specified code
 	     */
 	    private int calculateModulus(String code) throws CheckDigitException {

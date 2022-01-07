@@ -6,7 +6,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.oxt.toolbox.gui.AppWindow;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.Logger;
+
 
 /**
  * Class to define a custom selection adapter

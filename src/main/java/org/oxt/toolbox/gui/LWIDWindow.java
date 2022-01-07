@@ -21,10 +21,10 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.oxt.toolbox.helpers.AppProperties;
 import org.oxt.toolbox.helpers.CustomHelpSelectionAdapter;
+import org.oxt.toolbox.helpers.LogConfigurator;
 import org.oxt.toolbox.leitwegcheck.CheckDigitException;
 import org.oxt.toolbox.leitwegcheck.LeitwegCheckerImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
 
 
 /**
@@ -91,7 +91,8 @@ public class LWIDWindow {
 	 * @param display Display widget
 	 */
 	public LWIDWindow(Display display) {
-			this.logger = LoggerFactory.getLogger(LWIDWindow.class);
+			this.logger = LogConfigurator.LogConfig(HTMLWindow.class);
+			
 			this.display = display;
 			this.shell = new Shell(this.display);
 

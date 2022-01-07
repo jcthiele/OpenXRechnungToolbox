@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="OXT" packages="">
+	<Appenders>
+		<File name="FILE" fileName="log/oxt_v112.log" append="true">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd-HH:mm:ss} | %-5p | %C (%F:%L) | %m%n</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="error">
+			<AppenderRef ref="FILE" />
+		</Root>
+	</Loggers>
+</Configuration>

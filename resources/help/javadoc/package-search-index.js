@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.oxt.toolbox.converter"},{"l":"org.oxt.toolbox.gui"},{"l":"org.oxt.toolbox.helpers"},{"l":"org.oxt.toolbox.leitwegcheck"},{"l":"org.oxt.toolbox.validation"},{"l":"org.oxt.toolbox.visualization"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.oxt.toolbox.converter"},{"l":"org.oxt.toolbox.gui"},{"l":"org.oxt.toolbox.helpers"},{"l":"org.oxt.toolbox.leitwegcheck"},{"l":"org.oxt.toolbox.validation"},{"l":"org.oxt.toolbox.visualization"}];updateSearchResults();

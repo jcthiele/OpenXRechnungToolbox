@@ -10,8 +10,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.oxt.toolbox.gui.HTMLWindow;
 import org.oxt.toolbox.validation.ValidatorImpl;
 import org.oxt.toolbox.visualization.VisualizerImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Class to define a custom drop target adapter.
@@ -34,7 +34,7 @@ public class CustomDropTargetAdapter extends DropTargetAdapter {
 	 * @param vali indicator, if called for validation
 	 */
 	public CustomDropTargetAdapter(Shell shell, FileTransfer fileTransfer, boolean viz, boolean vali) {
-		this.logger = LoggerFactory.getLogger(CustomDropTargetAdapter.class);
+		this.logger = LogConfigurator.LogConfig(CustomDropTargetAdapter.class);
 		this.shell = shell;
 		this.viz = viz;
 		this.vali = vali;

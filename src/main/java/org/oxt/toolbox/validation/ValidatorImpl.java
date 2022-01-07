@@ -30,7 +30,8 @@ import de.kosit.validationtool.api.InputFactory;
 import de.kosit.validationtool.api.Result;
 import de.kosit.validationtool.impl.DefaultCheck;
 import de.kosit.validationtool.impl.DefaultResult;
-import de.kosit.validationtool.impl.ResolvingMode;
+
+import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Class implementing the validation report processing (implements the IValidator interface).
@@ -59,17 +60,25 @@ public class ValidatorImpl implements IValidator {
 	 */
 	//public StringWriter runValidation(String invoiceFile, String invoicePath, String scenarioXmlPath) throws XMLStreamException, IOException, Exception {
 	public String runValidation(String invoiceFile, String invoicePath, String scenarioXmlPath) throws XMLStreamException, IOException, Exception {
+		
 		this.invoicePath = invoicePath;
 		this.invoiceFile = invoiceFile;
 		Path testDoc = Paths.get(invoicePath);	
 		
 		// Load scenarios.xml 
         String valiVersion = AppProperties.prop.getProperty("valiVersion");
+        
         File scenarios = new File(AppProperties.prop.getProperty("validator.scenario."+valiVersion));			
+        //URL scenarios = this.getClass().getClassLoader().getResource(AppProperties.prop.getProperty("validator.scenario."+valiVersion));
+                
         // Load the rest of the specific Validator configuration from classpath
+        /*
         Configuration config = Configuration.load(scenarios.toURI())
         		.setResolvingMode(ResolvingMode.STRICT_LOCAL)
-        		.build();		
+        		.build();	
+        */
+        Configuration config = Configuration.load(scenarios.toURI()).build();
+                
         // Validate a single document
 		Input document = InputFactory.read(testDoc);		
         // Use the default validation procedure

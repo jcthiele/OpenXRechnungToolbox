@@ -8,9 +8,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
-import org.oxt.toolbox.gui.AppWindow;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Helper class to store software properties.
@@ -33,7 +32,8 @@ public class AppProperties {
 	 * @param fileName name/path of config file
 	 */
 	public static void initializeProperties(String fileName) {	
-		Logger logger = LoggerFactory.getLogger(AppWindow.class);
+		Logger logger = LogConfigurator.LogConfig(AppProperties.class);
+
 		AppProperties.fileName = fileName;
 		AppProperties.prop = new Properties();
 		InputStream is = null;

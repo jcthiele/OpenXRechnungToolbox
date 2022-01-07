@@ -160,7 +160,7 @@
       		<xsl:when test="$myparam.upper='0155'"><xsl:value-of select="$myparam"/> (Global Crossing AESA (ATM End System Address))</xsl:when>
       		<xsl:when test="$myparam.upper='0156'"><xsl:value-of select="$myparam"/> (AUNA)</xsl:when>
       		<xsl:when test="$myparam.upper='0157'"><xsl:value-of select="$myparam"/> (ATM interconnection with the Dutch KPN Telecom)</xsl:when>
-      		<xsl:when test="$myparam.upper='0158'"><xsl:value-of select="$myparam"/> (Identification number of economic subject (ICO) Act on State Statistics of 29 November 2'001, § 27)</xsl:when>
+      		<xsl:when test="$myparam.upper='0158'"><xsl:value-of select="$myparam"/> (Identification number of economic subject (ICO) Act on State Statistics of 29 November 2001, § 27)</xsl:when>
       		<xsl:when test="$myparam.upper='0159'"><xsl:value-of select="$myparam"/> (ACTALIS Object Identifiers)</xsl:when>
       		<xsl:when test="$myparam.upper='0160'"><xsl:value-of select="$myparam"/> (GTIN - Global Trade Item Number)</xsl:when>
       		<xsl:when test="$myparam.upper='0161'"><xsl:value-of select="$myparam"/> (ECCMA Open Technical Directory)</xsl:when>
@@ -210,6 +210,10 @@
       		<xsl:when test="$myparam.upper='0207'"><xsl:value-of select="$myparam"/> (PiLog Ontology Codification Identifier (POCI))</xsl:when>
       		<xsl:when test="$myparam.upper='0208'"><xsl:value-of select="$myparam"/> (Numero d'entreprise / ondernemingsnummer / Unternehmensnummer)</xsl:when>
       		<xsl:when test="$myparam.upper='0209'"><xsl:value-of select="$myparam"/> (GS1 identification keys)</xsl:when>
+      		<xsl:when test="$myparam.upper='0210'"><xsl:value-of select="$myparam"/> (CODICE FISCALE)</xsl:when>
+      		<xsl:when test="$myparam.upper='0211'"><xsl:value-of select="$myparam"/> (PARTITA IVA)</xsl:when>
+      		<xsl:when test="$myparam.upper='0212'"><xsl:value-of select="$myparam"/> (Finnish Organization Identifier)</xsl:when>
+      		<xsl:when test="$myparam.upper='0213'"><xsl:value-of select="$myparam"/> (Finnish Organization Value Add Tax Identifier)</xsl:when>
    			<xsl:otherwise><xsl:value-of select="$myparam"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>

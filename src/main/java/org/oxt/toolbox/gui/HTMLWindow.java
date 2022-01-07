@@ -17,10 +17,10 @@ import org.eclipse.swt.widgets.*;
 import org.oxt.toolbox.helpers.AppProperties;
 import org.oxt.toolbox.helpers.CustomHelpSelectionAdapter;
 import org.oxt.toolbox.helpers.CustomSelectionAdapter;
+import org.oxt.toolbox.helpers.LogConfigurator;
 import org.oxt.toolbox.validation.ValidatorImpl;
 import org.oxt.toolbox.visualization.VisualizerImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class to create HTML browser window to display 
@@ -240,7 +240,8 @@ public class HTMLWindow {
 	 * @param html html string to be displayed (visualization or validation report)
 	 */
 	public void launch(Display display, VisualizerImpl viz, ValidatorImpl val, String currentInvoice, String currentInvoicePath, String html) {
-		this.logger = LoggerFactory.getLogger(HTMLWindow.class);
+		this.logger = LogConfigurator.LogConfig(HTMLWindow.class);
+
 		this.viz = viz;
 		this.val = val;
 		this.currentInvoice = currentInvoice;

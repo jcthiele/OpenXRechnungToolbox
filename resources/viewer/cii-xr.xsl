@@ -329,11 +329,11 @@
    </xsl:template>
    <xsl:template mode="BT-23"
                  match="/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext/ram:BusinessProcessSpecifiedDocumentContextParameter/ram:ID">
-      <xr:Business_process_type>
+      <xr:Business_process_type_identifier>
          <xsl:attribute name="xr:id" select="'BT-23'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
          <xsl:call-template name="text"/>
-      </xr:Business_process_type>
+      </xr:Business_process_type_identifier>
    </xsl:template>
    <xsl:template mode="BT-24"
                  match="/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext/ram:GuidelineSpecifiedDocumentContextParameter/ram:ID">
@@ -1175,13 +1175,17 @@
          <xsl:apply-templates mode="BT-84" select="./ram:ProprietaryID"/>
          <xsl:apply-templates mode="BT-84" select="./ram:IBANID"/>
          <xsl:apply-templates mode="BT-85" select="./ram:AccountName"/>
+		 
+		 <!-- Anpassung, dass nur eine (richtige) BIC pro Bankverbindung angezeigt wird -->
+		 <xsl:apply-templates mode="BT-86" select="./../ram:PayeeSpecifiedCreditorFinancialInstitution/ram:BICID"/>
+		 <!--
          <xr:Payment_service_provider_identifier>
             <xsl:attribute name="xr:id" select="'BT-86'"/>
             <xsl:attribute name="xr:src" select="'/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayeeSpecifiedCreditorFinancialInstitution/ram:BICID'"/>            
             <xsl:call-template name="distinct-bt-86">
                <xsl:with-param name="bic-values" select="distinct-values(/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayeeSpecifiedCreditorFinancialInstitution/ram:BICID)"/>
             </xsl:call-template>
-         </xr:Payment_service_provider_identifier>
+         </xr:Payment_service_provider_identifier>-->
       </xsl:variable>
       <xsl:if test="$bg-contents">
          <xr:CREDIT_TRANSFER>
@@ -1214,7 +1218,17 @@
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
          <xsl:call-template name="text"/>
       </xr:Payment_account_name>
-   </xsl:template>   
+   </xsl:template>
+   
+   <!-- Anpassung, dass nur eine (richtige) BIC pro Bankverbindung angezeigt wird -->
+   <xsl:template mode="BT-86"
+                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayeeSpecifiedCreditorFinancialInstitution/ram:BICID">
+      <xr:Payment_service_provider_identifier>
+         <xsl:attribute name="xr:id" select="'BT-86'"/>
+         <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
+         <xsl:call-template name="text"/>
+      </xr:Payment_service_provider_identifier>
+   </xsl:template> 
    <xsl:template name="distinct-bt-86"     >      
       <xsl:param as="xs:string*" name="bic-values"></xsl:param>
       <xsl:for-each select="$bic-values">

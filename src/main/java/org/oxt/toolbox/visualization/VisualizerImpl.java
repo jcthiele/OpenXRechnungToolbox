@@ -37,10 +37,11 @@ import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 import org.oxt.toolbox.gui.AppWindow;
 import org.oxt.toolbox.helpers.AppProperties;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.oxt.toolbox.helpers.LogConfigurator;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+
 
 /**
  * Class implementing the visualization processing (implements the IVisualizer interface).
@@ -70,7 +71,7 @@ public class VisualizerImpl implements IVisualizer {
 	Logger logger;
 	
 	public VisualizerImpl() {
-		this.logger = LoggerFactory.getLogger(VisualizerImpl.class);
+		this.logger = LogConfigurator.LogConfig(VisualizerImpl.class);
 	}
 	
 	
@@ -215,7 +216,9 @@ public class VisualizerImpl implements IVisualizer {
         // Obtain the XSLT transformer
         Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath)); 
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
- 
+	    // Set language of visualization labels
+	    transformer.setParameter("lang", AppProperties.prop.getProperty("viz.language"));
+
         StringWriter sw = new StringWriter();
         StreamResult result = new StreamResult(sw);        
         transformer.transform(source, result);
@@ -250,6 +253,8 @@ public class VisualizerImpl implements IVisualizer {
 	      // Setup XSLT
 	      TransformerFactory factory = TransformerFactory.newInstance();
 	      Transformer transformer = factory.newTransformer(new StreamSource(xslPath));        
+	      // Set language of visualization labels
+	      transformer.setParameter("lang", AppProperties.prop.getProperty("viz.language"));
 	      // Setup input for XSLT transformation
 	      StreamSource source = new StreamSource(new StringReader(this.intermediateXML.toString()));
 	      // Resulting SAX events (the generated FO) must be piped through to FOP

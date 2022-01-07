@@ -6,41 +6,42 @@
 		<xsl:param name="myparam"/>
 		<xsl:variable name="myparam.upper" select="upper-case($myparam)"/>
 		<xsl:choose>
+      		<xsl:when test="$myparam.upper='05'"><xsl:value-of select="$myparam"/> (lift)</xsl:when>
+      		<xsl:when test="$myparam.upper='06'"><xsl:value-of select="$myparam"/> (small spray)</xsl:when>
+      		<xsl:when test="$myparam.upper='08'"><xsl:value-of select="$myparam"/> (heat lot)</xsl:when>
       		<xsl:when test="$myparam.upper='10'"><xsl:value-of select="$myparam"/> (group)</xsl:when>
       		<xsl:when test="$myparam.upper='11'"><xsl:value-of select="$myparam"/> (outfit)</xsl:when>
       		<xsl:when test="$myparam.upper='13'"><xsl:value-of select="$myparam"/> (ration)</xsl:when>
       		<xsl:when test="$myparam.upper='14'"><xsl:value-of select="$myparam"/> (shot)</xsl:when>
       		<xsl:when test="$myparam.upper='15'"><xsl:value-of select="$myparam"/> (stick, military)</xsl:when>
+      		<xsl:when test="$myparam.upper='16'"><xsl:value-of select="$myparam"/> (hundred fifteen kg drum)</xsl:when>
+      		<xsl:when test="$myparam.upper='17'"><xsl:value-of select="$myparam"/> (hundred lb drum)</xsl:when>
+      		<xsl:when test="$myparam.upper='18'"><xsl:value-of select="$myparam"/> (fiftyfive gallon (US) drum)</xsl:when>
+      		<xsl:when test="$myparam.upper='19'"><xsl:value-of select="$myparam"/> (tank truck)</xsl:when>
+      		<xsl:when test="$myparam.upper='1A'"><xsl:value-of select="$myparam"/> (car mile)</xsl:when>
+      		<xsl:when test="$myparam.upper='1B'"><xsl:value-of select="$myparam"/> (car count)</xsl:when>
+      		<xsl:when test="$myparam.upper='1C'"><xsl:value-of select="$myparam"/> (locomotive count)</xsl:when>
+      		<xsl:when test="$myparam.upper='1D'"><xsl:value-of select="$myparam"/> (caboose count)</xsl:when>
+      		<xsl:when test="$myparam.upper='1E'"><xsl:value-of select="$myparam"/> (empty car)</xsl:when>
+      		<xsl:when test="$myparam.upper='1F'"><xsl:value-of select="$myparam"/> (train mile)</xsl:when>
+      		<xsl:when test="$myparam.upper='1G'"><xsl:value-of select="$myparam"/> (fuel usage gallon (US))</xsl:when>
+      		<xsl:when test="$myparam.upper='1H'"><xsl:value-of select="$myparam"/> (caboose mile)</xsl:when>
+      		<xsl:when test="$myparam.upper='1I'"><xsl:value-of select="$myparam"/> (fixed rate)</xsl:when>
+      		<xsl:when test="$myparam.upper='1J'"><xsl:value-of select="$myparam"/> (ton mile)</xsl:when>
+      		<xsl:when test="$myparam.upper='1K'"><xsl:value-of select="$myparam"/> (locomotive mile)</xsl:when>
+      		<xsl:when test="$myparam.upper='1L'"><xsl:value-of select="$myparam"/> (total car count)</xsl:when>
+      		<xsl:when test="$myparam.upper='1M'"><xsl:value-of select="$myparam"/> (total car mile)</xsl:when>
+      		<xsl:when test="$myparam.upper='1X'"><xsl:value-of select="$myparam"/> (quarter mile)</xsl:when>
       		<xsl:when test="$myparam.upper='20'"><xsl:value-of select="$myparam"/> (twenty foot container)</xsl:when>
       		<xsl:when test="$myparam.upper='21'"><xsl:value-of select="$myparam"/> (forty foot container)</xsl:when>
       		<xsl:when test="$myparam.upper='22'"><xsl:value-of select="$myparam"/> (decilitre per gram)</xsl:when>
       		<xsl:when test="$myparam.upper='23'"><xsl:value-of select="$myparam"/> (gram per cubic centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='24'"><xsl:value-of select="$myparam"/> (theoretical pound)</xsl:when>
       		<xsl:when test="$myparam.upper='25'"><xsl:value-of select="$myparam"/> (gram per square centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='26'"><xsl:value-of select="$myparam"/> (actual ton)</xsl:when>
       		<xsl:when test="$myparam.upper='27'"><xsl:value-of select="$myparam"/> (theoretical ton)</xsl:when>
       		<xsl:when test="$myparam.upper='28'"><xsl:value-of select="$myparam"/> (kilogram per square metre)</xsl:when>
-      		<xsl:when test="$myparam.upper='33'"><xsl:value-of select="$myparam"/> (kilopascal square metre per gram)</xsl:when>
-      		<xsl:when test="$myparam.upper='34'"><xsl:value-of select="$myparam"/> (kilopascal per millimetre)</xsl:when>
-      		<xsl:when test="$myparam.upper='35'"><xsl:value-of select="$myparam"/> (millilitre per square centimetre second)</xsl:when>
-      		<xsl:when test="$myparam.upper='37'"><xsl:value-of select="$myparam"/> (ounce per square foot)</xsl:when>
-      		<xsl:when test="$myparam.upper='38'"><xsl:value-of select="$myparam"/> (ounce per square foot per 0,01inch)</xsl:when>
-      		<xsl:when test="$myparam.upper='40'"><xsl:value-of select="$myparam"/> (millilitre per second)</xsl:when>
-      		<xsl:when test="$myparam.upper='41'"><xsl:value-of select="$myparam"/> (millilitre per minute)</xsl:when>
-      		<xsl:when test="$myparam.upper='56'"><xsl:value-of select="$myparam"/> (sitas)</xsl:when>
-      		<xsl:when test="$myparam.upper='57'"><xsl:value-of select="$myparam"/> (mesh)</xsl:when>
-      		<xsl:when test="$myparam.upper='58'"><xsl:value-of select="$myparam"/> (net kilogram)</xsl:when>
-      		<xsl:when test="$myparam.upper='59'"><xsl:value-of select="$myparam"/> (part per million)</xsl:when>
-      		<xsl:when test="$myparam.upper='60'"><xsl:value-of select="$myparam"/> (percent weight)</xsl:when>
-      		<xsl:when test="$myparam.upper='61'"><xsl:value-of select="$myparam"/> (part per billion (US))</xsl:when>
-      		<xsl:when test="$myparam.upper='74'"><xsl:value-of select="$myparam"/> (millipascal)</xsl:when>
-      		<xsl:when test="$myparam.upper='77'"><xsl:value-of select="$myparam"/> (milli-inch)</xsl:when>
-      		<xsl:when test="$myparam.upper='80'"><xsl:value-of select="$myparam"/> (pound per square inch absolute)</xsl:when>
-      		<xsl:when test="$myparam.upper='81'"><xsl:value-of select="$myparam"/> (henry)</xsl:when>
-      		<xsl:when test="$myparam.upper='85'"><xsl:value-of select="$myparam"/> (foot pound-force)</xsl:when>
-      		<xsl:when test="$myparam.upper='87'"><xsl:value-of select="$myparam"/> (pound per cubic foot)</xsl:when>
-      		<xsl:when test="$myparam.upper='89'"><xsl:value-of select="$myparam"/> (poise)</xsl:when>
-      		<xsl:when test="$myparam.upper='91'"><xsl:value-of select="$myparam"/> (stokes)</xsl:when>
-      		<xsl:when test="$myparam.upper='1I'"><xsl:value-of select="$myparam"/> (fixed rate)</xsl:when>
+      		<xsl:when test="$myparam.upper='29'"><xsl:value-of select="$myparam"/> (pound per thousand square foot)</xsl:when>
       		<xsl:when test="$myparam.upper='2A'"><xsl:value-of select="$myparam"/> (radian per second)</xsl:when>
       		<xsl:when test="$myparam.upper='2B'"><xsl:value-of select="$myparam"/> (radian per second squared)</xsl:when>
       		<xsl:when test="$myparam.upper='2C'"><xsl:value-of select="$myparam"/> (roentgen)</xsl:when>
@@ -56,12 +57,38 @@
       		<xsl:when test="$myparam.upper='2Q'"><xsl:value-of select="$myparam"/> (kilobecquerel)</xsl:when>
       		<xsl:when test="$myparam.upper='2R'"><xsl:value-of select="$myparam"/> (kilocurie)</xsl:when>
       		<xsl:when test="$myparam.upper='2U'"><xsl:value-of select="$myparam"/> (megagram)</xsl:when>
+      		<xsl:when test="$myparam.upper='2V'"><xsl:value-of select="$myparam"/> (megagram per hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='2W'"><xsl:value-of select="$myparam"/> (bin)</xsl:when>
       		<xsl:when test="$myparam.upper='2X'"><xsl:value-of select="$myparam"/> (metre per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='2Y'"><xsl:value-of select="$myparam"/> (milliroentgen)</xsl:when>
       		<xsl:when test="$myparam.upper='2Z'"><xsl:value-of select="$myparam"/> (millivolt)</xsl:when>
+      		<xsl:when test="$myparam.upper='30'"><xsl:value-of select="$myparam"/> (horse power day per air dry metric ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='31'"><xsl:value-of select="$myparam"/> (catch weight)</xsl:when>
+      		<xsl:when test="$myparam.upper='32'"><xsl:value-of select="$myparam"/> (kilogram per air dry metric ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='33'"><xsl:value-of select="$myparam"/> (kilopascal square metre per gram)</xsl:when>
+      		<xsl:when test="$myparam.upper='34'"><xsl:value-of select="$myparam"/> (kilopascal per millimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='35'"><xsl:value-of select="$myparam"/> (millilitre per square centimetre second)</xsl:when>
+      		<xsl:when test="$myparam.upper='36'"><xsl:value-of select="$myparam"/> (cubic foot per minute per square foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='37'"><xsl:value-of select="$myparam"/> (ounce per square foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='38'"><xsl:value-of select="$myparam"/> (ounce per square foot per 0,01inch)</xsl:when>
       		<xsl:when test="$myparam.upper='3B'"><xsl:value-of select="$myparam"/> (megajoule)</xsl:when>
       		<xsl:when test="$myparam.upper='3C'"><xsl:value-of select="$myparam"/> (manmonth)</xsl:when>
+      		<xsl:when test="$myparam.upper='3E'"><xsl:value-of select="$myparam"/> (pound per pound of product)</xsl:when>
+      		<xsl:when test="$myparam.upper='3G'"><xsl:value-of select="$myparam"/> (pound per piece of product)</xsl:when>
+      		<xsl:when test="$myparam.upper='3H'"><xsl:value-of select="$myparam"/> (kilogram per kilogram of product)</xsl:when>
+      		<xsl:when test="$myparam.upper='3I'"><xsl:value-of select="$myparam"/> (kilogram per piece of product)</xsl:when>
+      		<xsl:when test="$myparam.upper='40'"><xsl:value-of select="$myparam"/> (millilitre per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='41'"><xsl:value-of select="$myparam"/> (millilitre per minute)</xsl:when>
+      		<xsl:when test="$myparam.upper='43'"><xsl:value-of select="$myparam"/> (super bulk bag)</xsl:when>
+      		<xsl:when test="$myparam.upper='44'"><xsl:value-of select="$myparam"/> (fivehundred kg bulk bag)</xsl:when>
+      		<xsl:when test="$myparam.upper='45'"><xsl:value-of select="$myparam"/> (threehundred kg bulk bag)</xsl:when>
+      		<xsl:when test="$myparam.upper='46'"><xsl:value-of select="$myparam"/> (fifty lb bulk bag)</xsl:when>
+      		<xsl:when test="$myparam.upper='47'"><xsl:value-of select="$myparam"/> (fifty lb bag)</xsl:when>
+      		<xsl:when test="$myparam.upper='48'"><xsl:value-of select="$myparam"/> (bulk car load)</xsl:when>
+      		<xsl:when test="$myparam.upper='4A'"><xsl:value-of select="$myparam"/> (bobbin)</xsl:when>
+      		<xsl:when test="$myparam.upper='4B'"><xsl:value-of select="$myparam"/> (cap)</xsl:when>
       		<xsl:when test="$myparam.upper='4C'"><xsl:value-of select="$myparam"/> (centistokes)</xsl:when>
+      		<xsl:when test="$myparam.upper='4E'"><xsl:value-of select="$myparam"/> (twenty pack)</xsl:when>
       		<xsl:when test="$myparam.upper='4G'"><xsl:value-of select="$myparam"/> (microlitre)</xsl:when>
       		<xsl:when test="$myparam.upper='4H'"><xsl:value-of select="$myparam"/> (micrometre (micron))</xsl:when>
       		<xsl:when test="$myparam.upper='4K'"><xsl:value-of select="$myparam"/> (milliampere)</xsl:when>
@@ -76,10 +103,54 @@
       		<xsl:when test="$myparam.upper='4U'"><xsl:value-of select="$myparam"/> (pound per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='4W'"><xsl:value-of select="$myparam"/> (ton (US) per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='4X'"><xsl:value-of select="$myparam"/> (kilolitre per hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='53'"><xsl:value-of select="$myparam"/> (theoretical kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='54'"><xsl:value-of select="$myparam"/> (theoretical tonne)</xsl:when>
+      		<xsl:when test="$myparam.upper='56'"><xsl:value-of select="$myparam"/> (sitas)</xsl:when>
+      		<xsl:when test="$myparam.upper='57'"><xsl:value-of select="$myparam"/> (mesh)</xsl:when>
+      		<xsl:when test="$myparam.upper='58'"><xsl:value-of select="$myparam"/> (net kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='59'"><xsl:value-of select="$myparam"/> (part per million)</xsl:when>
       		<xsl:when test="$myparam.upper='5A'"><xsl:value-of select="$myparam"/> (barrel (US) per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='5B'"><xsl:value-of select="$myparam"/> (batch)</xsl:when>
+      		<xsl:when test="$myparam.upper='5C'"><xsl:value-of select="$myparam"/> (gallon(US) per thousand)</xsl:when>
       		<xsl:when test="$myparam.upper='5E'"><xsl:value-of select="$myparam"/> (MMSCF/day)</xsl:when>
+      		<xsl:when test="$myparam.upper='5F'"><xsl:value-of select="$myparam"/> (pound per thousand)</xsl:when>
+      		<xsl:when test="$myparam.upper='5G'"><xsl:value-of select="$myparam"/> (pump)</xsl:when>
+      		<xsl:when test="$myparam.upper='5H'"><xsl:value-of select="$myparam"/> (stage)</xsl:when>
+      		<xsl:when test="$myparam.upper='5I'"><xsl:value-of select="$myparam"/> (standard cubic foot)</xsl:when>
       		<xsl:when test="$myparam.upper='5J'"><xsl:value-of select="$myparam"/> (hydraulic horse power)</xsl:when>
+      		<xsl:when test="$myparam.upper='5K'"><xsl:value-of select="$myparam"/> (count per minute)</xsl:when>
+      		<xsl:when test="$myparam.upper='5P'"><xsl:value-of select="$myparam"/> (seismic level)</xsl:when>
+      		<xsl:when test="$myparam.upper='5Q'"><xsl:value-of select="$myparam"/> (seismic line)</xsl:when>
+      		<xsl:when test="$myparam.upper='60'"><xsl:value-of select="$myparam"/> (percent weight)</xsl:when>
+      		<xsl:when test="$myparam.upper='61'"><xsl:value-of select="$myparam"/> (part per billion (US))</xsl:when>
+      		<xsl:when test="$myparam.upper='62'"><xsl:value-of select="$myparam"/> (percent per 1000 hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='63'"><xsl:value-of select="$myparam"/> (failure rate in time)</xsl:when>
+      		<xsl:when test="$myparam.upper='64'"><xsl:value-of select="$myparam"/> (pound per square inch, gauge)</xsl:when>
+      		<xsl:when test="$myparam.upper='66'"><xsl:value-of select="$myparam"/> (oersted)</xsl:when>
+      		<xsl:when test="$myparam.upper='69'"><xsl:value-of select="$myparam"/> (test specific scale)</xsl:when>
+      		<xsl:when test="$myparam.upper='71'"><xsl:value-of select="$myparam"/> (volt ampere per pound)</xsl:when>
+      		<xsl:when test="$myparam.upper='72'"><xsl:value-of select="$myparam"/> (watt per pound)</xsl:when>
+      		<xsl:when test="$myparam.upper='73'"><xsl:value-of select="$myparam"/> (ampere tum per centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='74'"><xsl:value-of select="$myparam"/> (millipascal)</xsl:when>
+      		<xsl:when test="$myparam.upper='76'"><xsl:value-of select="$myparam"/> (gauss)</xsl:when>
+      		<xsl:when test="$myparam.upper='77'"><xsl:value-of select="$myparam"/> (milli-inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='78'"><xsl:value-of select="$myparam"/> (kilogauss)</xsl:when>
+      		<xsl:when test="$myparam.upper='80'"><xsl:value-of select="$myparam"/> (pound per square inch absolute)</xsl:when>
+      		<xsl:when test="$myparam.upper='81'"><xsl:value-of select="$myparam"/> (henry)</xsl:when>
+      		<xsl:when test="$myparam.upper='84'"><xsl:value-of select="$myparam"/> (kilopound-force per square inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='85'"><xsl:value-of select="$myparam"/> (foot pound-force)</xsl:when>
+      		<xsl:when test="$myparam.upper='87'"><xsl:value-of select="$myparam"/> (pound per cubic foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='89'"><xsl:value-of select="$myparam"/> (poise)</xsl:when>
+      		<xsl:when test="$myparam.upper='90'"><xsl:value-of select="$myparam"/> (Saybold universal second)</xsl:when>
+      		<xsl:when test="$myparam.upper='91'"><xsl:value-of select="$myparam"/> (stokes)</xsl:when>
+      		<xsl:when test="$myparam.upper='92'"><xsl:value-of select="$myparam"/> (calorie per cubic centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='93'"><xsl:value-of select="$myparam"/> (calorie per gram)</xsl:when>
+      		<xsl:when test="$myparam.upper='94'"><xsl:value-of select="$myparam"/> (curl unit)</xsl:when>
+      		<xsl:when test="$myparam.upper='95'"><xsl:value-of select="$myparam"/> (twenty thousand gallon (US) tankcar)</xsl:when>
+      		<xsl:when test="$myparam.upper='96'"><xsl:value-of select="$myparam"/> (ten thousand gallon (US) tankcar)</xsl:when>
+      		<xsl:when test="$myparam.upper='97'"><xsl:value-of select="$myparam"/> (ten kg drum)</xsl:when>
+      		<xsl:when test="$myparam.upper='98'"><xsl:value-of select="$myparam"/> (fifteen kg drum)</xsl:when>
+      		<xsl:when test="$myparam.upper='A1'"><xsl:value-of select="$myparam"/> (15 °C calorie)</xsl:when>
       		<xsl:when test="$myparam.upper='A10'"><xsl:value-of select="$myparam"/> (ampere square metre per joule second)</xsl:when>
       		<xsl:when test="$myparam.upper='A11'"><xsl:value-of select="$myparam"/> (angstrom)</xsl:when>
       		<xsl:when test="$myparam.upper='A12'"><xsl:value-of select="$myparam"/> (astronomical unit)</xsl:when>
@@ -96,6 +167,7 @@
       		<xsl:when test="$myparam.upper='A22'"><xsl:value-of select="$myparam"/> (British thermal unit (international table) per second foot degree Rankine)</xsl:when>
       		<xsl:when test="$myparam.upper='A23'"><xsl:value-of select="$myparam"/> (British thermal unit (international table) per hour square foot degree Rankine)</xsl:when>
       		<xsl:when test="$myparam.upper='A24'"><xsl:value-of select="$myparam"/> (candela per square metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='A25'"><xsl:value-of select="$myparam"/> (cheval vapeur)</xsl:when>
       		<xsl:when test="$myparam.upper='A26'"><xsl:value-of select="$myparam"/> (coulomb metre)</xsl:when>
       		<xsl:when test="$myparam.upper='A27'"><xsl:value-of select="$myparam"/> (coulomb metre squared per volt)</xsl:when>
       		<xsl:when test="$myparam.upper='A28'"><xsl:value-of select="$myparam"/> (coulomb per cubic centimetre)</xsl:when>
@@ -122,12 +194,25 @@
       		<xsl:when test="$myparam.upper='A48'"><xsl:value-of select="$myparam"/> (degree Rankine)</xsl:when>
       		<xsl:when test="$myparam.upper='A49'"><xsl:value-of select="$myparam"/> (denier)</xsl:when>
       		<xsl:when test="$myparam.upper='A5'"><xsl:value-of select="$myparam"/> (ampere square metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='A50'"><xsl:value-of select="$myparam"/> (dyne second per cubic centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='A51'"><xsl:value-of select="$myparam"/> (dyne second per centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='A52'"><xsl:value-of select="$myparam"/> (dyne second per centimetre to the fifth power)</xsl:when>
       		<xsl:when test="$myparam.upper='A53'"><xsl:value-of select="$myparam"/> (electronvolt)</xsl:when>
       		<xsl:when test="$myparam.upper='A54'"><xsl:value-of select="$myparam"/> (electronvolt per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='A55'"><xsl:value-of select="$myparam"/> (electronvolt square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='A56'"><xsl:value-of select="$myparam"/> (electronvolt square metre per kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='A57'"><xsl:value-of select="$myparam"/> (erg)</xsl:when>
+      		<xsl:when test="$myparam.upper='A58'"><xsl:value-of select="$myparam"/> (erg per centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='A59'"><xsl:value-of select="$myparam"/> (8-part cloud cover)</xsl:when>
       		<xsl:when test="$myparam.upper='A6'"><xsl:value-of select="$myparam"/> (ampere per square metre kelvin squared)</xsl:when>
+      		<xsl:when test="$myparam.upper='A60'"><xsl:value-of select="$myparam"/> (erg per cubic centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='A61'"><xsl:value-of select="$myparam"/> (erg per gram)</xsl:when>
+      		<xsl:when test="$myparam.upper='A62'"><xsl:value-of select="$myparam"/> (erg per gram second)</xsl:when>
+      		<xsl:when test="$myparam.upper='A63'"><xsl:value-of select="$myparam"/> (erg per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='A64'"><xsl:value-of select="$myparam"/> (erg per second square centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='A65'"><xsl:value-of select="$myparam"/> (erg per square centimetre second)</xsl:when>
+      		<xsl:when test="$myparam.upper='A66'"><xsl:value-of select="$myparam"/> (erg square centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='A67'"><xsl:value-of select="$myparam"/> (erg square centimetre per gram)</xsl:when>
       		<xsl:when test="$myparam.upper='A68'"><xsl:value-of select="$myparam"/> (exajoule)</xsl:when>
       		<xsl:when test="$myparam.upper='A69'"><xsl:value-of select="$myparam"/> (farad per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='A7'"><xsl:value-of select="$myparam"/> (ampere per square millimetre)</xsl:when>
@@ -137,7 +222,14 @@
       		<xsl:when test="$myparam.upper='A74'"><xsl:value-of select="$myparam"/> (foot pound-force per second)</xsl:when>
       		<xsl:when test="$myparam.upper='A75'"><xsl:value-of select="$myparam"/> (freight ton)</xsl:when>
       		<xsl:when test="$myparam.upper='A76'"><xsl:value-of select="$myparam"/> (gal)</xsl:when>
+      		<xsl:when test="$myparam.upper='A77'"><xsl:value-of select="$myparam"/> (Gaussian CGS (Centimetre-Gram-Second system) unit of displacement)</xsl:when>
+      		<xsl:when test="$myparam.upper='A78'"><xsl:value-of select="$myparam"/> (Gaussian CGS (Centimetre-Gram-Second system) unit of electric current)</xsl:when>
+      		<xsl:when test="$myparam.upper='A79'"><xsl:value-of select="$myparam"/> (Gaussian CGS (Centimetre-Gram-Second system) unit of electric charge)</xsl:when>
       		<xsl:when test="$myparam.upper='A8'"><xsl:value-of select="$myparam"/> (ampere second)</xsl:when>
+      		<xsl:when test="$myparam.upper='A80'"><xsl:value-of select="$myparam"/> (Gaussian CGS (Centimetre-Gram-Second system) unit of electric field strength)</xsl:when>
+      		<xsl:when test="$myparam.upper='A81'"><xsl:value-of select="$myparam"/> (Gaussian CGS (Centimetre-Gram-Second system) unit of electric polarization)</xsl:when>
+      		<xsl:when test="$myparam.upper='A82'"><xsl:value-of select="$myparam"/> (Gaussian CGS (Centimetre-Gram-Second system) unit of electric potential)</xsl:when>
+      		<xsl:when test="$myparam.upper='A83'"><xsl:value-of select="$myparam"/> (Gaussian CGS (Centimetre-Gram-Second system) unit of magnetization)</xsl:when>
       		<xsl:when test="$myparam.upper='A84'"><xsl:value-of select="$myparam"/> (gigacoulomb per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='A85'"><xsl:value-of select="$myparam"/> (gigaelectronvolt)</xsl:when>
       		<xsl:when test="$myparam.upper='A86'"><xsl:value-of select="$myparam"/> (gigahertz)</xsl:when>
@@ -162,20 +254,29 @@
       		<xsl:when test="$myparam.upper='AE'"><xsl:value-of select="$myparam"/> (ampere per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='AH'"><xsl:value-of select="$myparam"/> (additional minute)</xsl:when>
       		<xsl:when test="$myparam.upper='AI'"><xsl:value-of select="$myparam"/> (average minute per call)</xsl:when>
+      		<xsl:when test="$myparam.upper='AJ'"><xsl:value-of select="$myparam"/> (cop)</xsl:when>
       		<xsl:when test="$myparam.upper='AK'"><xsl:value-of select="$myparam"/> (fathom)</xsl:when>
       		<xsl:when test="$myparam.upper='AL'"><xsl:value-of select="$myparam"/> (access line)</xsl:when>
+      		<xsl:when test="$myparam.upper='AM'"><xsl:value-of select="$myparam"/> (ampoule)</xsl:when>
       		<xsl:when test="$myparam.upper='AMH'"><xsl:value-of select="$myparam"/> (ampere hour)</xsl:when>
       		<xsl:when test="$myparam.upper='AMP'"><xsl:value-of select="$myparam"/> (ampere)</xsl:when>
       		<xsl:when test="$myparam.upper='ANN'"><xsl:value-of select="$myparam"/> (year)</xsl:when>
+      		<xsl:when test="$myparam.upper='AP'"><xsl:value-of select="$myparam"/> (aluminium pound only)</xsl:when>
       		<xsl:when test="$myparam.upper='APZ'"><xsl:value-of select="$myparam"/> (troy ounce or apothecary ounce)</xsl:when>
       		<xsl:when test="$myparam.upper='AQ'"><xsl:value-of select="$myparam"/> (anti-hemophilic factor (AHF) unit)</xsl:when>
+      		<xsl:when test="$myparam.upper='AR'"><xsl:value-of select="$myparam"/> (suppository)</xsl:when>
+      		<xsl:when test="$myparam.upper='ARE'"><xsl:value-of select="$myparam"/> (are)</xsl:when>
       		<xsl:when test="$myparam.upper='AS'"><xsl:value-of select="$myparam"/> (assortment)</xsl:when>
       		<xsl:when test="$myparam.upper='ASM'"><xsl:value-of select="$myparam"/> (alcoholic strength by mass)</xsl:when>
       		<xsl:when test="$myparam.upper='ASU'"><xsl:value-of select="$myparam"/> (alcoholic strength by volume)</xsl:when>
       		<xsl:when test="$myparam.upper='ATM'"><xsl:value-of select="$myparam"/> (standard atmosphere)</xsl:when>
+      		<xsl:when test="$myparam.upper='ATT'"><xsl:value-of select="$myparam"/> (technical atmosphere)</xsl:when>
+      		<xsl:when test="$myparam.upper='AV'"><xsl:value-of select="$myparam"/> (capsule)</xsl:when>
+      		<xsl:when test="$myparam.upper='AW'"><xsl:value-of select="$myparam"/> (powder filled vial)</xsl:when>
       		<xsl:when test="$myparam.upper='AWG'"><xsl:value-of select="$myparam"/> (american wire gauge)</xsl:when>
       		<xsl:when test="$myparam.upper='AY'"><xsl:value-of select="$myparam"/> (assembly)</xsl:when>
       		<xsl:when test="$myparam.upper='AZ'"><xsl:value-of select="$myparam"/> (British thermal unit (international table) per pound)</xsl:when>
+      		<xsl:when test="$myparam.upper='B0'"><xsl:value-of select="$myparam"/> (Btu per cubic foot)</xsl:when>
       		<xsl:when test="$myparam.upper='B1'"><xsl:value-of select="$myparam"/> (barrel (US) per day)</xsl:when>
       		<xsl:when test="$myparam.upper='B10'"><xsl:value-of select="$myparam"/> (bit per second)</xsl:when>
       		<xsl:when test="$myparam.upper='B11'"><xsl:value-of select="$myparam"/> (joule per kilogram kelvin)</xsl:when>
@@ -187,6 +288,7 @@
       		<xsl:when test="$myparam.upper='B17'"><xsl:value-of select="$myparam"/> (credit)</xsl:when>
       		<xsl:when test="$myparam.upper='B18'"><xsl:value-of select="$myparam"/> (joule second)</xsl:when>
       		<xsl:when test="$myparam.upper='B19'"><xsl:value-of select="$myparam"/> (digit)</xsl:when>
+      		<xsl:when test="$myparam.upper='B2'"><xsl:value-of select="$myparam"/> (bunk)</xsl:when>
       		<xsl:when test="$myparam.upper='B20'"><xsl:value-of select="$myparam"/> (joule square metre per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='B21'"><xsl:value-of select="$myparam"/> (kelvin per watt)</xsl:when>
       		<xsl:when test="$myparam.upper='B22'"><xsl:value-of select="$myparam"/> (kiloampere)</xsl:when>
@@ -204,7 +306,12 @@
       		<xsl:when test="$myparam.upper='B33'"><xsl:value-of select="$myparam"/> (kilogram metre squared per second)</xsl:when>
       		<xsl:when test="$myparam.upper='B34'"><xsl:value-of select="$myparam"/> (kilogram per cubic decimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='B35'"><xsl:value-of select="$myparam"/> (kilogram per litre)</xsl:when>
+      		<xsl:when test="$myparam.upper='B36'"><xsl:value-of select="$myparam"/> (calorie (thermochemical) per gram)</xsl:when>
+      		<xsl:when test="$myparam.upper='B37'"><xsl:value-of select="$myparam"/> (kilogram-force)</xsl:when>
+      		<xsl:when test="$myparam.upper='B38'"><xsl:value-of select="$myparam"/> (kilogram-force metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='B39'"><xsl:value-of select="$myparam"/> (kilogram-force metre per second)</xsl:when>
       		<xsl:when test="$myparam.upper='B4'"><xsl:value-of select="$myparam"/> (barrel, imperial)</xsl:when>
+      		<xsl:when test="$myparam.upper='B40'"><xsl:value-of select="$myparam"/> (kilogram-force per square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='B41'"><xsl:value-of select="$myparam"/> (kilojoule per kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='B42'"><xsl:value-of select="$myparam"/> (kilojoule per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='B43'"><xsl:value-of select="$myparam"/> (kilojoule per kilogram kelvin)</xsl:when>
@@ -214,7 +321,9 @@
       		<xsl:when test="$myparam.upper='B47'"><xsl:value-of select="$myparam"/> (kilonewton)</xsl:when>
       		<xsl:when test="$myparam.upper='B48'"><xsl:value-of select="$myparam"/> (kilonewton metre)</xsl:when>
       		<xsl:when test="$myparam.upper='B49'"><xsl:value-of select="$myparam"/> (kiloohm)</xsl:when>
+      		<xsl:when test="$myparam.upper='B5'"><xsl:value-of select="$myparam"/> (billet)</xsl:when>
       		<xsl:when test="$myparam.upper='B50'"><xsl:value-of select="$myparam"/> (kiloohm metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='B51'"><xsl:value-of select="$myparam"/> (kilopond)</xsl:when>
       		<xsl:when test="$myparam.upper='B52'"><xsl:value-of select="$myparam"/> (kilosecond)</xsl:when>
       		<xsl:when test="$myparam.upper='B53'"><xsl:value-of select="$myparam"/> (kilosiemens)</xsl:when>
       		<xsl:when test="$myparam.upper='B54'"><xsl:value-of select="$myparam"/> (kilosiemens per metre)</xsl:when>
@@ -223,11 +332,13 @@
       		<xsl:when test="$myparam.upper='B57'"><xsl:value-of select="$myparam"/> (light year)</xsl:when>
       		<xsl:when test="$myparam.upper='B58'"><xsl:value-of select="$myparam"/> (litre per mole)</xsl:when>
       		<xsl:when test="$myparam.upper='B59'"><xsl:value-of select="$myparam"/> (lumen hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='B6'"><xsl:value-of select="$myparam"/> (bun)</xsl:when>
       		<xsl:when test="$myparam.upper='B60'"><xsl:value-of select="$myparam"/> (lumen per square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='B61'"><xsl:value-of select="$myparam"/> (lumen per watt)</xsl:when>
       		<xsl:when test="$myparam.upper='B62'"><xsl:value-of select="$myparam"/> (lumen second)</xsl:when>
       		<xsl:when test="$myparam.upper='B63'"><xsl:value-of select="$myparam"/> (lux hour)</xsl:when>
       		<xsl:when test="$myparam.upper='B64'"><xsl:value-of select="$myparam"/> (lux second)</xsl:when>
+      		<xsl:when test="$myparam.upper='B65'"><xsl:value-of select="$myparam"/> (maxwell)</xsl:when>
       		<xsl:when test="$myparam.upper='B66'"><xsl:value-of select="$myparam"/> (megaampere per square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='B67'"><xsl:value-of select="$myparam"/> (megabecquerel per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='B68'"><xsl:value-of select="$myparam"/> (gigabit)</xsl:when>
@@ -254,6 +365,7 @@
       		<xsl:when test="$myparam.upper='B87'"><xsl:value-of select="$myparam"/> (microcoulomb per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='B88'"><xsl:value-of select="$myparam"/> (microcoulomb per square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='B89'"><xsl:value-of select="$myparam"/> (microfarad per metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='B9'"><xsl:value-of select="$myparam"/> (batt)</xsl:when>
       		<xsl:when test="$myparam.upper='B90'"><xsl:value-of select="$myparam"/> (microhenry)</xsl:when>
       		<xsl:when test="$myparam.upper='B91'"><xsl:value-of select="$myparam"/> (microhenry per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='B92'"><xsl:value-of select="$myparam"/> (micronewton)</xsl:when>
@@ -266,18 +378,32 @@
       		<xsl:when test="$myparam.upper='B99'"><xsl:value-of select="$myparam"/> (microsiemens)</xsl:when>
       		<xsl:when test="$myparam.upper='BAR'"><xsl:value-of select="$myparam"/> (bar [unit of pressure])</xsl:when>
       		<xsl:when test="$myparam.upper='BB'"><xsl:value-of select="$myparam"/> (base box)</xsl:when>
+      		<xsl:when test="$myparam.upper='BD'"><xsl:value-of select="$myparam"/> (board)</xsl:when>
+      		<xsl:when test="$myparam.upper='BE'"><xsl:value-of select="$myparam"/> (bundle)</xsl:when>
       		<xsl:when test="$myparam.upper='BFT'"><xsl:value-of select="$myparam"/> (board foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='BG'"><xsl:value-of select="$myparam"/> (bag)</xsl:when>
+      		<xsl:when test="$myparam.upper='BH'"><xsl:value-of select="$myparam"/> (brush)</xsl:when>
       		<xsl:when test="$myparam.upper='BHP'"><xsl:value-of select="$myparam"/> (brake horse power)</xsl:when>
       		<xsl:when test="$myparam.upper='BIL'"><xsl:value-of select="$myparam"/> (billion (EUR))</xsl:when>
+      		<xsl:when test="$myparam.upper='BJ'"><xsl:value-of select="$myparam"/> (bucket)</xsl:when>
+      		<xsl:when test="$myparam.upper='BK'"><xsl:value-of select="$myparam"/> (basket)</xsl:when>
+      		<xsl:when test="$myparam.upper='BL'"><xsl:value-of select="$myparam"/> (bale)</xsl:when>
       		<xsl:when test="$myparam.upper='BLD'"><xsl:value-of select="$myparam"/> (dry barrel (US))</xsl:when>
       		<xsl:when test="$myparam.upper='BLL'"><xsl:value-of select="$myparam"/> (barrel (US))</xsl:when>
+      		<xsl:when test="$myparam.upper='BO'"><xsl:value-of select="$myparam"/> (bottle)</xsl:when>
       		<xsl:when test="$myparam.upper='BP'"><xsl:value-of select="$myparam"/> (hundred board foot)</xsl:when>
       		<xsl:when test="$myparam.upper='BPM'"><xsl:value-of select="$myparam"/> (beats per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='BQL'"><xsl:value-of select="$myparam"/> (becquerel)</xsl:when>
+      		<xsl:when test="$myparam.upper='BR'"><xsl:value-of select="$myparam"/> (bar [unit of packaging])</xsl:when>
+      		<xsl:when test="$myparam.upper='BT'"><xsl:value-of select="$myparam"/> (bolt)</xsl:when>
       		<xsl:when test="$myparam.upper='BTU'"><xsl:value-of select="$myparam"/> (British thermal unit (international table))</xsl:when>
       		<xsl:when test="$myparam.upper='BUA'"><xsl:value-of select="$myparam"/> (bushel (US))</xsl:when>
       		<xsl:when test="$myparam.upper='BUI'"><xsl:value-of select="$myparam"/> (bushel (UK))</xsl:when>
+      		<xsl:when test="$myparam.upper='BW'"><xsl:value-of select="$myparam"/> (base weight)</xsl:when>
+      		<xsl:when test="$myparam.upper='BX'"><xsl:value-of select="$myparam"/> (box)</xsl:when>
+      		<xsl:when test="$myparam.upper='BZ'"><xsl:value-of select="$myparam"/> (million BTUs)</xsl:when>
       		<xsl:when test="$myparam.upper='C0'"><xsl:value-of select="$myparam"/> (call)</xsl:when>
+      		<xsl:when test="$myparam.upper='C1'"><xsl:value-of select="$myparam"/> (composite product pound (total weight))</xsl:when>
       		<xsl:when test="$myparam.upper='C10'"><xsl:value-of select="$myparam"/> (millifarad)</xsl:when>
       		<xsl:when test="$myparam.upper='C11'"><xsl:value-of select="$myparam"/> (milligal)</xsl:when>
       		<xsl:when test="$myparam.upper='C12'"><xsl:value-of select="$myparam"/> (milligram per metre)</xsl:when>
@@ -288,6 +414,7 @@
       		<xsl:when test="$myparam.upper='C17'"><xsl:value-of select="$myparam"/> (millimetre squared per second)</xsl:when>
       		<xsl:when test="$myparam.upper='C18'"><xsl:value-of select="$myparam"/> (millimole)</xsl:when>
       		<xsl:when test="$myparam.upper='C19'"><xsl:value-of select="$myparam"/> (mole per kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='C2'"><xsl:value-of select="$myparam"/> (carset)</xsl:when>
       		<xsl:when test="$myparam.upper='C20'"><xsl:value-of select="$myparam"/> (millinewton)</xsl:when>
       		<xsl:when test="$myparam.upper='C21'"><xsl:value-of select="$myparam"/> (kibibit)</xsl:when>
       		<xsl:when test="$myparam.upper='C22'"><xsl:value-of select="$myparam"/> (millinewton per metre)</xsl:when>
@@ -309,6 +436,7 @@
       		<xsl:when test="$myparam.upper='C37'"><xsl:value-of select="$myparam"/> (kilobit)</xsl:when>
       		<xsl:when test="$myparam.upper='C38'"><xsl:value-of select="$myparam"/> (mole per litre)</xsl:when>
       		<xsl:when test="$myparam.upper='C39'"><xsl:value-of select="$myparam"/> (nanoampere)</xsl:when>
+      		<xsl:when test="$myparam.upper='C4'"><xsl:value-of select="$myparam"/> (carload)</xsl:when>
       		<xsl:when test="$myparam.upper='C40'"><xsl:value-of select="$myparam"/> (nanocoulomb)</xsl:when>
       		<xsl:when test="$myparam.upper='C41'"><xsl:value-of select="$myparam"/> (nanofarad)</xsl:when>
       		<xsl:when test="$myparam.upper='C42'"><xsl:value-of select="$myparam"/> (nanofarad per metre)</xsl:when>
@@ -319,6 +447,7 @@
       		<xsl:when test="$myparam.upper='C47'"><xsl:value-of select="$myparam"/> (nanosecond)</xsl:when>
       		<xsl:when test="$myparam.upper='C48'"><xsl:value-of select="$myparam"/> (nanotesla)</xsl:when>
       		<xsl:when test="$myparam.upper='C49'"><xsl:value-of select="$myparam"/> (nanowatt)</xsl:when>
+      		<xsl:when test="$myparam.upper='C5'"><xsl:value-of select="$myparam"/> (cost)</xsl:when>
       		<xsl:when test="$myparam.upper='C50'"><xsl:value-of select="$myparam"/> (neper)</xsl:when>
       		<xsl:when test="$myparam.upper='C51'"><xsl:value-of select="$myparam"/> (neper per second)</xsl:when>
       		<xsl:when test="$myparam.upper='C52'"><xsl:value-of select="$myparam"/> (picometre)</xsl:when>
@@ -329,6 +458,7 @@
       		<xsl:when test="$myparam.upper='C57'"><xsl:value-of select="$myparam"/> (newton second)</xsl:when>
       		<xsl:when test="$myparam.upper='C58'"><xsl:value-of select="$myparam"/> (newton second per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='C59'"><xsl:value-of select="$myparam"/> (octave)</xsl:when>
+      		<xsl:when test="$myparam.upper='C6'"><xsl:value-of select="$myparam"/> (cell)</xsl:when>
       		<xsl:when test="$myparam.upper='C60'"><xsl:value-of select="$myparam"/> (ohm centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='C61'"><xsl:value-of select="$myparam"/> (ohm metre)</xsl:when>
       		<xsl:when test="$myparam.upper='C62'"><xsl:value-of select="$myparam"/> (one)</xsl:when>
@@ -347,6 +477,7 @@
       		<xsl:when test="$myparam.upper='C74'"><xsl:value-of select="$myparam"/> (kilobit per second)</xsl:when>
       		<xsl:when test="$myparam.upper='C75'"><xsl:value-of select="$myparam"/> (picowatt)</xsl:when>
       		<xsl:when test="$myparam.upper='C76'"><xsl:value-of select="$myparam"/> (picowatt per square metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='C77'"><xsl:value-of select="$myparam"/> (pound gage)</xsl:when>
       		<xsl:when test="$myparam.upper='C78'"><xsl:value-of select="$myparam"/> (pound-force)</xsl:when>
       		<xsl:when test="$myparam.upper='C79'"><xsl:value-of select="$myparam"/> (kilovolt ampere hour)</xsl:when>
       		<xsl:when test="$myparam.upper='C8'"><xsl:value-of select="$myparam"/> (millicoulomb per kilogram)</xsl:when>
@@ -369,14 +500,20 @@
       		<xsl:when test="$myparam.upper='C95'"><xsl:value-of select="$myparam"/> (reciprocal mole)</xsl:when>
       		<xsl:when test="$myparam.upper='C96'"><xsl:value-of select="$myparam"/> (reciprocal pascal or pascal to the power minus one)</xsl:when>
       		<xsl:when test="$myparam.upper='C97'"><xsl:value-of select="$myparam"/> (reciprocal second)</xsl:when>
+      		<xsl:when test="$myparam.upper='C98'"><xsl:value-of select="$myparam"/> (reciprocal second per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='C99'"><xsl:value-of select="$myparam"/> (reciprocal second per metre squared)</xsl:when>
+      		<xsl:when test="$myparam.upper='CA'"><xsl:value-of select="$myparam"/> (can)</xsl:when>
       		<xsl:when test="$myparam.upper='CCT'"><xsl:value-of select="$myparam"/> (carrying capacity in metric ton)</xsl:when>
       		<xsl:when test="$myparam.upper='CDL'"><xsl:value-of select="$myparam"/> (candela)</xsl:when>
       		<xsl:when test="$myparam.upper='CEL'"><xsl:value-of select="$myparam"/> (degree Celsius)</xsl:when>
       		<xsl:when test="$myparam.upper='CEN'"><xsl:value-of select="$myparam"/> (hundred)</xsl:when>
       		<xsl:when test="$myparam.upper='CG'"><xsl:value-of select="$myparam"/> (card)</xsl:when>
       		<xsl:when test="$myparam.upper='CGM'"><xsl:value-of select="$myparam"/> (centigram)</xsl:when>
+      		<xsl:when test="$myparam.upper='CH'"><xsl:value-of select="$myparam"/> (container)</xsl:when>
+      		<xsl:when test="$myparam.upper='CJ'"><xsl:value-of select="$myparam"/> (cone)</xsl:when>
+      		<xsl:when test="$myparam.upper='CK'"><xsl:value-of select="$myparam"/> (connector)</xsl:when>
       		<xsl:when test="$myparam.upper='CKG'"><xsl:value-of select="$myparam"/> (coulomb per kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='CL'"><xsl:value-of select="$myparam"/> (coil)</xsl:when>
       		<xsl:when test="$myparam.upper='CLF'"><xsl:value-of select="$myparam"/> (hundred leave)</xsl:when>
       		<xsl:when test="$myparam.upper='CLT'"><xsl:value-of select="$myparam"/> (centilitre)</xsl:when>
       		<xsl:when test="$myparam.upper='CMK'"><xsl:value-of select="$myparam"/> (square centimetre)</xsl:when>
@@ -384,13 +521,22 @@
       		<xsl:when test="$myparam.upper='CMT'"><xsl:value-of select="$myparam"/> (centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='CNP'"><xsl:value-of select="$myparam"/> (hundred pack)</xsl:when>
       		<xsl:when test="$myparam.upper='CNT'"><xsl:value-of select="$myparam"/> (cental (UK))</xsl:when>
+      		<xsl:when test="$myparam.upper='CO'"><xsl:value-of select="$myparam"/> (carboy)</xsl:when>
       		<xsl:when test="$myparam.upper='COU'"><xsl:value-of select="$myparam"/> (coulomb)</xsl:when>
+      		<xsl:when test="$myparam.upper='CQ'"><xsl:value-of select="$myparam"/> (cartridge)</xsl:when>
+      		<xsl:when test="$myparam.upper='CR'"><xsl:value-of select="$myparam"/> (crate)</xsl:when>
+      		<xsl:when test="$myparam.upper='CS'"><xsl:value-of select="$myparam"/> (case)</xsl:when>
+      		<xsl:when test="$myparam.upper='CT'"><xsl:value-of select="$myparam"/> (carton)</xsl:when>
       		<xsl:when test="$myparam.upper='CTG'"><xsl:value-of select="$myparam"/> (content gram)</xsl:when>
       		<xsl:when test="$myparam.upper='CTM'"><xsl:value-of select="$myparam"/> (metric carat)</xsl:when>
       		<xsl:when test="$myparam.upper='CTN'"><xsl:value-of select="$myparam"/> (content ton (metric))</xsl:when>
+      		<xsl:when test="$myparam.upper='CU'"><xsl:value-of select="$myparam"/> (cup)</xsl:when>
       		<xsl:when test="$myparam.upper='CUR'"><xsl:value-of select="$myparam"/> (curie)</xsl:when>
+      		<xsl:when test="$myparam.upper='CV'"><xsl:value-of select="$myparam"/> (cover)</xsl:when>
       		<xsl:when test="$myparam.upper='CWA'"><xsl:value-of select="$myparam"/> (hundred pound (cwt) / hundred weight (US))</xsl:when>
       		<xsl:when test="$myparam.upper='CWI'"><xsl:value-of select="$myparam"/> (hundred weight (UK))</xsl:when>
+      		<xsl:when test="$myparam.upper='CY'"><xsl:value-of select="$myparam"/> (cylinder)</xsl:when>
+      		<xsl:when test="$myparam.upper='CZ'"><xsl:value-of select="$myparam"/> (combo)</xsl:when>
       		<xsl:when test="$myparam.upper='D03'"><xsl:value-of select="$myparam"/> (kilowatt hour per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='D04'"><xsl:value-of select="$myparam"/> (lot [unit of weight])</xsl:when>
       		<xsl:when test="$myparam.upper='D1'"><xsl:value-of select="$myparam"/> (reciprocal second per steradian)</xsl:when>
@@ -398,6 +544,7 @@
       		<xsl:when test="$myparam.upper='D11'"><xsl:value-of select="$myparam"/> (mebibit)</xsl:when>
       		<xsl:when test="$myparam.upper='D12'"><xsl:value-of select="$myparam"/> (siemens square metre per mole)</xsl:when>
       		<xsl:when test="$myparam.upper='D13'"><xsl:value-of select="$myparam"/> (sievert)</xsl:when>
+      		<xsl:when test="$myparam.upper='D14'"><xsl:value-of select="$myparam"/> (thousand linear yard)</xsl:when>
       		<xsl:when test="$myparam.upper='D15'"><xsl:value-of select="$myparam"/> (sone)</xsl:when>
       		<xsl:when test="$myparam.upper='D16'"><xsl:value-of select="$myparam"/> (square centimetre per erg)</xsl:when>
       		<xsl:when test="$myparam.upper='D17'"><xsl:value-of select="$myparam"/> (square centimetre per steradian erg)</xsl:when>
@@ -412,13 +559,19 @@
       		<xsl:when test="$myparam.upper='D25'"><xsl:value-of select="$myparam"/> (square metre per steradian joule)</xsl:when>
       		<xsl:when test="$myparam.upper='D26'"><xsl:value-of select="$myparam"/> (square metre per volt second)</xsl:when>
       		<xsl:when test="$myparam.upper='D27'"><xsl:value-of select="$myparam"/> (steradian)</xsl:when>
+      		<xsl:when test="$myparam.upper='D28'"><xsl:value-of select="$myparam"/> (syphon)</xsl:when>
       		<xsl:when test="$myparam.upper='D29'"><xsl:value-of select="$myparam"/> (terahertz)</xsl:when>
       		<xsl:when test="$myparam.upper='D30'"><xsl:value-of select="$myparam"/> (terajoule)</xsl:when>
       		<xsl:when test="$myparam.upper='D31'"><xsl:value-of select="$myparam"/> (terawatt)</xsl:when>
       		<xsl:when test="$myparam.upper='D32'"><xsl:value-of select="$myparam"/> (terawatt hour)</xsl:when>
       		<xsl:when test="$myparam.upper='D33'"><xsl:value-of select="$myparam"/> (tesla)</xsl:when>
       		<xsl:when test="$myparam.upper='D34'"><xsl:value-of select="$myparam"/> (tex)</xsl:when>
+      		<xsl:when test="$myparam.upper='D35'"><xsl:value-of select="$myparam"/> (calorie (thermochemical))</xsl:when>
       		<xsl:when test="$myparam.upper='D36'"><xsl:value-of select="$myparam"/> (megabit)</xsl:when>
+      		<xsl:when test="$myparam.upper='D37'"><xsl:value-of select="$myparam"/> (calorie (thermochemical) per gram kelvin)</xsl:when>
+      		<xsl:when test="$myparam.upper='D38'"><xsl:value-of select="$myparam"/> (calorie (thermochemical) per second centimetre kelvin)</xsl:when>
+      		<xsl:when test="$myparam.upper='D39'"><xsl:value-of select="$myparam"/> (calorie (thermochemical) per second square centimetre kelvin)</xsl:when>
+      		<xsl:when test="$myparam.upper='D40'"><xsl:value-of select="$myparam"/> (thousand litre)</xsl:when>
       		<xsl:when test="$myparam.upper='D41'"><xsl:value-of select="$myparam"/> (tonne per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='D42'"><xsl:value-of select="$myparam"/> (tropical year)</xsl:when>
       		<xsl:when test="$myparam.upper='D43'"><xsl:value-of select="$myparam"/> (unified atomic mass unit)</xsl:when>
@@ -444,13 +597,24 @@
       		<xsl:when test="$myparam.upper='D61'"><xsl:value-of select="$myparam"/> (minute [unit of angle])</xsl:when>
       		<xsl:when test="$myparam.upper='D62'"><xsl:value-of select="$myparam"/> (second [unit of angle])</xsl:when>
       		<xsl:when test="$myparam.upper='D63'"><xsl:value-of select="$myparam"/> (book)</xsl:when>
+      		<xsl:when test="$myparam.upper='D64'"><xsl:value-of select="$myparam"/> (block)</xsl:when>
       		<xsl:when test="$myparam.upper='D65'"><xsl:value-of select="$myparam"/> (round)</xsl:when>
+      		<xsl:when test="$myparam.upper='D66'"><xsl:value-of select="$myparam"/> (cassette)</xsl:when>
+      		<xsl:when test="$myparam.upper='D67'"><xsl:value-of select="$myparam"/> (dollar per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='D68'"><xsl:value-of select="$myparam"/> (number of words)</xsl:when>
       		<xsl:when test="$myparam.upper='D69'"><xsl:value-of select="$myparam"/> (inch to the fourth power)</xsl:when>
+      		<xsl:when test="$myparam.upper='D7'"><xsl:value-of select="$myparam"/> (sandwich)</xsl:when>
+      		<xsl:when test="$myparam.upper='D70'"><xsl:value-of select="$myparam"/> (calorie (international table))</xsl:when>
+      		<xsl:when test="$myparam.upper='D71'"><xsl:value-of select="$myparam"/> (calorie (international table) per second centimetre kelvin)</xsl:when>
+      		<xsl:when test="$myparam.upper='D72'"><xsl:value-of select="$myparam"/> (calorie (international table) per second square centimetre kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='D73'"><xsl:value-of select="$myparam"/> (joule square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='D74'"><xsl:value-of select="$myparam"/> (kilogram per mole)</xsl:when>
+      		<xsl:when test="$myparam.upper='D75'"><xsl:value-of select="$myparam"/> (calorie (international table) per gram)</xsl:when>
+      		<xsl:when test="$myparam.upper='D76'"><xsl:value-of select="$myparam"/> (calorie (international table) per gram kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='D77'"><xsl:value-of select="$myparam"/> (megacoulomb)</xsl:when>
       		<xsl:when test="$myparam.upper='D78'"><xsl:value-of select="$myparam"/> (megajoule per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='D79'"><xsl:value-of select="$myparam"/> (beam)</xsl:when>
+      		<xsl:when test="$myparam.upper='D8'"><xsl:value-of select="$myparam"/> (draize score)</xsl:when>
       		<xsl:when test="$myparam.upper='D80'"><xsl:value-of select="$myparam"/> (microwatt)</xsl:when>
       		<xsl:when test="$myparam.upper='D81'"><xsl:value-of select="$myparam"/> (microtesla)</xsl:when>
       		<xsl:when test="$myparam.upper='D82'"><xsl:value-of select="$myparam"/> (microvolt)</xsl:when>
@@ -460,17 +624,29 @@
       		<xsl:when test="$myparam.upper='D87'"><xsl:value-of select="$myparam"/> (millimole per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='D88'"><xsl:value-of select="$myparam"/> (millicoulomb per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='D89'"><xsl:value-of select="$myparam"/> (millicoulomb per square metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='D9'"><xsl:value-of select="$myparam"/> (dyne per square centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='D90'"><xsl:value-of select="$myparam"/> (cubic metre (net))</xsl:when>
       		<xsl:when test="$myparam.upper='D91'"><xsl:value-of select="$myparam"/> (rem)</xsl:when>
+      		<xsl:when test="$myparam.upper='D92'"><xsl:value-of select="$myparam"/> (band)</xsl:when>
       		<xsl:when test="$myparam.upper='D93'"><xsl:value-of select="$myparam"/> (second per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='D94'"><xsl:value-of select="$myparam"/> (second per cubic metre radian)</xsl:when>
       		<xsl:when test="$myparam.upper='D95'"><xsl:value-of select="$myparam"/> (joule per gram)</xsl:when>
+      		<xsl:when test="$myparam.upper='D96'"><xsl:value-of select="$myparam"/> (pound gross)</xsl:when>
+      		<xsl:when test="$myparam.upper='D97'"><xsl:value-of select="$myparam"/> (pallet/unit load)</xsl:when>
+      		<xsl:when test="$myparam.upper='D98'"><xsl:value-of select="$myparam"/> (mass pound)</xsl:when>
+      		<xsl:when test="$myparam.upper='D99'"><xsl:value-of select="$myparam"/> (sleeve)</xsl:when>
       		<xsl:when test="$myparam.upper='DAA'"><xsl:value-of select="$myparam"/> (decare)</xsl:when>
       		<xsl:when test="$myparam.upper='DAD'"><xsl:value-of select="$myparam"/> (ten day)</xsl:when>
       		<xsl:when test="$myparam.upper='DAY'"><xsl:value-of select="$myparam"/> (day)</xsl:when>
       		<xsl:when test="$myparam.upper='DB'"><xsl:value-of select="$myparam"/> (dry pound)</xsl:when>
+      		<xsl:when test="$myparam.upper='DBM'"><xsl:value-of select="$myparam"/> (Decibel-milliwatts)</xsl:when>
+      		<xsl:when test="$myparam.upper='DBW'"><xsl:value-of select="$myparam"/> (Decibel watt)</xsl:when>
+      		<xsl:when test="$myparam.upper='DC'"><xsl:value-of select="$myparam"/> (disk (disc))</xsl:when>
       		<xsl:when test="$myparam.upper='DD'"><xsl:value-of select="$myparam"/> (degree [unit of angle])</xsl:when>
+      		<xsl:when test="$myparam.upper='DE'"><xsl:value-of select="$myparam"/> (deal)</xsl:when>
       		<xsl:when test="$myparam.upper='DEC'"><xsl:value-of select="$myparam"/> (decade)</xsl:when>
       		<xsl:when test="$myparam.upper='DG'"><xsl:value-of select="$myparam"/> (decigram)</xsl:when>
+      		<xsl:when test="$myparam.upper='DI'"><xsl:value-of select="$myparam"/> (dispenser)</xsl:when>
       		<xsl:when test="$myparam.upper='DJ'"><xsl:value-of select="$myparam"/> (decagram)</xsl:when>
       		<xsl:when test="$myparam.upper='DLT'"><xsl:value-of select="$myparam"/> (decilitre)</xsl:when>
       		<xsl:when test="$myparam.upper='DMA'"><xsl:value-of select="$myparam"/> (cubic decametre)</xsl:when>
@@ -482,12 +658,19 @@
       		<xsl:when test="$myparam.upper='DPC'"><xsl:value-of select="$myparam"/> (dozen piece)</xsl:when>
       		<xsl:when test="$myparam.upper='DPR'"><xsl:value-of select="$myparam"/> (dozen pair)</xsl:when>
       		<xsl:when test="$myparam.upper='DPT'"><xsl:value-of select="$myparam"/> (displacement tonnage)</xsl:when>
+      		<xsl:when test="$myparam.upper='DQ'"><xsl:value-of select="$myparam"/> (data record)</xsl:when>
+      		<xsl:when test="$myparam.upper='DR'"><xsl:value-of select="$myparam"/> (drum)</xsl:when>
       		<xsl:when test="$myparam.upper='DRA'"><xsl:value-of select="$myparam"/> (dram (US))</xsl:when>
       		<xsl:when test="$myparam.upper='DRI'"><xsl:value-of select="$myparam"/> (dram (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='DRL'"><xsl:value-of select="$myparam"/> (dozen roll)</xsl:when>
+      		<xsl:when test="$myparam.upper='DRM'"><xsl:value-of select="$myparam"/> (drachm (UK))</xsl:when>
+      		<xsl:when test="$myparam.upper='DS'"><xsl:value-of select="$myparam"/> (display)</xsl:when>
       		<xsl:when test="$myparam.upper='DT'"><xsl:value-of select="$myparam"/> (dry ton)</xsl:when>
       		<xsl:when test="$myparam.upper='DTN'"><xsl:value-of select="$myparam"/> (decitonne)</xsl:when>
+      		<xsl:when test="$myparam.upper='DU'"><xsl:value-of select="$myparam"/> (dyne)</xsl:when>
       		<xsl:when test="$myparam.upper='DWT'"><xsl:value-of select="$myparam"/> (pennyweight)</xsl:when>
+      		<xsl:when test="$myparam.upper='DX'"><xsl:value-of select="$myparam"/> (dyne per centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='DY'"><xsl:value-of select="$myparam"/> (directory book)</xsl:when>
       		<xsl:when test="$myparam.upper='DZN'"><xsl:value-of select="$myparam"/> (dozen)</xsl:when>
       		<xsl:when test="$myparam.upper='DZP'"><xsl:value-of select="$myparam"/> (dozen pack)</xsl:when>
       		<xsl:when test="$myparam.upper='E01'"><xsl:value-of select="$myparam"/> (newton per square centimetre)</xsl:when>
@@ -495,6 +678,7 @@
       		<xsl:when test="$myparam.upper='E08'"><xsl:value-of select="$myparam"/> (megawatt per hertz)</xsl:when>
       		<xsl:when test="$myparam.upper='E09'"><xsl:value-of select="$myparam"/> (milliampere hour)</xsl:when>
       		<xsl:when test="$myparam.upper='E10'"><xsl:value-of select="$myparam"/> (degree day)</xsl:when>
+      		<xsl:when test="$myparam.upper='E11'"><xsl:value-of select="$myparam"/> (gigacalorie)</xsl:when>
       		<xsl:when test="$myparam.upper='E12'"><xsl:value-of select="$myparam"/> (mille)</xsl:when>
       		<xsl:when test="$myparam.upper='E14'"><xsl:value-of select="$myparam"/> (kilocalorie (international table))</xsl:when>
       		<xsl:when test="$myparam.upper='E15'"><xsl:value-of select="$myparam"/> (kilocalorie (thermochemical) per hour)</xsl:when>
@@ -502,6 +686,7 @@
       		<xsl:when test="$myparam.upper='E17'"><xsl:value-of select="$myparam"/> (cubic foot per second)</xsl:when>
       		<xsl:when test="$myparam.upper='E18'"><xsl:value-of select="$myparam"/> (tonne per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='E19'"><xsl:value-of select="$myparam"/> (ping)</xsl:when>
+      		<xsl:when test="$myparam.upper='E2'"><xsl:value-of select="$myparam"/> (belt)</xsl:when>
       		<xsl:when test="$myparam.upper='E20'"><xsl:value-of select="$myparam"/> (megabit per second)</xsl:when>
       		<xsl:when test="$myparam.upper='E21'"><xsl:value-of select="$myparam"/> (shares)</xsl:when>
       		<xsl:when test="$myparam.upper='E22'"><xsl:value-of select="$myparam"/> (TEU)</xsl:when>
@@ -509,6 +694,7 @@
       		<xsl:when test="$myparam.upper='E25'"><xsl:value-of select="$myparam"/> (active unit)</xsl:when>
       		<xsl:when test="$myparam.upper='E27'"><xsl:value-of select="$myparam"/> (dose)</xsl:when>
       		<xsl:when test="$myparam.upper='E28'"><xsl:value-of select="$myparam"/> (air dry ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='E3'"><xsl:value-of select="$myparam"/> (trailer)</xsl:when>
       		<xsl:when test="$myparam.upper='E30'"><xsl:value-of select="$myparam"/> (strand)</xsl:when>
       		<xsl:when test="$myparam.upper='E31'"><xsl:value-of select="$myparam"/> (square metre per litre)</xsl:when>
       		<xsl:when test="$myparam.upper='E32'"><xsl:value-of select="$myparam"/> (litre per hour)</xsl:when>
@@ -530,6 +716,7 @@
       		<xsl:when test="$myparam.upper='E47'"><xsl:value-of select="$myparam"/> (kilowatt hour per kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='E48'"><xsl:value-of select="$myparam"/> (service unit)</xsl:when>
       		<xsl:when test="$myparam.upper='E49'"><xsl:value-of select="$myparam"/> (working day)</xsl:when>
+      		<xsl:when test="$myparam.upper='E5'"><xsl:value-of select="$myparam"/> (metric long ton)</xsl:when>
       		<xsl:when test="$myparam.upper='E50'"><xsl:value-of select="$myparam"/> (accounting unit)</xsl:when>
       		<xsl:when test="$myparam.upper='E51'"><xsl:value-of select="$myparam"/> (job)</xsl:when>
       		<xsl:when test="$myparam.upper='E52'"><xsl:value-of select="$myparam"/> (run foot)</xsl:when>
@@ -582,7 +769,10 @@
       		<xsl:when test="$myparam.upper='E99'"><xsl:value-of select="$myparam"/> (hectopascal per bar)</xsl:when>
       		<xsl:when test="$myparam.upper='EA'"><xsl:value-of select="$myparam"/> (each)</xsl:when>
       		<xsl:when test="$myparam.upper='EB'"><xsl:value-of select="$myparam"/> (electronic mail box)</xsl:when>
+      		<xsl:when test="$myparam.upper='EC'"><xsl:value-of select="$myparam"/> (each per month)</xsl:when>
+      		<xsl:when test="$myparam.upper='EP'"><xsl:value-of select="$myparam"/> (eleven pack)</xsl:when>
       		<xsl:when test="$myparam.upper='EQ'"><xsl:value-of select="$myparam"/> (equivalent gallon)</xsl:when>
+      		<xsl:when test="$myparam.upper='EV'"><xsl:value-of select="$myparam"/> (envelope)</xsl:when>
       		<xsl:when test="$myparam.upper='F01'"><xsl:value-of select="$myparam"/> (bit per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='F02'"><xsl:value-of select="$myparam"/> (kelvin per kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='F03'"><xsl:value-of select="$myparam"/> (kilopascal per bar)</xsl:when>
@@ -591,6 +781,7 @@
       		<xsl:when test="$myparam.upper='F06'"><xsl:value-of select="$myparam"/> (poise per bar)</xsl:when>
       		<xsl:when test="$myparam.upper='F07'"><xsl:value-of select="$myparam"/> (pascal per bar)</xsl:when>
       		<xsl:when test="$myparam.upper='F08'"><xsl:value-of select="$myparam"/> (milliampere per inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='F1'"><xsl:value-of select="$myparam"/> (thousand cubic foot per day)</xsl:when>
       		<xsl:when test="$myparam.upper='F10'"><xsl:value-of select="$myparam"/> (kelvin per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='F11'"><xsl:value-of select="$myparam"/> (kelvin per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='F12'"><xsl:value-of select="$myparam"/> (kelvin per second)</xsl:when>
@@ -671,6 +862,7 @@
       		<xsl:when test="$myparam.upper='F87'"><xsl:value-of select="$myparam"/> (volt per litre minute)</xsl:when>
       		<xsl:when test="$myparam.upper='F88'"><xsl:value-of select="$myparam"/> (newton centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='F89'"><xsl:value-of select="$myparam"/> (newton metre per degree)</xsl:when>
+      		<xsl:when test="$myparam.upper='F9'"><xsl:value-of select="$myparam"/> (fibre per cubic centimetre of air)</xsl:when>
       		<xsl:when test="$myparam.upper='F90'"><xsl:value-of select="$myparam"/> (newton metre per ampere)</xsl:when>
       		<xsl:when test="$myparam.upper='F91'"><xsl:value-of select="$myparam"/> (bar litre per second)</xsl:when>
       		<xsl:when test="$myparam.upper='F92'"><xsl:value-of select="$myparam"/> (bar cubic metre per second)</xsl:when>
@@ -683,12 +875,18 @@
       		<xsl:when test="$myparam.upper='F99'"><xsl:value-of select="$myparam"/> (pascal litre per second)</xsl:when>
       		<xsl:when test="$myparam.upper='FAH'"><xsl:value-of select="$myparam"/> (degree Fahrenheit)</xsl:when>
       		<xsl:when test="$myparam.upper='FAR'"><xsl:value-of select="$myparam"/> (farad)</xsl:when>
+      		<xsl:when test="$myparam.upper='FB'"><xsl:value-of select="$myparam"/> (field)</xsl:when>
       		<xsl:when test="$myparam.upper='FBM'"><xsl:value-of select="$myparam"/> (fibre metre)</xsl:when>
       		<xsl:when test="$myparam.upper='FC'"><xsl:value-of select="$myparam"/> (thousand cubic foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='FD'"><xsl:value-of select="$myparam"/> (million particle per cubic foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='FE'"><xsl:value-of select="$myparam"/> (track foot)</xsl:when>
       		<xsl:when test="$myparam.upper='FF'"><xsl:value-of select="$myparam"/> (hundred cubic metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='FG'"><xsl:value-of select="$myparam"/> (transdermal patch)</xsl:when>
       		<xsl:when test="$myparam.upper='FH'"><xsl:value-of select="$myparam"/> (micromole)</xsl:when>
       		<xsl:when test="$myparam.upper='FIT'"><xsl:value-of select="$myparam"/> (failures in time)</xsl:when>
       		<xsl:when test="$myparam.upper='FL'"><xsl:value-of select="$myparam"/> (flake ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='FM'"><xsl:value-of select="$myparam"/> (million cubic foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='FNU'"><xsl:value-of select="$myparam"/> (Formazin nephelometric unit)</xsl:when>
       		<xsl:when test="$myparam.upper='FOT'"><xsl:value-of select="$myparam"/> (foot)</xsl:when>
       		<xsl:when test="$myparam.upper='FP'"><xsl:value-of select="$myparam"/> (pound per square foot)</xsl:when>
       		<xsl:when test="$myparam.upper='FR'"><xsl:value-of select="$myparam"/> (foot per minute)</xsl:when>
@@ -762,6 +960,7 @@
       		<xsl:when test="$myparam.upper='G67'"><xsl:value-of select="$myparam"/> (litre per minute kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='G68'"><xsl:value-of select="$myparam"/> (litre per second kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='G69'"><xsl:value-of select="$myparam"/> (cubic metre per day kelvin)</xsl:when>
+      		<xsl:when test="$myparam.upper='G7'"><xsl:value-of select="$myparam"/> (microfiche sheet)</xsl:when>
       		<xsl:when test="$myparam.upper='G70'"><xsl:value-of select="$myparam"/> (cubic metre per hour kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='G71'"><xsl:value-of select="$myparam"/> (cubic metre per minute kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='G72'"><xsl:value-of select="$myparam"/> (cubic metre per second kelvin)</xsl:when>
@@ -794,29 +993,39 @@
       		<xsl:when test="$myparam.upper='G99'"><xsl:value-of select="$myparam"/> (microhenry per ohm)</xsl:when>
       		<xsl:when test="$myparam.upper='GB'"><xsl:value-of select="$myparam"/> (gallon (US) per day)</xsl:when>
       		<xsl:when test="$myparam.upper='GBQ'"><xsl:value-of select="$myparam"/> (gigabecquerel)</xsl:when>
+      		<xsl:when test="$myparam.upper='GC'"><xsl:value-of select="$myparam"/> (gram per 100 gram)</xsl:when>
+      		<xsl:when test="$myparam.upper='GD'"><xsl:value-of select="$myparam"/> (gross barrel)</xsl:when>
       		<xsl:when test="$myparam.upper='GDW'"><xsl:value-of select="$myparam"/> (gram, dry weight)</xsl:when>
       		<xsl:when test="$myparam.upper='GE'"><xsl:value-of select="$myparam"/> (pound per gallon (US))</xsl:when>
       		<xsl:when test="$myparam.upper='GF'"><xsl:value-of select="$myparam"/> (gram per metre (gram per 100 centimetres))</xsl:when>
       		<xsl:when test="$myparam.upper='GFI'"><xsl:value-of select="$myparam"/> (gram of fissile isotope)</xsl:when>
       		<xsl:when test="$myparam.upper='GGR'"><xsl:value-of select="$myparam"/> (great gross)</xsl:when>
+      		<xsl:when test="$myparam.upper='GH'"><xsl:value-of select="$myparam"/> (half gallon (US))</xsl:when>
       		<xsl:when test="$myparam.upper='GIA'"><xsl:value-of select="$myparam"/> (gill (US))</xsl:when>
       		<xsl:when test="$myparam.upper='GIC'"><xsl:value-of select="$myparam"/> (gram, including container)</xsl:when>
       		<xsl:when test="$myparam.upper='GII'"><xsl:value-of select="$myparam"/> (gill (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='GIP'"><xsl:value-of select="$myparam"/> (gram, including inner packaging)</xsl:when>
       		<xsl:when test="$myparam.upper='GJ'"><xsl:value-of select="$myparam"/> (gram per millilitre)</xsl:when>
+      		<xsl:when test="$myparam.upper='GK'"><xsl:value-of select="$myparam"/> (gram per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='GL'"><xsl:value-of select="$myparam"/> (gram per litre)</xsl:when>
       		<xsl:when test="$myparam.upper='GLD'"><xsl:value-of select="$myparam"/> (dry gallon (US))</xsl:when>
       		<xsl:when test="$myparam.upper='GLI'"><xsl:value-of select="$myparam"/> (gallon (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='GLL'"><xsl:value-of select="$myparam"/> (gallon (US))</xsl:when>
       		<xsl:when test="$myparam.upper='GM'"><xsl:value-of select="$myparam"/> (gram per square metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='GN'"><xsl:value-of select="$myparam"/> (gross gallon)</xsl:when>
       		<xsl:when test="$myparam.upper='GO'"><xsl:value-of select="$myparam"/> (milligram per square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='GP'"><xsl:value-of select="$myparam"/> (milligram per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='GQ'"><xsl:value-of select="$myparam"/> (microgram per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='GRM'"><xsl:value-of select="$myparam"/> (gram)</xsl:when>
       		<xsl:when test="$myparam.upper='GRN'"><xsl:value-of select="$myparam"/> (grain)</xsl:when>
       		<xsl:when test="$myparam.upper='GRO'"><xsl:value-of select="$myparam"/> (gross)</xsl:when>
+      		<xsl:when test="$myparam.upper='GRT'"><xsl:value-of select="$myparam"/> (gross register ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='GT'"><xsl:value-of select="$myparam"/> (gross ton)</xsl:when>
       		<xsl:when test="$myparam.upper='GV'"><xsl:value-of select="$myparam"/> (gigajoule)</xsl:when>
+      		<xsl:when test="$myparam.upper='GW'"><xsl:value-of select="$myparam"/> (gallon per thousand cubic foot)</xsl:when>
       		<xsl:when test="$myparam.upper='GWH'"><xsl:value-of select="$myparam"/> (gigawatt hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='GY'"><xsl:value-of select="$myparam"/> (gross yard)</xsl:when>
+      		<xsl:when test="$myparam.upper='GZ'"><xsl:value-of select="$myparam"/> (gage system)</xsl:when>
       		<xsl:when test="$myparam.upper='H03'"><xsl:value-of select="$myparam"/> (henry per kiloohm)</xsl:when>
       		<xsl:when test="$myparam.upper='H04'"><xsl:value-of select="$myparam"/> (henry per ohm)</xsl:when>
       		<xsl:when test="$myparam.upper='H05'"><xsl:value-of select="$myparam"/> (millihenry per kiloohm)</xsl:when>
@@ -824,6 +1033,7 @@
       		<xsl:when test="$myparam.upper='H07'"><xsl:value-of select="$myparam"/> (pascal second per bar)</xsl:when>
       		<xsl:when test="$myparam.upper='H08'"><xsl:value-of select="$myparam"/> (microbecquerel)</xsl:when>
       		<xsl:when test="$myparam.upper='H09'"><xsl:value-of select="$myparam"/> (reciprocal year)</xsl:when>
+      		<xsl:when test="$myparam.upper='H1'"><xsl:value-of select="$myparam"/> (half page – electronic)</xsl:when>
       		<xsl:when test="$myparam.upper='H10'"><xsl:value-of select="$myparam"/> (reciprocal hour)</xsl:when>
       		<xsl:when test="$myparam.upper='H11'"><xsl:value-of select="$myparam"/> (reciprocal month)</xsl:when>
       		<xsl:when test="$myparam.upper='H12'"><xsl:value-of select="$myparam"/> (degree Celsius per hour)</xsl:when>
@@ -833,6 +1043,7 @@
       		<xsl:when test="$myparam.upper='H16'"><xsl:value-of select="$myparam"/> (square decametre)</xsl:when>
       		<xsl:when test="$myparam.upper='H18'"><xsl:value-of select="$myparam"/> (square hectometre)</xsl:when>
       		<xsl:when test="$myparam.upper='H19'"><xsl:value-of select="$myparam"/> (cubic hectometre)</xsl:when>
+      		<xsl:when test="$myparam.upper='H2'"><xsl:value-of select="$myparam"/> (half litre)</xsl:when>
       		<xsl:when test="$myparam.upper='H20'"><xsl:value-of select="$myparam"/> (cubic kilometre)</xsl:when>
       		<xsl:when test="$myparam.upper='H21'"><xsl:value-of select="$myparam"/> (blank)</xsl:when>
       		<xsl:when test="$myparam.upper='H22'"><xsl:value-of select="$myparam"/> (volt square inch per pound-force)</xsl:when>
@@ -891,6 +1102,7 @@
       		<xsl:when test="$myparam.upper='H75'"><xsl:value-of select="$myparam"/> (decapascal)</xsl:when>
       		<xsl:when test="$myparam.upper='H76'"><xsl:value-of select="$myparam"/> (gram per millimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='H77'"><xsl:value-of select="$myparam"/> (module width)</xsl:when>
+      		<xsl:when test="$myparam.upper='H78'"><xsl:value-of select="$myparam"/> (conventional centimetre of water)</xsl:when>
       		<xsl:when test="$myparam.upper='H79'"><xsl:value-of select="$myparam"/> (French gauge)</xsl:when>
       		<xsl:when test="$myparam.upper='H80'"><xsl:value-of select="$myparam"/> (rack unit)</xsl:when>
       		<xsl:when test="$myparam.upper='H81'"><xsl:value-of select="$myparam"/> (millimetre per minute)</xsl:when>
@@ -911,28 +1123,52 @@
       		<xsl:when test="$myparam.upper='H98'"><xsl:value-of select="$myparam"/> (percent per inch)</xsl:when>
       		<xsl:when test="$myparam.upper='H99'"><xsl:value-of select="$myparam"/> (percent per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='HA'"><xsl:value-of select="$myparam"/> (hank)</xsl:when>
+      		<xsl:when test="$myparam.upper='HAD'"><xsl:value-of select="$myparam"/> (Piece Day)</xsl:when>
+      		<xsl:when test="$myparam.upper='HAR'"><xsl:value-of select="$myparam"/> (hectare)</xsl:when>
       		<xsl:when test="$myparam.upper='HBA'"><xsl:value-of select="$myparam"/> (hectobar)</xsl:when>
       		<xsl:when test="$myparam.upper='HBX'"><xsl:value-of select="$myparam"/> (hundred boxes)</xsl:when>
       		<xsl:when test="$myparam.upper='HC'"><xsl:value-of select="$myparam"/> (hundred count)</xsl:when>
+      		<xsl:when test="$myparam.upper='HD'"><xsl:value-of select="$myparam"/> (half dozen)</xsl:when>
       		<xsl:when test="$myparam.upper='HDW'"><xsl:value-of select="$myparam"/> (hundred kilogram, dry weight)</xsl:when>
+      		<xsl:when test="$myparam.upper='HE'"><xsl:value-of select="$myparam"/> (hundredth of a carat)</xsl:when>
       		<xsl:when test="$myparam.upper='HEA'"><xsl:value-of select="$myparam"/> (head)</xsl:when>
+      		<xsl:when test="$myparam.upper='HF'"><xsl:value-of select="$myparam"/> (hundred foot)</xsl:when>
       		<xsl:when test="$myparam.upper='HGM'"><xsl:value-of select="$myparam"/> (hectogram)</xsl:when>
       		<xsl:when test="$myparam.upper='HH'"><xsl:value-of select="$myparam"/> (hundred cubic foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='HI'"><xsl:value-of select="$myparam"/> (hundred sheet)</xsl:when>
       		<xsl:when test="$myparam.upper='HIU'"><xsl:value-of select="$myparam"/> (hundred international unit)</xsl:when>
+      		<xsl:when test="$myparam.upper='HJ'"><xsl:value-of select="$myparam"/> (metric horse power)</xsl:when>
+      		<xsl:when test="$myparam.upper='HK'"><xsl:value-of select="$myparam"/> (hundred kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='HKM'"><xsl:value-of select="$myparam"/> (hundred kilogram, net mass)</xsl:when>
+      		<xsl:when test="$myparam.upper='HL'"><xsl:value-of select="$myparam"/> (hundred foot (linear))</xsl:when>
       		<xsl:when test="$myparam.upper='HLT'"><xsl:value-of select="$myparam"/> (hectolitre)</xsl:when>
       		<xsl:when test="$myparam.upper='HM'"><xsl:value-of select="$myparam"/> (mile per hour (statute mile))</xsl:when>
+      		<xsl:when test="$myparam.upper='HMO'"><xsl:value-of select="$myparam"/> (Piece Month)</xsl:when>
       		<xsl:when test="$myparam.upper='HMQ'"><xsl:value-of select="$myparam"/> (million cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='HMT'"><xsl:value-of select="$myparam"/> (hectometre)</xsl:when>
+      		<xsl:when test="$myparam.upper='HN'"><xsl:value-of select="$myparam"/> (conventional millimetre of mercury)</xsl:when>
+      		<xsl:when test="$myparam.upper='HO'"><xsl:value-of select="$myparam"/> (hundred troy ounce)</xsl:when>
+      		<xsl:when test="$myparam.upper='HP'"><xsl:value-of select="$myparam"/> (conventional millimetre of water)</xsl:when>
       		<xsl:when test="$myparam.upper='HPA'"><xsl:value-of select="$myparam"/> (hectolitre of pure alcohol)</xsl:when>
+      		<xsl:when test="$myparam.upper='HS'"><xsl:value-of select="$myparam"/> (hundred square foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='HT'"><xsl:value-of select="$myparam"/> (half hour)</xsl:when>
       		<xsl:when test="$myparam.upper='HTZ'"><xsl:value-of select="$myparam"/> (hertz)</xsl:when>
       		<xsl:when test="$myparam.upper='HUR'"><xsl:value-of select="$myparam"/> (hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='HWE'"><xsl:value-of select="$myparam"/> (Piece Week)</xsl:when>
+      		<xsl:when test="$myparam.upper='HY'"><xsl:value-of select="$myparam"/> (hundred yard)</xsl:when>
       		<xsl:when test="$myparam.upper='IA'"><xsl:value-of select="$myparam"/> (inch pound (pound inch))</xsl:when>
+      		<xsl:when test="$myparam.upper='IC'"><xsl:value-of select="$myparam"/> (count per inch)</xsl:when>
       		<xsl:when test="$myparam.upper='IE'"><xsl:value-of select="$myparam"/> (person)</xsl:when>
+      		<xsl:when test="$myparam.upper='IF'"><xsl:value-of select="$myparam"/> (inches of water)</xsl:when>
+      		<xsl:when test="$myparam.upper='II'"><xsl:value-of select="$myparam"/> (column inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='IL'"><xsl:value-of select="$myparam"/> (inch per minute)</xsl:when>
+      		<xsl:when test="$myparam.upper='IM'"><xsl:value-of select="$myparam"/> (impression)</xsl:when>
       		<xsl:when test="$myparam.upper='INH'"><xsl:value-of select="$myparam"/> (inch)</xsl:when>
       		<xsl:when test="$myparam.upper='INK'"><xsl:value-of select="$myparam"/> (square inch)</xsl:when>
       		<xsl:when test="$myparam.upper='INQ'"><xsl:value-of select="$myparam"/> (cubic inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='IP'"><xsl:value-of select="$myparam"/> (insurance policy)</xsl:when>
       		<xsl:when test="$myparam.upper='ISD'"><xsl:value-of select="$myparam"/> (international sugar degree)</xsl:when>
+      		<xsl:when test="$myparam.upper='IT'"><xsl:value-of select="$myparam"/> (count per centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='IU'"><xsl:value-of select="$myparam"/> (inch per second)</xsl:when>
       		<xsl:when test="$myparam.upper='IUG'"><xsl:value-of select="$myparam"/> (international unit per gram)</xsl:when>
       		<xsl:when test="$myparam.upper='IV'"><xsl:value-of select="$myparam"/> (inch per second squared)</xsl:when>
@@ -1010,21 +1246,27 @@
       		<xsl:when test="$myparam.upper='J84'"><xsl:value-of select="$myparam"/> (centimetre per second kelvin)</xsl:when>
       		<xsl:when test="$myparam.upper='J85'"><xsl:value-of select="$myparam"/> (centimetre per second bar)</xsl:when>
       		<xsl:when test="$myparam.upper='J87'"><xsl:value-of select="$myparam"/> (cubic centimetre per cubic metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='J89'"><xsl:value-of select="$myparam"/> (centimetre of mercury)</xsl:when>
       		<xsl:when test="$myparam.upper='J90'"><xsl:value-of select="$myparam"/> (cubic decimetre per day)</xsl:when>
       		<xsl:when test="$myparam.upper='J91'"><xsl:value-of select="$myparam"/> (cubic decimetre per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='J92'"><xsl:value-of select="$myparam"/> (cubic decimetre per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='J93'"><xsl:value-of select="$myparam"/> (cubic decimetre per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='J94'"><xsl:value-of select="$myparam"/> (dyne centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='J95'"><xsl:value-of select="$myparam"/> (ounce (UK fluid) per day)</xsl:when>
       		<xsl:when test="$myparam.upper='J96'"><xsl:value-of select="$myparam"/> (ounce (UK fluid) per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='J97'"><xsl:value-of select="$myparam"/> (ounce (UK fluid) per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='J98'"><xsl:value-of select="$myparam"/> (ounce (UK fluid) per second)</xsl:when>
       		<xsl:when test="$myparam.upper='J99'"><xsl:value-of select="$myparam"/> (ounce (US fluid) per day)</xsl:when>
+      		<xsl:when test="$myparam.upper='JB'"><xsl:value-of select="$myparam"/> (jumbo)</xsl:when>
       		<xsl:when test="$myparam.upper='JE'"><xsl:value-of select="$myparam"/> (joule per kelvin)</xsl:when>
+      		<xsl:when test="$myparam.upper='JG'"><xsl:value-of select="$myparam"/> (jug)</xsl:when>
       		<xsl:when test="$myparam.upper='JK'"><xsl:value-of select="$myparam"/> (megajoule per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='JM'"><xsl:value-of select="$myparam"/> (megajoule per cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='JNT'"><xsl:value-of select="$myparam"/> (pipeline joint)</xsl:when>
+      		<xsl:when test="$myparam.upper='JO'"><xsl:value-of select="$myparam"/> (joint)</xsl:when>
       		<xsl:when test="$myparam.upper='JOU'"><xsl:value-of select="$myparam"/> (joule)</xsl:when>
       		<xsl:when test="$myparam.upper='JPS'"><xsl:value-of select="$myparam"/> (hundred metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='JR'"><xsl:value-of select="$myparam"/> (jar)</xsl:when>
       		<xsl:when test="$myparam.upper='JWL'"><xsl:value-of select="$myparam"/> (number of jewels)</xsl:when>
       		<xsl:when test="$myparam.upper='K1'"><xsl:value-of select="$myparam"/> (kilowatt demand)</xsl:when>
       		<xsl:when test="$myparam.upper='K10'"><xsl:value-of select="$myparam"/> (ounce (US fluid) per hour)</xsl:when>
@@ -1042,6 +1284,8 @@
       		<xsl:when test="$myparam.upper='K21'"><xsl:value-of select="$myparam"/> (cubic foot per degree Fahrenheit)</xsl:when>
       		<xsl:when test="$myparam.upper='K22'"><xsl:value-of select="$myparam"/> (cubic foot per day)</xsl:when>
       		<xsl:when test="$myparam.upper='K23'"><xsl:value-of select="$myparam"/> (cubic foot per psi)</xsl:when>
+      		<xsl:when test="$myparam.upper='K24'"><xsl:value-of select="$myparam"/> (foot of water)</xsl:when>
+      		<xsl:when test="$myparam.upper='K25'"><xsl:value-of select="$myparam"/> (foot of mercury)</xsl:when>
       		<xsl:when test="$myparam.upper='K26'"><xsl:value-of select="$myparam"/> (gallon (UK) per day)</xsl:when>
       		<xsl:when test="$myparam.upper='K27'"><xsl:value-of select="$myparam"/> (gallon (UK) per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='K28'"><xsl:value-of select="$myparam"/> (gallon (UK) per second)</xsl:when>
@@ -1065,6 +1309,7 @@
       		<xsl:when test="$myparam.upper='K47'"><xsl:value-of select="$myparam"/> (inch per second degree Fahrenheit)</xsl:when>
       		<xsl:when test="$myparam.upper='K48'"><xsl:value-of select="$myparam"/> (inch per second psi)</xsl:when>
       		<xsl:when test="$myparam.upper='K49'"><xsl:value-of select="$myparam"/> (reciprocal cubic inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='K5'"><xsl:value-of select="$myparam"/> (kilovolt ampere (reactive))</xsl:when>
       		<xsl:when test="$myparam.upper='K50'"><xsl:value-of select="$myparam"/> (kilobaud)</xsl:when>
       		<xsl:when test="$myparam.upper='K51'"><xsl:value-of select="$myparam"/> (kilocalorie (mean))</xsl:when>
       		<xsl:when test="$myparam.upper='K52'"><xsl:value-of select="$myparam"/> (kilocalorie (international table) per hour metre degree Celsius)</xsl:when>
@@ -1118,8 +1363,11 @@
       		<xsl:when test="$myparam.upper='KB'"><xsl:value-of select="$myparam"/> (kilocharacter)</xsl:when>
       		<xsl:when test="$myparam.upper='KBA'"><xsl:value-of select="$myparam"/> (kilobar)</xsl:when>
       		<xsl:when test="$myparam.upper='KCC'"><xsl:value-of select="$myparam"/> (kilogram of choline chloride)</xsl:when>
+      		<xsl:when test="$myparam.upper='KD'"><xsl:value-of select="$myparam"/> (kilogram decimal)</xsl:when>
       		<xsl:when test="$myparam.upper='KDW'"><xsl:value-of select="$myparam"/> (kilogram drained net weight)</xsl:when>
       		<xsl:when test="$myparam.upper='KEL'"><xsl:value-of select="$myparam"/> (kelvin)</xsl:when>
+      		<xsl:when test="$myparam.upper='KF'"><xsl:value-of select="$myparam"/> (kilopacket)</xsl:when>
+      		<xsl:when test="$myparam.upper='KG'"><xsl:value-of select="$myparam"/> (keg)</xsl:when>
       		<xsl:when test="$myparam.upper='KGM'"><xsl:value-of select="$myparam"/> (kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='KGS'"><xsl:value-of select="$myparam"/> (kilogram per second)</xsl:when>
       		<xsl:when test="$myparam.upper='KHY'"><xsl:value-of select="$myparam"/> (kilogram of hydrogen peroxide)</xsl:when>
@@ -1147,9 +1395,11 @@
       		<xsl:when test="$myparam.upper='KPO'"><xsl:value-of select="$myparam"/> (kilogram of potassium oxide)</xsl:when>
       		<xsl:when test="$myparam.upper='KPP'"><xsl:value-of select="$myparam"/> (kilogram of phosphorus pentoxide (phosphoric anhydride))</xsl:when>
       		<xsl:when test="$myparam.upper='KR'"><xsl:value-of select="$myparam"/> (kiloroentgen)</xsl:when>
+      		<xsl:when test="$myparam.upper='KS'"><xsl:value-of select="$myparam"/> (thousand pound per square inch)</xsl:when>
       		<xsl:when test="$myparam.upper='KSD'"><xsl:value-of select="$myparam"/> (kilogram of substance 90 % dry)</xsl:when>
       		<xsl:when test="$myparam.upper='KSH'"><xsl:value-of select="$myparam"/> (kilogram of sodium hydroxide (caustic soda))</xsl:when>
       		<xsl:when test="$myparam.upper='KT'"><xsl:value-of select="$myparam"/> (kit)</xsl:when>
+      		<xsl:when test="$myparam.upper='KTM'"><xsl:value-of select="$myparam"/> (kilometre)</xsl:when>
       		<xsl:when test="$myparam.upper='KTN'"><xsl:value-of select="$myparam"/> (kilotonne)</xsl:when>
       		<xsl:when test="$myparam.upper='KUR'"><xsl:value-of select="$myparam"/> (kilogram of uranium)</xsl:when>
       		<xsl:when test="$myparam.upper='KVA'"><xsl:value-of select="$myparam"/> (kilovolt - ampere)</xsl:when>
@@ -1161,6 +1411,7 @@
       		<xsl:when test="$myparam.upper='KWO'"><xsl:value-of select="$myparam"/> (kilogram of tungsten trioxide)</xsl:when>
       		<xsl:when test="$myparam.upper='KWS'"><xsl:value-of select="$myparam"/> (Kilowatt hour per standard cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='KWT'"><xsl:value-of select="$myparam"/> (kilowatt)</xsl:when>
+      		<xsl:when test="$myparam.upper='KWY'"><xsl:value-of select="$myparam"/> (kilowatt year)</xsl:when>
       		<xsl:when test="$myparam.upper='KX'"><xsl:value-of select="$myparam"/> (millilitre per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='L10'"><xsl:value-of select="$myparam"/> (quart (US liquid) per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='L11'"><xsl:value-of select="$myparam"/> (quart (US liquid) per second)</xsl:when>
@@ -1213,6 +1464,8 @@
       		<xsl:when test="$myparam.upper='L58'"><xsl:value-of select="$myparam"/> (pint (US liquid) per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='L59'"><xsl:value-of select="$myparam"/> (pint (US liquid) per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='L60'"><xsl:value-of select="$myparam"/> (pint (US liquid) per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='L61'"><xsl:value-of select="$myparam"/> (pint (US dry))</xsl:when>
+      		<xsl:when test="$myparam.upper='L62'"><xsl:value-of select="$myparam"/> (quart (US dry))</xsl:when>
       		<xsl:when test="$myparam.upper='L63'"><xsl:value-of select="$myparam"/> (slug per day)</xsl:when>
       		<xsl:when test="$myparam.upper='L64'"><xsl:value-of select="$myparam"/> (slug per foot second)</xsl:when>
       		<xsl:when test="$myparam.upper='L65'"><xsl:value-of select="$myparam"/> (slug per cubic foot)</xsl:when>
@@ -1253,10 +1506,14 @@
       		<xsl:when test="$myparam.upper='LAC'"><xsl:value-of select="$myparam"/> (lactose excess percentage)</xsl:when>
       		<xsl:when test="$myparam.upper='LBR'"><xsl:value-of select="$myparam"/> (pound)</xsl:when>
       		<xsl:when test="$myparam.upper='LBT'"><xsl:value-of select="$myparam"/> (troy pound (US))</xsl:when>
+      		<xsl:when test="$myparam.upper='LC'"><xsl:value-of select="$myparam"/> (linear centimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='LD'"><xsl:value-of select="$myparam"/> (litre per day)</xsl:when>
+      		<xsl:when test="$myparam.upper='LE'"><xsl:value-of select="$myparam"/> (lite)</xsl:when>
       		<xsl:when test="$myparam.upper='LEF'"><xsl:value-of select="$myparam"/> (leaf)</xsl:when>
       		<xsl:when test="$myparam.upper='LF'"><xsl:value-of select="$myparam"/> (linear foot)</xsl:when>
       		<xsl:when test="$myparam.upper='LH'"><xsl:value-of select="$myparam"/> (labour hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='LI'"><xsl:value-of select="$myparam"/> (linear inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='LJ'"><xsl:value-of select="$myparam"/> (large spray)</xsl:when>
       		<xsl:when test="$myparam.upper='LK'"><xsl:value-of select="$myparam"/> (link)</xsl:when>
       		<xsl:when test="$myparam.upper='LM'"><xsl:value-of select="$myparam"/> (linear metre)</xsl:when>
       		<xsl:when test="$myparam.upper='LN'"><xsl:value-of select="$myparam"/> (length)</xsl:when>
@@ -1270,7 +1527,9 @@
       		<xsl:when test="$myparam.upper='LUB'"><xsl:value-of select="$myparam"/> (metric ton, lubricating oil)</xsl:when>
       		<xsl:when test="$myparam.upper='LUM'"><xsl:value-of select="$myparam"/> (lumen)</xsl:when>
       		<xsl:when test="$myparam.upper='LUX'"><xsl:value-of select="$myparam"/> (lux)</xsl:when>
+      		<xsl:when test="$myparam.upper='LX'"><xsl:value-of select="$myparam"/> (linear yard per pound)</xsl:when>
       		<xsl:when test="$myparam.upper='LY'"><xsl:value-of select="$myparam"/> (linear yard)</xsl:when>
+      		<xsl:when test="$myparam.upper='M0'"><xsl:value-of select="$myparam"/> (magnetic tape)</xsl:when>
       		<xsl:when test="$myparam.upper='M1'"><xsl:value-of select="$myparam"/> (milligram per litre)</xsl:when>
       		<xsl:when test="$myparam.upper='M10'"><xsl:value-of select="$myparam"/> (reciprocal cubic yard)</xsl:when>
       		<xsl:when test="$myparam.upper='M11'"><xsl:value-of select="$myparam"/> (cubic yard per degree Fahrenheit)</xsl:when>
@@ -1364,6 +1623,7 @@
       		<xsl:when test="$myparam.upper='M97'"><xsl:value-of select="$myparam"/> (dyne metre)</xsl:when>
       		<xsl:when test="$myparam.upper='M98'"><xsl:value-of select="$myparam"/> (kilogram centimetre per second)</xsl:when>
       		<xsl:when test="$myparam.upper='M99'"><xsl:value-of select="$myparam"/> (gram centimetre per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='MA'"><xsl:value-of select="$myparam"/> (machine per unit)</xsl:when>
       		<xsl:when test="$myparam.upper='MAH'"><xsl:value-of select="$myparam"/> (megavolt ampere reactive hour)</xsl:when>
       		<xsl:when test="$myparam.upper='MAL'"><xsl:value-of select="$myparam"/> (megalitre)</xsl:when>
       		<xsl:when test="$myparam.upper='MAM'"><xsl:value-of select="$myparam"/> (megametre)</xsl:when>
@@ -1375,6 +1635,7 @@
       		<xsl:when test="$myparam.upper='MC'"><xsl:value-of select="$myparam"/> (microgram)</xsl:when>
       		<xsl:when test="$myparam.upper='MCU'"><xsl:value-of select="$myparam"/> (millicurie)</xsl:when>
       		<xsl:when test="$myparam.upper='MD'"><xsl:value-of select="$myparam"/> (air dry metric ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='MF'"><xsl:value-of select="$myparam"/> (milligram per square foot per side)</xsl:when>
       		<xsl:when test="$myparam.upper='MGM'"><xsl:value-of select="$myparam"/> (milligram)</xsl:when>
       		<xsl:when test="$myparam.upper='MHZ'"><xsl:value-of select="$myparam"/> (megahertz)</xsl:when>
       		<xsl:when test="$myparam.upper='MIK'"><xsl:value-of select="$myparam"/> (square mile (statute mile))</xsl:when>
@@ -1382,21 +1643,36 @@
       		<xsl:when test="$myparam.upper='MIN'"><xsl:value-of select="$myparam"/> (minute [unit of time])</xsl:when>
       		<xsl:when test="$myparam.upper='MIO'"><xsl:value-of select="$myparam"/> (million)</xsl:when>
       		<xsl:when test="$myparam.upper='MIU'"><xsl:value-of select="$myparam"/> (million international unit)</xsl:when>
+      		<xsl:when test="$myparam.upper='MK'"><xsl:value-of select="$myparam"/> (milligram per square inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='MKD'"><xsl:value-of select="$myparam"/> (Square Metre Day)</xsl:when>
+      		<xsl:when test="$myparam.upper='MKM'"><xsl:value-of select="$myparam"/> (Square Metre Month)</xsl:when>
+      		<xsl:when test="$myparam.upper='MKW'"><xsl:value-of select="$myparam"/> (Square Metre Week)</xsl:when>
       		<xsl:when test="$myparam.upper='MLD'"><xsl:value-of select="$myparam"/> (milliard)</xsl:when>
       		<xsl:when test="$myparam.upper='MLT'"><xsl:value-of select="$myparam"/> (millilitre)</xsl:when>
       		<xsl:when test="$myparam.upper='MMK'"><xsl:value-of select="$myparam"/> (square millimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='MMQ'"><xsl:value-of select="$myparam"/> (cubic millimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='MMT'"><xsl:value-of select="$myparam"/> (millimetre)</xsl:when>
       		<xsl:when test="$myparam.upper='MND'"><xsl:value-of select="$myparam"/> (kilogram, dry weight)</xsl:when>
+      		<xsl:when test="$myparam.upper='MNJ'"><xsl:value-of select="$myparam"/> (Mega Joule per Normalised cubic Metre)</xsl:when>
       		<xsl:when test="$myparam.upper='MON'"><xsl:value-of select="$myparam"/> (month)</xsl:when>
       		<xsl:when test="$myparam.upper='MPA'"><xsl:value-of select="$myparam"/> (megapascal)</xsl:when>
+      		<xsl:when test="$myparam.upper='MQ'"><xsl:value-of select="$myparam"/> (thousand metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='MQD'"><xsl:value-of select="$myparam"/> (Cubic Metre Day)</xsl:when>
       		<xsl:when test="$myparam.upper='MQH'"><xsl:value-of select="$myparam"/> (cubic metre per hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='MQM'"><xsl:value-of select="$myparam"/> (Cubic Metre Month)</xsl:when>
       		<xsl:when test="$myparam.upper='MQS'"><xsl:value-of select="$myparam"/> (cubic metre per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='MQW'"><xsl:value-of select="$myparam"/> (Cubic Metre Week)</xsl:when>
+      		<xsl:when test="$myparam.upper='MRD'"><xsl:value-of select="$myparam"/> (Metre Day)</xsl:when>
+      		<xsl:when test="$myparam.upper='MRM'"><xsl:value-of select="$myparam"/> (Metre Month)</xsl:when>
+      		<xsl:when test="$myparam.upper='MRW'"><xsl:value-of select="$myparam"/> (Metre Week)</xsl:when>
       		<xsl:when test="$myparam.upper='MSK'"><xsl:value-of select="$myparam"/> (metre per second squared)</xsl:when>
+      		<xsl:when test="$myparam.upper='MT'"><xsl:value-of select="$myparam"/> (mat)</xsl:when>
       		<xsl:when test="$myparam.upper='MTK'"><xsl:value-of select="$myparam"/> (square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='MTQ'"><xsl:value-of select="$myparam"/> (cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='MTR'"><xsl:value-of select="$myparam"/> (metre)</xsl:when>
       		<xsl:when test="$myparam.upper='MTS'"><xsl:value-of select="$myparam"/> (metre per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='MTZ'"><xsl:value-of select="$myparam"/> (milihertz)</xsl:when>
+      		<xsl:when test="$myparam.upper='MV'"><xsl:value-of select="$myparam"/> (number of mults)</xsl:when>
       		<xsl:when test="$myparam.upper='MVA'"><xsl:value-of select="$myparam"/> (megavolt - ampere)</xsl:when>
       		<xsl:when test="$myparam.upper='MWH'"><xsl:value-of select="$myparam"/> (megawatt hour (1000 kW.h))</xsl:when>
       		<xsl:when test="$myparam.upper='N1'"><xsl:value-of select="$myparam"/> (pen calorie)</xsl:when>
@@ -1410,6 +1686,7 @@
       		<xsl:when test="$myparam.upper='N17'"><xsl:value-of select="$myparam"/> (inch of mercury (60 ºF))</xsl:when>
       		<xsl:when test="$myparam.upper='N18'"><xsl:value-of select="$myparam"/> (inch of water (39.2 ºF))</xsl:when>
       		<xsl:when test="$myparam.upper='N19'"><xsl:value-of select="$myparam"/> (inch of water (60 ºF))</xsl:when>
+      		<xsl:when test="$myparam.upper='N2'"><xsl:value-of select="$myparam"/> (number of lines)</xsl:when>
       		<xsl:when test="$myparam.upper='N20'"><xsl:value-of select="$myparam"/> (kip per square inch)</xsl:when>
       		<xsl:when test="$myparam.upper='N21'"><xsl:value-of select="$myparam"/> (poundal per square foot)</xsl:when>
       		<xsl:when test="$myparam.upper='N22'"><xsl:value-of select="$myparam"/> (ounce (avoirdupois) per square inch)</xsl:when>
@@ -1493,19 +1770,38 @@
       		<xsl:when test="$myparam.upper='N99'"><xsl:value-of select="$myparam"/> (picovolt)</xsl:when>
       		<xsl:when test="$myparam.upper='NA'"><xsl:value-of select="$myparam"/> (milligram per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='NAR'"><xsl:value-of select="$myparam"/> (number of articles)</xsl:when>
+      		<xsl:when test="$myparam.upper='NB'"><xsl:value-of select="$myparam"/> (barge)</xsl:when>
+      		<xsl:when test="$myparam.upper='NBB'"><xsl:value-of select="$myparam"/> (number of bobbins)</xsl:when>
+      		<xsl:when test="$myparam.upper='NC'"><xsl:value-of select="$myparam"/> (car)</xsl:when>
       		<xsl:when test="$myparam.upper='NCL'"><xsl:value-of select="$myparam"/> (number of cells)</xsl:when>
+      		<xsl:when test="$myparam.upper='ND'"><xsl:value-of select="$myparam"/> (net barrel)</xsl:when>
+      		<xsl:when test="$myparam.upper='NE'"><xsl:value-of select="$myparam"/> (net litre)</xsl:when>
       		<xsl:when test="$myparam.upper='NEW'"><xsl:value-of select="$myparam"/> (newton)</xsl:when>
       		<xsl:when test="$myparam.upper='NF'"><xsl:value-of select="$myparam"/> (message)</xsl:when>
+      		<xsl:when test="$myparam.upper='NG'"><xsl:value-of select="$myparam"/> (net gallon (us))</xsl:when>
+      		<xsl:when test="$myparam.upper='NH'"><xsl:value-of select="$myparam"/> (message hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='NI'"><xsl:value-of select="$myparam"/> (net imperial gallon)</xsl:when>
       		<xsl:when test="$myparam.upper='NIL'"><xsl:value-of select="$myparam"/> (nil)</xsl:when>
       		<xsl:when test="$myparam.upper='NIU'"><xsl:value-of select="$myparam"/> (number of international units)</xsl:when>
+      		<xsl:when test="$myparam.upper='NJ'"><xsl:value-of select="$myparam"/> (number of screens)</xsl:when>
       		<xsl:when test="$myparam.upper='NL'"><xsl:value-of select="$myparam"/> (load)</xsl:when>
       		<xsl:when test="$myparam.upper='NM3'"><xsl:value-of select="$myparam"/> (Normalised cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='NMI'"><xsl:value-of select="$myparam"/> (nautical mile)</xsl:when>
       		<xsl:when test="$myparam.upper='NMP'"><xsl:value-of select="$myparam"/> (number of packs)</xsl:when>
+      		<xsl:when test="$myparam.upper='NN'"><xsl:value-of select="$myparam"/> (train)</xsl:when>
+      		<xsl:when test="$myparam.upper='NPL'"><xsl:value-of select="$myparam"/> (number of parcels)</xsl:when>
+      		<xsl:when test="$myparam.upper='NPR'"><xsl:value-of select="$myparam"/> (number of pairs)</xsl:when>
       		<xsl:when test="$myparam.upper='NPT'"><xsl:value-of select="$myparam"/> (number of parts)</xsl:when>
+      		<xsl:when test="$myparam.upper='NQ'"><xsl:value-of select="$myparam"/> (mho)</xsl:when>
+      		<xsl:when test="$myparam.upper='NR'"><xsl:value-of select="$myparam"/> (micromho)</xsl:when>
+      		<xsl:when test="$myparam.upper='NRL'"><xsl:value-of select="$myparam"/> (number of rolls)</xsl:when>
       		<xsl:when test="$myparam.upper='NT'"><xsl:value-of select="$myparam"/> (net ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='NTT'"><xsl:value-of select="$myparam"/> (net register ton)</xsl:when>
+      		<xsl:when test="$myparam.upper='NTU'"><xsl:value-of select="$myparam"/> (Nephelometric turbidity unit)</xsl:when>
       		<xsl:when test="$myparam.upper='NU'"><xsl:value-of select="$myparam"/> (newton metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='NV'"><xsl:value-of select="$myparam"/> (vehicle)</xsl:when>
       		<xsl:when test="$myparam.upper='NX'"><xsl:value-of select="$myparam"/> (part per thousand)</xsl:when>
+      		<xsl:when test="$myparam.upper='NY'"><xsl:value-of select="$myparam"/> (pound per air dry metric ton)</xsl:when>
       		<xsl:when test="$myparam.upper='OA'"><xsl:value-of select="$myparam"/> (panel)</xsl:when>
       		<xsl:when test="$myparam.upper='ODE'"><xsl:value-of select="$myparam"/> (ozone depletion equivalent)</xsl:when>
       		<xsl:when test="$myparam.upper='ODG'"><xsl:value-of select="$myparam"/> (ODS Grams)</xsl:when>
@@ -1514,10 +1810,13 @@
       		<xsl:when test="$myparam.upper='OHM'"><xsl:value-of select="$myparam"/> (ohm)</xsl:when>
       		<xsl:when test="$myparam.upper='ON'"><xsl:value-of select="$myparam"/> (ounce per square yard)</xsl:when>
       		<xsl:when test="$myparam.upper='ONZ'"><xsl:value-of select="$myparam"/> (ounce (avoirdupois))</xsl:when>
+      		<xsl:when test="$myparam.upper='OP'"><xsl:value-of select="$myparam"/> (two pack)</xsl:when>
       		<xsl:when test="$myparam.upper='OPM'"><xsl:value-of select="$myparam"/> (oscillations per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='OT'"><xsl:value-of select="$myparam"/> (overtime hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='OZ'"><xsl:value-of select="$myparam"/> (ounce av)</xsl:when>
       		<xsl:when test="$myparam.upper='OZA'"><xsl:value-of select="$myparam"/> (fluid ounce (US))</xsl:when>
       		<xsl:when test="$myparam.upper='OZI'"><xsl:value-of select="$myparam"/> (fluid ounce (UK))</xsl:when>
+      		<xsl:when test="$myparam.upper='P0'"><xsl:value-of select="$myparam"/> (page - electronic)</xsl:when>
       		<xsl:when test="$myparam.upper='P1'"><xsl:value-of select="$myparam"/> (percent)</xsl:when>
       		<xsl:when test="$myparam.upper='P10'"><xsl:value-of select="$myparam"/> (coulomb per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='P11'"><xsl:value-of select="$myparam"/> (kiloweber)</xsl:when>
@@ -1540,6 +1839,7 @@
       		<xsl:when test="$myparam.upper='P27'"><xsl:value-of select="$myparam"/> (footcandle)</xsl:when>
       		<xsl:when test="$myparam.upper='P28'"><xsl:value-of select="$myparam"/> (candela per square inch)</xsl:when>
       		<xsl:when test="$myparam.upper='P29'"><xsl:value-of select="$myparam"/> (footlambert)</xsl:when>
+      		<xsl:when test="$myparam.upper='P3'"><xsl:value-of select="$myparam"/> (three pack)</xsl:when>
       		<xsl:when test="$myparam.upper='P30'"><xsl:value-of select="$myparam"/> (lambert)</xsl:when>
       		<xsl:when test="$myparam.upper='P31'"><xsl:value-of select="$myparam"/> (stilb)</xsl:when>
       		<xsl:when test="$myparam.upper='P32'"><xsl:value-of select="$myparam"/> (candela per square foot)</xsl:when>
@@ -1550,6 +1850,7 @@
       		<xsl:when test="$myparam.upper='P37'"><xsl:value-of select="$myparam"/> (British thermal unit (international table) per square foot)</xsl:when>
       		<xsl:when test="$myparam.upper='P38'"><xsl:value-of select="$myparam"/> (British thermal unit (thermochemical) per square foot)</xsl:when>
       		<xsl:when test="$myparam.upper='P39'"><xsl:value-of select="$myparam"/> (calorie (thermochemical) per square centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='P4'"><xsl:value-of select="$myparam"/> (four pack)</xsl:when>
       		<xsl:when test="$myparam.upper='P40'"><xsl:value-of select="$myparam"/> (langley)</xsl:when>
       		<xsl:when test="$myparam.upper='P41'"><xsl:value-of select="$myparam"/> (decade (logarithmic))</xsl:when>
       		<xsl:when test="$myparam.upper='P42'"><xsl:value-of select="$myparam"/> (pascal squared second)</xsl:when>
@@ -1571,6 +1872,7 @@
       		<xsl:when test="$myparam.upper='P57'"><xsl:value-of select="$myparam"/> (gray per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='P58'"><xsl:value-of select="$myparam"/> (milligray per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='P59'"><xsl:value-of select="$myparam"/> (microgray per minute)</xsl:when>
+      		<xsl:when test="$myparam.upper='P6'"><xsl:value-of select="$myparam"/> (six pack)</xsl:when>
       		<xsl:when test="$myparam.upper='P60'"><xsl:value-of select="$myparam"/> (nanogray per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='P61'"><xsl:value-of select="$myparam"/> (gray per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='P62'"><xsl:value-of select="$myparam"/> (milligray per hour)</xsl:when>
@@ -1581,6 +1883,7 @@
       		<xsl:when test="$myparam.upper='P67'"><xsl:value-of select="$myparam"/> (microsievert per second)</xsl:when>
       		<xsl:when test="$myparam.upper='P68'"><xsl:value-of select="$myparam"/> (nanosievert per second)</xsl:when>
       		<xsl:when test="$myparam.upper='P69'"><xsl:value-of select="$myparam"/> (rem per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='P7'"><xsl:value-of select="$myparam"/> (seven pack)</xsl:when>
       		<xsl:when test="$myparam.upper='P70'"><xsl:value-of select="$myparam"/> (sievert per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='P71'"><xsl:value-of select="$myparam"/> (millisievert per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='P72'"><xsl:value-of select="$myparam"/> (microsievert per hour)</xsl:when>
@@ -1591,6 +1894,7 @@
       		<xsl:when test="$myparam.upper='P77'"><xsl:value-of select="$myparam"/> (nanosievert per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='P78'"><xsl:value-of select="$myparam"/> (reciprocal square inch)</xsl:when>
       		<xsl:when test="$myparam.upper='P79'"><xsl:value-of select="$myparam"/> (pascal square metre per kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='P8'"><xsl:value-of select="$myparam"/> (eight pack)</xsl:when>
       		<xsl:when test="$myparam.upper='P80'"><xsl:value-of select="$myparam"/> (millipascal per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='P81'"><xsl:value-of select="$myparam"/> (kilopascal per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='P82'"><xsl:value-of select="$myparam"/> (hectopascal per metre)</xsl:when>
@@ -1601,6 +1905,7 @@
       		<xsl:when test="$myparam.upper='P87'"><xsl:value-of select="$myparam"/> (cubic metre per second square metre)</xsl:when>
       		<xsl:when test="$myparam.upper='P88'"><xsl:value-of select="$myparam"/> (rhe)</xsl:when>
       		<xsl:when test="$myparam.upper='P89'"><xsl:value-of select="$myparam"/> (pound-force foot per inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='P9'"><xsl:value-of select="$myparam"/> (nine pack)</xsl:when>
       		<xsl:when test="$myparam.upper='P90'"><xsl:value-of select="$myparam"/> (pound-force inch per inch)</xsl:when>
       		<xsl:when test="$myparam.upper='P91'"><xsl:value-of select="$myparam"/> (perm (0 ºC))</xsl:when>
       		<xsl:when test="$myparam.upper='P92'"><xsl:value-of select="$myparam"/> (perm (23 ºC))</xsl:when>
@@ -1611,20 +1916,35 @@
       		<xsl:when test="$myparam.upper='P97'"><xsl:value-of select="$myparam"/> (reciprocal radian)</xsl:when>
       		<xsl:when test="$myparam.upper='P98'"><xsl:value-of select="$myparam"/> (pascal to the power sum of stoichiometric numbers)</xsl:when>
       		<xsl:when test="$myparam.upper='P99'"><xsl:value-of select="$myparam"/> (mole per cubiv metre to the power sum of stoichiometric numbers)</xsl:when>
+      		<xsl:when test="$myparam.upper='PA'"><xsl:value-of select="$myparam"/> (packet)</xsl:when>
       		<xsl:when test="$myparam.upper='PAL'"><xsl:value-of select="$myparam"/> (pascal)</xsl:when>
+      		<xsl:when test="$myparam.upper='PB'"><xsl:value-of select="$myparam"/> (pair inch)</xsl:when>
       		<xsl:when test="$myparam.upper='PD'"><xsl:value-of select="$myparam"/> (pad)</xsl:when>
+      		<xsl:when test="$myparam.upper='PE'"><xsl:value-of select="$myparam"/> (pound equivalent)</xsl:when>
+      		<xsl:when test="$myparam.upper='PF'"><xsl:value-of select="$myparam"/> (pallet (lift))</xsl:when>
       		<xsl:when test="$myparam.upper='PFL'"><xsl:value-of select="$myparam"/> (proof litre)</xsl:when>
+      		<xsl:when test="$myparam.upper='PG'"><xsl:value-of select="$myparam"/> (plate)</xsl:when>
       		<xsl:when test="$myparam.upper='PGL'"><xsl:value-of select="$myparam"/> (proof gallon)</xsl:when>
       		<xsl:when test="$myparam.upper='PI'"><xsl:value-of select="$myparam"/> (pitch)</xsl:when>
+      		<xsl:when test="$myparam.upper='PK'"><xsl:value-of select="$myparam"/> (pack)</xsl:when>
+      		<xsl:when test="$myparam.upper='PL'"><xsl:value-of select="$myparam"/> (pail)</xsl:when>
       		<xsl:when test="$myparam.upper='PLA'"><xsl:value-of select="$myparam"/> (degree Plato)</xsl:when>
+      		<xsl:when test="$myparam.upper='PM'"><xsl:value-of select="$myparam"/> (pound percentage)</xsl:when>
+      		<xsl:when test="$myparam.upper='PN'"><xsl:value-of select="$myparam"/> (pound net)</xsl:when>
       		<xsl:when test="$myparam.upper='PO'"><xsl:value-of select="$myparam"/> (pound per inch of length)</xsl:when>
       		<xsl:when test="$myparam.upper='PQ'"><xsl:value-of select="$myparam"/> (page per inch)</xsl:when>
       		<xsl:when test="$myparam.upper='PR'"><xsl:value-of select="$myparam"/> (pair)</xsl:when>
       		<xsl:when test="$myparam.upper='PS'"><xsl:value-of select="$myparam"/> (pound-force per square inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='PT'"><xsl:value-of select="$myparam"/> (pint (US))</xsl:when>
       		<xsl:when test="$myparam.upper='PTD'"><xsl:value-of select="$myparam"/> (dry pint (US))</xsl:when>
       		<xsl:when test="$myparam.upper='PTI'"><xsl:value-of select="$myparam"/> (pint (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='PTL'"><xsl:value-of select="$myparam"/> (liquid pint (US))</xsl:when>
       		<xsl:when test="$myparam.upper='PTN'"><xsl:value-of select="$myparam"/> (portion)</xsl:when>
+      		<xsl:when test="$myparam.upper='PU'"><xsl:value-of select="$myparam"/> (tray / tray pack)</xsl:when>
+      		<xsl:when test="$myparam.upper='PV'"><xsl:value-of select="$myparam"/> (half pint (US))</xsl:when>
+      		<xsl:when test="$myparam.upper='PW'"><xsl:value-of select="$myparam"/> (pound per inch of width)</xsl:when>
+      		<xsl:when test="$myparam.upper='PY'"><xsl:value-of select="$myparam"/> (peck dry (US))</xsl:when>
+      		<xsl:when test="$myparam.upper='PZ'"><xsl:value-of select="$myparam"/> (peck dry (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='Q10'"><xsl:value-of select="$myparam"/> (joule per tesla)</xsl:when>
       		<xsl:when test="$myparam.upper='Q11'"><xsl:value-of select="$myparam"/> (erlang)</xsl:when>
       		<xsl:when test="$myparam.upper='Q12'"><xsl:value-of select="$myparam"/> (octet)</xsl:when>
@@ -1645,6 +1965,7 @@
       		<xsl:when test="$myparam.upper='Q27'"><xsl:value-of select="$myparam"/> (newton metre per metre)</xsl:when>
       		<xsl:when test="$myparam.upper='Q28'"><xsl:value-of select="$myparam"/> (kilogram per square metre pascal second)</xsl:when>
       		<xsl:when test="$myparam.upper='Q29'"><xsl:value-of select="$myparam"/> (microgram per hectogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='Q3'"><xsl:value-of select="$myparam"/> (meal)</xsl:when>
       		<xsl:when test="$myparam.upper='Q30'"><xsl:value-of select="$myparam"/> (pH (potential of Hydrogen))</xsl:when>
       		<xsl:when test="$myparam.upper='Q31'"><xsl:value-of select="$myparam"/> (kilojoule per gram)</xsl:when>
       		<xsl:when test="$myparam.upper='Q32'"><xsl:value-of select="$myparam"/> (femtolitre)</xsl:when>
@@ -1658,72 +1979,137 @@
       		<xsl:when test="$myparam.upper='Q40'"><xsl:value-of select="$myparam"/> (Normalized cubic metre per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='Q41'"><xsl:value-of select="$myparam"/> (Joule per normalised cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='Q42'"><xsl:value-of select="$myparam"/> (Joule per standard cubic metre)</xsl:when>
-      		<xsl:when test="$myparam.upper='Q3'"><xsl:value-of select="$myparam"/> (meal)</xsl:when>
       		<xsl:when test="$myparam.upper='QA'"><xsl:value-of select="$myparam"/> (page - facsimile)</xsl:when>
       		<xsl:when test="$myparam.upper='QAN'"><xsl:value-of select="$myparam"/> (quarter (of a year))</xsl:when>
       		<xsl:when test="$myparam.upper='QB'"><xsl:value-of select="$myparam"/> (page - hardcopy)</xsl:when>
+      		<xsl:when test="$myparam.upper='QD'"><xsl:value-of select="$myparam"/> (quarter dozen)</xsl:when>
+      		<xsl:when test="$myparam.upper='QH'"><xsl:value-of select="$myparam"/> (quarter hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='QK'"><xsl:value-of select="$myparam"/> (quarter kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='QR'"><xsl:value-of select="$myparam"/> (quire)</xsl:when>
+      		<xsl:when test="$myparam.upper='QT'"><xsl:value-of select="$myparam"/> (quart (US))</xsl:when>
       		<xsl:when test="$myparam.upper='QTD'"><xsl:value-of select="$myparam"/> (dry quart (US))</xsl:when>
       		<xsl:when test="$myparam.upper='QTI'"><xsl:value-of select="$myparam"/> (quart (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='QTL'"><xsl:value-of select="$myparam"/> (liquid quart (US))</xsl:when>
       		<xsl:when test="$myparam.upper='QTR'"><xsl:value-of select="$myparam"/> (quarter (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='R1'"><xsl:value-of select="$myparam"/> (pica)</xsl:when>
+      		<xsl:when test="$myparam.upper='R4'"><xsl:value-of select="$myparam"/> (calorie)</xsl:when>
       		<xsl:when test="$myparam.upper='R9'"><xsl:value-of select="$myparam"/> (thousand cubic metre)</xsl:when>
+      		<xsl:when test="$myparam.upper='RA'"><xsl:value-of select="$myparam"/> (rack)</xsl:when>
+      		<xsl:when test="$myparam.upper='RD'"><xsl:value-of select="$myparam"/> (rod)</xsl:when>
+      		<xsl:when test="$myparam.upper='RG'"><xsl:value-of select="$myparam"/> (ring)</xsl:when>
       		<xsl:when test="$myparam.upper='RH'"><xsl:value-of select="$myparam"/> (running or operating hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='RK'"><xsl:value-of select="$myparam"/> (roll metric measure)</xsl:when>
+      		<xsl:when test="$myparam.upper='RL'"><xsl:value-of select="$myparam"/> (reel)</xsl:when>
       		<xsl:when test="$myparam.upper='RM'"><xsl:value-of select="$myparam"/> (ream)</xsl:when>
+      		<xsl:when test="$myparam.upper='RN'"><xsl:value-of select="$myparam"/> (ream metric measure)</xsl:when>
+      		<xsl:when test="$myparam.upper='RO'"><xsl:value-of select="$myparam"/> (roll)</xsl:when>
       		<xsl:when test="$myparam.upper='ROM'"><xsl:value-of select="$myparam"/> (room)</xsl:when>
       		<xsl:when test="$myparam.upper='RP'"><xsl:value-of select="$myparam"/> (pound per ream)</xsl:when>
       		<xsl:when test="$myparam.upper='RPM'"><xsl:value-of select="$myparam"/> (revolutions per minute)</xsl:when>
       		<xsl:when test="$myparam.upper='RPS'"><xsl:value-of select="$myparam"/> (revolutions per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='RS'"><xsl:value-of select="$myparam"/> (reset)</xsl:when>
       		<xsl:when test="$myparam.upper='RT'"><xsl:value-of select="$myparam"/> (revenue ton mile)</xsl:when>
+      		<xsl:when test="$myparam.upper='RU'"><xsl:value-of select="$myparam"/> (run)</xsl:when>
       		<xsl:when test="$myparam.upper='S3'"><xsl:value-of select="$myparam"/> (square foot per second)</xsl:when>
       		<xsl:when test="$myparam.upper='S4'"><xsl:value-of select="$myparam"/> (square metre per second)</xsl:when>
+      		<xsl:when test="$myparam.upper='S5'"><xsl:value-of select="$myparam"/> (sixty fourths of an inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='S6'"><xsl:value-of select="$myparam"/> (session)</xsl:when>
+      		<xsl:when test="$myparam.upper='S7'"><xsl:value-of select="$myparam"/> (storage unit)</xsl:when>
+      		<xsl:when test="$myparam.upper='S8'"><xsl:value-of select="$myparam"/> (standard advertising unit)</xsl:when>
+      		<xsl:when test="$myparam.upper='SA'"><xsl:value-of select="$myparam"/> (sack)</xsl:when>
       		<xsl:when test="$myparam.upper='SAN'"><xsl:value-of select="$myparam"/> (half year (6 months))</xsl:when>
       		<xsl:when test="$myparam.upper='SCO'"><xsl:value-of select="$myparam"/> (score)</xsl:when>
       		<xsl:when test="$myparam.upper='SCR'"><xsl:value-of select="$myparam"/> (scruple)</xsl:when>
+      		<xsl:when test="$myparam.upper='SD'"><xsl:value-of select="$myparam"/> (solid pound)</xsl:when>
+      		<xsl:when test="$myparam.upper='SE'"><xsl:value-of select="$myparam"/> (section)</xsl:when>
       		<xsl:when test="$myparam.upper='SEC'"><xsl:value-of select="$myparam"/> (second [unit of time])</xsl:when>
       		<xsl:when test="$myparam.upper='SET'"><xsl:value-of select="$myparam"/> (set)</xsl:when>
       		<xsl:when test="$myparam.upper='SG'"><xsl:value-of select="$myparam"/> (segment)</xsl:when>
+      		<xsl:when test="$myparam.upper='SHT'"><xsl:value-of select="$myparam"/> (shipping ton)</xsl:when>
       		<xsl:when test="$myparam.upper='SIE'"><xsl:value-of select="$myparam"/> (siemens)</xsl:when>
+      		<xsl:when test="$myparam.upper='SK'"><xsl:value-of select="$myparam"/> (split tank truck)</xsl:when>
+      		<xsl:when test="$myparam.upper='SL'"><xsl:value-of select="$myparam"/> (slipsheet)</xsl:when>
       		<xsl:when test="$myparam.upper='SM3'"><xsl:value-of select="$myparam"/> (Standard cubic metre)</xsl:when>
       		<xsl:when test="$myparam.upper='SMI'"><xsl:value-of select="$myparam"/> (mile (statute mile))</xsl:when>
+      		<xsl:when test="$myparam.upper='SN'"><xsl:value-of select="$myparam"/> (square rod)</xsl:when>
+      		<xsl:when test="$myparam.upper='SO'"><xsl:value-of select="$myparam"/> (spool)</xsl:when>
+      		<xsl:when test="$myparam.upper='SP'"><xsl:value-of select="$myparam"/> (shelf package)</xsl:when>
       		<xsl:when test="$myparam.upper='SQ'"><xsl:value-of select="$myparam"/> (square)</xsl:when>
       		<xsl:when test="$myparam.upper='SQR'"><xsl:value-of select="$myparam"/> (square, roofing)</xsl:when>
       		<xsl:when test="$myparam.upper='SR'"><xsl:value-of select="$myparam"/> (strip)</xsl:when>
+      		<xsl:when test="$myparam.upper='SS'"><xsl:value-of select="$myparam"/> (sheet metric measure)</xsl:when>
+      		<xsl:when test="$myparam.upper='SST'"><xsl:value-of select="$myparam"/> (short standard (7200 matches))</xsl:when>
+      		<xsl:when test="$myparam.upper='ST'"><xsl:value-of select="$myparam"/> (sheet)</xsl:when>
       		<xsl:when test="$myparam.upper='STC'"><xsl:value-of select="$myparam"/> (stick)</xsl:when>
       		<xsl:when test="$myparam.upper='STI'"><xsl:value-of select="$myparam"/> (stone (UK))</xsl:when>
       		<xsl:when test="$myparam.upper='STK'"><xsl:value-of select="$myparam"/> (stick, cigarette)</xsl:when>
       		<xsl:when test="$myparam.upper='STL'"><xsl:value-of select="$myparam"/> (standard litre)</xsl:when>
       		<xsl:when test="$myparam.upper='STN'"><xsl:value-of select="$myparam"/> (ton (US) or short ton (UK/US))</xsl:when>
       		<xsl:when test="$myparam.upper='STW'"><xsl:value-of select="$myparam"/> (straw)</xsl:when>
+      		<xsl:when test="$myparam.upper='SV'"><xsl:value-of select="$myparam"/> (skid)</xsl:when>
       		<xsl:when test="$myparam.upper='SW'"><xsl:value-of select="$myparam"/> (skein)</xsl:when>
       		<xsl:when test="$myparam.upper='SX'"><xsl:value-of select="$myparam"/> (shipment)</xsl:when>
       		<xsl:when test="$myparam.upper='SYR'"><xsl:value-of select="$myparam"/> (syringe)</xsl:when>
       		<xsl:when test="$myparam.upper='T0'"><xsl:value-of select="$myparam"/> (telecommunication line in service)</xsl:when>
+      		<xsl:when test="$myparam.upper='T1'"><xsl:value-of select="$myparam"/> (thousand pound gross)</xsl:when>
       		<xsl:when test="$myparam.upper='T3'"><xsl:value-of select="$myparam"/> (thousand piece)</xsl:when>
+      		<xsl:when test="$myparam.upper='T4'"><xsl:value-of select="$myparam"/> (thousand bag)</xsl:when>
+      		<xsl:when test="$myparam.upper='T5'"><xsl:value-of select="$myparam"/> (thousand casing)</xsl:when>
+      		<xsl:when test="$myparam.upper='T6'"><xsl:value-of select="$myparam"/> (thousand gallon (US))</xsl:when>
+      		<xsl:when test="$myparam.upper='T7'"><xsl:value-of select="$myparam"/> (thousand impression)</xsl:when>
+      		<xsl:when test="$myparam.upper='T8'"><xsl:value-of select="$myparam"/> (thousand linear inch)</xsl:when>
+      		<xsl:when test="$myparam.upper='TA'"><xsl:value-of select="$myparam"/> (tenth cubic foot)</xsl:when>
       		<xsl:when test="$myparam.upper='TAH'"><xsl:value-of select="$myparam"/> (kiloampere hour (thousand ampere hour))</xsl:when>
       		<xsl:when test="$myparam.upper='TAN'"><xsl:value-of select="$myparam"/> (total acid number)</xsl:when>
+      		<xsl:when test="$myparam.upper='TC'"><xsl:value-of select="$myparam"/> (truckload)</xsl:when>
+      		<xsl:when test="$myparam.upper='TD'"><xsl:value-of select="$myparam"/> (therm)</xsl:when>
+      		<xsl:when test="$myparam.upper='TE'"><xsl:value-of select="$myparam"/> (tote)</xsl:when>
+      		<xsl:when test="$myparam.upper='TF'"><xsl:value-of select="$myparam"/> (ten square yard)</xsl:when>
       		<xsl:when test="$myparam.upper='TI'"><xsl:value-of select="$myparam"/> (thousand square inch)</xsl:when>
       		<xsl:when test="$myparam.upper='TIC'"><xsl:value-of select="$myparam"/> (metric ton, including container)</xsl:when>
       		<xsl:when test="$myparam.upper='TIP'"><xsl:value-of select="$myparam"/> (metric ton, including inner packaging)</xsl:when>
+      		<xsl:when test="$myparam.upper='TJ'"><xsl:value-of select="$myparam"/> (thousand square centimetre)</xsl:when>
+      		<xsl:when test="$myparam.upper='TK'"><xsl:value-of select="$myparam"/> (tank, rectangular)</xsl:when>
       		<xsl:when test="$myparam.upper='TKM'"><xsl:value-of select="$myparam"/> (tonne kilometre)</xsl:when>
+      		<xsl:when test="$myparam.upper='TL'"><xsl:value-of select="$myparam"/> (thousand foot (linear))</xsl:when>
       		<xsl:when test="$myparam.upper='TMS'"><xsl:value-of select="$myparam"/> (kilogram of imported meat, less offal)</xsl:when>
+      		<xsl:when test="$myparam.upper='TN'"><xsl:value-of select="$myparam"/> (tin)</xsl:when>
       		<xsl:when test="$myparam.upper='TNE'"><xsl:value-of select="$myparam"/> (tonne (metric ton))</xsl:when>
       		<xsl:when test="$myparam.upper='TP'"><xsl:value-of select="$myparam"/> (ten pack)</xsl:when>
       		<xsl:when test="$myparam.upper='TPI'"><xsl:value-of select="$myparam"/> (teeth per inch)</xsl:when>
       		<xsl:when test="$myparam.upper='TPR'"><xsl:value-of select="$myparam"/> (ten pair)</xsl:when>
+      		<xsl:when test="$myparam.upper='TQ'"><xsl:value-of select="$myparam"/> (thousand foot)</xsl:when>
       		<xsl:when test="$myparam.upper='TQD'"><xsl:value-of select="$myparam"/> (thousand cubic metre per day)</xsl:when>
+      		<xsl:when test="$myparam.upper='TR'"><xsl:value-of select="$myparam"/> (ten square foot)</xsl:when>
       		<xsl:when test="$myparam.upper='TRL'"><xsl:value-of select="$myparam"/> (trillion (EUR))</xsl:when>
+      		<xsl:when test="$myparam.upper='TS'"><xsl:value-of select="$myparam"/> (thousand square foot)</xsl:when>
+      		<xsl:when test="$myparam.upper='TSD'"><xsl:value-of select="$myparam"/> (tonne of substance 90 % dry)</xsl:when>
+      		<xsl:when test="$myparam.upper='TSH'"><xsl:value-of select="$myparam"/> (ton of steam per hour)</xsl:when>
       		<xsl:when test="$myparam.upper='TST'"><xsl:value-of select="$myparam"/> (ten set)</xsl:when>
+      		<xsl:when test="$myparam.upper='TT'"><xsl:value-of select="$myparam"/> (thousand linear metre)</xsl:when>
       		<xsl:when test="$myparam.upper='TTS'"><xsl:value-of select="$myparam"/> (ten thousand sticks)</xsl:when>
+      		<xsl:when test="$myparam.upper='TU'"><xsl:value-of select="$myparam"/> (tube)</xsl:when>
+      		<xsl:when test="$myparam.upper='TV'"><xsl:value-of select="$myparam"/> (thousand kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='TW'"><xsl:value-of select="$myparam"/> (thousand sheet)</xsl:when>
+      		<xsl:when test="$myparam.upper='TY'"><xsl:value-of select="$myparam"/> (tank, cylindrical)</xsl:when>
       		<xsl:when test="$myparam.upper='U1'"><xsl:value-of select="$myparam"/> (treatment)</xsl:when>
       		<xsl:when test="$myparam.upper='U2'"><xsl:value-of select="$myparam"/> (tablet)</xsl:when>
+      		<xsl:when test="$myparam.upper='UA'"><xsl:value-of select="$myparam"/> (torr)</xsl:when>
       		<xsl:when test="$myparam.upper='UB'"><xsl:value-of select="$myparam"/> (telecommunication line in service average)</xsl:when>
       		<xsl:when test="$myparam.upper='UC'"><xsl:value-of select="$myparam"/> (telecommunication port)</xsl:when>
+      		<xsl:when test="$myparam.upper='UD'"><xsl:value-of select="$myparam"/> (tenth minute)</xsl:when>
+      		<xsl:when test="$myparam.upper='UE'"><xsl:value-of select="$myparam"/> (tenth hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='UF'"><xsl:value-of select="$myparam"/> (usage per telecommunication line average)</xsl:when>
+      		<xsl:when test="$myparam.upper='UH'"><xsl:value-of select="$myparam"/> (ten thousand yard)</xsl:when>
+      		<xsl:when test="$myparam.upper='UM'"><xsl:value-of select="$myparam"/> (million unit)</xsl:when>
       		<xsl:when test="$myparam.upper='VA'"><xsl:value-of select="$myparam"/> (volt - ampere per kilogram)</xsl:when>
+      		<xsl:when test="$myparam.upper='VI'"><xsl:value-of select="$myparam"/> (vial)</xsl:when>
       		<xsl:when test="$myparam.upper='VLT'"><xsl:value-of select="$myparam"/> (volt)</xsl:when>
       		<xsl:when test="$myparam.upper='VP'"><xsl:value-of select="$myparam"/> (percent volume)</xsl:when>
+      		<xsl:when test="$myparam.upper='VQ'"><xsl:value-of select="$myparam"/> (bulk)</xsl:when>
+      		<xsl:when test="$myparam.upper='VS'"><xsl:value-of select="$myparam"/> (visit)</xsl:when>
       		<xsl:when test="$myparam.upper='W2'"><xsl:value-of select="$myparam"/> (wet kilo)</xsl:when>
+      		<xsl:when test="$myparam.upper='W4'"><xsl:value-of select="$myparam"/> (two week)</xsl:when>
       		<xsl:when test="$myparam.upper='WA'"><xsl:value-of select="$myparam"/> (watt per kilogram)</xsl:when>
       		<xsl:when test="$myparam.upper='WB'"><xsl:value-of select="$myparam"/> (wet pound)</xsl:when>
       		<xsl:when test="$myparam.upper='WCD'"><xsl:value-of select="$myparam"/> (cord)</xsl:when>
@@ -1731,15 +2117,29 @@
       		<xsl:when test="$myparam.upper='WEB'"><xsl:value-of select="$myparam"/> (weber)</xsl:when>
       		<xsl:when test="$myparam.upper='WEE'"><xsl:value-of select="$myparam"/> (week)</xsl:when>
       		<xsl:when test="$myparam.upper='WG'"><xsl:value-of select="$myparam"/> (wine gallon)</xsl:when>
+      		<xsl:when test="$myparam.upper='WH'"><xsl:value-of select="$myparam"/> (wheel)</xsl:when>
       		<xsl:when test="$myparam.upper='WHR'"><xsl:value-of select="$myparam"/> (watt hour)</xsl:when>
+      		<xsl:when test="$myparam.upper='WI'"><xsl:value-of select="$myparam"/> (weight per square inch)</xsl:when>
       		<xsl:when test="$myparam.upper='WM'"><xsl:value-of select="$myparam"/> (working month)</xsl:when>
+      		<xsl:when test="$myparam.upper='WR'"><xsl:value-of select="$myparam"/> (wrap)</xsl:when>
       		<xsl:when test="$myparam.upper='WSD'"><xsl:value-of select="$myparam"/> (standard)</xsl:when>
       		<xsl:when test="$myparam.upper='WTT'"><xsl:value-of select="$myparam"/> (watt)</xsl:when>
+      		<xsl:when test="$myparam.upper='WW'"><xsl:value-of select="$myparam"/> (millilitre of water)</xsl:when>
       		<xsl:when test="$myparam.upper='X1'"><xsl:value-of select="$myparam"/> (Gunter's chain)</xsl:when>
       		<xsl:when test="$myparam.upper='YDK'"><xsl:value-of select="$myparam"/> (square yard)</xsl:when>
       		<xsl:when test="$myparam.upper='YDQ'"><xsl:value-of select="$myparam"/> (cubic yard)</xsl:when>
+      		<xsl:when test="$myparam.upper='YL'"><xsl:value-of select="$myparam"/> (hundred linear yard)</xsl:when>
       		<xsl:when test="$myparam.upper='YRD'"><xsl:value-of select="$myparam"/> (yard)</xsl:when>
+      		<xsl:when test="$myparam.upper='YT'"><xsl:value-of select="$myparam"/> (ten yard)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z1'"><xsl:value-of select="$myparam"/> (lift van)</xsl:when>
       		<xsl:when test="$myparam.upper='Z11'"><xsl:value-of select="$myparam"/> (hanging container)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z2'"><xsl:value-of select="$myparam"/> (chest)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z3'"><xsl:value-of select="$myparam"/> (cask)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z4'"><xsl:value-of select="$myparam"/> (hogshead)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z5'"><xsl:value-of select="$myparam"/> (lug)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z6'"><xsl:value-of select="$myparam"/> (conference point)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z8'"><xsl:value-of select="$myparam"/> (newspage agate line)</xsl:when>
+      		<xsl:when test="$myparam.upper='Z9'"><xsl:value-of select="$myparam"/> (nanomole)</xsl:when>
       		<xsl:when test="$myparam.upper='ZP'"><xsl:value-of select="$myparam"/> (page)</xsl:when>
       		<xsl:when test="$myparam.upper='ZZ'"><xsl:value-of select="$myparam"/> (mutually defined)</xsl:when>
    			<xsl:otherwise><xsl:value-of select="$myparam"/></xsl:otherwise>

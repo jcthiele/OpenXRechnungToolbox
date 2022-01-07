@@ -1,0 +1,3 @@
+Peppol BIS version 3.0.12 release, 2021 November (Fall)
+
+https://github.com/OpenPEPPOL/peppol-bis-invoice-3/releases/tag/3.0.12

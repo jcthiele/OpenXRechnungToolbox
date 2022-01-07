@@ -33,18 +33,18 @@ Released   : 20130801
 
 
 <div id="logo" class="container">
-	<h1><span class="icon icon-o icon-size2"></span><span class="icon icon-x icon-size"></span><span class="icon icon-t icon-size2"></span><a href="index.html">Open<span>XRechnung</span>Toolbox</a></h1>
-	<p>by <a href="author.html" rel="nofollow">Dr. Jan C. Thiele</a></p>
+	<h1><span class="icon icon-o icon-size2"></span><span class="icon icon-x icon-size"></span><span class="icon icon-t icon-size2"></span><a href="index_en.html">Open<span>XRechnung</span>Toolbox</a></h1>
+	<p>by <a href="author_en.html" rel="nofollow">Dr. Jan C. Thiele</a></p>
 </div>
 <div id="wrapper" class="container">
 	<div id="menu" class="container">
 		<ul>
-			<li><a href="index.html" accesskey="1" title="">OXT</a></li>
-			<li><a href="author.html" accesskey="1" title="">Autor</a></li>
-			<li class="current_page_item"><a href="manual.html" accesskey="2" title="">Benutzerhandbuch</a></li>
-			<li><a href="docu.html" accesskey="3" title="">Dokumentation</a></li>
-			<li><a href="license.html" accesskey="4" title="">Lizenz</a></li>
-			<li><a href="impress.html" accesskey="5" title="">Impressum</a></li>
+			<li><a href="index_en.html" accesskey="1" title="">OXT</a></li>
+			<li><a href="author_en.html" accesskey="1" title="">Autor</a></li>
+			<li class="current_page_item"><a href="manual_en.html" accesskey="2" title="">Benutzerhandbuch</a></li>
+			<li><a href="docu_en.html" accesskey="3" title="">Dokumentation</a></li>
+			<li><a href="license_en.html" accesskey="4" title="">Lizenz</a></li>
+			<li><a href="impress_en.html" accesskey="5" title="">Impressum</a></li>
 		</ul>
 	</div>
 	<div id="three-column" class="container">
@@ -129,7 +129,7 @@ Released   : 20130801
 			Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. <a href="https://www.7-zip.org/" target="_blank">7-zip</a> nutzen.
 			</p>
 			<p>
-			Die OpenXRechnungToolbox Version 1.0 benötigt eine Java-Installation Version 8 oder höher.
+			Die OpenXRechnungToolbox Version 1.1.2 benötigt eine Java-Installation Version 9 oder höher.
 			Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich).
 			Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.</p>
 			
@@ -138,7 +138,7 @@ Released   : 20130801
 			<p class="h4">
 			Für Windows Betriebssysteme steht eine direkt ausführbare Datei (exe) zur Verfügung. Hier starten Sie die OpenXRechnungToolbox durch einen Doppelkick auf die Datei OpenXRechnungToolbox.exe bzw. nach Durchführung der automatischen Installationsroutine durch Auswahl im Windows-Startmenü.<br />
 			Haben Sie nicht die Variante mit der automatischen Installationsroutine genutzt, dann können finden Sie im entpackten Ordner keine exe-Datei sondern eine jar-Datei.
-			Ist eine passende Java-Version (>= 8) verfügbar, können Sie die OpenXRechnungToolbox über einen Doppelklick auf die jar-Datei oder im Dos-Fenster bzw. in der PowerShell mittels folgenden Befehl starten:<br />
+			Ist eine passende Java-Version (>= 9) verfügbar, können Sie die OpenXRechnungToolbox über einen Doppelklick auf die jar-Datei oder im Dos-Fenster bzw. in der PowerShell mittels folgenden Befehl starten:<br />
 			<i>java -jar OpenXRechnungToolbox.jar "resources/app.config"</i><br />
 			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
 			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
@@ -149,8 +149,8 @@ Released   : 20130801
 			Unter Linux starten Sie die OpenXRechnungToolbox durch Ausführen der Datei <i>OpenXRechnungToolbox.sh</i> im Terminal/Console. 
 			Dazu müssen Sie die Datei zunächst ausführbar machen, z.B. durch den Befehl <i>chmod +x OpenXRechnungToolbox.sh</i>. 
 			Alternativ können Sie den Java-Aufruf auch direkt auf der Console/im Terminal eingeben:<br />
-			<i>java -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
-			In beiden Fällen muss auf dem Rechner eine Java-Installation (Version >= 8) verfügbar sein.<br />			
+			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
+			In beiden Fällen muss auf dem Rechner eine Java-Installation (Version >= 9) verfügbar sein.<br />			
 			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
 			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
 			</p>
@@ -158,8 +158,8 @@ Released   : 20130801
 			<h4><a id="macos">Unter Apple Mac OS</a></h4>
 			<p class="h4">
 			Unter Apple Mac OS starten Sie die Anwendung durch Ausführung des Befehls im Terminal:<br />
-			<i>java -XstartOnFirstThread -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
-			Hierfür muss auf dem Rechner eine Java-Installation (Version >= 8) verfügbar sein.<br />
+			<i>java -XstartOnFirstThread -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
+			Hierfür muss auf dem Rechner eine Java-Installation (Version >= 9) verfügbar sein.<br />
 			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
 			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
 			</p>
@@ -259,13 +259,19 @@ Released   : 20130801
 			</p>			
 
 
-			<h8><a id="settingsLanguage">Sprache:</a></h8>
+			<h8><a id="settingsLanguage">Sprache der Benutzeroberfläche:</a></h8>
 			<p class="h8">
 			Die Auswahl der Sprache erfolgt auf Basis des Länder-/Sprachcodes (z.B. <i>de</i> für Deutsch, <i>en</i> für Englisch). 
 			Es stehen die Sprachen zur Auswahl, die in der Konfigurationsdatei definiert sind und für die entsprechende Sprachdateien vorliegen. Weitere Sprachen können selbstständig ergänzt werden. 
 			Siehe hierzu die <a href="docu.html#languages">Dokumentation</a>. Derzeit stehen keine Übersetzungen zur Verfügung, auch wenn die Auswahl von Englisch bereits vorbereit ist. Zulieferungen sind herzlich Willkommen.
 			</p>
 
+			<h8><a id="settingsLanguage">Sprache der XRechnungs-Visualisierung:</a></h8>
+			<p class="h8">
+			Die Auswahl der Sprache erfolgt auf Basis des Länder-/Sprachcodes (z.B. <i>de</i> für Deutsch, <i>en</i> für Englisch; <i>de-bt</i> für einen Sondertyp, bei dem die Business Terms in Klammern ergänzt sind). 
+			Es stehen die Sprachen zur Auswahl, die in der Konfigurationsdatei definiert sind und für die entsprechende Sprachdateien vorliegen. Weitere Sprachen können selbstständig ergänzt werden. 
+			Siehe hierzu die <a href="docu.html#languages">Dokumentation</a>.
+			</p>
 			
 			<h8><a id="settingsVisualization">Visualisierung:</a></h8>
 			<p class="h8">
