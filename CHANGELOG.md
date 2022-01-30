@@ -3,7 +3,7 @@
 Documentation of notable changes to OpenXRechnungToolbox.
 
 
-## v1.1.2RC1
+## v1.1.2
 
 ### Changed
 
