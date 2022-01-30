@@ -3,6 +3,19 @@
 Documentation of notable changes to OpenXRechnungToolbox.
 
 
+## v1.1.3
+
+### Changed
+
+* update to XRechnung v2.2.0
+* update to KoSIT visualization for XRechnung v2.2.0
+* update of codelist resolving for XRechnung v2.2.0
+
+### Added
+
+* adding validation scenario and example invoices for XRechnung v2.2.0
+
+
 ## v1.1.2
 
 ### Changed
@@ -17,7 +30,7 @@ Documentation of notable changes to OpenXRechnungToolbox.
 
 * language selection for visualization labels (de, en)
 * adding validation scenario and example invoices for XRechnung v2.1.1
-* adding validation scenario and example invoices for en16931 v1.3.6
+* adding validation scenario and example invoices for en16931 v1.3.7
 * adding validation scenario and example invoices for en16931 v1.3.6
 * adding validation scenario and example invoices for en16931 v1.3.5
 * adding validation scenario and example invoices for en16931 v1.3.4

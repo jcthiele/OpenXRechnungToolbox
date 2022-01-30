@@ -1,0 +1,3 @@
+KoSIT Testsuite for XRechnung 2.2.0, build 2022-01-31
+
+https://github.com/itplr-kosit/xrechnung-testsuite/releases/tag/release-2022-01-31

@@ -19,13 +19,13 @@
 
 
 ; The name of the installer
-Name "OpenXRechnungToolbox v1.1.2"
+Name "OpenXRechnungToolbox v1.1.3"
 
 ; The icon
 Icon "resources/images/oxt.ico"
 
 ; The file to write
-OutFile "OpenXRechnungToolbox_v1.1.2_Installer.exe"
+OutFile "OpenXRechnungToolbox_v1.1.3_Installer.exe"
 
 ; Request application privileges for Windows Vista and higher
 RequestExecutionLevel admin
@@ -41,7 +41,7 @@ InstallDir $PROGRAMFILES\OpenXRechnungToolbox
 InstallDirRegKey HKLM "Software\OpenXRechnungToolbox" "Install_Dir"
 
 ; sign the installer; insert storepass password; insert the outfile name at the end
-!finalize 'java -jar jsign.jar --keystore ../keystore.jks --alias ssl --storepass password --tsaurl http://timestamp.sectigo.com OpenXRechnungToolbox_v1.1.2_Installer.exe'
+!finalize 'java -jar jsign.jar --keystore ../keystore.jks --alias ssl --storepass password --tsaurl http://timestamp.sectigo.com OpenXRechnungToolbox_v1.1.3_Installer.exe'
 
 ;--------------------------------
 

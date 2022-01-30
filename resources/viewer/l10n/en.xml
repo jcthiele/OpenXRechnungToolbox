@@ -14,9 +14,9 @@
   <entry key="xr:Buyer_contact_telephone_number" id="BT-57">Contact point phone</entry>
   <entry key="xr:Buyer_contact_email_address" id="BT-58">Contact point email</entry>
   <entry key="xr:Seller_name" id="BT-27">Company name</entry>
-  <entry key="xr:Seller_address_line_1" id="BT-35">Adress line 1</entry>
-  <entry key="xr:Seller_address_line_2" id="BT-36">Adress line 2</entry>
-  <entry key="xr:Seller_address_line_3">Adress line 3</entry>
+  <entry key="xr:Seller_address_line_1" id="BT-35">Address line 1</entry>
+  <entry key="xr:Seller_address_line_2" id="BT-36">Address line 2</entry>
+  <entry key="xr:Seller_address_line_3">Address line 3</entry>
   <entry key="xr:Seller_post_code" id="BT-38">ZIP</entry>
   <entry key="xr:Seller_city" id="BT-37">Location</entry>
   <entry key="xr:Seller_country_subdivision" id="BT-39">State</entry>
@@ -156,6 +156,7 @@
   <entry key="xrv:subject">Subject</entry>
   <entry key="xrv:text">Text</entry>
   <entry key="xrv:details">Details</entry>
+  <entry key="xr:Invoice_line_identifier" id="BT-126">Identifier</entry>
   <entry key="xr:Invoice_line_note" id="BT-127">Free text</entry>
   <entry key="xr:Invoice_line_object_identifier" id="BT-128_identifier">Object identifier</entry>
   <entry key="xr:Invoice_line_object_identifier/@scheme_identifier" id="BT-128_scheme">Object identifier scheme</entry>

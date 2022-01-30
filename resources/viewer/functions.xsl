@@ -103,7 +103,7 @@
     </xsl:choose>
   </xsl:function>
   
-  <!-- We are emulating older tempate for getting labels in order to maintain backward compatability -->
+  <!-- We are emulating older template for getting labels in order to maintain backward compatability -->
   <xsl:template name="field-mapping">
     <xsl:param name="identifier"/>
     

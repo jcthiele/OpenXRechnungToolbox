@@ -158,6 +158,7 @@
   <entry key="xrv:betreff">Betreff</entry>
   <entry key="xrv:text">Text</entry>
   <entry key="xrv:details">Details</entry>
+  <entry key="xr:Invoice_line_identifier" id="BT-126">Position</entry>
   <entry key="xr:Invoice_line_note" id="BT-127">Freitext</entry>
   <entry key="xr:Invoice_line_object_identifier" id="BT-128_identifier">Objektkennung</entry>
   <entry key="xr:Invoice_line_object_identifier/@scheme_identifier" id="BT-128_scheme">Schema der Objektkennung</entry>

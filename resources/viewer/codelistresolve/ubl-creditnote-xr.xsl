@@ -15,7 +15,7 @@
          <xd:p>
             <xd:b>Author:</xd:b> KoSIT Bremen (kosit@finanzen.bremen.de)</xd:p>
          <xd:b>Fassung vom: 2020-06-30+02:00</xd:b>
-		 <xd:b>modifiziert durch Dr. Jan Thiele am: 2021-12-29+01:00</xd:b>         
+		 <xd:b>modifiziert durch Dr. Jan Thiele am: 2022-01-30+01:00</xd:b>         
          <xd:p>Überführt eine zur EN 16931 konforme elektronische Rechnung in der konkreten Syntax UBL.2_1.CreditNote in eine Instanz gemäß des Schemas für den Namensraum urn:ce.eu:en16931:2017:xoev-de:kosit:standard:xrechnung-1.</xd:p>
          <xd:p>Das Skript setzt voraus, dass das zu verarbeitende Dokument valide bzgl. des XML Schemas und der Schematron-Regeln der Quelle ist. Für nicht valide Dokumente ist das Ergebnis nicht definiert.</xd:p>
       </xd:desc>

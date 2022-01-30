@@ -705,6 +705,8 @@ Des Weiteren werden für die OpenXRechnungToolbox verschiedene Bilder/Icons verw
 
 Darüber hinaus werden mit der OpenXRechnungToolbox einige Beispielrechnungen ausgeliefert. Diese stammen aus folgenden Quellen:
 
+    KoSIT Testsuite for XRechnung 2.2.0, build 2022-01-31, KoSIT, Apache 2 Lizenz
+    KoSIT Testsuite for XRechnung 2.1.1, build 2021-11-15, KoSIT, Apache 2 Lizenz
     KoSIT Testsuite for XRechnung 2.0.0, build 2020-07-31, KoSIT, Apache 2 Lizenz
     KoSIT Testsuite for XRechnung 1.2.2, build 2019-12-30, KoSIT, Apache 2 Lizenz
     KoSIT Testsuite for XRechnung 1.2.1, build 2019-06-30, KoSIT, Apache 2 Lizenz
