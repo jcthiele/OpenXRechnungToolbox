@@ -30,7 +30,7 @@ Documentation of notable changes to OpenXRechnungToolbox.
 * adding validation scenario for Peppol BIS v3.0.15
 * adding validation scenario for Peppol BIS v3.0.16
 * adding validation scenario and example invoices for Peppol BIS v3.0.17
-
+* tested with ZUGFeRD 2.3 Profile XRechnung (xml) [using validation scenario for XRechnung v3.0.2]
 
 ## v1.1.3
 
