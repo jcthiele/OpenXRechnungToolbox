@@ -1,3 +1,4 @@
+
 /* Tab-Container aufbauen **************************************************/
 
 var a = new Array("uebersicht", "details", "zusaetze", "anlagen", "laufzettel");
@@ -38,6 +39,10 @@ function show(e) {
 window.onload = function () {
     document.getElementById(b[0]).setAttribute("class", "btnAktiv");
     document.getElementById(b[0]).setAttribute("aria-selected", "true");
+    // could be substituted by an xslt solution
+    document.body.querySelectorAll('[data-title]').forEach(function(element, index) {
+    element.setAttribute('title', element.getAttribute('data-title'));
+    });
 }
 
 /* Eingebettete Binaerdaten runterladen   ************************************/
@@ -52,10 +57,8 @@ function base64_to_binary(data) {
     return new Uint8Array(bytes);
 }
 
-function downloadData(element_id) {
-    var data_element = document.getElementById(element_id);
-    var mimetype = data_element.getAttribute('data-mimeType');
-    var filename = data_element.getAttribute('data-filename');
+function downloadData(element_id, mimetype, filename) {    
+    var data_element = document.getElementById(element_id);  
     var text = data_element.innerHTML;
     var binary = base64_to_binary(text);
     var blob = new Blob([binary], {
@@ -66,9 +69,7 @@ function downloadData(element_id) {
         // IE
         window.navigator.msSaveOrOpenBlob(blob, filename);
     } else {
-        // Non-IE
-        var url = window.URL.createObjectURL(blob);
-        window.open(url, "_self");
+        saveAs(blob, filename);       
     }
 }
 

@@ -818,6 +818,9 @@
       		<xsl:when test="$myparam.upper='821'"><xsl:value-of select="$myparam"/> (Vessel arrival at pilot area date/time, actual)</xsl:when>
       		<xsl:when test="$myparam.upper='822'"><xsl:value-of select="$myparam"/> (Delivery place booking date/time)</xsl:when>
       		<xsl:when test="$myparam.upper='823'"><xsl:value-of select="$myparam"/> (Pickup place booking date/time)</xsl:when>
+      		<xsl:when test="$myparam.upper='824'"><xsl:value-of select="$myparam"/> (Discharge date/time, ended)</xsl:when>
+      		<xsl:when test="$myparam.upper='825'"><xsl:value-of select="$myparam"/> (Loading date/time, ended)</xsl:when>
+      		<xsl:when test="$myparam.upper='826'"><xsl:value-of select="$myparam"/> (Loading date/time, started)</xsl:when>
       		<xsl:when test="$myparam.upper='ZZZ'"><xsl:value-of select="$myparam"/> (Mutually defined)</xsl:when>
    			<xsl:otherwise><xsl:value-of select="$myparam"/></xsl:otherwise>
 		</xsl:choose>

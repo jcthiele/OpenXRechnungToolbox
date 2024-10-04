@@ -78,7 +78,6 @@ package org.oxt.toolbox.leitwegcheck;
 	        }
 	        
 	        String check = code.substring(code.lastIndexOf("-") + 1, code.length());// CHECKSTYLE IGNORE MagicNumber
-	        //String check = code.substring(2,4); // CHECKSTYLE IGNORE MagicNumber
 	        if ("00".equals(check) || "01".equals(check) || "99".equals(check)) {
 	            return false;
 	        }
@@ -105,7 +104,6 @@ package org.oxt.toolbox.leitwegcheck;
 	                    (code == null ? 0 : code.length()));
 	        }
 	        code = code + "00"; // CHECKSTYLE IGNORE MagicNumber
-	        //code = code.substring(0, 2) + "00" + code.substring(4); // CHECKSTYLE IGNORE MagicNumber
 	        int modulusResult = calculateModulus(code);
 	        int charValue = (98 - modulusResult); // CHECKSTYLE IGNORE MagicNumber
 	        String checkDigit = Integer.toString(charValue);
@@ -122,7 +120,6 @@ package org.oxt.toolbox.leitwegcheck;
 	     */
 	    private int calculateModulus(String code) throws CheckDigitException {
 	    	String reformattedCode = code; // CHECKSTYLE IGNORE MagicNumber
-	        //String reformattedCode = code.substring(4) + code.substring(0, 4); // CHECKSTYLE IGNORE MagicNumber
 	        long total = 0;
 	        for (int i = 0; i < reformattedCode.length(); i++) {
 	            int charValue = Character.getNumericValue(reformattedCode.charAt(i));

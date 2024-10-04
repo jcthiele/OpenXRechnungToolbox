@@ -124,7 +124,6 @@ public class LWIDWindow {
 	        GridLayout gridLayout2 = new GridLayout();
 	        gridLayout2.numColumns = 5;
 	        gridLayout2.marginHeight = 20;
-	        //gridLayout2.verticalSpacing = 20;
 	        calcGroup.setLayout(gridLayout2);
 	        GridData gridData = new GridData(GridData.HORIZONTAL_ALIGN_FILL);
 	        gridData.horizontalSpan = 5;

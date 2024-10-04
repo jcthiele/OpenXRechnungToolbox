@@ -2,7 +2,7 @@
 
 Graphical User Interface for visualization and validation of XRechnung (and other EN16931 compliant e-invoices) as well as tool for Leitweg-ID calculation and validation.
 
-Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) und fügt ergänzend noch ein paar weitere Funktionalitäten hinzu (Codelistenauflösung für die Visualisierung, Leitweg-ID-Rechner/-Prüfer, Nutzung für Peppol-Rechnungen). Damit macht sie die XRechnungs-Tools für Nicht-Programmierer nutzbar.
+Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche (und seit Version 3.0.0 auch einen Kommandozeilenzugriff) zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) und fügt ergänzend noch ein paar weitere Funktionalitäten hinzu (Codelistenauflösung für die Visualisierung, Leitweg-ID-Rechner/-Prüfer, Nutzung für Peppol-Rechnungen). Damit macht sie die XRechnungs-Tools für Nicht-Programmierer nutzbar.
 
 ## Im Detail bietet die OpenXRechnungToolbox derzeit folgende Funktionalitäten:
 
@@ -10,6 +10,7 @@ Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den
 - Technische Validierung von XRechnungs-Dateien sowie Peppol BIS 3.0 Rechnungen, verfügbar für verschiedene XRechnungs-Versionen, inkl. Speicherfunktion des Prüfberichts als HTML-Datei
 - Berechnung und Prüfung von Leitweg-ID-Prüfziffern
 - Konvertierung von UN/CEFACT CII nach UBL 2.1
+- Nutzung der Funktionalitäten per graphischer Benutzeroberfläche oder per Kommandozeile (CLI)
 
 ## Die Vorteile der OpenXRechnungToolbox gegenüber vielen anderen Angeboten sind:
 
@@ -26,11 +27,11 @@ Für Windows Betriebssysteme steht der Komfortabilität wegen dennoch optional e
 Es steht, wie für andere Betriebssysteme (Linux, Apple Mac) aber auch für Windows ein einfaches zip-Archiv zur Verfügung, für das keine Installationsroutine durchlaufen werden muss. So kann die Software auch genutzt werden, wenn keine Administrationsrechte auf dem Rechner zur Verfügung stehen.
 In diesem Fall laden Sie einfach das zip-Archiv für Ihr Betriebssystem (Windows, Linux oder Apple Mac) herunter und entpacken es an einem beliebigen Ort. Von dort können Sie dann die Anwendung, wie im Benutzer*innenhandbuch beschrieben, starten. Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. 7-zip nutzen.
 
-Die OpenXRechnungToolbox Version 1.1.3 benötigt eine Java-Installation Version 8 oder höher. Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich). Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.
+Die OpenXRechnungToolbox Version 3.0.0 benötigt eine Java-Installation Version 9 oder höher. Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich). Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.
 
 
 ## Benutzung
 
-Das Benutzer*innenhandbuch finden Sie unter https://jcthiele.github.io/OpenXRechnungToolbox/docs/manual.html sowie über das Hilfe-Menü der OpenXRechnungToolbox.
+Das Benutzer*innenhandbuch finden Sie unter https://jcthiele.github.io/OpenXRechnungToolbox/resources/help/manual.html sowie über das Hilfe-Menü der OpenXRechnungToolbox.
 
 

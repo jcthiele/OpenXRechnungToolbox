@@ -60,7 +60,7 @@ public class HTMLWindow {
 	              HTMLWindow win = new HTMLWindow();
 	              VisualizerImpl viz = new VisualizerImpl();
 	              try {
-                      StringWriter sw = viz.runVisualization(currentInvoice, currentInvoicePath, AppProperties.prop.getProperty("viz.intermediate.ubl.xsl"), AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl"), AppProperties.prop.getProperty("viz.intermediate.cii.xsl"), AppProperties.prop.getProperty("viz.html.xsl"));
+                      StringWriter sw = viz.runVisualization(currentInvoicePath, AppProperties.prop.getProperty("viz.intermediate.ubl.xsl"), AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl"), AppProperties.prop.getProperty("viz.intermediate.cii.xsl"), AppProperties.prop.getProperty("viz.html.xsl"));
 	                  win.launch(shell.getDisplay(), viz, null, currentInvoice, currentInvoicePath, sw.toString());	        
 	                } catch (Exception e1) {
 	                  logger.error(e1.getMessage());
@@ -80,9 +80,7 @@ public class HTMLWindow {
 	              HTMLWindow win = new HTMLWindow();
 	        	  ValidatorImpl vali = new ValidatorImpl();
 	              try {
-	                  //StringWriter sw = vali.runValidation(currentInvoice, currentInvoicePath, AppProperties.prop.getProperty("validator.scenario"));
-	                  //win.launch(shell.getDisplay(), null, vali, currentInvoice, currentInvoicePath, sw.toString());	        
-	                  String sw = vali.runValidation(currentInvoice, currentInvoicePath, AppProperties.prop.getProperty("validator.scenario"));
+	                  String sw = vali.runValidation(currentInvoicePath, AppProperties.prop.getProperty("valiVersion"));
 	                  win.launch(shell.getDisplay(), null, vali, currentInvoice, currentInvoicePath, sw);	        
 	                } catch (Exception e1) {
 	                  logger.error(e1.getMessage());

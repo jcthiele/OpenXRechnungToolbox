@@ -389,7 +389,7 @@
         
         .metadata dt {
           float: left;
-          width: 230px;
+          width: 250px;
           clear: left;
         }
         

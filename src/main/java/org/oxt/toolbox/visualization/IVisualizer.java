@@ -17,7 +17,6 @@ public interface IVisualizer {
 
 	/**
 	 * Method to run visualization.
-	 * @param invoiceFile name of invoice file
 	 * @param invoicePath path to invoice file
 	 * @param xslPathubl path to xsl for ubl
 	 * @param xslPathublcn path to xsl for ubl credit note
@@ -28,7 +27,7 @@ public interface IVisualizer {
 	 * @throws IOException read error
 	 * @throws Exception unspecific error
 	 */
-	public StringWriter runVisualization(String invoiceFile, String invoicePath, String xslPathubl, String xslPathublcn, String xslPathcii, String htmlXslPath) throws XMLStreamException, IOException, Exception;
+	public StringWriter runVisualization(String invoicePath, String xslPathubl, String xslPathublcn, String xslPathcii, String htmlXslPath) throws XMLStreamException, IOException, Exception;
 	
 	/**
 	 * Method to create PDF transformation and save result to file.

@@ -102,8 +102,6 @@ public class SettingsWindow {
         shell.setText(AppWindow.resourceBundle.getString("settings_title"));
       
         shell.setImage(new Image(shell.getDisplay(), AppProperties.prop.getProperty("app.icon")));
- 
-        //shell.setMenuBar(createMenuBar());
         
         GridLayout gridLayout = new GridLayout();
         gridLayout.numColumns = 1;
@@ -130,7 +128,6 @@ public class SettingsWindow {
         
         this.languageCombo = new Combo(languageGroup, SWT.READ_ONLY);        
         languageCombo.setBounds(50, 50, 150, 65);
-        //String items[] = { "DE", "EN" };
         
         String langs = AppProperties.prop.getProperty("available_languages");
         String[] languages = langs.split(",");
@@ -158,7 +155,6 @@ public class SettingsWindow {
         
         this.vizLanguageCombo = new Combo(languageGroup, SWT.READ_ONLY);        
         vizLanguageCombo.setBounds(50, 50, 150, 65);
-        //String items[] = { "de", "en" };
         
         String vizLangs = AppProperties.prop.getProperty("available_vizLanguages");
         String[] vizLanguages = vizLangs.split(",");

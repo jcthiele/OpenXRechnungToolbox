@@ -3,7 +3,6 @@ package org.oxt.toolbox.converter;
 import java.io.File;
 import java.io.Serializable;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Iterator;
 
 import org.eclipse.swt.SWT;
@@ -12,25 +11,23 @@ import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.oxt.toolbox.gui.AppWindow;
 import org.oxt.toolbox.helpers.LogConfigurator;
-import org.oxt.toolbox.visualization.VisualizerImpl;
 import org.apache.logging.log4j.Logger;
 
-import org.w3c.dom.Document;
-
-import com.helger.cii.d16b.CIID16BReader;
-import com.helger.cii.d16b.ECIID16BDocumentType;
+import com.helger.cii.d16b.CIID16BCrossIndustryInvoiceTypeMarshaller;
 import com.helger.commons.error.list.ErrorList;
 import com.helger.commons.io.file.FilenameHelper;
-import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.en16931.cii2ubl.AbstractCIIToUBLConverter;
 import com.helger.en16931.cii2ubl.CIIToUBL21Converter;
-import com.helger.ubl21.UBL21Writer;
-import com.helger.xml.serialize.read.DOMReader;
-import com.helger.xml.serialize.read.DOMReaderSettings;
+import com.helger.jaxb.GenericJAXBMarshaller;
+import com.helger.ubl21.UBL21Marshaller;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 import un.unece.uncefact.data.standard.reusableaggregatebusinessinformationentity._100.DocumentContextParameterType;
 
+/**
+ * Class implementing the conversion processing (implements the IConverter interface).
+ * @author Dr. Jan C. Thiele
+ */
 public class ConverterImpl implements IConverter {
 
 	/**
@@ -53,7 +50,7 @@ public class ConverterImpl implements IConverter {
 	 * @param display Mother display
 	 */
 	public ConverterImpl(Display display) {
-		this.logger = LogConfigurator.LogConfig(VisualizerImpl.class);
+		this.logger = LogConfigurator.LogConfig(ConverterImpl.class);
 		
 		this.display = display;
 		this.shell = new Shell(this.display);
@@ -84,10 +81,10 @@ public class ConverterImpl implements IConverter {
 		if (f.exists()) {			
 	    	logger.debug("conversion for file: "+invoiceFile);
 			String customizationID = AbstractCIIToUBLConverter.DEFAULT_CUSTOMIZATION_ID;
-			URL fileurl = f.toURI().toURL();
-			final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (fileurl),
-                    new DOMReaderSettings().setSchema (ECIID16BDocumentType.CROSS_INDUSTRY_INVOICE.getSchema()));
-			final CrossIndustryInvoiceType aCIIObject = CIID16BReader.crossIndustryInvoice().read(aDoc);
+			
+			CIID16BCrossIndustryInvoiceTypeMarshaller ciimarshaller = new CIID16BCrossIndustryInvoiceTypeMarshaller();
+			CrossIndustryInvoiceType aCIIObject = ciimarshaller.read(f);
+
 			Iterator<DocumentContextParameterType> it = aCIIObject.getExchangedDocumentContext().getGuidelineSpecifiedDocumentContextParameter().iterator();
 			while(it.hasNext()) {
 		    	DocumentContextParameterType obj = (DocumentContextParameterType)it.next();
@@ -103,9 +100,11 @@ public class ConverterImpl implements IConverter {
 		        {
 					logger.debug("write ubl invoice");
 					((oasis.names.specification.ubl.schema.xsd.invoice_21.InvoiceType)convert).setCustomizationID (customizationID);
-					UBL21Writer.invoice()
-		                     .setFormattedOutput (bFormattedOutput)
-		                     .write ((oasis.names.specification.ubl.schema.xsd.invoice_21.InvoiceType) convert, destFile);
+
+			        // Validate against EN16931 validation rules
+			        final GenericJAXBMarshaller <oasis.names.specification.ubl.schema.xsd.invoice_21.InvoiceType> aWriter = UBL21Marshaller.invoice ().setFormattedOutput(bFormattedOutput);
+			        aWriter.write ((oasis.names.specification.ubl.schema.xsd.invoice_21.InvoiceType) convert, destFile);
+					
 					// confirmation dialog
 			    	MessageBox dialog = new MessageBox(this.shell, SWT.OK);
 					dialog.setText(AppWindow.resourceBundle.getString("conversion_confirmTitle"));	
@@ -117,9 +116,11 @@ public class ConverterImpl implements IConverter {
 		          {
 		        	  	logger.debug("write ubl credit note");
 						((oasis.names.specification.ubl.schema.xsd.creditnote_21.CreditNoteType)convert).setCustomizationID (customizationID);
-						UBL21Writer.creditNote()
-		                       .setFormattedOutput (bFormattedOutput)
-		                       .write ((oasis.names.specification.ubl.schema.xsd.creditnote_21.CreditNoteType) convert, destFile);
+						
+				        // Check UBL XSD scheme
+				        final GenericJAXBMarshaller <oasis.names.specification.ubl.schema.xsd.creditnote_21.CreditNoteType> aWriter = UBL21Marshaller.creditNote().setFormattedOutput(bFormattedOutput);
+				        aWriter.write((oasis.names.specification.ubl.schema.xsd.creditnote_21.CreditNoteType) convert, destFile);
+
 						// confirmation dialog
 				    	MessageBox dialog = new MessageBox(this.shell, SWT.OK);
 						dialog.setText(AppWindow.resourceBundle.getString("conversion_confirmTitle"));	

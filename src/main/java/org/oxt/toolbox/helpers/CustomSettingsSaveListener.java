@@ -10,7 +10,6 @@ import org.eclipse.swt.widgets.MessageBox;
 import org.oxt.toolbox.gui.AppWindow;
 import org.oxt.toolbox.gui.SettingsWindow;
 import org.apache.logging.log4j.Logger;
-import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Class to define a custom save listener for settings file.

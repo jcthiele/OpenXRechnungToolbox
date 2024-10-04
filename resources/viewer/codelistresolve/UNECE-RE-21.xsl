@@ -301,7 +301,6 @@
       		<xsl:when test="$myparam.upper='XSU'"><xsl:value-of select="$myparam"/> (Suitcase)</xsl:when>
       		<xsl:when test="$myparam.upper='XSV'"><xsl:value-of select="$myparam"/> (Envelope, steel)</xsl:when>
       		<xsl:when test="$myparam.upper='XSW'"><xsl:value-of select="$myparam"/> (Shrinkwrapped)</xsl:when>
-      		<xsl:when test="$myparam.upper='XSX'"><xsl:value-of select="$myparam"/> (Set)</xsl:when>
       		<xsl:when test="$myparam.upper='XSY'"><xsl:value-of select="$myparam"/> (Sleeve)</xsl:when>
       		<xsl:when test="$myparam.upper='XSZ'"><xsl:value-of select="$myparam"/> (Sheets, in bundle/bunch/truss)</xsl:when>
       		<xsl:when test="$myparam.upper='XT1'"><xsl:value-of select="$myparam"/> (Tablet)</xsl:when>

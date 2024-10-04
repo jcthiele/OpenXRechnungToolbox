@@ -27,7 +27,6 @@ public class LogConfigurator {
 		try {
 			ConfigurationSource source;
 			source = new ConfigurationSource(new FileInputStream(log4jConfigFile));
-			//Configurator.initialize(null, source);
 			Configurator.initialize(callingClass.getClassLoader(), source);
 			
 		} catch (FileNotFoundException e) {

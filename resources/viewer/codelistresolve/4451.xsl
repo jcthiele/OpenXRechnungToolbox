@@ -283,6 +283,15 @@
       		<xsl:when test="$myparam.upper='BAQ'"><xsl:value-of select="$myparam"/> (VAT exemption reason)</xsl:when>
       		<xsl:when test="$myparam.upper='BAR'"><xsl:value-of select="$myparam"/> (Processing Instructions)</xsl:when>
       		<xsl:when test="$myparam.upper='BAS'"><xsl:value-of select="$myparam"/> (Relay Instructions)</xsl:when>
+      		<xsl:when test="$myparam.upper='BAT'"><xsl:value-of select="$myparam"/> (SIMA applicable)</xsl:when>
+      		<xsl:when test="$myparam.upper='BAU'"><xsl:value-of select="$myparam"/> (Appeals program code)</xsl:when>
+      		<xsl:when test="$myparam.upper='BAV'"><xsl:value-of select="$myparam"/> (SIMA subject)</xsl:when>
+      		<xsl:when test="$myparam.upper='BAW'"><xsl:value-of select="$myparam"/> (Surtax applicable)</xsl:when>
+      		<xsl:when test="$myparam.upper='BAX'"><xsl:value-of select="$myparam"/> (SIMA security bond)</xsl:when>
+      		<xsl:when test="$myparam.upper='BAY'"><xsl:value-of select="$myparam"/> (Surtax subject)</xsl:when>
+      		<xsl:when test="$myparam.upper='BAZ'"><xsl:value-of select="$myparam"/> (Safeguard applicable)</xsl:when>
+      		<xsl:when test="$myparam.upper='BBA'"><xsl:value-of select="$myparam"/> (Safeguard applicable)</xsl:when>
+      		<xsl:when test="$myparam.upper='BBB'"><xsl:value-of select="$myparam"/> (Safeguard subject)</xsl:when>
       		<xsl:when test="$myparam.upper='BLC'"><xsl:value-of select="$myparam"/> (Transport contract document clause)</xsl:when>
       		<xsl:when test="$myparam.upper='BLD'"><xsl:value-of select="$myparam"/> (Instruction to prepare the patient)</xsl:when>
       		<xsl:when test="$myparam.upper='BLE'"><xsl:value-of select="$myparam"/> (Medicine treatment comment)</xsl:when>
@@ -312,7 +321,16 @@
       		<xsl:when test="$myparam.upper='BMC'"><xsl:value-of select="$myparam"/> (Ship-to-ship activity information)</xsl:when>
       		<xsl:when test="$myparam.upper='BMD'"><xsl:value-of select="$myparam"/> (Package material description)</xsl:when>
       		<xsl:when test="$myparam.upper='BME'"><xsl:value-of select="$myparam"/> (Consumer level package marking)</xsl:when>
+      		<xsl:when test="$myparam.upper='BMF'"><xsl:value-of select="$myparam"/> (SIMA measure in force)</xsl:when>
+      		<xsl:when test="$myparam.upper='BMG'"><xsl:value-of select="$myparam"/> (Pre-CARM)</xsl:when>
+      		<xsl:when test="$myparam.upper='BMH'"><xsl:value-of select="$myparam"/> (SIMA measure type)</xsl:when>
       		<xsl:when test="$myparam.upper='CCI'"><xsl:value-of select="$myparam"/> (Customs clearance instructions)</xsl:when>
+      		<xsl:when test="$myparam.upper='CCJ'"><xsl:value-of select="$myparam"/> (Sub Type Code)</xsl:when>
+      		<xsl:when test="$myparam.upper='CCK'"><xsl:value-of select="$myparam"/> (SIMA information)</xsl:when>
+      		<xsl:when test="$myparam.upper='CCL'"><xsl:value-of select="$myparam"/> (Time limit end)</xsl:when>
+      		<xsl:when test="$myparam.upper='CCM'"><xsl:value-of select="$myparam"/> (Time limit start)</xsl:when>
+      		<xsl:when test="$myparam.upper='CCN'"><xsl:value-of select="$myparam"/> (Warehouse time limit)</xsl:when>
+      		<xsl:when test="$myparam.upper='CCO'"><xsl:value-of select="$myparam"/> (Value for duty information)</xsl:when>
       		<xsl:when test="$myparam.upper='CEX'"><xsl:value-of select="$myparam"/> (Customs clearance instructions export)</xsl:when>
       		<xsl:when test="$myparam.upper='CHG'"><xsl:value-of select="$myparam"/> (Change information)</xsl:when>
       		<xsl:when test="$myparam.upper='CIP'"><xsl:value-of select="$myparam"/> (Customs clearance instruction import)</xsl:when>

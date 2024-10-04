@@ -1,1 +1,1 @@
-keytool -genkey -keystore keystore.jks -alias ssl -keyalg RSA -sigalg SHA256withRSA -validity 1460 -keysize 2048
+keytool -genkey -keystore keystore.jks -alias oxt -keyalg RSA -sigalg SHA256withRSA -validity 15000 -keysize 2048

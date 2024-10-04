@@ -16,31 +16,15 @@
          <xd:p>
             <xd:b>Author:</xd:b> KoSIT Bremen (kosit@finanzen.bremen.de)</xd:p>
          <xd:b>Fassung vom: 2020-06-30+02:00</xd:b>
-         <xd:b>modifiziert durch Dr. Jan Thiele am: 2022-01-30+01:00</xd:b>         
+         <xd:b>modifiziert durch Dr. Jan Thiele am: 2024-09-26+01:00</xd:b>         
          <xd:p>Überführt eine zur EN 16931 konforme elektronische Rechnung in der konkreten Syntax UNCEFACT.CII.D16B in eine Instanz gemäß des Schemas für den Namensraum urn:ce.eu:en16931:2017:xoev-de:kosit:standard:xrechnung-1.</xd:p>
          <xd:p>Das Skript setzt voraus, dass das zu verarbeitende Dokument valide bzgl. des XML Schemas und der Schematron-Regeln der Quelle ist. Für nicht valide Dokumente ist das Ergebnis nicht definiert.</xd:p>
       </xd:desc>
    </xd:doc>
-
-   <!-- Begin: Jan Thiele -->
-   <xsl:import href="1001.xsl" />
-   <xsl:import href="1153.xsl" />
-   <xsl:import href="2005.xsl" />
-   <xsl:import href="3166.xsl" />
-   <xsl:import href="4217.xsl" />
-   <xsl:import href="4451.xsl" />
-   <xsl:import href="4461.xsl" />
-   <xsl:import href="5189.xsl" />
-   <xsl:import href="5305.xsl" />
-   <xsl:import href="6523.xsl" />
-   <xsl:import href="7143.xsl" />
-   <xsl:import href="7161.xsl" />
-   <xsl:import href="UNECE-RE-21.xsl" />
-   <xsl:import href="EAS.xsl" />
-   <xsl:import href="VATEX.xsl" />
-   <!-- End: Jan Thiele -->
    
    <xsl:output method="xml" indent="yes"/>
+   
+   <xsl:include href="./common-xr.xsl"/>
 
    <xsl:template match="/rsm:CrossIndustryInvoice">
       <xr:invoice>
@@ -122,7 +106,6 @@
          <!--Manuell: angepasst für BG-16-->
          <xsl:for-each-group select="./rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans"
                              group-by="ram:TypeCode">
-             <xsl:message >Matched BG-16</xsl:message>
             <xr:PAYMENT_INSTRUCTIONS>
                <xsl:attribute name="xr:id" select="'BG-16'"/>
                <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
@@ -311,7 +294,7 @@
          </xsl:call-template>
 		 -->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.1153">
+         <xsl:call-template name="identifier.1153">
 		    <xsl:with-param name="schemeID" select="following-sibling::ram:ReferenceTypeCode"/>
          </xsl:call-template>
 		 <!-- End: Jan Thiele -->
@@ -437,11 +420,11 @@
          <xsl:apply-templates mode="BT-28"
                               select="./ram:SpecifiedLegalOrganization/ram:TradingBusinessName"/>
          <xsl:apply-templates mode="BT-29"
-                              select="./ram:ID[empty(following-sibling::ram:GlobalID/@schemeID)]"/>
+                              select="./ram:ID"/>
          <xsl:apply-templates mode="BT-29" select="./ram:GlobalID[exists(@schemeID)]"/>
          <xsl:apply-templates mode="BT-30" select="./ram:SpecifiedLegalOrganization/ram:ID"/>
          <xsl:apply-templates mode="BT-31"
-                              select="./ram:SpecifiedTaxRegistration/ram:ID[@schemeID=('VA', 'VAT')]"/>
+                              select="./ram:SpecifiedTaxRegistration/ram:ID[@schemeID='VA']"/>
          <xsl:apply-templates mode="BT-32"
                               select="./ram:SpecifiedTaxRegistration/ram:ID[@schemeID='FC']"/>
          <xsl:apply-templates mode="BT-33" select="./ram:Description"/>
@@ -474,13 +457,13 @@
       </xr:Seller_trading_name>
    </xsl:template>
    <xsl:template mode="BT-29"
-                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID[empty(following-sibling::ram:GlobalID/@schemeID)]">
+                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID">
       <xr:Seller_identifier>
          <xsl:attribute name="xr:id" select="'BT-29'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Seller_identifier>
    </xsl:template>
@@ -489,9 +472,9 @@
       <xr:Seller_identifier>
          <xsl:attribute name="xr:id" select="'BT-29'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Seller_identifier>
    </xsl:template>
@@ -500,14 +483,14 @@
       <xr:Seller_legal_registration_identifier>
          <xsl:attribute name="xr:id" select="'BT-30'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Seller_legal_registration_identifier>
    </xsl:template>
    <xsl:template mode="BT-31"
-                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID[@schemeID=('VA', 'VAT')]">
+                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID[@schemeID='VA']">
       <xr:Seller_VAT_identifier>
          <xsl:attribute name="xr:id" select="'BT-31'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
@@ -535,9 +518,9 @@
       <xr:Seller_electronic_address>
          <xsl:attribute name="xr:id" select="'BT-34'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.EAS"/>
+         <xsl:call-template name="identifier.EAS"/>
 		 <!-- End: Jan Thiele -->
       </xr:Seller_electronic_address>
    </xsl:template>
@@ -715,9 +698,9 @@
       <xr:Buyer_identifier>
          <xsl:attribute name="xr:id" select="'BT-46'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Buyer_identifier>
    </xsl:template>
@@ -726,9 +709,9 @@
       <xr:Buyer_identifier>
          <xsl:attribute name="xr:id" select="'BT-46'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Buyer_identifier>
    </xsl:template>
@@ -737,9 +720,9 @@
       <xr:Buyer_legal_registration_identifier>
          <xsl:attribute name="xr:id" select="'BT-47'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Buyer_legal_registration_identifier>
    </xsl:template>
@@ -756,9 +739,9 @@
       <xr:Buyer_electronic_address>
          <xsl:attribute name="xr:id" select="'BT-49'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.EAS"/>
+         <xsl:call-template name="identifier.EAS"/>
 		 <!-- End: Jan Thiele -->
       </xr:Buyer_electronic_address>
    </xsl:template>
@@ -898,7 +881,6 @@
          <xsl:apply-templates mode="BT-60" select="./ram:GlobalID[exists(@schemeID)]"/>
          <xsl:apply-templates mode="BT-60"
                               select="./ram:ID[empty(following-sibling::ram:GlobalID/@schemeID)]"/>
-         <xsl:apply-templates mode="BT-61" select="./ram:SpecifiedLegalOrganization/ram:ID/@schemeID"/>
          <xsl:apply-templates mode="BT-61" select="./ram:SpecifiedLegalOrganization/ram:ID"/>
       </xsl:variable>
       <xsl:if test="$bg-contents">
@@ -922,9 +904,9 @@
       <xr:Payee_identifier>
          <xsl:attribute name="xr:id" select="'BT-60'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Payee_identifier>
    </xsl:template>
@@ -933,31 +915,20 @@
       <xr:Payee_identifier>
          <xsl:attribute name="xr:id" select="'BT-60'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Payee_identifier>
-   </xsl:template>
-   <xsl:template mode="BT-61"
-                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:PayeeTradeParty/ram:SpecifiedLegalOrganization/ram:ID/@schemeID">
-      <xr:Payee_legal_registration_identifier>
-         <xsl:attribute name="xr:id" select="'BT-61'"/>
-         <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
-		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
-		 <!-- End: Jan Thiele -->
-      </xr:Payee_legal_registration_identifier>
    </xsl:template>
    <xsl:template mode="BT-61"
                  match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:PayeeTradeParty/ram:SpecifiedLegalOrganization/ram:ID">
       <xr:Payee_legal_registration_identifier>
          <xsl:attribute name="xr:id" select="'BT-61'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Payee_legal_registration_identifier>
    </xsl:template>
@@ -1081,7 +1052,6 @@
                   exists( ram:ApplicableHeaderTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime/udt:DateTimeString) or
                   exists( ram:ApplicableHeaderTradeSettlement/ram:BillingSpecifiedPeriod)
                   ]">
-        <xsl:message >Matched BG-13</xsl:message>
       <xsl:variable name="bg-contents" as="item()*">
           
           <xsl:apply-templates mode="BT-70" select="./ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:Name"/>
@@ -1115,9 +1085,9 @@
       <xr:Deliver_to_location_identifier>
          <xsl:attribute name="xr:id" select="'BT-71'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Deliver_to_location_identifier>
    </xsl:template>
@@ -1126,7 +1096,7 @@
       <xr:Deliver_to_location_identifier>
          <xsl:attribute name="xr:id" select="'BT-71'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <xsl:call-template name="identifier-with-scheme"/>
+         <xsl:call-template name="identifier"/>
       </xr:Deliver_to_location_identifier>
    </xsl:template>
    <xsl:template mode="BT-72"
@@ -1254,7 +1224,6 @@
    <xsl:template mode="BG-16"
                  match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans">
       <xsl:variable name="bg-contents" as="item()*"><!--Der Pfad /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans der Instanz in konkreter Syntax wird auf 6 Objekte der EN 16931 abgebildet. -->
-          <xsl:message >Matched BG-16</xsl:message>
           
          <xsl:apply-templates mode="BT-81" select="./ram:TypeCode"/>
          <xsl:apply-templates mode="BT-82" select="./ram:Information"/>
@@ -1619,10 +1588,9 @@
          <xsl:apply-templates mode="BT-107" select="./ram:AllowanceTotalAmount"/>
          <xsl:apply-templates mode="BT-108" select="./ram:ChargeTotalAmount"/>
          <xsl:apply-templates mode="BT-109" select="./ram:TaxBasisTotalAmount"/>
-         <xsl:apply-templates mode="BT-110"
-                              select="./ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:TaxCurrencyCode]"/>
+         <xsl:apply-templates mode="BT-110" select="./ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:InvoiceCurrencyCode]"/>         
          <xsl:apply-templates mode="BT-111"
-                              select="./ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:InvoiceCurrencyCode]"/>
+            select="./ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:TaxCurrencyCode]"/>
          <xsl:apply-templates mode="BT-112" select="./ram:GrandTotalAmount"/>
          <xsl:apply-templates mode="BT-113" select="./ram:TotalPrepaidAmount"/>
          <xsl:apply-templates mode="BT-114" select="./ram:RoundingAmount"/>
@@ -1669,7 +1637,7 @@
       </xr:Invoice_total_amount_without_VAT>
    </xsl:template>
    <xsl:template mode="BT-110"
-                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:TaxCurrencyCode]">
+      match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:InvoiceCurrencyCode]">
       <xr:Invoice_total_VAT_amount>
          <xsl:attribute name="xr:id" select="'BT-110'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
@@ -1677,7 +1645,7 @@
       </xr:Invoice_total_VAT_amount>
    </xsl:template>
    <xsl:template mode="BT-111"
-                 match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:InvoiceCurrencyCode]">
+      match="/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount[@currencyID = parent::ram:SpecifiedTradeSettlementHeaderMonetarySummation/preceding-sibling::ram:TaxCurrencyCode]">
       <xr:Invoice_total_VAT_amount_in_accounting_currency>
          <xsl:attribute name="xr:id" select="'BT-111'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
@@ -1906,7 +1874,7 @@
 		 -->
          <!--<xsl:call-template name="identifier-with-scheme"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.1153">
+         <xsl:call-template name="identifier.1153">
             <xsl:with-param name="schemeID" select="following-sibling::ram:ReferenceTypeCode"/>
          </xsl:call-template>
 		 <!-- End: Jan Thiele -->
@@ -2287,9 +2255,9 @@
       <xr:Item_standard_identifier>
          <xsl:attribute name="xr:id" select="'BT-157'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme.6523"/>
+         <xsl:call-template name="identifier.6523"/>
 		 <!-- End: Jan Thiele -->
       </xr:Item_standard_identifier>
    </xsl:template>
@@ -2298,9 +2266,9 @@
       <xr:Item_classification_identifier>
          <xsl:attribute name="xr:id" select="'BT-158'"/>
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
-         <!--<xsl:call-template name="identifier-with-scheme-and-version"/>-->
+         <!--<xsl:call-template name="identifier"/>-->
 		 <!-- Begin: Jan Thiele -->
-         <xsl:call-template name="identifier-with-scheme-and-version.7143"/>
+         <xsl:call-template name="identifier.7143"/>
 		 <!-- End: Jan Thiele -->
       </xr:Item_classification_identifier>
    </xsl:template>
@@ -2346,159 +2314,5 @@
          <xsl:attribute name="xr:src" select="xr:src-path(.)"/>
          <xsl:call-template name="text"/>
       </xr:Item_attribute_value>
-   </xsl:template>
-   <xsl:template name="text">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="date">
-      <xsl:variable name="normalizeddate" select="normalize-space(replace(., '-', ''))" />      
-      <xsl:choose>         
-         <xsl:when test="matches($normalizeddate, '^[0-9]{8}$')">
-            <xsl:value-of select="xs:date( concat(substring($normalizeddate,1,4), '-', substring($normalizeddate,5,2), '-', substring($normalizeddate,7,2) ) )"/>
-         </xsl:when>
-         <xsl:otherwise>ILLEGAL DATE FORMAT: &lt;para&gt;Mit diesem Datentyp wird ein kalendarisches Datum abgebildet, wie es in der ISO 8601 Spezifikation &lt;quote&gt;Calendar date complete representation&lt;/quote&gt; beschrieben ist (siehe ISO 8601:2004, Abschnitt 5.2.1.1). Das Datum beinhaltet keine Zeitangabe. Das konkret zu verwendende Format ist abhängig von der genutzten Syntax.&lt;/para&gt;
-&lt;para&gt;Der Datentyp basiert auf dem Typ &lt;quote&gt;Date Time. Type&lt;/quote&gt;, wie in ISO 15000-5:2014 Anhang B definiert.&lt;/para&gt;</xsl:otherwise>
-      </xsl:choose>
-   </xsl:template>
-   <xsl:template name="identifier-with-scheme-and-version">
-      <xsl:param name="schemeID" as="element()?"/>
-      <xsl:if test="@listID | @schemeID">
-         <xsl:attribute name="scheme_identifier" select="($schemeID, @listID, @schemeID)[1]"/>
-      </xsl:if>
-      <xsl:if test="@schemeVersionID | @listVersionID">
-         <xsl:attribute name="scheme_version_identifier"
-                        select="(@listVersionID, @schemeVersionID)[1]"/>
-      </xsl:if>
-      <xsl:value-of select="."/>
-   </xsl:template>   
-   <!-- Begin: Jan Thiele -->
-   <xsl:template name="identifier-with-scheme-and-version.7143">
-      <xsl:param name="schemeID" as="element()?"/>
-      <xsl:if test="@listID | @schemeID">
-		 <xsl:variable name="listID_JT">
-			<xsl:call-template name="code.UNTDID.7143">
-				<xsl:with-param name="myparam" select="($schemeID, @listID, @schemeID)[1]"/>			
-			</xsl:call-template>
-		 </xsl:variable>	  
-		 <xsl:attribute name="scheme_identifier" select="($schemeID, $listID_JT, @schemeID)[1]"/>		 
-      </xsl:if>
-      <xsl:if test="@schemeVersionID | @listVersionID">
-         <xsl:attribute name="scheme_version_identifier"
-                        select="(@listVersionID, @schemeVersionID)[1]"/>
-      </xsl:if>
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <!-- End: Jan Thiele -->  
-   <xsl:template name="identifier-with-scheme">
-      <xsl:param name="schemeID" as="element()?"/>
-      <xsl:if test="@schemeID">
-         <xsl:attribute name="scheme_identifier" select="($schemeID, @listID, @schemeID)[1]"/>
-      </xsl:if>
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <!-- Begin: Jan Thiele -->
-   <xsl:template name="identifier-with-scheme.EAS">
-      <xsl:param name="schemeID" as="element()?"/>
-      <xsl:if test="@schemeID">
-		 <xsl:variable name="listID_JT">
-			<xsl:call-template name="code.EAS">
-				<xsl:with-param name="myparam" select="($schemeID, @listID, @schemeID)[1]"/>			
-			</xsl:call-template>
-		 </xsl:variable>	  
-		 <xsl:attribute name="scheme_identifier" select="($schemeID, $listID_JT, @schemeID)[1]"/>		 
-      </xsl:if>
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <!-- End: Jan Thiele -->  
-   <!-- Begin: Jan Thiele -->
-   <xsl:template name="identifier-with-scheme.1153">
-      <xsl:param name="schemeID" as="element()?"/>
-      <xsl:if test="@schemeID">
-		 <xsl:variable name="listID_JT">
-			<xsl:call-template name="code.UNTDID.1153">
-				<xsl:with-param name="myparam" select="($schemeID, @listID, @schemeID)[1]"/>			
-			</xsl:call-template>
-		 </xsl:variable>	  
-		 <xsl:attribute name="scheme_identifier" select="($schemeID, $listID_JT, @schemeID)[1]"/>		 
-      </xsl:if>
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <!-- End: Jan Thiele -->  
-   <!-- Begin: Jan Thiele -->
-   <xsl:template name="identifier-with-scheme.6523">
-      <xsl:param name="schemeID" as="element()?"/>
-      <xsl:if test="@schemeID">
-		 <xsl:variable name="listID_JT">
-			<xsl:call-template name="code.ICD">
-				<xsl:with-param name="myparam" select="($schemeID, @listID, @schemeID)[1]"/>			
-			</xsl:call-template>
-		 </xsl:variable>	  
-		 <xsl:attribute name="scheme_identifier" select="($schemeID, $listID_JT, @schemeID)[1]"/>		 
-      </xsl:if>
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <!-- End: Jan Thiele -->        
-   <xsl:template name="identifier">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="code">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="amount">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="percentage">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="binary_object">
-      <xsl:if test="@mimeCode">
-         <xsl:attribute name="mime_code">
-            <xsl:value-of select="@mimeCode"/>
-         </xsl:attribute>
-      </xsl:if>
-      <xsl:if test="@filename">
-         <xsl:attribute name="filename">
-            <xsl:value-of select="@filename"/>
-         </xsl:attribute>
-      </xsl:if>
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="unit_price_amount">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="quantity">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xsl:template name="document_reference">
-      <xsl:value-of select="."/>
-   </xsl:template>
-   <xd:doc>
-      <xd:desc> Liefert einen XPath-Pfad, welches $n eindeutig identifiziert. </xd:desc>
-      <xd:param name="n"/>
-   </xd:doc>
-   <xsl:function name="xr:src-path" as="xs:string">
-      <xsl:param name="n" as="node()"/>
-      <xsl:variable name="segments" as="xs:string*">
-         <xsl:apply-templates select="$n" mode="xr:src-path"/>
-      </xsl:variable>
-      <xsl:sequence select="string-join($segments, '')"/>
-   </xsl:function>
-   <xd:doc>
-      <xd:desc> Liefert einen XPath-Pfad, welches $n eindeutig identifiziert. </xd:desc>
-      <xd:param name="n"/>
-   </xd:doc>
-   <xsl:template match="node() | @*" mode="xr:src-path">
-      <xsl:for-each select="ancestor-or-self::*">
-         <xsl:text>/</xsl:text>
-         <xsl:value-of select="name(.)"/>
-         <xsl:if test="preceding-sibling::*[name(.) = name(current())] or following-sibling::*[name(.) = name(current())]">
-            <xsl:text>[</xsl:text>
-            <xsl:value-of select="count(preceding-sibling::*[name(.) = name(current())]) + 1"/>
-            <xsl:text>]</xsl:text>
-         </xsl:if>
-      </xsl:for-each>
-      <xsl:if test="not(self::*)">
-         <xsl:text/>/@<xsl:value-of select="name(.)"/>
-      </xsl:if>
    </xsl:template>
 </xsl:stylesheet>

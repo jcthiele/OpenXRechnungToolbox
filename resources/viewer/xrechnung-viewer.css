@@ -185,6 +185,17 @@ button
   margin-bottom: 30px;
 }
 
+.noscript
+{
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  border: 1px solid #ff6347;
+  background-color: #ffd5ce;
+}
+
 .haftungausschluss
 {
   color: #000;

@@ -95,7 +95,7 @@
   
   <!-- Wert-Felder -->
   <xsl:variable name="wertHG">#eeeeee</xsl:variable>
-  <xsl:variable name="wert-legende-breite">28</xsl:variable>
+  <xsl:variable name="wert-legende-breite">30</xsl:variable>
    
   <xsl:attribute-set name="wert-legende">
     <xsl:attribute name="font-size">7pt</xsl:attribute>

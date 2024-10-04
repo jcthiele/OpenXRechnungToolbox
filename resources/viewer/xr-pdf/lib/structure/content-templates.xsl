@@ -6,6 +6,7 @@
                	          xmlns:xs="http://www.w3.org/2001/XMLSchema"
                	          xmlns:xrv="http://www.example.org/XRechnung-Viewer"
                	          xmlns:xrf="https://projekte.kosit.org/xrechnung/xrechnung-visualization/functions"
+                          xmlns:pdf="http://xmlgraphics.apache.org/fop/extensions/pdf"
 	        version="2.0">
 
 
@@ -210,7 +211,6 @@
     <xsl:param name="field-mapping-identifier">
       <xsl:value-of select="name()"/>
     </xsl:param>
-    <xsl:message><xsl:value-of select="$field-mapping-identifier"/>:<xsl:value-of select="$value"/></xsl:message>
     <xsl:if test="normalize-space(.)">
       <xsl:variable name="field-mapping">
         <xsl:call-template name="field-mapping">
@@ -288,7 +288,7 @@
 
 
   <xsl:template match="*|@*" mode="value-list-entry">
-    <xsl:param name="value"/>
+    <xsl:param name="value"/>    
     <xsl:param name="field-mapping-identifier">
       <xsl:value-of select="name()"/>
     </xsl:param>
@@ -307,10 +307,10 @@
               <xsl:when test="$value">
                 <xsl:value-of select="$value"/>
               </xsl:when>
-              <xsl:otherwise>
+              <xsl:otherwise>                
                 <xsl:value-of select="."/>
               </xsl:otherwise>
-            </xsl:choose>
+            </xsl:choose>           
           </fo:block>
         </fo:table-cell>
       </fo:table-row>
@@ -378,7 +378,19 @@
   </xsl:template>
 
   <xsl:template match="*|@*" mode="binary">
-    <xsl:param name="identifier"/>
+    <xsl:param name="identifier"/>    
+    <fo:basic-link>
+      <xsl:attribute name="external-destination">url(embedded-file:<xsl:value-of select="encode-for-uri($identifier)"/>)</xsl:attribute>
+      <xsl:value-of select="$identifier"/>
+    </fo:basic-link>
+  </xsl:template>
+
+  <xsl:template match="*|@*" mode="binary-declaration">
+    <xsl:param name="identifier"/>   
+      <pdf:embedded-file>
+        <xsl:attribute name="filename"><xsl:value-of select="$identifier"/></xsl:attribute>
+        <xsl:attribute name="src">data:application/pdf;base64,<xsl:value-of select="normalize-space(.)"/></xsl:attribute>
+      </pdf:embedded-file> 
   </xsl:template>
 
   <!-- ==========================================================================
@@ -468,7 +480,7 @@
                   </fo:table-header>
                   <fo:table-body>
                     <fo:table-row>
-                      <fo:table-cell xsl:use-attribute-sets="wert-legende">
+                      <fo:table-cell xsl:use-attribute-sets="wert-ausgabe">
                         <fo:block><xsl:value-of select="xr:Item_attribute_name"/>:</fo:block>
                       </fo:table-cell>
                     </fo:table-row>
@@ -565,7 +577,7 @@
         </fo:block>
       </fo:table-cell>
       <fo:table-cell text-align="right" padding-right="1em">
-        <fo:block><xsl:value-of select="format-number(xr:PRICE_DETAILS/xr:Item_net_price, $amount-picture, $lang)"/></fo:block>
+        <fo:block><xsl:value-of select="format-number(xr:PRICE_DETAILS/xr:Item_net_price, $at-least-two-picture, $lang)"/></fo:block>
       </fo:table-cell>
       <fo:table-cell text-align="center">
         <fo:block>
@@ -575,7 +587,7 @@
         </fo:block>
       </fo:table-cell>
       <fo:table-cell text-align="center">
-        <fo:block><xsl:value-of select="xr:LINE_VAT_INFORMATION/xr:Invoiced_item_VAT_rate"/></fo:block>
+        <fo:block><xsl:value-of select="concat(format-number(xr:LINE_VAT_INFORMATION/xr:Invoiced_item_VAT_rate, $percentage-picture, $lang), '%')"/></fo:block>
       </fo:table-cell>
       <fo:table-cell text-align="center">
         <fo:block><xsl:value-of select="xr:LINE_VAT_INFORMATION/xr:Invoiced_item_VAT_category_code"/></fo:block>
@@ -664,14 +676,14 @@
           <xsl:if test="xr:PRICE_DETAILS/xr:Item_price_discount">
             <xsl:value-of select="xrf:field-label('xr:Item_price_discount')"/>
             <xsl:text>: </xsl:text>
-            <xsl:value-of select="xr:PRICE_DETAILS/xr:Item_price_discount"/>
+            <xsl:value-of select="format-number(xr:PRICE_DETAILS/xr:Item_price_discount, $at-least-two-picture, $lang)"/>
           </xsl:if>
         </xsl:with-param>
         <xsl:with-param name="col2">
           <xsl:if test="xr:PRICE_DETAILS/xr:Item_gross_price">
             <xsl:value-of select="xrf:field-label('xr:Item_gross_price')"/>
             <xsl:text>: </xsl:text>
-            <xsl:value-of select="xr:PRICE_DETAILS/xr:Item_gross_price"/>
+            <xsl:value-of select="format-number(xr:PRICE_DETAILS/xr:Item_gross_price, $at-least-two-picture, $lang)"/>
           </xsl:if>
         </xsl:with-param>
       </xsl:call-template>
@@ -822,7 +834,7 @@
                   </fo:table-cell>
                   <fo:table-cell text-align="center">
                     <fo:block>
-                      <xsl:value-of select="xr:Invoice_line_allowance_percentage"/>
+                      <xsl:value-of select="concat(format-number(xr:Invoice_line_allowance_percentage, $percentage-picture, $lang), '%')"/>
                     </fo:block>
                   </fo:table-cell>
                   <fo:table-cell text-align="right">
@@ -904,7 +916,7 @@
                   </fo:table-cell>
                   <fo:table-cell text-align="center">
                     <fo:block>
-                      <xsl:value-of select="xr:Invoice_line_charge_percentage"/>
+                      <xsl:value-of select="concat(format-number(xr:Invoice_line_charge_percentage, $percentage-picture, $lang), '%')" />
                     </fo:block>
                   </fo:table-cell>
                   <fo:table-cell text-align="right">

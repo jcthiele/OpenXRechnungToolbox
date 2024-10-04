@@ -61,32 +61,32 @@
 <div class="slideshow-container">
 			<div class="mySlides fade">
 			  <div class="numbertext">1 / 6</div>
-			  <img src="docs/img/slideshow/Oberflaeche.PNG" style="height:100%">
+			  <img src="resources/help/img/slideshow/Oberflaeche.PNG" style="height:100%">
 			  <div class="text">Hauptfenster</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">2 / 6</div>
-			  <img src="docs/img/slideshow/Pruefbericht.PNG" style="height:100%">
+			  <img src="resources/help/img/slideshow/Pruefbericht.PNG" style="height:100%">
 			  <div class="text">Prüfbericht</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">3 / 6</div>
-			  <img src="docs/img/slideshow/Visualisierung.PNG" style="height:100%">
+			  <img src="resources/help/img/slideshow/Visualisierung.PNG" style="height:100%">
 			  <div class="text">Visualisierung</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">4 / 6</div>
-			  <img src="docs/img/slideshow/VisualisierungPDF.PNG" style="height:100%">
+			  <img src="resources/help/img/slideshow/VisualisierungPDF.PNG" style="height:100%">
 			  <div class="text">PDF-Visualisierung</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">5 / 6</div>
-			  <img src="docs/img/slideshow/LWID.PNG" style="height:100%">
+			  <img src="resources/help/img/slideshow/LWID.PNG" style="height:100%">
 			  <div class="text">Leitweg-ID-Rechner/-Prüfer</div>
 			</div>
 			<div class="mySlides fade">
 			  <div class="numbertext">6 / 6</div>
-			  <img src="docs/img/slideshow/Einstellungen.PNG" style="height:100%">
+			  <img src="resources/help/img/slideshow/Einstellungen.PNG" style="height:100%">
 			  <div class="text">Einstellungen</div>
 			</div>
 </div>
@@ -123,7 +123,7 @@ function showSlides() {
 }
 </script>
 
-Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) und fügt ergänzend noch ein paar weitere Funktionalitäten hinzu (Codelistenauflösung für die Visualisierung, Leitweg-ID-Rechner/-Prüfer, Nutzung für Peppol-Rechnungen). Damit macht sie die XRechnungs-Tools für Nicht-Programmierer nutzbar. 
+Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche (und seit Version 3.0.0 auch einen Kommandozeilenzugriff) zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) und fügt ergänzend noch ein paar weitere Funktionalitäten hinzu (Codelistenauflösung für die Visualisierung, Leitweg-ID-Rechner/-Prüfer, Nutzung für Peppol-Rechnungen). Damit macht sie die XRechnungs-Tools für Nicht-Programmierer nutzbar. 
 
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -144,6 +144,7 @@ Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den
 - **Technische Validierung** von XRechnungs-Dateien sowie Peppol BIS 3.0 Rechnungen, verfügbar für verschiedene XRechnungs-Versionen, inkl. Speicherfunktion des Prüfberichts als HTML-Datei
 - Berechnung und Prüfung von **Leitweg-ID-Prüfziffern**
 - **Konvertierung** von UN/CEFACT CII nach UBL 2.1
+- Nutzung der Funktionalitäten per **graphischer Benutzeroberfläche** oder per **Kommandozeile** (CLI)
 
 ### Vorteile gegenüber vielen anderen Angeboten
 
@@ -154,14 +155,15 @@ Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den
 
 ### Wer steckt dahinter
 
-Die OpenXRechnungToolbox wurde von Jan C. Thiele entwickelt. Dr. Dr. Jan C. Thiele ist hauptberuflich Referent und stv. Referatsleiter beim Senator für Finanzen der Freien Hansestadt Bremen. Er ist einer der Autoren des Standards XRechnung, hat das EU-Projekt "Peppol eInvoicing für Government in Germany" (PeGGy) für Bremen durchgeführt und ist Vertreter Bremens im Steuerungskreis von XRechnung.<br /> 
+Die OpenXRechnungToolbox wurde von Jan C. Thiele entwickelt. Dr. Dr. Jan C. Thiele war hauptberuflich Referent und stv. Referatsleiter beim Senator für Finanzen der Freien Hansestadt Bremen. Er ist einer der Autoren des Standards XRechnung, hat das EU-Projekt "Peppol eInvoicing für Government in Germany" (PeGGy) für Bremen durchgeführt und war Vertreter Bremens im Steuerungskreis von XRechnung.<br /> 
+Heute arbeite er als Projektmanager und stv. Stabsstellenleiter für die Bürgerschaftskanzlei Bremen (Landtag der Freien Hansestadt Bremen) und ist nebenberuflich als Lehrbeauftragter an der Hochschule Bremen im Dualen Studiengang für Wirtschafts- und Verwaltungsinformatik tätig.
 Zuvor hat er als wissenschaftlicher Mitarbeiter der Universität Göttingen in verschiedenen Projekten (betriebliche) Informationssysteme, insb. Entscheidungsunterstützungssysteme im Umweltbereich, entworfen und entwickelt. Ein Schwerpunkt seiner wissenschaftlichen Tätigkeit war die simulationsbasierte Entscheidungsunterstützung.<br /> 
 Die OpenXRechnungToolbox ist ein Freizeitprojekt und steht in keinem direkten Zusammenhang mit dem Senator für Finanzen. 
 Als Open Source Software ist jede(r) eingeladen zur Weiterentwicklung der Software beizutragen. 
 
 ### Weitere Infos
 
-Das Benutzerhandbuch etc. ist [hier](https://jcthiele.github.io/OpenXRechnungToolbox/docs/manual.html "Benutzerhandbuch") zu finden.
+Das Benutzerhandbuch etc. ist [hier](https://jcthiele.github.io/OpenXRechnungToolbox/resources/help/manual.html "Benutzerhandbuch") zu finden.
 
 ### Kontakt
 

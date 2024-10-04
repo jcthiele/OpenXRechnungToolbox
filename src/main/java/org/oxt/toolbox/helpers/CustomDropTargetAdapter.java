@@ -11,7 +11,6 @@ import org.oxt.toolbox.gui.HTMLWindow;
 import org.oxt.toolbox.validation.ValidatorImpl;
 import org.oxt.toolbox.visualization.VisualizerImpl;
 import org.apache.logging.log4j.Logger;
-import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Class to define a custom drop target adapter.
@@ -61,7 +60,7 @@ public class CustomDropTargetAdapter extends DropTargetAdapter {
                 		HTMLWindow win = new HTMLWindow();
                 		VisualizerImpl viz = new VisualizerImpl();
                 		try {
-                            StringWriter sw = viz.runVisualization(invoiceFile.getName(), invoiceFile.getAbsolutePath(), AppProperties.prop.getProperty("viz.intermediate.ubl.xsl"), AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl"), AppProperties.prop.getProperty("viz.intermediate.cii.xsl"), AppProperties.prop.getProperty("viz.html.xsl"));
+                            StringWriter sw = viz.runVisualization(invoiceFile.getAbsolutePath(), AppProperties.prop.getProperty("viz.intermediate.ubl.xsl"), AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl"), AppProperties.prop.getProperty("viz.intermediate.cii.xsl"), AppProperties.prop.getProperty("viz.html.xsl"));
                             win.launch(shell.getDisplay(), viz, null, invoiceFile.getName(), invoiceFile.getAbsolutePath(), sw.toString());
                 		} catch (Exception e1) {
                 			logger.error(e1.getMessage());
@@ -74,14 +73,11 @@ public class CustomDropTargetAdapter extends DropTargetAdapter {
                 		HTMLWindow win = new HTMLWindow();
                 		ValidatorImpl vali = new ValidatorImpl();
                 		try {
-                			//StringWriter sw = vali.runValidation(invoiceFile.getName(), invoiceFile.getAbsolutePath(), AppProperties.prop.getProperty("validator.scenario"));
-                			//win.launch(shell.getDisplay(), null, vali, invoiceFile.getName(), invoiceFile.getAbsolutePath(), sw.toString());
-                			String sw = vali.runValidation(invoiceFile.getName(), invoiceFile.getAbsolutePath(), AppProperties.prop.getProperty("validator.scenario"));
+                			String sw = vali.runValidation(invoiceFile.getAbsolutePath(), AppProperties.prop.getProperty("valiVersion"));
                 			win.launch(shell.getDisplay(), null, vali, invoiceFile.getName(), invoiceFile.getAbsolutePath(), sw);
                 		} catch (Exception e1) {
                 			logger.error(e1.getMessage());
-                			//e1.printStackTrace();
-	  	                    String html = "<html><body>Datei kann nicht geprüft werden.</body></html>";
+                			String html = "<html><body>Datei kann nicht geprüft werden.</body></html>";
 	  	                    win.launch(shell.getDisplay(), null, vali, invoiceFile.getName(), invoiceFile.getAbsolutePath(), html);	      				
 	  	                  }                		
                 	}

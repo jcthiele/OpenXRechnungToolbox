@@ -53,14 +53,14 @@ Released   : 20130801
 	<div id="page">
 		<div>
 			<div class="title">
-				<h2>Open<span>XRechnung</span>Toolbox 1.1.2</h2>
+				<h2>Open<span>XRechnung</span>Toolbox 3.0.0</h2>
 				<span class="byline">
 				by Dr. Jan C. Thiele</span> </div>				
 			<p>
 				<img width="400px" src="img/Oberflaeche.PNG">
 			</p>
 			<p>
-			Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) 
+			Die OpenXRechnungToolbox (OXT) bietet eine graphische Benutzeroberfläche (und seit Version 3.0.0 auch einen Kommandozeilenzugriff) zu den mit dem Standard XRechnung herausgegebenen Tools (Prüftool, Visualisierung) 
 			und fügt ergänzend noch ein paar weitere Funktionalitäten hinzu (Codelistenauflösung für die Visualisierung, Leitweg-ID-Rechner/-Prüfer, Nutzung für Peppol-Rechnungen).
 			Damit macht sie die XRechnungs-Tools für Nicht-Programmierer nutzbar.
 			</p>
@@ -74,6 +74,7 @@ Released   : 20130801
 				<li>Technische <b>Validierung</b> von XRechnungs-Dateien sowie Peppol BIS 3.0 Rechnungen, verfügbar für verschiedene XRechnungs-Versionen, inkl. <b>Speicherfunktion des Prüfberichts als HTML-Datei</b></li>
 				<li><b>Berechnung und Prüfung von Leitweg-ID-Prüfziffern</b></li>
 				<li><b>Konvertierung</b> von UN/CEFACT CII nach UBL 2.1</li>
+				<li>Nutzung der Funktionalitäten per <b>graphischer Benutzeroberfläche</b> oder per <b>Kommandozeile</b> (CLI)</li>
 			</ul>
 			</p>
 			<p>
@@ -112,7 +113,7 @@ Released   : 20130801
 			Damit ist nicht nur die kompilierte Software sondern auch der Quellcode des Programms unter Beachtung der Lizenzbedingungen frei verfügbar und weiterverwendbar.
 			</p>
 			<p>
-			Die Toolbox nutzt für die Visualisierung die <a href="https://github.com/itplr-kosit/xrechnung-visualization" target="_blank">Viewer-Komponente</a>, die von der <a href="https://www.xoev.de">KoSIT</a> als Betreiberin der <a href="https://www.xoev.de/xrechnung-16828">XRechnung</a> bereitgestellt wird. 
+			Die Toolbox nutzt für die Visualisierung die <a href="https://github.com/itplr-kosit/xrechnung-visualization" target="_blank">Viewer-Komponente</a>, die von der <a href="https://www.xoev.de">KoSIT</a> als Betreiberin der <a href="https://xeinkauf.de/xrechnung/">XRechnung</a> bereitgestellt wird. 
 			Diese Komponente ist unter der Apache 2 Lizenz verfügbar.
 			</p>
 			<p>
@@ -156,19 +157,19 @@ Released   : 20130801
 			</ul>
 			</p>
 			
-			<p>Die Toolbox in der vorliegenden Version 1.1.2 nutzt folgende Komponentenversionen:</p>
+			<p>Die Toolbox in der vorliegenden Version 3.0.0 nutzt folgende Komponentenversionen:</p>
 			<ul>
-				<li><a href="https://github.com/itplr-kosit/validator/releases/tag/v1.4.2" target="_blank">Validator für XRechnung (von der KoSIT), Release Version 1.4.2</a></li>
-				<li><a href="https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/tag/release-2021-11-15" target="_blank">Validator Configuration XRechnung (von der KoSIT), Release Version 2021-11-15 kompatibel mit XRechnung 2.1.1</a>, sowie vorausgegangene Versionen</li> 
-				<li><a href="https://github.com/itplr-kosit/validator-configuration-bis/releases/tag/release-3.0.12" target="_blank">Validator Configuration BIS (von der KoSIT), Release supporting Peppol Billing BIS 3.0.12 rules from 2021-12-14, sowie vorausgegangene Versionen</a></li>
-				<li><a href="https://github.com/itplr-kosit/xrechnung-visualization/releases/tag/v2021-11-15" target="_blank">XRechnung Visualization, Release Version 2020-12-31 kompatibel mit XRechnung 2.1.1</a></li> 
+				<li><a href="https://github.com/itplr-kosit/validator/releases/tag/v1.5.0" target="_blank">Validator für XRechnung (von der KoSIT), Release Version 1.5.0</a></li>
+				<li><a href="https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/tag/release-2024-06-20" target="_blank">Validator Configuration XRechnung (von der KoSIT), Release Version 2024-06-20 kompatibel mit XRechnung 3.0.x</a>, sowie vorausgegangene Versionen</li> 
+				<li><a href="https://github.com/itplr-kosit/validator-configuration-bis/releases/tag/release-3.0.17" target="_blank">Validator Configuration BIS (von der KoSIT), Release supporting Peppol Billing BIS 3.0.17 rules from 2024-05-27, sowie vorausgegangene Versionen</a></li>
+				<li><a href="https://github.com/itplr-kosit/xrechnung-visualization/releases/tag/v2024-06-20" target="_blank">XRechnung Visualization, Release Version 2024-06-20 kompatibel mit XRechnung 3.0.x</a></li> 
 			</ul>
 
 			<p>Die Testrechnungen, die mit der Toolbox ausgeliefert werden, kommen aus folgenden Quellen:</p>
 			<ul>
-				<li><a href="https://github.com/itplr-kosit/xrechnung-testsuite/releases/tag/release-2021-11-15" target="_blank">KoSIT Testsuite for XRechnung 2.1.1, build 2021-11-15, KoSIT, sowie Vorgängerversionen</a></li>
-				<li><a href="https://github.com/OpenPEPPOL/peppol-bis-invoice-3/releases/tag/3.0.12" target="_blank">Peppol BIS version 3.0.12 release, 2021 November (Fall), OpenPeppol, sowie Vorgängerversionen</a></li>
-				<li><a href="https://github.com/ConnectingEurope/eInvoicing-EN16931/releases/tag/validation-1.3.3" target="_blank">EN16931 Validation artefacts v.1.3.7, 2020-10-02, CEN TC434, sowie Vorgängerversionen</a></li>
+				<li><a href="https://github.com/itplr-kosit/xrechnung-testsuite/releases/tag/release-2024-06-20" target="_blank">KoSIT Testsuite for XRechnung 3.0.x, build 2024-06-20, KoSIT, sowie Vorgängerversionen</a></li>
+				<li><a href="https://github.com/OpenPEPPOL/peppol-bis-invoice-3/releases/tag/3.0.17" target="_blank">Peppol BIS version 3.0.17 release, 2024 May, OpenPeppol, sowie Vorgängerversionen</a></li>
+				<li><a href="https://github.com/ConnectingEurope/eInvoicing-EN16931/releases/tag/validation-1.3.12" target="_blank">EN16931 Validation artefacts v.1.3.12, 2024-04-10, CEN TC434, sowie Vorgängerversionen</a></li>
 			</ul>
 			
 

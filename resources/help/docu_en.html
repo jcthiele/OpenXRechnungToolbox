@@ -98,7 +98,7 @@ Released   : 20130801
 			<h5><a id="validationtool">Prüftoolkonfigurationsversionen hinzufügen</a></h5>
 			<p class="h5">
 			Eine zusätzliche Version des Prüftools machen Sie wie folgt verfügbar:
-			Im Pfade <i>resources/validatorxrechnung</i> legen Sie einen neuen Unterordner für die neuen Prüftoolkonfigurationendateien an und legen diese darin ab.
+			Im Pfad <i>resources/validatorxrechnung</i> legen Sie einen neuen Unterordner für die neuen Prüftoolkonfigurationendateien an und legen diese darin ab.
 			Im Key <i>available_valiVersions</i> fügen Sie in der kommagetrennten Liste einen neuen Wert für die neue Konfiguration hinzu.
 			Nun fügend Sie folgende neue Keys mit den entsprechenden Speicherpfaden hinzu (ggf. können die Pfade variieren, z.B. wenn neue Syntaxversionen genutzt werden): <br />
 			<i>validator.scenario.<neuer Wert>=resources/validatorxrechnung/<neuer Wert>/scenarios.xml</i> <br />
@@ -162,24 +162,21 @@ Released   : 20130801
 			Die Windows Executables werden im Maven-Build-Prozess über Launch4j automatisch erzeugt. <br />
 			Der Windows-Installer wird mit NSIS (Nullsoft Scriptable Install System) über das Script <i>nsis_installer.nsi</i> im Nachgang erzeugt. <br />
 			Für die Erzeugung der graphischen Benutzeroberfläche wird die SWT-Bibliothek verwendet. <br />
-			Für die Validator-Bibliothek steht kein Maven-Repository zur Verfügung. Daher wird die Bibliothek im lib-Ordner mitgeliefert und muss von dort ins lokale Repository übertragen werden.<br />
-			Dies kann über den Befehl:
-			<i>mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.4.2.jar</i>
-			erfolgen.
 			</p>
 			<p>
 			Da die SWT-Bibliothek betriebssystemabhängig ist, muss die OpenXRechnungToolbox entsprechend betriebssystemspezifisch kompiliert werden. Dazu sind entsprechende Profile in der Maven-Spezifikationsdatei (pom.xml) spezifiert.
 			Das Batch-Skript build-all-archs.bat führt entsprechend Maven-Aufrufe für alle Profile nacheinander aus, so dass hierüber alle zip-Archive zur Veröffentlichung erzeugt werden.
 			</p>
 			<p>
-			Derzeit besteht das Projekt aus fünf Paketen: (1) <i>gui</i>, (2) <i>helpers</i>, (3) <i>leitwegcheck</i>, (4) <i>validation</i>, (5) <i>visualization</i>.
+			Derzeit besteht das Projekt aus sechs Paketen: (1) <i>gui</i>, (2) <i>helpers</i>, (3) <i>leitwegcheck</i>, (4) <i>validation</i>, (5) <i>visualization</i>, (6) <i>cli</i>.
 			Die Quellen für die Erzeugung der Benutzeroberflächen finden sich im Paket <i>gui</i>. Das Paket <i>helpers</i> enthält verschiedene ausgelagerte Hilfsfunktionen, z.B. für den Umgang mit der Konfigurationsdatei.
+			Das Paket <i>cli</i> enthält die Methoden zur Nutzung der Toolbox im Kommandozeilen-Modus. Der Zugriff auf die Methoden aus der Kommandozeile heraus erfolgt aber über das Paket <i>gui</i>.
 			Die weiteren drei Pakete enthalten die Backendfunktionen für die eigentlichen Tools: die Visualisierung (Paket <i>visualization</i>), die Prüfung (Paket <i>validation</i>) und die Leigweg-ID-Erzeugung/-Prüfung (Paket <i>leitwegcheck</i>).
 			Eine automatischer Unittest ist derzeit noch nicht verfügbar. Ein Beitrag aus der Community wird sehr begrüßt.			
 			</p>
 			<p>
-			Die Hauptklasse der OpenXRechnungsToolbox ist im Paket <i>gui</i> die Klasse <i>AppWindow.java</i>. Diese erzeugt das Hauptfenster. 
-			Das Visualisierungs- sowie das Prüfergebnis wird in einem Browserfenster dargestellt, dass von der Klasse <i>HTMLWindow.java</i> erzeugt wird. 
+			Die Hauptklasse der OpenXRechnungsToolbox ist im Paket <i>gui</i> die Klasse <i>AppWindow.java</i>. Diese erzeugt das Hauptfenster und bietet Zugriff auf den Kommandozeilen-Modus. 
+			Das Visualisierungs- sowie das Prüfergebnis wird in einem Browserfenster dargestellt, das von der Klasse <i>HTMLWindow.java</i> erzeugt wird. 
 			Die Benutzeroberfläche der Leitweg-ID-Erzeugung und -Prüfung wird durch die Klasse <i>LWIDWindow.java</i> erzeugt. 
 			Das Fenster für die Konfiguration der Einstellungen wird durch die Klasse <i>SettingsWindow.java</i> bereitgestellt.
 			Alle weiteren Informationen können der <a href="./javadoc/index.html" target="_blank">javadoc Dokumentation</a> entnommen werden.
@@ -187,9 +184,8 @@ Released   : 20130801
 			<p>
 			Die einzelnen Schritte für die Erzeugung sind:
 			<ul>
-				<li>KoSIT validation tool, OpenJDK herunterladen</li>
+				<li>OpenJDK herunterladen</li>
 				<li>JDK, NSIS, Maven & Eclipse installieren</li>
-				<li>KoSIT validation tool in Maven registrieren: <i>mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=validationtool-1.4.2.jar</i></li>
 				<li>Eclipse Existing Maven Project importieren</li>
 				<li><i>create_keystore.bat</i> ausführen</li>
 				<li>keystore Passwort in Property <i>keystore.password</i> in <i>pom.xml</i> eintragen</li>
@@ -197,7 +193,7 @@ Released   : 20130801
 				<li>keystore Passwort in Zeile <i>finalize!</i> in <i>target/nsis_installer.nsi</i> eintragen</li>
 				<li><i>nsis_installer.nsi</i> in Ordner target mit NSIS ausführen</li>
 			</ul>
-			</p>			
+			</p>
 		</div>		
 	</div>
 

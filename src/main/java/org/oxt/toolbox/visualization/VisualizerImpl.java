@@ -1,34 +1,15 @@
 package org.oxt.toolbox.visualization;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
-
-import javax.xml.XMLConstants;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.sax.SAXResult;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Validator;
 
 import org.apache.fop.apps.FOPException;
 import org.apache.fop.apps.FOUserAgent;
@@ -39,6 +20,24 @@ import org.oxt.toolbox.gui.AppWindow;
 import org.oxt.toolbox.helpers.AppProperties;
 import org.oxt.toolbox.helpers.LogConfigurator;
 import org.apache.logging.log4j.Logger;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.Source;
+import javax.xml.transform.Result;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.sax.SAXResult;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -54,10 +53,6 @@ public class VisualizerImpl implements IVisualizer {
 	 * Class member to store invoice path.
 	 */
 	String invoicePath;
-	/**
-	 * Class member to store invoice file.
-	 */
-	String invoiceFile;
 	/**
 	 * String writer to store visualization HTML.
 	 */
@@ -79,9 +74,9 @@ public class VisualizerImpl implements IVisualizer {
 	/**
 	 * Method to run visualization. 
 	 */
-	public StringWriter runVisualization(String invoiceFile, String invoicePath, String xslPathubl, String xslPathublcn, String xslPathcii, String htmlXslPath) throws XMLStreamException, IOException, Exception {
-		this.intermediateXML = this.xsltTransformationFromFile(invoicePath, xslPathubl, xslPathublcn, xslPathcii);
-		StringWriter visualizationHTML = this.xsltTransformationFromStringWriter(intermediateXML, htmlXslPath);		
+	public StringWriter runVisualization(String invoicePath, String xslPathubl, String xslPathublcn, String xslPathcii, String htmlXslPath) throws /*XMLStreamException,*/ IOException, Exception {	
+		this.intermediateXML = this.xsltTransformationFromFile(invoicePath, xslPathubl, xslPathublcn, xslPathcii);		
+		StringWriter visualizationHTML = this.xsltTransformationFromStringWriter(intermediateXML, htmlXslPath);			
 		return visualizationHTML;
 	}
 
@@ -91,15 +86,9 @@ public class VisualizerImpl implements IVisualizer {
 	 */
 	public void saveAs(String filePath) throws IOException {
 		if (this.html != null) {
-			// requires Java >= 9:
-			//FileWriter fw = new FileWriter(filePath, StandardCharsets.UTF_8);
-			//FileWriter fw = new FileWriter(filePath);
-	        //fw.write(this.html.toString());
-	        //fw.close();	
-			// Java = 8 compatible solution
-			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath, true), StandardCharsets.UTF_8));
-			bw.write(this.html.toString());		
-			bw.close();
+			FileWriter fw = new FileWriter(filePath, StandardCharsets.UTF_8);
+			fw.write(this.html.toString());
+	        fw.close();	
 		}
 	}
 
@@ -112,7 +101,7 @@ public class VisualizerImpl implements IVisualizer {
 	 */
 	private boolean validateAgainstXSD(String inputFile, String xsd)
 	{
-		File schemaFile = new File(xsd); // etc.
+		File schemaFile = new File(xsd); 
 		Source xmlFile = new StreamSource(new File(inputFile));
 		SchemaFactory schemaFactory = SchemaFactory
 		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -121,7 +110,7 @@ public class VisualizerImpl implements IVisualizer {
 			Validator validator = schema.newValidator();
 			validator.validate(xmlFile);
 			// valid
-			return true;
+			return true;		
 		} catch (SAXException e) {
 			// not valid
 			logger.error(e.getMessage());
@@ -141,9 +130,7 @@ public class VisualizerImpl implements IVisualizer {
 	 * @return
 	 * @throws Exception
 	 */
-	private StringWriter xsltTransformationFromFile(String inputFile, String xslPathubl, String xslPathublcn, String xslPathcii) throws Exception {
-		
-		
+	private StringWriter xsltTransformationFromFile(String inputFile, String xslPathubl, String xslPathublcn, String xslPathcii) throws Exception {	
         factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
         File initialFile = new File(inputFile);
@@ -176,7 +163,7 @@ public class VisualizerImpl implements IVisualizer {
 				extracted();
 			}
         }
-		
+
         Document doc = builder.parse(targetStream);
         DOMSource source = new DOMSource(doc);
  
@@ -214,7 +201,7 @@ public class VisualizerImpl implements IVisualizer {
         TransformerFactory transfomerFactory = TransformerFactory.newInstance();
  
         // Obtain the XSLT transformer
-        Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath)); 
+        Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath));         
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 	    // Set language of visualization labels
 	    transformer.setParameter("lang", AppProperties.prop.getProperty("viz.language"));

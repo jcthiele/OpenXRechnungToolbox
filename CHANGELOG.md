@@ -3,6 +3,35 @@
 Documentation of notable changes to OpenXRechnungToolbox.
 
 
+## v3.0.0
+
+### Changed
+
+* major release number synchronized to newest XRechnung version supported by the Toolbox
+* update to XRechnung v2.3.0 and XRechnung v3.0.x
+* update to KoSIT visualization for XRechnung v3.0.x
+* update of codelist resolving for XRechnung v3.0.x
+* update to KoSIT validator 1.5.0
+* update to phax cii2ubl 2.2.4
+
+### Added
+
+* adding command line interface (CLI) to validation, visualization and conversion (experimental)
+* adding validation scenario and example invoices for XRechnung v2.3.1
+* adding validation scenario for XRechnung v3.0.0
+* adding validation scenario for XRechnung v3.0.1
+* adding validation scenario and example invoices for XRechnung v3.0.2
+* adding validation scenario for en16931 v1.3.9
+* adding validation scenario for en16931 v1.3.10
+* adding validation scenario for en16931 v1.3.11
+* adding validation scenario and example invoices for en16931 v1.3.12
+* adding validation scenario for Peppol BIS v3.0.13
+* adding validation scenario for Peppol BIS v3.0.14
+* adding validation scenario for Peppol BIS v3.0.15
+* adding validation scenario for Peppol BIS v3.0.16
+* adding validation scenario and example invoices for Peppol BIS v3.0.17
+
+
 ## v1.1.3
 
 ### Changed

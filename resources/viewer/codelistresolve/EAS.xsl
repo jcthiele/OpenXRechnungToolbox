@@ -18,9 +18,12 @@
       		<xsl:when test="$myparam.upper='0130'"><xsl:value-of select="$myparam"/> (Directorates of the European Commission)</xsl:when>
       		<xsl:when test="$myparam.upper='0135'"><xsl:value-of select="$myparam"/> (SIA Object Identifiers)</xsl:when>
       		<xsl:when test="$myparam.upper='0142'"><xsl:value-of select="$myparam"/> (SECETI Object Identifiers)</xsl:when>
+      		<xsl:when test="$myparam.upper='0147'"><xsl:value-of select="$myparam"/> (Standard Company Code)</xsl:when>
       		<xsl:when test="$myparam.upper='0151'"><xsl:value-of select="$myparam"/> (Australian Business Number (ABN) Scheme)</xsl:when>
+      		<xsl:when test="$myparam.upper='0170'"><xsl:value-of select="$myparam"/> (Teikoku Company Code)</xsl:when>
       		<xsl:when test="$myparam.upper='0183'"><xsl:value-of select="$myparam"/> (Numéro d'identification suisse des enterprises (IDE), Swiss Unique Business Identification Number (UIDB))</xsl:when>
       		<xsl:when test="$myparam.upper='0184'"><xsl:value-of select="$myparam"/> (DIGSTORG)</xsl:when>
+      		<xsl:when test="$myparam.upper='0188'"><xsl:value-of select="$myparam"/> (Corporate Number of The Social Security and Tax Number System)</xsl:when>
       		<xsl:when test="$myparam.upper='0190'"><xsl:value-of select="$myparam"/> (Dutch Originator's Identification Number)</xsl:when>
       		<xsl:when test="$myparam.upper='0191'"><xsl:value-of select="$myparam"/> (Centre of Registers and Information Systems of the Ministry of Justice)</xsl:when>
       		<xsl:when test="$myparam.upper='0192'"><xsl:value-of select="$myparam"/> (Enhetsregisteret ved Bronnoysundregisterne)</xsl:when>
@@ -35,12 +38,15 @@
       		<xsl:when test="$myparam.upper='0202'"><xsl:value-of select="$myparam"/> (Indirizzo di Posta Elettronica Certificata)</xsl:when>
       		<xsl:when test="$myparam.upper='0203'"><xsl:value-of select="$myparam"/> (eDelivery Network Participant identifier)</xsl:when>
       		<xsl:when test="$myparam.upper='0204'"><xsl:value-of select="$myparam"/> (Leitweg-ID)</xsl:when>
+      		<xsl:when test="$myparam.upper='0205'"><xsl:value-of select="$myparam"/> (CODDEST)</xsl:when>
       		<xsl:when test="$myparam.upper='0208'"><xsl:value-of select="$myparam"/> (Numero d'entreprise / ondernemingsnummer / Unternehmensnummer)</xsl:when>
       		<xsl:when test="$myparam.upper='0209'"><xsl:value-of select="$myparam"/> (GS1 identification keys)</xsl:when>
       		<xsl:when test="$myparam.upper='0210'"><xsl:value-of select="$myparam"/> (CODICE FISCALE)</xsl:when>
       		<xsl:when test="$myparam.upper='0211'"><xsl:value-of select="$myparam"/> (PARTITA IVA)</xsl:when>
       		<xsl:when test="$myparam.upper='0212'"><xsl:value-of select="$myparam"/> (Finnish Organization Identifier)</xsl:when>
       		<xsl:when test="$myparam.upper='0213'"><xsl:value-of select="$myparam"/> (Finnish Organization Value Add Tax Identifier)</xsl:when>
+      		<xsl:when test="$myparam.upper='0215'"><xsl:value-of select="$myparam"/> (Net service ID)</xsl:when>
+      		<xsl:when test="$myparam.upper='0216'"><xsl:value-of select="$myparam"/> (OVTcode)</xsl:when>
       		<xsl:when test="$myparam.upper='9901'"><xsl:value-of select="$myparam"/> (Danish Ministry of the Interior and Health)</xsl:when>
       		<xsl:when test="$myparam.upper='9902'"><xsl:value-of select="$myparam"/> (The Danish Commerce and Companies Agency)</xsl:when>
       		<xsl:when test="$myparam.upper='9904'"><xsl:value-of select="$myparam"/> (Danish Ministry of Taxation, Central Customs and Tax Administration)</xsl:when>
@@ -97,6 +103,9 @@
       		<xsl:when test="$myparam.upper='AS'"><xsl:value-of select="$myparam"/> (AS2 exchange)</xsl:when>
       		<xsl:when test="$myparam.upper='AU'"><xsl:value-of select="$myparam"/> (File Transfer Protocol)</xsl:when>
       		<xsl:when test="$myparam.upper='EM'"><xsl:value-of select="$myparam"/> (Electronic mail)</xsl:when>
+      		<xsl:when test="$myparam.upper='XR01'"><xsl:value-of select="$myparam"/> (DiGAVEID)</xsl:when>
+      		<xsl:when test="$myparam.upper='XR02'"><xsl:value-of select="$myparam"/> (Freischaltcode)</xsl:when>
+      		<xsl:when test="$myparam.upper='XR03'"><xsl:value-of select="$myparam"/> (IK)</xsl:when>
    			<xsl:otherwise><xsl:value-of select="$myparam"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>

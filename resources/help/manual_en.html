@@ -63,7 +63,7 @@ Released   : 20130801
 			</div>
 			<p>
 			Im Folgenden wird die Bedienung der OpenXRechnungToolbox erläutert. 
-			Wesentliche Grundlage ist der <a href="https://www.xoev.de/xrechnung-16828#BestandteileXRechnung" target="_blank">Standard XRechnung</a> und die zugehörigen technischen Bestandteile.
+			Wesentliche Grundlage ist der <a href="https://xeinkauf.de/xrechnung/" target="_blank">Standard XRechnung</a> und die zugehörigen technischen Bestandteile.
 			</p>
 			
 			
@@ -113,6 +113,10 @@ Released   : 20130801
 						<div style="text-indent:60px;"><a href="#lwidMenuEntryClose">Menüpunkt <i>Schließen</i></a><br /></div>
 					<div style="text-indent:45px;"><a href="#lwidMenuHelp">Menü <i>Hilfe</i></a><br /></div>
 						<div style="text-indent:60px;"><a href="#lwidMenuEntryOpenHelp">Menüpunkt <i>Hilfe öffnen</i></a><br /></div>
+			<div style="text-indent:15px;"><a href="#cli">Kommandozeilen-Modus (CLI)</a><br /></div>							
+				<div style="text-indent:30px;"><a href="#clivali">Validierung</a><br /></div>
+				<div style="text-indent:30px;"><a href="#cliviz">Visualisierung</a><br /></div>
+				<div style="text-indent:30px;"><a href="#clicon">Konvertierung</a><br /></div>
 			</p>
 			
 			
@@ -129,7 +133,7 @@ Released   : 20130801
 			Falls Sie unter Windows eine Software zum Entpacken benötigen, können Sie z.B. <a href="https://www.7-zip.org/" target="_blank">7-zip</a> nutzen.
 			</p>
 			<p>
-			Die OpenXRechnungToolbox Version 1.1.2 benötigt eine Java-Installation Version 8 oder höher.
+			Die OpenXRechnungToolbox Version 3.0.0 benötigt eine Java-Installation Version 9 oder höher.
 			Wenn Sie die Installationsroutine für Windows 64-bit nutzen, wird Java direkt mitgeliefert (daher ist die Dateigröße auch entsprechend umfangreich).
 			Hier entfällt die Voraussetzung, dass eine Java-Installation vorhanden sein muss.</p>
 			
@@ -138,7 +142,7 @@ Released   : 20130801
 			<p class="h4">
 			Für Windows Betriebssysteme steht eine direkt ausführbare Datei (exe) zur Verfügung. Hier starten Sie die OpenXRechnungToolbox durch einen Doppelkick auf die Datei OpenXRechnungToolbox.exe bzw. nach Durchführung der automatischen Installationsroutine durch Auswahl im Windows-Startmenü.<br />
 			Haben Sie nicht die Variante mit der automatischen Installationsroutine genutzt, dann können finden Sie im entpackten Ordner keine exe-Datei sondern eine jar-Datei.
-			Ist eine passende Java-Version (>= 8) verfügbar, können Sie die OpenXRechnungToolbox über einen Doppelklick auf die jar-Datei oder im Dos-Fenster bzw. in der PowerShell mittels folgenden Befehl starten:<br />
+			Ist eine passende Java-Version (>= 9) verfügbar, können Sie die OpenXRechnungToolbox über einen Doppelklick auf die jar-Datei oder im Dos-Fenster bzw. in der PowerShell mittels folgenden Befehl starten:<br />
 			<i>java -jar OpenXRechnungToolbox.jar "resources/app.config"</i><br />
 			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
 			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
@@ -149,8 +153,8 @@ Released   : 20130801
 			Unter Linux starten Sie die OpenXRechnungToolbox durch Ausführen der Datei <i>OpenXRechnungToolbox.sh</i> im Terminal/Console. 
 			Dazu müssen Sie die Datei zunächst ausführbar machen, z.B. durch den Befehl <i>chmod +x OpenXRechnungToolbox.sh</i>. 
 			Alternativ können Sie den Java-Aufruf auch direkt auf der Console/im Terminal eingeben:<br />
-			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
-			In beiden Fällen muss auf dem Rechner eine Java-Installation (Version >= 8) verfügbar sein.<br />			
+			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --config resources/app.config</i>.
+			In beiden Fällen muss auf dem Rechner eine Java-Installation (Version >= 9) verfügbar sein.<br />			
 			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
 			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
 			</p>
@@ -158,8 +162,8 @@ Released   : 20130801
 			<h4><a id="macos">Unter Apple Mac OS</a></h4>
 			<p class="h4">
 			Unter Apple Mac OS starten Sie die Anwendung durch Ausführung des Befehls im Terminal:<br />
-			<i>java -XstartOnFirstThread -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar "resources/app.config"</i>.
-			Hierfür muss auf dem Rechner eine Java-Installation (Version >= 8) verfügbar sein.<br />
+			<i>java -XstartOnFirstThread -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --config resources/app.config</i>.
+			Hierfür muss auf dem Rechner eine Java-Installation (Version >= 9) verfügbar sein.<br />
 			Im zip-Archiv finden Sie einen Unterordner <i>exampleInvoices</i>, der verschiedene Testrechnungen enthält, mit denen Sie die Anwendung ausprobieren können, sofern Sie keine eigene Rechnung zur Hand haben.<br />
 			Für die Benutzung der Prüftools achten Sie auf die richtige Einstellung der Konfigurationsversion. Diese muss zur Rechnung passen. Mehr dazu siehe unter <a href="#settingsValidation">Einstellungen > Prüfbericht</a>. 
 			</p>
@@ -502,6 +506,95 @@ Released   : 20130801
 			<p class="h6">
 			Hierüber wird das vorliegende Benutzerhandbuch geöffnet.
 			</p>			
+
+
+			<h3><a id="cli">Kommandozeilen-Modus (CLI)</a></h3>
+			<p>
+			Die Basisfunktionalitäten (Validierung, Visualisierung, Konvertierung) können auch ohne graphische Benutzeroberfläche über die Kommandozeile ausgeführt werden.
+			Die funktioniert sowohl mit der .exe-Datei (OpenXRechnungToolbox.exe) als auch - bei installiertem und auf der Kommandozeile verfügbaren Java-Runtime - mit der 
+			.jar-Datei (OpenXRechnungToolbox.jar). Zu beachten ist allerdings, dass Rückmeldungen zur Nutzung, Fehlern etc. nur bei der Variante mit der .jar-Datei sichtbar werden.
+			Es kann mit einem Aufruf jeweils nur eine Funktionalität ausgeführt werden. Soll z.B. eine Rechnung sowohl validiert als auch 
+			visualisiert werden, so sind zwei Aufrufe erforderlich.
+			</p>
+			<p>
+			Die Hilfe kann mit dem Kommandozeilen-Parameter <i>-h</i> bzw. <i>--help</i> aufgerufen werden. <br />
+			<i>java -jar OpenXRechnungToolbox.jar -h</i>
+			</p>
+			
+			<h4><a id="clivali">Validierung im Kommandozeilen-Modus</a></h4>			
+			<p class="h4">
+			Mit dem Kommandozeilen-Parameter <i>-val</i> bzw. <i>--validation</i> kann die Validierungsfunktion genutzt werden.
+			Der Kommandozeilen-Aufruf für die Validierung einer Rechnung kann dann z.B. wie folgt aussehen:
+			</p>
+			<p class="h4">
+			Mit der .jar-Datei:<br />
+			<i>OpenXRechnungToolbox.jar -val -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o testreport1.html -v 3.0.2</i>.
+			</p>
+			<p class="h4">
+			Mit der .exe-Datei:<br />
+			<i>OpenXRechnungToolbox.exe -val -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o testreport1.html -v 3.0.2</i>.
+			</p>
+			<p class="h4">
+			Die Parameter sind: <br />
+			<i>-i</i> bzw. <i>--input</i>: Pfad zu der zu validierenden Rechnung <br />
+			<i>-o</i> bzw. <i>--output</i>: Pfad unter dem der Report gespeichert werden soll <br />
+			<i>-v</i> bzw. <i>--valiversion</i>: Spezifikation der Prüftoolkonfiguration, gegen die die Rechnung validiert werden soll. Zulässige Werte finden sich in der Variable <i>available_valiVersions</i> aus der Datei <i>resources/app.config</i>.<br />
+			</p>
+
+
+			<h4><a id="cliviz">Visualisierung im Kommandozeilen-Modus</a></h4>			
+			<p class="h4">
+			Mit dem Kommandozeilen-Parameter <i>-viz</i> bzw. <i>--visualization</i> kann die Visualisierungsfunktion genutzt werden.
+			Der Kommandozeilen-Aufruf für die Visualisierung einer Rechnung kann dann z.B. wie folgt aussehen:
+			</p>
+			<p class="h4">
+			Mit der .jar-Datei:<br />
+			<i>OpenXRechnungToolbox.jar -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.html</i>.
+			</p>
+			<p class="h4">
+			Mit der .exe-Datei:<br />
+			<i>OpenXRechnungToolbox.exe -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.html</i>.
+			</p>
+			<p class="h4">
+			Dies erzeugt eine HTML-Visualisierung der elektronischen Rechnung. Es ist mit dem Zusatzparameter <i>-p</i> bzw. <i>--pdf</i> möglich eine PDF-Visualisierung anstelle der HTML-Visualisierung zu erzeugen.
+			Ein solcher Aufruf kann z.B. so aussehen:
+			</p>
+			<p class="h4">
+			Mit der .jar-Datei:<br />
+			<i>OpenXRechnungToolbox.jar -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.pdf -p</i>.
+			</p>
+			<p class="h4">
+			Mit der .exe-Datei:<br />
+			<i>OpenXRechnungToolbox.exe -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.pdf -p</i>.
+			</p>
+
+			<p class="h4">
+			Die Parameter sind: <br />
+			<i>-i</i> bzw. <i>--input</i>: Pfad zu der zu visualisierenden Rechnung <br />
+			<i>-o</i> bzw. <i>--output</i>: Pfad unter dem die Visualisierung gespeichert werden soll <br />
+			<i>-p</i> bzw. <i>--pdf</i>: optionaler Parameter; wenn angegeben, dann wird eine PDF-Visualisierung anstelle einer HTML-Visualisierung erzeugt<br />
+			</p>
+
+
+			<h4><a id="clicon">Konvertierung von CII zu UBL im Kommandozeilen-Modus</a></h4>			
+			<p class="h4">
+			Mit dem Kommandozeilen-Parameter <i>-con</i> bzw. <i>--conversion</i> kann die Konvertierungsfunktion von CII zu UBL genutzt werden.
+			Der Kommandozeilen-Aufruf für die Konverztierung einer CII-Rechnung kann dann z.B. wie folgt aussehen:
+			</p>
+			<p class="h4">
+			Mit der .jar-Datei:<br />
+			<i>OpenXRechnungToolbox.jar -con -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_uncefact.xml -o convertedFromCII.xml</i>.
+			</p>
+			<p class="h4">
+			Mit der .exe-Datei:<br />
+			<i>OpenXRechnungToolbox.exe -con -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_uncefact.xml -o convertedFromCII.xml</i>.
+			</p>
+			<p class="h4">
+			Die Parameter sind: <br />
+			<i>-i</i> bzw. <i>--input</i>: Pfad zu der zu konvertierenden CII-Rechnung <br />
+			<i>-o</i> bzw. <i>--output</i>: Pfad unter dem die erzeugte UBL-Rechnung gespeichert werden soll <br />
+			</p>
+
 
 			
 		</div>		

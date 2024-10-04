@@ -1,0 +1,1 @@
+build_all_archs.bat > build.log 2>&1

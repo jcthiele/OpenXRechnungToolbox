@@ -9,7 +9,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.apache.logging.log4j.Logger;
-import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Helper class to store software properties.
@@ -41,7 +40,6 @@ public class AppProperties {
 			is = new FileInputStream(fileName);
 		    AppProperties.prop.load(is);
 		} catch (Exception ex) {
-			//ex.printStackTrace();
 			logger.error(ex.getMessage());
 			Display display = new Display();
 			Shell shell = new Shell(display);

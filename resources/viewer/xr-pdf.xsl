@@ -4,13 +4,14 @@
 	        xmlns:axf="http://www.antennahouse.com/names/XSL/Extensions"
 	        xmlns:xr="urn:ce.eu:en16931:2017:xoev-de:kosit:standard:xrechnung-1"
 	        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	        xmlns:xrv="http://www.example.org/XRechnung-Viewer"
+	        xmlns:xrv="http://www.example.org/XRechnung-Viewer"          
 	        version="2.0">
 
 
   <!-- ==========================================================================
        == Imports
        =========================================================================== -->
+  <xsl:import href="common-xr.xsl"/>
   
   <xsl:import href="xr-content.xsl"/>
 
@@ -18,8 +19,6 @@
   <xsl:import href="xr-pdf/lib/structure/layout-master-set.xsl"/>
   <xsl:import href="xr-pdf/lib/structure/content-templates.xsl"/>
   <xsl:import href="xr-pdf/lib/structure/page-sequence.xsl"/>
-
-  <xsl:include href="functions.xsl"/>
 
   <xsl:output method="xml" version="1.0" encoding="utf-8" /> 
 
@@ -58,8 +57,8 @@
        == Basic structure
        =========================================================================== -->
   <xsl:template match="xr:invoice">
-
-    <fo:root language="{$lang}" font-family="{$fontSans}">
+    <fo:root xmlns:pdf="http://xmlgraphics.apache.org/fop/extensions/pdf"
+      language="{$lang}" font-family="{$fontSans}">
       <xsl:call-template name="generiere-layout-master-set"/>
       <fo:declarations>
         <x:xmpmeta xmlns:x="adobe:ns:meta/">
@@ -73,6 +72,11 @@
             </rdf:Description>
           </rdf:RDF>
         </x:xmpmeta>
+        <xsl:for-each select="xr:ADDITIONAL_SUPPORTING_DOCUMENTS">
+          <xsl:apply-templates mode="binary-declaration" select="xr:Attached_document">
+            <xsl:with-param name="identifier" select="xr:Attached_document/@filename"/>
+          </xsl:apply-templates>
+        </xsl:for-each>
       </fo:declarations>
       <xsl:call-template name="generiere-page-sequence">
         <xsl:with-param name="body-content-flow">
@@ -86,7 +90,7 @@
             <fo:block id="seitenzahlLetzteSeite"></fo:block>
           </fo:flow>
         </xsl:with-param>
-      </xsl:call-template>
+      </xsl:call-template>     
     </fo:root>
   </xsl:template>
   

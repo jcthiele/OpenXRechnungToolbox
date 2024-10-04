@@ -25,7 +25,8 @@ public class Internationalization {
 		URL[] urls = {filepath.toURI().toURL()};  
 		ClassLoader loader = new URLClassLoader(urls);
 
-		Locale locale = new Locale(localeStr);
+		Locale locale = new Locale.Builder().setLanguage(localeStr).build();
+		
 		return ResourceBundle.getBundle(file, locale, loader, new UTF8Control());   
 				
 	}

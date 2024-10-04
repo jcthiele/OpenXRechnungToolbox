@@ -10,10 +10,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.oxt.toolbox.gui.AppWindow;
-import org.oxt.toolbox.gui.HTMLWindow;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.oxt.toolbox.helpers.LogConfigurator;
 
 /**
  * Helper class to implement a custom selection adapter for help page opening in external browser.
@@ -51,8 +48,6 @@ public class CustomHelpSelectionAdapter extends SelectionAdapter {
 	        messageBox.setText(AppWindow.resourceBundle.getString("help_error_title"));			        
 	        messageBox.setMessage(AppWindow.resourceBundle.getString("help_error"));
 	        messageBox.open();					
-	        //logger.error("help_error");
-	        //logger.error(e1.getMessage());
 		}
     }
 

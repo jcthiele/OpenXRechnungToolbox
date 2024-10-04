@@ -751,7 +751,14 @@
       		<xsl:when test="$myparam.upper='894'"><xsl:value-of select="$myparam"/> (Purchase Order Financing Request Cancellation)</xsl:when>
       		<xsl:when test="$myparam.upper='895'"><xsl:value-of select="$myparam"/> (Statistical document, export)</xsl:when>
       		<xsl:when test="$myparam.upper='896'"><xsl:value-of select="$myparam"/> (INTRASTAT declaration)</xsl:when>
+      		<xsl:when test="$myparam.upper='897'"><xsl:value-of select="$myparam"/> (Transit certificate of approval)</xsl:when>
+      		<xsl:when test="$myparam.upper='898'"><xsl:value-of select="$myparam"/> (Pre-packed cross docking consignment order)</xsl:when>
+      		<xsl:when test="$myparam.upper='899'"><xsl:value-of select="$myparam"/> (Traceability event declaration)</xsl:when>
+      		<xsl:when test="$myparam.upper='900'"><xsl:value-of select="$myparam"/> (Sustainability data request)</xsl:when>
       		<xsl:when test="$myparam.upper='901'"><xsl:value-of select="$myparam"/> (Delivery verification certificate)</xsl:when>
+      		<xsl:when test="$myparam.upper='902'"><xsl:value-of select="$myparam"/> (Sustainability data response)</xsl:when>
+      		<xsl:when test="$myparam.upper='903'"><xsl:value-of select="$myparam"/> (Sustainability Inspection request)</xsl:when>
+      		<xsl:when test="$myparam.upper='904'"><xsl:value-of select="$myparam"/> (Sustainability Inspection response)</xsl:when>
       		<xsl:when test="$myparam.upper='910'"><xsl:value-of select="$myparam"/> (Import licence, application for)</xsl:when>
       		<xsl:when test="$myparam.upper='911'"><xsl:value-of select="$myparam"/> (Import licence)</xsl:when>
       		<xsl:when test="$myparam.upper='913'"><xsl:value-of select="$myparam"/> (Customs declaration without commercial detail)</xsl:when>

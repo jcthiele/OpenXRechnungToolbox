@@ -22,7 +22,7 @@
                 <fo:table-row>
                   <fo:table-cell>
                     <fo:block font-weight="bold">
-                      <xsl:value-of select="xrf:_('Bereiche ohne Inhalte werden nicht dargestellt!')"/>
+                      <xsl:value-of select="xrf:_('_no-content')"/>
                     </fo:block>
                   </fo:table-cell>
                   <fo:table-cell white-space="nowrap"
@@ -54,7 +54,7 @@
           <fo:block font-family="{$fontSans}" 
                     font-size="9pt"
                     text-align="center">
-            <fo:block><xsl:value-of select="xrf:_('Seite')"/><xsl:text> </xsl:text><fo:page-number/> / <fo:page-number-citation ref-id="seitenzahlLetzteSeite"/></fo:block>
+            <fo:block><xsl:value-of select="xrf:_('_page')"/><xsl:text> </xsl:text><fo:page-number/> / <fo:page-number-citation ref-id="seitenzahlLetzteSeite"/></fo:block>
           </fo:block>
         </fo:block-container>
       </fo:static-content>

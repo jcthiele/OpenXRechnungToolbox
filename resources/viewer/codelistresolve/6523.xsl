@@ -214,6 +214,12 @@
       		<xsl:when test="$myparam.upper='0211'"><xsl:value-of select="$myparam"/> (PARTITA IVA)</xsl:when>
       		<xsl:when test="$myparam.upper='0212'"><xsl:value-of select="$myparam"/> (Finnish Organization Identifier)</xsl:when>
       		<xsl:when test="$myparam.upper='0213'"><xsl:value-of select="$myparam"/> (Finnish Organization Value Add Tax Identifier)</xsl:when>
+      		<xsl:when test="$myparam.upper='0214'"><xsl:value-of select="$myparam"/> (Tradeplace TradePI Standard)</xsl:when>
+      		<xsl:when test="$myparam.upper='0215'"><xsl:value-of select="$myparam"/> (Net service ID)</xsl:when>
+      		<xsl:when test="$myparam.upper='0216'"><xsl:value-of select="$myparam"/> (OVTcode)</xsl:when>
+      		<xsl:when test="$myparam.upper='XR01'"><xsl:value-of select="$myparam"/> (DiGAVEID)</xsl:when>
+      		<xsl:when test="$myparam.upper='XR02'"><xsl:value-of select="$myparam"/> (Freischaltcode)</xsl:when>
+      		<xsl:when test="$myparam.upper='XR03'"><xsl:value-of select="$myparam"/> (IK)</xsl:when>
    			<xsl:otherwise><xsl:value-of select="$myparam"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
