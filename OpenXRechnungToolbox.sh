@@ -1,1 +1,1 @@
-java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --config resources\app.config
+java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --config resources/app.config
