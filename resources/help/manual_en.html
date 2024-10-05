@@ -518,7 +518,7 @@ Released   : 20130801
 			</p>
 			<p>
 			Die Hilfe kann mit dem Kommandozeilen-Parameter <i>-h</i> bzw. <i>--help</i> aufgerufen werden. <br />
-			<i>java -jar OpenXRechnungToolbox.jar -h</i>
+			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar -h</i>
 			</p>
 			
 			<h4><a id="clivali">Validierung im Kommandozeilen-Modus</a></h4>			
@@ -528,7 +528,7 @@ Released   : 20130801
 			</p>
 			<p class="h4">
 			Mit der .jar-Datei:<br />
-			<i>OpenXRechnungToolbox.jar -val -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o testreport1.html -v 3.0.2</i>.
+			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar -val -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o testreport1.html -v 3.0.2</i>.
 			</p>
 			<p class="h4">
 			Mit der .exe-Datei:<br />
@@ -549,7 +549,7 @@ Released   : 20130801
 			</p>
 			<p class="h4">
 			Mit der .jar-Datei:<br />
-			<i>OpenXRechnungToolbox.jar -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.html</i>.
+			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.html</i>.
 			</p>
 			<p class="h4">
 			Mit der .exe-Datei:<br />
@@ -561,7 +561,7 @@ Released   : 20130801
 			</p>
 			<p class="h4">
 			Mit der .jar-Datei:<br />
-			<i>OpenXRechnungToolbox.jar -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.pdf -p</i>.
+			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar -viz -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_ubl.xml -o tesviz.pdf -p</i>.
 			</p>
 			<p class="h4">
 			Mit der .exe-Datei:<br />
@@ -583,7 +583,7 @@ Released   : 20130801
 			</p>
 			<p class="h4">
 			Mit der .jar-Datei:<br />
-			<i>OpenXRechnungToolbox.jar -con -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_uncefact.xml -o convertedFromCII.xml</i>.
+			<i>java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar -con -i exampleInvoices\XRechnung_v3.0.2\01.01a-INVOICE_uncefact.xml -o convertedFromCII.xml</i>.
 			</p>
 			<p class="h4">
 			Mit der .exe-Datei:<br />

@@ -13,7 +13,7 @@
   <properties>
 	<!-- insert keystore password here -->
 	<keystore.password>passwort</keystore.password>
-
+	
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 	<jsign.url>https://github.com/ebourg/jsign/releases/download/6.0/jsign-6.0.jar</jsign.url>

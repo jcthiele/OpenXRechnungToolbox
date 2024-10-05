@@ -357,8 +357,12 @@ public class AppWindow {
 		
 		Options baseOptions = new Options();
 		
-		OptionGroup vizvalGroup = new OptionGroup();
-        Option vizOption = new Option("viz", "visualization", false, "run visualization without GUI in Command Line Interface (CLI) mode.");
+		Option helpOpt = new Option("h", "help", false, "print this message");
+		helpOpt.setRequired(false);
+		baseOptions.addOption(helpOpt);
+		
+		OptionGroup vizvalGroup = new OptionGroup();		
+		Option vizOption = new Option("viz", "visualization", false, "run visualization without GUI in Command Line Interface (CLI) mode.");
         vizOption.setRequired(false);
         vizvalGroup.addOption(vizOption);
         Option valOption = new Option("val", "validation", false, "run validation without GUI in Command Line Interface (CLI) mode.");
@@ -390,7 +394,16 @@ public class AppWindow {
 
         try {
         	CommandLine cmd = parser.parse(baseOptions, args);
-
+        	if (cmd.hasOption("help")) {
+        		// not necessary to define the usage modes when option configuration is correctly configured with groups...
+    	        // just use: help.printHelp("java OpenXRechnungToolbox.jar", options, true)
+    	        // don't forget to add -Dlog4j.configuration option (or Java VM options in general)
+    	        help.printHelp("\n"
+    	        		+ "Gui mode: java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --config <path to config file> \n"
+    	        		+ "CLI mode validation: java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --validation --input <path to invoice file> --output <path of report file> --valiVersion <version of XRechnung to validate against> \n"
+    	        		+ "CLI mode visualization: java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --visualization --input <path to invoice file> --output <path of visualization file> --type <pdf or html>", baseOptions);
+    	        System.exit(1);        		
+        	}
         	if (cmd.hasOption("config")) {
 	            String alternativeConfig = cmd.getOptionValue("config");
 	            if (alternativeConfig != null) {
@@ -451,6 +464,9 @@ public class AppWindow {
 	        }
         } catch (ParseException e) {
 	        System.out.println(e.getMessage());
+    		// not necessary to define the usage modes when option configuration is correctly configured with groups...
+	        // just use: help.printHelp("java OpenXRechnungToolbox.jar", options, true)
+	        // don't forget to add -Dlog4j.configuration option (or Java VM options in general)
 	        help.printHelp("\n"
 	        		+ "Gui mode: java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --config <path to config file> \n"
 	        		+ "CLI mode validation: java -Dlog4j.configuration=./resources/log4j2.xml -jar OpenXRechnungToolbox.jar --validation --input <path to invoice file> --output <path of report file> --valiVersion <version of XRechnung to validate against> \n"
