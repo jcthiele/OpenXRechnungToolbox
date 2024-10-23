@@ -2,6 +2,13 @@
 
 Documentation of notable changes to OpenXRechnungToolbox.
 
+## v3.0.1
+
+### Changed
+
+* bug fix: tooltips in Visualization
+* bug fix: logging configuration (thx to Adrian Devries)
+
 
 ## v3.0.0
 

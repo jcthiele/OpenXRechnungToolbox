@@ -23,31 +23,43 @@ public class LogConfigurator {
 
 	
 	public static Logger LogConfig(final Class<?> callingClass) {
-		String log4jConfigFile = System.getProperty("user.dir") + File.separator + "resources" + File.separator + "log4j2.xml";
-		try {
-			ConfigurationSource source;
-			source = new ConfigurationSource(new FileInputStream(log4jConfigFile));
-			Configurator.initialize(callingClass.getClassLoader(), source);
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			Display display = new Display();
-			Shell shell = new Shell(display);
-			MessageBox messageBox = new MessageBox(shell, SWT.ICON_WARNING | SWT.OK);				        
-	        messageBox.setText("Error");
-	        messageBox.setMessage("Log-Configuration file not found.");
-	        messageBox.open();
-		} catch (IOException e) {
-			e.printStackTrace();
-			Display display = new Display();
-			Shell shell = new Shell(display);
-			MessageBox messageBox = new MessageBox(shell, SWT.ICON_WARNING | SWT.OK);				        
-	        messageBox.setText("Error");
-	        messageBox.setMessage("Log-Configuration file not readable.");
-	        messageBox.open();
+		if (!checkSystemProperty()) {
+			String log4jConfigFile = System.getProperty("user.dir") + File.separator + "resources" + File.separator + "log4j2.xml";
+			try {
+				ConfigurationSource source;
+				source = new ConfigurationSource(new FileInputStream(log4jConfigFile));
+				Configurator.initialize(callingClass.getClassLoader(), source);
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+				Display display = new Display();
+				Shell shell = new Shell(display);
+				MessageBox messageBox = new MessageBox(shell, SWT.ICON_WARNING | SWT.OK);
+				messageBox.setText("Error");
+				messageBox.setMessage("Log-Configuration file not found.");
+				messageBox.open();
+			} catch (IOException e) {
+				e.printStackTrace();
+				Display display = new Display();
+				Shell shell = new Shell(display);
+				MessageBox messageBox = new MessageBox(shell, SWT.ICON_WARNING | SWT.OK);
+				messageBox.setText("Error");
+				messageBox.setMessage("Log-Configuration file not readable.");
+				messageBox.open();
+			}
 		}
 		
 		final Logger logger = LogManager.getLogger(callingClass);
 		return logger;
+	}
+
+	private static boolean checkSystemProperty() {
+		boolean rv = false;
+		String cfg = System.getProperty("log4j2.configurationFile");
+		if (cfg != null && !cfg.isEmpty()) {
+			File file = new File(cfg);
+			rv = file.exists();
+		}
+		return rv;
 	}
 }

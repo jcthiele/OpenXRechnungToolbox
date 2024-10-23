@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>OpenXRechnungToolbox</groupId>
   <artifactId>org.oxt</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <name>OpenXRechnungToolbox</name>
   <description>This is the OpenXRechnungToolbox by Dr. Jan C. Thiele</description>
   <packaging>jar</packaging>
