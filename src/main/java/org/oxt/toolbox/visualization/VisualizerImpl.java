@@ -24,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -169,9 +170,9 @@ public class VisualizerImpl implements IVisualizer {
  
         // Create an instance of the TransformerFactory
         TransformerFactory transfomerFactory = TransformerFactory.newInstance();
- 
+
         // Obtain the XSLT transformer
-        Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath)); 
+        Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath));
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");        
         StringWriter sw = new StringWriter();
         StreamResult result = new StreamResult(sw);
@@ -191,15 +192,17 @@ public class VisualizerImpl implements IVisualizer {
 	 * @return
 	 * @throws TransformerException
 	 */
-	private StringWriter xsltTransformationFromStringWriter(StringWriter inputString, String xslPath) throws TransformerException {
+	private StringWriter xsltTransformationFromStringWriter(StringWriter inputString, String xslPath) throws TransformerException, ParserConfigurationException {
         // second transformation
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
+		factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+
         StreamSource source = new StreamSource(new StringReader(inputString.toString()));
  
         // Create an instance of the TransformerFactory
         TransformerFactory transfomerFactory = TransformerFactory.newInstance();
- 
+
         // Obtain the XSLT transformer
         Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath));         
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
