@@ -9,4 +9,4 @@ call mvn install -P linux_64bit
 
 REM call mvn install -P mac_32bit
 call mvn install -P mac_64bit
-
+call mvn install -P mac_arm64

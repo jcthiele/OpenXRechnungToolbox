@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>OpenXRechnungToolbox</groupId>
   <artifactId>org.oxt</artifactId>
-  <version>3.0.1</version>
+  <version>3.1.0</version>
   <name>OpenXRechnungToolbox</name>
   <description>This is the OpenXRechnungToolbox by Dr. Jan C. Thiele</description>
   <packaging>jar</packaging>
@@ -18,6 +18,7 @@
 
 	<jsign.url>https://github.com/ebourg/jsign/releases/download/6.0/jsign-6.0.jar</jsign.url>
     <swt.version>4.6.1</swt.version> 
+    <swt.version.aarch64>3.127.0</swt.version.aarch64> 
 	<swt.version.mac32>4.4.2</swt.version.mac32>
     <lombok.version>1.18.24</lombok.version>
   
@@ -85,13 +86,13 @@
 		          	<id>zip</id>
 		            <phase>install</phase>
 		            <configuration>
-		              <tasks>
+		              <target>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_32bit.zip">  
 						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>              
-		              </tasks>
+		              </target>
 		            </configuration>
 		            <goals>
 		              <goal>run</goal>
@@ -185,14 +186,14 @@
 		          	<id>zip</id>
 		            <phase>install</phase>
 		            <configuration>
-		              <tasks>
+		              <target>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_64bit_including_Java.zip">  
 						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, CHANGELOG.md, knownIssues.txt, license.txt" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/openJDK" includes="**" prefix="openJDK"/>				   
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>              
-		              </tasks>
+		              </target>
 		            </configuration>
 		            <goals>
 		              <goal>run</goal>
@@ -284,13 +285,13 @@
 		          	<id>zip</id>
 		            <phase>install</phase>
 		            <configuration>
-		              <tasks>
+		              <target>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Windows_64bit.zip">  
 						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.exe, OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>              
-		              </tasks>
+		              </target>
 		            </configuration>
 		            <goals>
 		              <goal>run</goal>
@@ -381,13 +382,13 @@
 		          	<id>zip</id>
 		            <phase>install</phase>
 		            <configuration>
-		              <tasks>
+		              <target>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Linux_32bit.zip">  
 						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
-		              </tasks>
+		              </target>
 		            </configuration>
 		            <goals>
 		              <goal>run</goal>
@@ -420,13 +421,13 @@
 		          	<id>zip</id>
 		            <phase>install</phase>
 		            <configuration>
-		              <tasks>
+		              <target>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Linux_64bit.zip">  
 						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolbox.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
-		              </tasks>
+		              </target>
 		            </configuration>
 		            <goals>
 		              <goal>run</goal>
@@ -459,13 +460,13 @@
 		          	<id>zip</id>
 		            <phase>install</phase>
 		            <configuration>
-		              <tasks>
+		              <target>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_32bit.zip">  
 						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
-		              </tasks>
+		              </target>
 		            </configuration>
 		            <goals>
 		              <goal>run</goal>
@@ -498,13 +499,52 @@
 		          	<id>zip</id>
 		            <phase>install</phase>
 		            <configuration>
-		              <tasks>
+		              <target>
 						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_64bit.zip">  
 						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolboxMac.sh" />
 						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
 						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
 						</zip>  						             
-		              </tasks>
+		              </target>
+		            </configuration>
+		            <goals>
+		              <goal>run</goal>
+		            </goals>
+		          </execution>		        
+				</executions>
+			</plugin>
+		   </plugins>
+		</build>    
+	</profile>
+
+    <!--  ******************************* -->
+    <!-- profile for  Apple Silicon -->
+    <!--  ******************************* -->	
+	<profile>
+		<id>mac_arm64</id>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.platform</groupId>
+				<artifactId>org.eclipse.swt.cocoa.macosx.aarch64</artifactId>
+				<version>${swt.version.aarch64}</version>
+			</dependency>
+		</dependencies>
+	    <build>	        
+		   <plugins>    
+			<plugin>
+		        <artifactId>maven-antrun-plugin</artifactId>
+		        <executions>
+		          <execution>	
+		          	<id>zip</id>
+		            <phase>install</phase>
+		            <configuration>
+		              <target>
+						<zip destfile="${project.build.directory}/OpenXRechnungToolbox_${project.version}_Mac_arm64.zip">  
+						   <zipfileset dir="${project.build.directory}" includes="OpenXRechnungToolbox.jar, CHANGELOG.md, knownIssues.txt, license.txt, OpenXRechnungToolboxMacARM.sh" />
+						   <zipfileset dir="${project.build.directory}/resources" includes="**" prefix="resources"/>
+						   <zipfileset dir="${project.build.directory}/exampleInvoices" includes="**" prefix="exampleInvoices"/>				   
+						</zip>  						             
+		              </target>
 		            </configuration>
 		            <goals>
 		              <goal>run</goal>
@@ -693,6 +733,11 @@
 	        <id>maven-eclipse-repo</id>
 	        <url>https://maven-eclipse.github.io/maven</url>
 	    </repository>
+  		<!--  swt repository for Apple Silicon ARM64 -->
+  		<repository>
+	        <id>mvnrepo</id>
+	        <url>https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.swt.cocoa.macosx.aarch64</url>
+	    </repository>
   </repositories>
    
    
@@ -709,7 +754,7 @@
           	<id>copyresources</id>
             <phase>package</phase>
             <configuration>
-              <tasks>
+              <target>
 				<copy todir="${project.build.directory}" >  
 				    <fileset dir="${basedir}">  
 				        <include name="resources/**"/>
@@ -762,7 +807,7 @@
 				        <include name="jsign.jar"/>
 				    </fileset>
 				</copy>
-              </tasks>
+              </target>
             </configuration>
             <goals>
               <goal>run</goal>
@@ -775,9 +820,9 @@
           	<id>copyjar</id>
             <phase>install</phase>
             <configuration>
-              <tasks>          	 
+              <target>          	 
               	<copy file="${project.build.directory}/OpenXRechnungToolbox_${project.version}-jar-with-dependencies.jar" tofile="${project.build.directory}/OpenXRechnungToolbox.jar"/>  
-              </tasks>
+              </target>
             </configuration>
             <goals>
               <goal>run</goal>
