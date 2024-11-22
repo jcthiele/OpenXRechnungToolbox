@@ -1,0 +1,5 @@
+/target/
+log/oxt_v300.log
+log4j2.configurationFile\#2.patch
+*.patch
+*.bak

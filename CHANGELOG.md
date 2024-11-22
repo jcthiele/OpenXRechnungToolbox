@@ -2,6 +2,15 @@
 
 Documentation of notable changes to OpenXRechnungToolbox.
 
+## v3.0.2
+
+### Changed
+
+* downgrade to GTK2 in startscript for linux
+* support for Apple Silicon ARM64 (thx to mentastic)
+* security fix for XML external entity vulnerability (thx to MichaelDohmenPool) 
+
+
 ## v3.0.1
 
 ### Changed
