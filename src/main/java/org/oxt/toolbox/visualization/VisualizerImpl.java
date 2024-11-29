@@ -25,12 +25,7 @@ import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.Source;
-import javax.xml.transform.Result;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamResult;
@@ -75,7 +70,7 @@ public class VisualizerImpl implements IVisualizer {
 	/**
 	 * Method to run visualization. 
 	 */
-	public StringWriter runVisualization(String invoicePath, String xslPathubl, String xslPathublcn, String xslPathcii, String htmlXslPath) throws /*XMLStreamException,*/ IOException, Exception {	
+	public StringWriter runVisualization(String invoicePath, String xslPathubl, String xslPathublcn, String xslPathcii, String htmlXslPath) throws /*XMLStreamException,*/ Exception {
 		this.intermediateXML = this.xsltTransformationFromFile(invoicePath, xslPathubl, xslPathublcn, xslPathcii);		
 		StringWriter visualizationHTML = this.xsltTransformationFromStringWriter(intermediateXML, htmlXslPath);			
 		return visualizationHTML;
@@ -135,49 +130,52 @@ public class VisualizerImpl implements IVisualizer {
         factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
         File initialFile = new File(inputFile);
-        InputStream targetStream = new FileInputStream(initialFile);
+		try(InputStream targetStream = new FileInputStream(initialFile)) {
 
-		// check for ubl-invoice, ubl-creditnote, cii
-        String xslPath = null;
-        
-        // use version with codelist resolve or not?
-        String valiVersion = AppProperties.prop.getProperty("valiVersion");
-        if (Boolean.parseBoolean(AppProperties.prop.getProperty("viz.codelistresolve"))) {
-			if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ubl.xsd."+valiVersion))) {
-				xslPath = AppProperties.prop.getProperty("viz.intermediate.ubl.xsl.codelistresolve");
-			} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ublcn.xsd."+valiVersion))) {
-				xslPath = AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl.codelistresolve");
-			} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.cii.xsd."+valiVersion))) {
-				xslPath = AppProperties.prop.getProperty("viz.intermediate.cii.xsl.codelistresolve");
+
+			// check for ubl-invoice, ubl-creditnote, cii
+			String xslPath = null;
+
+			// use version with codelist resolve or not?
+			String valiVersion = AppProperties.prop.getProperty("valiVersion");
+			if (Boolean.parseBoolean(AppProperties.prop.getProperty("viz.codelistresolve"))) {
+				if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ubl.xsd." + valiVersion))) {
+					xslPath = AppProperties.prop.getProperty("viz.intermediate.ubl.xsl.codelistresolve");
+				} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ublcn.xsd." + valiVersion))) {
+					xslPath = AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl.codelistresolve");
+				} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.cii.xsd." + valiVersion))) {
+					xslPath = AppProperties.prop.getProperty("viz.intermediate.cii.xsl.codelistresolve");
+				} else {
+					extracted();
+				}
 			} else {
-				extracted();
+				if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ubl.xsd." + valiVersion))) {
+					xslPath = AppProperties.prop.getProperty("viz.intermediate.ubl.xsl");
+				} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ublcn.xsd." + valiVersion))) {
+					xslPath = AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl");
+				} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.cii.xsd." + valiVersion))) {
+					xslPath = AppProperties.prop.getProperty("viz.intermediate.cii.xsl");
+				} else {
+					extracted();
+				}
 			}
-        }
-        else {        
-			if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ubl.xsd."+valiVersion))) {
-				xslPath = AppProperties.prop.getProperty("viz.intermediate.ubl.xsl");
-			} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.ublcn.xsd."+valiVersion))) {
-				xslPath = AppProperties.prop.getProperty("viz.intermediate.ublcn.xsl");
-			} else if (this.validateAgainstXSD(inputFile, AppProperties.prop.getProperty("validator.cii.xsd."+valiVersion))) {
-				xslPath = AppProperties.prop.getProperty("viz.intermediate.cii.xsl");
-			} else {
-				extracted();
-			}
-        }
 
-        Document doc = builder.parse(targetStream);
-        DOMSource source = new DOMSource(doc);
- 
-        // Create an instance of the TransformerFactory
-        TransformerFactory transfomerFactory = TransformerFactory.newInstance();
+			Document doc = builder.parse(targetStream);
+			DOMSource source = new DOMSource(doc);
 
-        // Obtain the XSLT transformer
-        Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath));
-        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");        
-        StringWriter sw = new StringWriter();
-        StreamResult result = new StreamResult(sw);
-        transformer.transform(source, result);
-        return sw;
+			// Create an instance of the TransformerFactory
+			TransformerFactory transfomerFactory = TransformerFactory.newInstance();
+
+			// Obtain the XSLT transformer
+			Transformer transformer = transfomerFactory.newTransformer(new StreamSource(xslPath));
+			transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+			StringWriter sw = new StringWriter();
+			StreamResult result = new StreamResult(sw);
+			transformer.transform(source, result);
+			return sw;
+		} catch (Exception e) {
+			throw new Exception("xslt Transformation from file failed");
+		}
 	}
 
 	private void extracted() throws Exception {
@@ -235,24 +233,30 @@ public class VisualizerImpl implements IVisualizer {
 	      FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
 	      // configure foUserAgent as desired        
 	      // Setup output
-	      OutputStream out = new FileOutputStream(pdfFile);
-	      out = new java.io.BufferedOutputStream(out);
+
+
+		try (OutputStream out = new FileOutputStream(pdfFile);
+			 var outStream = new java.io.BufferedOutputStream(out)) {
+
+
 	      // Construct fop with desired output format
-	      Fop fop;                
-	      fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);    
+	      Fop fop;
+	      fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, outStream);
 	      // Setup XSLT
 	      TransformerFactory factory = TransformerFactory.newInstance();
-	      Transformer transformer = factory.newTransformer(new StreamSource(xslPath));        
+	      Transformer transformer = factory.newTransformer(new StreamSource(xslPath));
 	      // Set language of visualization labels
 	      transformer.setParameter("lang", AppProperties.prop.getProperty("viz.language"));
 	      // Setup input for XSLT transformation
 	      StreamSource source = new StreamSource(new StringReader(this.intermediateXML.toString()));
 	      // Resulting SAX events (the generated FO) must be piped through to FOP
-	      Result res = new SAXResult(fop.getDefaultHandler());        
+	      Result res = new SAXResult(fop.getDefaultHandler());
 	      // Start XSLT transformation and FOP processing
 	      transformer.transform(source, res);
-	      out.close();
-		}
+		} catch (FOPException | TransformerFactoryConfigurationError | TransformerException e) {
+            throw new RuntimeException(e);
+        }
+        }
 		else {
 			logger.error(AppWindow.resourceBundle.getString("viz_intermediate_missing"));
 			throw new IOException(AppWindow.resourceBundle.getString("viz_intermediate_missing"));

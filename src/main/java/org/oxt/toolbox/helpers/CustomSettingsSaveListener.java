@@ -35,9 +35,8 @@ public class CustomSettingsSaveListener implements Listener {
         AppProperties.prop.setProperty("viz.codelistresolve", String.valueOf(this.sw.getResolveCodelists().getSelection()));
         AppProperties.prop.setProperty("valiVersion", this.sw.getValiVersionCombo().getItem(this.sw.getValiVersionCombo().getSelectionIndex()));
     	
-        FileOutputStream outputStrem;
-		try {
-			outputStrem = new FileOutputStream(AppProperties.fileName);
+
+		try (FileOutputStream outputStrem = new FileOutputStream(AppProperties.fileName)) {
 	        //Storing the properties file
 	        AppProperties.prop.store(outputStrem, "");
 		} catch (IOException e) {

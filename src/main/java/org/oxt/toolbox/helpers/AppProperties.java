@@ -35,9 +35,7 @@ public class AppProperties {
 
 		AppProperties.fileName = fileName;
 		AppProperties.prop = new Properties();
-		InputStream is = null;
-		try {
-			is = new FileInputStream(fileName);
+		try (var is = new FileInputStream(fileName)){
 		    AppProperties.prop.load(is);
 		} catch (Exception ex) {
 			logger.error(ex.getMessage());
