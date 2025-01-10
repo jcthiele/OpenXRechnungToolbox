@@ -34,4 +34,6 @@ Die OpenXRechnungToolbox Version 3.0.0 benötigt eine Java-Installation Version 
 
 Das Benutzer*innenhandbuch finden Sie unter https://jcthiele.github.io/OpenXRechnungToolbox/resources/help/manual.html sowie über das Hilfe-Menü der OpenXRechnungToolbox.
 
+## Bugreports
 
+Bitte sendet mir keine Bugreports, ich habe keine Zeit mir damit zu beschäftigen. Deshalb habe ich die Issues deaktiviert.
