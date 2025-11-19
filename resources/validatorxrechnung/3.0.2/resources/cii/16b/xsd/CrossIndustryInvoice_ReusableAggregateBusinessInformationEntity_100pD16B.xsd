@@ -53,7 +53,7 @@ This document and the information contained herein is provided on an "AS IS" bas
 		<xsd:sequence>
 			<xsd:element name="ID" type="udt:IDType"/>
 			<xsd:element name="ReferenceID" type="udt:IDType" minOccurs="0"/>
-			<xsd:element name="PrimaryClassificationCode" type="udt:CodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PrimaryClassificationCode" type="udt:CodeType" minOccurs="0" maxOccurs="1000"/>
 			<xsd:element name="AlternativeClassificationCode" type="udt:CodeType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="Comment" type="udt:TextType" minOccurs="0" maxOccurs="unbounded"/>
@@ -66,9 +66,9 @@ This document and the information contained herein is provided on an "AS IS" bas
 			<xsd:element name="RequestedActionCode" type="udt:CodeType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="PriceListItemID" type="udt:IDType" minOccurs="0"/>
 			<xsd:element name="ContractualLanguageCode" type="udt:CodeType" minOccurs="0"/>
-			<xsd:element name="ActualWorkItemComplexDescription" type="ram:WorkItemComplexDescriptionType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="TotalQuantityWorkItemQuantityAnalysis" type="ram:WorkItemQuantityAnalysisType" minOccurs="0" maxOccurs="unbounded"/>
-			<xsd:element name="UnitCalculatedPrice" type="ram:CalculatedPriceType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ActualWorkItemComplexDescription" type="ram:WorkItemComplexDescriptionType" minOccurs="0" maxOccurs="1000"/>
+			<xsd:element name="TotalQuantityWorkItemQuantityAnalysis" type="ram:WorkItemQuantityAnalysisType" minOccurs="0" maxOccurs="1000"/>
+			<xsd:element name="UnitCalculatedPrice" type="ram:CalculatedPriceType" minOccurs="0" maxOccurs="1000"/>
 			<xsd:element name="TotalCalculatedPrice" type="ram:CalculatedPriceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="SubordinateBasicWorkItem" type="ram:BasicWorkItemType" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element name="ChangedRecordedStatus" type="ram:RecordedStatusType" minOccurs="0" maxOccurs="unbounded"/>
